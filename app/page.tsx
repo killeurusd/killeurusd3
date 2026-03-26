@@ -29,9 +29,7 @@ const useSEO = (title: string, description: string) => {
 const Button = ({ children, variant = 'primary', className = '', onClick, type = 'button' }: any) => {
   const baseStyle = "inline-flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-300 rounded-sm";
   const variants = {
-    // Rouge profond #7A0F0F
     primary: "bg-[#7A0F0F] hover:bg-[#5A0A0A] text-white px-8 py-4 text-sm md:text-base shadow-[0_4px_14px_0_rgba(122,15,15,0.39)] hover:shadow-[0_6px_20px_rgba(122,15,15,0.23)] hover:-translate-y-0.5",
-    // Or accent #C9A227
     accent: "bg-[#C9A227] hover:bg-[#B38F22] text-[#0B0B0D] px-8 py-4 text-sm md:text-base shadow-[0_4px_14px_0_rgba(201,162,39,0.39)] hover:shadow-[0_6px_20px_rgba(201,162,39,0.23)] hover:-translate-y-0.5",
     secondary: "bg-[#111114] border border-zinc-800 hover:border-[#7A0F0F] text-white px-8 py-4 text-sm md:text-base",
     outline: "border border-zinc-800 hover:bg-[#111114] text-zinc-300 hover:text-white px-6 py-3 text-xs md:text-sm"
@@ -52,6 +50,31 @@ const SectionHeading = ({ subtitle, title, align = 'center' }: any) => (
     <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
       {title}
     </h2>
+  </div>
+);
+
+// --- COMPOSANTS PAGES LÉGALES ---
+const LegalSection = ({ title, children }: any) => (
+  <div className="mb-10">
+    <h2 className="text-xl md:text-2xl font-bold text-white mb-6 border-l-4 border-[#7A0F0F] pl-4">{title}</h2>
+    <div className="space-y-4 text-zinc-400 leading-relaxed text-sm md:text-base">
+      {children}
+    </div>
+  </div>
+);
+
+const LegalLayout = ({ title, lastUpdated, children, navigate }: any) => (
+  <div className="pt-32 pb-24 max-w-4xl mx-auto px-6 min-h-screen">
+    <button onClick={() => navigate('home')} className="flex items-center text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider mb-12">
+      <ChevronRight className="w-4 h-4 mr-1 rotate-180" /> Retour à l'accueil
+    </button>
+    <div className="mb-12 border-b border-zinc-800 pb-8">
+      <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">{title}</h1>
+      <p className="text-[#C9A227] uppercase tracking-widest text-xs font-bold">Dernière mise à jour : {lastUpdated}</p>
+    </div>
+    <div>
+      {children}
+    </div>
   </div>
 );
 
@@ -140,7 +163,6 @@ const HomePage = ({ navigate }: any) => {
              <div className="aspect-[4/3] bg-[#0B0B0D] border border-zinc-800 rounded-sm overflow-hidden relative shadow-[0_0_50px_rgba(0,0,0,0.8)]">
                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-transparent to-transparent"></div>
-               {/* UI Mockup abstraction */}
                <div className="absolute inset-x-8 bottom-8 top-12 border border-zinc-800/50 bg-[#111114]/80 backdrop-blur flex flex-col p-4">
                   <div className="flex justify-between items-center border-b border-zinc-800/50 pb-3 mb-4">
                     <div className="flex space-x-2">
@@ -228,7 +250,6 @@ const HomePage = ({ navigate }: any) => {
           <SectionHeading subtitle="Avant / Après" title="Passe du chaos à une méthode réelle" />
           
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-stretch">
-            {/* Avant */}
             <div className="bg-[#111114] border border-zinc-800 p-8 md:p-10 rounded-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <X className="w-24 h-24 text-red-500" />
@@ -250,7 +271,6 @@ const HomePage = ({ navigate }: any) => {
               </ul>
             </div>
 
-            {/* Après */}
             <div className="bg-[#0B0B0D] border border-[#C9A227]/30 p-8 md:p-10 rounded-sm relative overflow-hidden shadow-[0_0_30px_rgba(201,162,39,0.05)]">
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <CheckCircle className="w-24 h-24 text-[#C9A227]" />
@@ -341,7 +361,6 @@ const HomePage = ({ navigate }: any) => {
                     Rejoindre la formation
                   </Button>
                   
-                  {/* URGENCY LOGIQUE ET CRÉDIBLE */}
                   <div className="w-full bg-[#111114] border border-zinc-800 p-4 rounded-sm text-center mt-2">
                     <p className="text-xs text-zinc-400 leading-relaxed">
                       Pour garder un vrai niveau de suivi et assurer les coachings mensuels, <strong className="text-white">chaque session est limitée en capacité.</strong>
@@ -435,7 +454,6 @@ const HomePage = ({ navigate }: any) => {
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="aspect-[4/5] bg-[#111114] border border-zinc-800 relative overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-             {/* PLACEHOLDER PRO : Portrait sombre, studio, crédible */}
              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"></div>
              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/60 to-transparent"></div>
              <div className="absolute bottom-6 left-6 right-6">
@@ -733,7 +751,6 @@ const ArticlePage = ({ navigate }: any) => {
           </p>
         </div>
 
-        {/* CTA IN-ARTICLE */}
         <div className="mt-16 bg-gradient-to-br from-[#0B0B0D] to-[#111114] border border-zinc-800 p-8 rounded-sm text-center">
           <h3 className="text-xl font-bold text-white mb-4">Prêt à arrêter de jouer au hasard ?</h3>
           <p className="text-zinc-400 text-sm mb-6 max-w-md mx-auto">Rejoins la formation KILLEURUSD et maîtrise une approche chirurgicale du marché.</p>
@@ -870,6 +887,511 @@ const ThankYouPage = () => {
   );
 };
 
+// --- PAGES DES MENTIONS LÉGALES ---
+
+const CGVPage = ({ navigate }: any) => {
+  useSEO("Conditions Générales de Vente | KILLEURUSD", "Conditions Générales de Vente du site KILLEURUSD.");
+  
+  return (
+    <LegalLayout title="Conditions Générales de Vente (CGV)" lastUpdated="[À COMPLÉTER]" navigate={navigate}>
+      <LegalSection title="1. Identité du vendeur">
+        <p>Le présent site est exploité par :</p>
+        <p>
+          <strong>RAYSS RESEARCH LLC</strong><br/>
+          Forme juridique : Limited Liability Company (LLC)<br/>
+          État d’immatriculation : Nouveau-Mexique, États-Unis<br/>
+          Siège social : [ADRESSE À COMPLÉTER]<br/>
+          Email de contact : [EMAIL SUPPORT À COMPLÉTER]
+        </p>
+        <p>Ci-après dénommé “le Vendeur”.</p>
+      </LegalSection>
+
+      <LegalSection title="2. Objet">
+        <p>Les présentes Conditions Générales de Vente ont pour objet de définir les conditions dans lesquelles le Vendeur propose à la vente, via le site internet KILLEUR USD, des produits et services à destination de clients particuliers et professionnels.</p>
+        <p>Toute commande passée sur le site implique l’acceptation pleine et entière des présentes CGV.</p>
+      </LegalSection>
+
+      <LegalSection title="3. Produits et services proposés">
+        <p>Le Vendeur propose notamment à la vente une offre de formation et d’accompagnement en trading comprenant, à la date des présentes :</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>un accès immédiat à une formation numérique en ligne,</li>
+          <li>un accompagnement privé individuel,</li>
+          <li>des sessions de coaching de groupe régulières, selon les modalités définies par le Vendeur.</li>
+        </ul>
+        <p>Le contenu exact de l’offre, sa composition, ses modules, ses bonus, ses modalités d’accompagnement et ses éventuelles évolutions sont présentés sur la page de vente du site.</p>
+        <p>Le Vendeur se réserve le droit de faire évoluer, modifier, enrichir, retirer ou adapter tout ou partie de l’offre, de son contenu, de son organisation ou de ses modalités, à tout moment, afin d’améliorer l’expérience client ou d’adapter son offre.</p>
+      </LegalSection>
+
+      <LegalSection title="4. Public concerné">
+        <p>Les offres du site peuvent être souscrites par :</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>des particuliers agissant à des fins personnelles,</li>
+          <li>des professionnels agissant dans le cadre de leur activité.</li>
+        </ul>
+        <p>Le client déclare avoir la capacité juridique nécessaire pour contracter et utiliser les services proposés.</p>
+      </LegalSection>
+
+      <LegalSection title="5. Caractéristiques essentielles de l’offre principale">
+        <p>L’offre principale vendue sur le site comprend actuellement :</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>l’accès à une formation numérique en ligne,</li>
+          <li>un accès immédiat au contenu pédagogique après confirmation du paiement,</li>
+          <li>3 mois de coaching privé,</li>
+          <li>des sessions de groupe régulières, selon les disponibilités, l’organisation et les modalités librement définies par le Vendeur.</li>
+        </ul>
+        <p>Le client reconnaît que le contenu exact et l’organisation de l’offre peuvent évoluer à la discrétion du Vendeur.</p>
+      </LegalSection>
+
+      <LegalSection title="6. Prix">
+        <p>Le prix de l’offre principale est fixé à : <strong>997 USD</strong></p>
+        <p>Sauf mention contraire, les prix affichés sur le site sont exprimés en dollars américains.</p>
+        <p>Le Vendeur se réserve le droit de modifier ses prix à tout moment. Toutefois, le prix applicable à une commande est celui affiché au moment de la validation de celle-ci.</p>
+        <p>Les éventuelles taxes applicables, obligations déclaratives locales, frais bancaires, frais de conversion de devise ou autres frais annexes restent à la charge du client, sauf mention contraire affichée au moment de la commande.</p>
+      </LegalSection>
+
+      <LegalSection title="7. Commande">
+        <p>La commande est réputée formée dès validation du paiement par le client et confirmation de celui-ci par le prestataire de paiement.</p>
+        <p>Avant validation définitive, le client est invité à vérifier le détail de sa commande, son prix total, et à corriger toute éventuelle erreur.</p>
+        <p>Le Vendeur se réserve le droit de refuser ou d’annuler toute commande en cas de fraude, de tentative de fraude, de comportement abusif, de litige antérieur, ou pour tout motif légitime.</p>
+      </LegalSection>
+
+      <LegalSection title="8. Modalités de paiement">
+        <p>Le paiement est effectué via Stripe.</p>
+        <p>Les moyens de paiement acceptés sont ceux proposés par Stripe au moment de la commande.</p>
+        <p>Le client garantit qu’il dispose des autorisations nécessaires pour utiliser le moyen de paiement choisi.</p>
+        <p>En cas de refus de paiement, d’incident, d’impayé, ou de contestation bancaire abusive, le Vendeur pourra suspendre ou annuler l’accès aux services concernés.</p>
+      </LegalSection>
+
+      <LegalSection title="9. Livraison / accès aux services">
+        <h3 className="text-white font-bold mb-2 mt-4">9.1 Formation numérique</h3>
+        <p>L’accès à la formation est fourni immédiatement après validation du paiement, sauf incident technique ou vérification particulière.</p>
+        <h3 className="text-white font-bold mb-2 mt-4">9.2 Coaching privé</h3>
+        <p>Le coaching privé est inclus pour une durée de 3 mois. Les séances doivent être réservées selon les modalités communiquées par le Vendeur.</p>
+        <h3 className="text-white font-bold mb-2 mt-4">9.3 Coaching de groupe</h3>
+        <p>Les sessions de groupe peuvent être proposées selon une fréquence, une forme et une disponibilité librement déterminées par le Vendeur. Le client reconnaît que ces sessions ne constituent pas un engagement fixe, permanent ou intangible, sauf mention expresse contraire sur la page de vente au moment de l’achat.</p>
+      </LegalSection>
+
+      <LegalSection title="10. Durée d’accès">
+        <h3 className="text-white font-bold mb-2 mt-4">10.1 Formation</h3>
+        <p>Sauf indication contraire au moment de l’achat, l’accès à la formation est accordé à vie, sous réserve du maintien du service, de la plateforme et du respect des présentes CGV.</p>
+        <h3 className="text-white font-bold mb-2 mt-4">10.2 Coaching privé</h3>
+        <p>Le coaching privé est accessible pendant une durée de 3 mois à compter de la confirmation de la commande, sauf mention contraire expresse.</p>
+        <h3 className="text-white font-bold mb-2 mt-4">10.3 Coaching de groupe</h3>
+        <p>Le coaching de groupe est proposé de manière variable et peut être modifié, suspendu, remplacé ou supprimé à tout moment par le Vendeur.</p>
+      </LegalSection>
+
+      <LegalSection title="11. Droit de rétractation">
+        <h3 className="text-white font-bold mb-2 mt-4">11.1 Clients consommateurs</h3>
+        <p>Lorsqu’un client agit en qualité de consommateur, il bénéficie d’un délai de rétractation de 14 jours à compter de la conclusion du contrat.</p>
+        <p>Pour exercer ce droit, le client doit notifier sa décision de se rétracter par écrit à l’adresse email suivante : [EMAIL SUPPORT À COMPLÉTER]</p>
+        <p>Toute demande doit permettre d’identifier clairement le client et la commande concernée.</p>
+        <h3 className="text-white font-bold mb-2 mt-4">11.2 Remboursement en cas de rétractation</h3>
+        <p>En cas de rétractation valable exercée dans le délai applicable, le Vendeur remboursera les sommes versées dans les meilleurs délais et au plus tard dans les délais requis par la réglementation applicable.</p>
+        <h3 className="text-white font-bold mb-2 mt-4">11.3 Évolution future</h3>
+        <p>Le client est informé que, pour les contenus numériques fournis immédiatement, un régime différent pourra être mis en place à l’avenir avec consentement exprès et reconnaissance de perte du droit de rétractation, conformément aux règles applicables.</p>
+      </LegalSection>
+
+      <LegalSection title="12. Conditions spécifiques du coaching">
+        <ul className="list-disc pl-6 space-y-2">
+          <li><strong>12.1 Réservation :</strong> Les séances de coaching privé doivent être réservées selon les créneaux proposés par le Vendeur.</li>
+          <li><strong>12.2 Annulation / report :</strong> Toute annulation ou demande de report doit être effectuée au minimum 24 heures à l’avance.</li>
+          <li><strong>12.3 Absence :</strong> En cas d’absence du client, de retard important, ou de non-présentation sans respect du délai d’annulation de 24 heures, la séance est considérée comme due et n’est pas remboursable.</li>
+          <li><strong>12.4 Disponibilité :</strong> Le Vendeur fera ses meilleurs efforts pour proposer des créneaux adaptés, sans garantie de disponibilité immédiate ou illimitée.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="13. Obligations du client">
+        <p>Le client s’engage à :</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>fournir des informations exactes lors de sa commande,</li>
+          <li>ne pas partager ses accès,</li>
+          <li>ne pas revendre, céder, louer ou transmettre les contenus achetés,</li>
+          <li>ne pas reproduire, copier, diffuser ou exploiter commercialement les supports fournis sans autorisation écrite préalable,</li>
+          <li>adopter un comportement respectueux dans les échanges, coachings et espaces de groupe.</li>
+        </ul>
+        <p>Le non-respect de ces obligations pourra entraîner la suspension ou la suppression de l’accès aux services, sans remboursement.</p>
+      </LegalSection>
+
+      <LegalSection title="14. Propriété intellectuelle">
+        <p>L’ensemble des contenus proposés par le Vendeur, incluant notamment les vidéos, textes, méthodes, documents, supports pédagogiques, visuels, structures de formation, marques, logos, et contenus du site, est protégé par les règles de propriété intellectuelle applicables.</p>
+        <p>Tous les droits sont réservés.</p>
+        <p>Aucune reproduction, diffusion, revente, adaptation, publication, communication ou exploitation, totale ou partielle, n’est autorisée sans l’accord écrit préalable du Vendeur.</p>
+      </LegalSection>
+
+      <LegalSection title="15. Responsabilité et avertissements">
+        <p>Le contenu proposé sur le site et dans les offres du Vendeur est fourni à titre strictement éducatif et informatif.</p>
+        <p>Le Vendeur :</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>ne fournit pas de conseil en investissement personnalisé,</li>
+          <li>ne garantit aucun résultat,</li>
+          <li>ne promet aucun gain,</li>
+          <li>ne garantit aucune performance future,</li>
+          <li>ne saurait être tenu responsable des décisions de trading, d’investissement ou de gestion financière prises par le client.</li>
+        </ul>
+        <p>Le trading et l’investissement comportent des risques importants de perte en capital. Le client reste seul responsable de ses décisions, de leur exécution et de leurs conséquences.</p>
+        <p>Les performances passées, exemples, illustrations, analyses ou éléments pédagogiques éventuels ne constituent en aucun cas une garantie de résultats futurs.</p>
+      </LegalSection>
+
+      <LegalSection title="16. Force majeure">
+        <p>Le Vendeur ne pourra être tenu responsable d’un retard ou d’une inexécution résultant d’un cas de force majeure ou de tout événement échappant raisonnablement à son contrôle.</p>
+      </LegalSection>
+
+      <LegalSection title="17. Suspension / résiliation">
+        <p>Le Vendeur se réserve le droit de suspendre, restreindre ou résilier l’accès du client en cas de :</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>violation des présentes CGV,</li>
+          <li>usage abusif,</li>
+          <li>fraude,</li>
+          <li>comportement nuisible,</li>
+          <li>atteinte aux intérêts du Vendeur ou des autres utilisateurs.</li>
+        </ul>
+        <p>Une telle mesure pourra intervenir sans remboursement si les faits le justifient.</p>
+      </LegalSection>
+
+      <LegalSection title="18. Droit applicable">
+        <p>Les présentes CGV sont rédigées en français.</p>
+        <p>Elles sont soumises au droit applicable déterminé conformément aux règles de conflit de lois applicables, avec référence principale au droit de l’État du Nouveau-Mexique / droit américain lorsque cela est possible.</p>
+        <p>Toutefois, si le client est un consommateur bénéficiant de dispositions impératives plus protectrices dans son pays de résidence habituelle, ces dispositions pourront demeurer applicables nonobstant le présent choix de loi.</p>
+      </LegalSection>
+
+      <LegalSection title="19. Réclamations et litiges">
+        <p>Toute réclamation doit être adressée en priorité à : [EMAIL SUPPORT À COMPLÉTER]</p>
+        <p>Le client est invité à rechercher d’abord une solution amiable avec le Vendeur.</p>
+        <h3 className="text-white font-bold mb-2 mt-4">19.1 Médiation de la consommation</h3>
+        <p>Clause provisoire à compléter avant mise en ligne définitive si nécessaire : Si le client agit en qualité de consommateur et que la réglementation applicable l’exige, il pourra recourir à un dispositif de médiation de la consommation selon les informations qui seront communiquées par le Vendeur.</p>
+      </LegalSection>
+
+      <LegalSection title="20. Nullité partielle">
+        <p>Si une clause des présentes CGV était déclarée nulle, illégale ou inapplicable, les autres stipulations demeureraient pleinement en vigueur.</p>
+      </LegalSection>
+
+      <LegalSection title="21. Acceptation">
+        <p>Le client reconnaît avoir pris connaissance des présentes CGV avant toute commande, les avoir comprises et acceptées sans réserve.</p>
+      </LegalSection>
+
+      <LegalSection title="22. Coordonnées à compléter">
+        <p>
+          Adresse du siège : [À COMPLÉTER]<br/>
+          Email support : [À COMPLÉTER]<br/>
+          Date de mise à jour : [À COMPLÉTER]<br/>
+          Médiateur consommation : [À COMPLÉTER SI NÉCESSAIRE]
+        </p>
+      </LegalSection>
+    </LegalLayout>
+  );
+};
+
+const LegalNoticePage = ({ navigate }: any) => {
+  useSEO("Legal Notice | KILLEURUSD", "Legal Notice and Publisher Information for KILLEURUSD.");
+  
+  return (
+    <LegalLayout title="Legal Notice" lastUpdated="[INSERT DATE]" navigate={navigate}>
+      <LegalSection title="1. Website Publisher">
+        <p>This website is published and operated by:</p>
+        <p>
+          <strong>RAYSS RESEARCH LLC</strong><br/>
+          A New Mexico limited liability company<br/>
+          Registered in the State of New Mexico, USA<br/>
+          Registered address: [INSERT REGISTERED ADDRESS]<br/>
+          Support / legal email: [INSERT EMAIL ADDRESS]
+        </p>
+        <p>Throughout this Legal Notice, “Company,” “we,” “us,” and “our” refer to RAYSS RESEARCH LLC.</p>
+      </LegalSection>
+
+      <LegalSection title="2. Website Brand">
+        <p>This website is operated under the brand name: <strong>KILLEUR USD / KILLER USD</strong></p>
+        <p>Unless otherwise stated, all content, offers, products, and services presented under this brand are provided by RAYSS RESEARCH LLC.</p>
+      </LegalSection>
+
+      <LegalSection title="3. Website Purpose">
+        <p>This website is intended to provide information, educational content, digital training, coaching-related offers, and related business services under the KILLEUR USD / KILLER USD brand.</p>
+        <p>Nothing on this website should be interpreted as personalized legal, tax, financial, or investment advice.</p>
+      </LegalSection>
+
+      <LegalSection title="4. Hosting Provider">
+        <p>This website is hosted by:</p>
+        <p>
+          [INSERT HOSTING PROVIDER NAME]<br/>
+          [INSERT HOSTING PROVIDER ADDRESS]<br/>
+          [INSERT HOSTING PROVIDER WEBSITE OR CONTACT DETAILS]
+        </p>
+        <p>If the website is deployed through a platform such as Vercel or another hosting provider, replace this section with the exact legal details of that provider.</p>
+      </LegalSection>
+
+      <LegalSection title="5. Contact">
+        <p>For support, legal inquiries, or general contact requests, you may contact:</p>
+        <p>
+          RAYSS RESEARCH LLC<br/>
+          Email: [INSERT EMAIL ADDRESS]
+        </p>
+        <p>If you provide a dedicated support address and a separate legal address, you may distinguish them here.</p>
+      </LegalSection>
+
+      <LegalSection title="6. Intellectual Property">
+        <p>Unless otherwise stated, all elements of this website are the exclusive property of RAYSS RESEARCH LLC or are used under appropriate license.</p>
+        <p>This includes, without limitation:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>texts,</li>
+          <li>brand names,</li>
+          <li>logos,</li>
+          <li>graphics,</li>
+          <li>training materials,</li>
+          <li>visual identity,</li>
+          <li>page structures,</li>
+          <li>educational frameworks,</li>
+          <li>downloadable materials,</li>
+          <li>videos,</li>
+          <li>and other website content.</li>
+        </ul>
+        <p>No part of this website may be copied, reproduced, republished, uploaded, transmitted, distributed, sold, licensed, or otherwise exploited without prior written authorization from the Company.</p>
+        <p>Unauthorized use of any part of the website may result in legal action.</p>
+      </LegalSection>
+
+      <LegalSection title="7. Trademarks and Brand Elements">
+        <p>The names KILLEUR USD and KILLER USD, along with any associated logos, slogans, design elements, and branding components, may be protected under applicable intellectual property laws.</p>
+        <p>Any unauthorized use, imitation, or misuse of the brand identity is prohibited.</p>
+      </LegalSection>
+
+      <LegalSection title="8. Website Access">
+        <p>The Company makes reasonable efforts to keep the website accessible and functional. However, access to the website may be suspended, interrupted, restricted, or limited at any time for maintenance, updates, technical issues, security reasons, or any other business reason.</p>
+        <p>The Company does not guarantee uninterrupted or error-free access to the website.</p>
+      </LegalSection>
+
+      <LegalSection title="9. Website Content">
+        <p>The Company strives to provide content that is clear, accurate, and useful. However, the information published on this website may be updated, modified, corrected, or removed at any time without notice.</p>
+        <p>The Company does not guarantee that all information on the website is complete, current, or free of errors at all times.</p>
+        <p>Use of the website and reliance on its content remain at your own risk.</p>
+      </LegalSection>
+
+      <LegalSection title="10. No Professional or Investment Advice">
+        <p>The content made available on this website is provided for educational and informational purposes only.</p>
+        <p>The Company does not provide:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>personalized investment advice,</li>
+          <li>brokerage services,</li>
+          <li>portfolio management,</li>
+          <li>legal advice,</li>
+          <li>tax advice,</li>
+          <li>or any regulated advisory service unless expressly stated otherwise.</li>
+        </ul>
+        <p>Any trading or financial decisions made after viewing this website remain solely your responsibility.</p>
+      </LegalSection>
+
+      <LegalSection title="11. Limitation of Responsibility">
+        <p>To the fullest extent permitted by applicable law, RAYSS RESEARCH LLC shall not be held liable for:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>errors or omissions on the website,</li>
+          <li>temporary or permanent website unavailability,</li>
+          <li>technical failures,</li>
+          <li>data loss,</li>
+          <li>unauthorized access,</li>
+          <li>reliance placed on website content,</li>
+          <li>business losses,</li>
+          <li>financial losses,</li>
+          <li>trading losses,</li>
+          <li>or any indirect, incidental, or consequential damages arising from the use of the website.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="12. External Links">
+        <p>This website may contain links to third-party websites, platforms, tools, or services.</p>
+        <p>Such links are provided for convenience only.</p>
+        <p>The Company does not control and is not responsible for the content, terms, practices, availability, or privacy standards of third-party websites.</p>
+        <p>Accessing third-party websites is done at your own risk.</p>
+      </LegalSection>
+
+      <LegalSection title="13. User Responsibility">
+        <p>By using this website, you agree to do so lawfully and responsibly.</p>
+        <p>You agree not to:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>misuse the website,</li>
+          <li>interfere with its operation,</li>
+          <li>attempt unauthorized access,</li>
+          <li>copy protected content,</li>
+          <li>engage in fraud or abusive conduct,</li>
+          <li>or use the website in a way that may damage the Company or its reputation.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="14. Applicable Documents">
+        <p>Use of this website may also be governed by additional legal documents, including: Terms & Conditions and Privacy Policy.</p>
+        <p>In the event of a conflict between this Legal Notice and another contractual document, the more specific document shall prevail for the relevant subject matter.</p>
+      </LegalSection>
+
+      <LegalSection title="15. Governing Law">
+        <p>This Legal Notice shall be governed by and interpreted in accordance with the laws of the State of New Mexico, USA, without regard to conflict of laws principles.</p>
+      </LegalSection>
+
+      <LegalSection title="16. Modifications">
+        <p>The Company reserves the right to update, revise, or modify this Legal Notice at any time.</p>
+        <p>The updated version will be published on this page with the revised date.</p>
+        <p>Your continued use of the website after such changes are posted constitutes acceptance of the updated version.</p>
+      </LegalSection>
+
+      <LegalSection title="17. Information to Complete">
+        <p>Before publication, make sure to complete the following fields:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Registered address</li>
+          <li>Email address</li>
+          <li>Hosting provider details</li>
+          <li>Last updated date</li>
+        </ul>
+      </LegalSection>
+    </LegalLayout>
+  );
+};
+
+const PrivacyPolicyPage = ({ navigate }: any) => {
+  useSEO("Privacy Policy | KILLEURUSD", "Privacy Policy and data protection details for KILLEURUSD.");
+  
+  return (
+    <LegalLayout title="Privacy Policy" lastUpdated="[INSERT DATE]" navigate={navigate}>
+      <p className="mb-8 text-zinc-300">
+        This Privacy Policy explains how RAYSS RESEARCH LLC, operating the KILLEUR USD / KILLER USD website and brand, collects, uses, stores, shares, and protects your information when you visit the website, submit a form, purchase a product or service, subscribe to communications, or otherwise interact with us.
+      </p>
+      <p className="mb-8 text-zinc-300">By using the website, you agree to the practices described in this Privacy Policy. If you do not agree with this Privacy Policy, please do not use the website.</p>
+
+      <LegalSection title="1. Company Information">
+        <p>
+          RAYSS RESEARCH LLC<br/>
+          A New Mexico limited liability company<br/>
+          Registered in the State of New Mexico, USA<br/>
+          Registered address: [INSERT REGISTERED ADDRESS]<br/>
+          Privacy contact email: [INSERT PRIVACY EMAIL]
+        </p>
+        <p>Throughout this Privacy Policy, “Company,” “we,” “us,” and “our” refer to RAYSS RESEARCH LLC. “You” refers to any visitor, user, lead, subscriber, customer, or other individual interacting with the website.</p>
+      </LegalSection>
+
+      <LegalSection title="2. Information We May Collect">
+        <h3 className="text-white font-bold mb-2 mt-4">2.1 Information You Provide Directly</h3>
+        <p>We may collect personal information that you voluntarily provide, including:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>your name, email address, phone number,</li>
+          <li>billing information, payment-related details,</li>
+          <li>company name, contact information,</li>
+          <li>messages submitted through forms, booking information, support requests,</li>
+          <li>and any information you choose to provide to us.</li>
+        </ul>
+
+        <h3 className="text-white font-bold mb-2 mt-4">2.2 Payment Information</h3>
+        <p>Payments are processed through third-party payment providers such as Stripe. We do not typically store your full payment card details on our own servers unless explicitly stated otherwise.</p>
+
+        <h3 className="text-white font-bold mb-2 mt-4">2.3 Account / Access Information</h3>
+        <p>If we provide account access, member access, training access, or booking access, we may collect login details, account identifiers, access history, and related technical information.</p>
+
+        <h3 className="text-white font-bold mb-2 mt-4">2.4 Automatically Collected Information</h3>
+        <p>When you use the website, we may automatically collect certain technical and usage data, including: IP address, browser type, device type, operating system, pages visited, time spent on pages, referral URLs, general location based on IP, cookie identifiers, and analytics-related data.</p>
+
+        <h3 className="text-white font-bold mb-2 mt-4">2.5 Cookies and Similar Technologies</h3>
+        <p>We may use cookies, pixels, tags, scripts, and similar technologies to operate the website, improve performance, analyze traffic, remember preferences, and support marketing or retargeting efforts.</p>
+      </LegalSection>
+
+      <LegalSection title="3. How We Use Your Information">
+        <p>We may use your information for the following purposes:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>to operate and maintain the website,</li>
+          <li>to deliver products, services, training, and coaching,</li>
+          <li>to process payments, to communicate with you,</li>
+          <li>to send confirmations, updates, and support messages, to respond to inquiries,</li>
+          <li>to manage bookings and coaching schedules,</li>
+          <li>to improve our website, services, and offers,</li>
+          <li>to analyze performance and user behavior,</li>
+          <li>to send promotional emails or marketing communications,</li>
+          <li>to protect against fraud, abuse, unauthorized access, or misuse,</li>
+          <li>to enforce our legal terms and policies, and to comply with legal obligations.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="4. Marketing Communications">
+        <p>If you subscribe to our emails, download a resource, fill in a form, purchase an offer, or otherwise provide your contact details, we may send you: educational emails, updates about our offers, launch announcements, reminders, support-related messages, and promotional communications.</p>
+        <p>You may unsubscribe from marketing emails at any time by using the unsubscribe link included in the email or by contacting us directly. Please note that even if you unsubscribe from marketing emails, we may still send transactional or service-related messages when necessary.</p>
+      </LegalSection>
+
+      <LegalSection title="5. How We Share Information">
+        <p>We do not sell your personal information in the ordinary sense of selling customer lists for cash. However, we may share your information with trusted third parties when necessary to operate the business, including: payment processors, email service providers, hosting providers, analytics providers, booking or scheduling tools, customer support tools, website infrastructure providers, contractors or service providers assisting us, legal or compliance professionals, or competent authorities where required by law.</p>
+        <p>We may also disclose information to enforce our legal rights, to prevent fraud or abuse, to protect the website, users, or business, in connection with a merger, acquisition, sale of assets, restructuring, or similar business transaction, or if legally required to do so.</p>
+      </LegalSection>
+
+      <LegalSection title="6. Third-Party Services">
+        <p>The website may rely on third-party tools, platforms, or services such as: Stripe, hosting providers, email marketing tools, analytics tools, scheduling tools, embedded content providers, or communication tools.</p>
+        <p>These third parties may process your information under their own privacy policies and terms. We are not responsible for the privacy practices of third-party services we do not control. You should review their policies directly where relevant.</p>
+      </LegalSection>
+
+      <LegalSection title="7. Data Retention">
+        <p>We retain information for as long as reasonably necessary for: providing the services, fulfilling transactions, maintaining business records, handling customer relationships, complying with legal obligations, resolving disputes, enforcing agreements, and protecting the business.</p>
+      </LegalSection>
+
+      <LegalSection title="8. Data Security">
+        <p>We take reasonable administrative, technical, and organizational measures to help protect personal information against unauthorized access, loss, misuse, disclosure, alteration, or destruction. However, no method of transmission over the internet and no method of storage is completely secure. Therefore, we cannot guarantee absolute security. You use the website and provide information at your own risk.</p>
+      </LegalSection>
+
+      <LegalSection title="9. International Data Transfers">
+        <p>Because the Company is based in the United States and may use service providers located in different countries, your information may be transferred to, stored in, or processed in jurisdictions outside your country of residence.</p>
+        <p>By using the website and providing your information, you understand and agree that your information may be transferred to and processed in the United States and other jurisdictions where our service providers operate.</p>
+      </LegalSection>
+
+      <LegalSection title="10. Your Choices">
+        <p>Depending on how you interact with us, you may choose to: not submit forms, not provide optional information, unsubscribe from marketing emails, disable cookies through your browser settings, or contact us to request updates or corrections to your information.</p>
+      </LegalSection>
+
+      <LegalSection title="11. Access, Correction, and Deletion Requests">
+        <p>Depending on applicable law and your location, you may have the right to request: access to certain personal information we hold about you, correction of inaccurate information, deletion of certain information, restriction of certain processing, or information about how your data is used.</p>
+        <p>To make such a request, contact us at: [INSERT PRIVACY EMAIL]</p>
+      </LegalSection>
+
+      <LegalSection title="12. Cookies and Tracking Technologies">
+        <p>We may use cookies and similar technologies to: keep the website functioning properly, remember settings or preferences, measure website traffic, analyze user behavior, improve performance, and support advertising or remarketing activities.</p>
+        <p>You can manage cookies through your browser settings. In some cases, your browser may allow you to block, delete, or limit cookies. If you use ad blockers, privacy settings, or browser restrictions, some website features may not function as intended.</p>
+      </LegalSection>
+
+      <LegalSection title="13. Analytics">
+        <p>We may use analytics tools to understand how users interact with the website, which pages are visited, how traffic reaches the site, and how we can improve the user experience and performance of the business. These tools may use cookies, tags, or similar technologies and may collect technical and usage information.</p>
+      </LegalSection>
+
+      <LegalSection title="14. Do Not Track">
+        <p>Some browsers offer a “Do Not Track” feature. Because there is no universal standard for how websites should respond to Do Not Track signals, the website may not respond to such signals in a uniform way unless and until a legally required standard applies.</p>
+      </LegalSection>
+
+      <LegalSection title="15. Children’s Privacy">
+        <p>This website is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe that a child under 13 has provided personal information through the website, please contact us so that we can take appropriate steps.</p>
+      </LegalSection>
+
+      <LegalSection title="16. User-Generated Content / Communications">
+        <p>If you submit messages, comments, support requests, testimonials, feedback, survey responses, or similar content, we may store and use that information for support, service improvement, quality control, legal protection, or business purposes.</p>
+      </LegalSection>
+
+      <LegalSection title="17. Business Transfers">
+        <p>If the Company is involved in a merger, acquisition, financing, reorganization, sale of assets, or similar transaction, your information may be transferred as part of that transaction, subject to applicable law.</p>
+      </LegalSection>
+
+      <LegalSection title="18. Changes to This Privacy Policy">
+        <p>We may update this Privacy Policy at any time. When we do, the updated version will be posted on this page with a new “Last updated” date. Your continued use of the website after any changes are posted constitutes acceptance of the updated Privacy Policy.</p>
+      </LegalSection>
+
+      <LegalSection title="19. Contact">
+        <p>If you have questions about this Privacy Policy or wish to contact us regarding privacy matters, you may contact:</p>
+        <p>
+          RAYSS RESEARCH LLC<br/>
+          Address: [INSERT REGISTERED ADDRESS]<br/>
+          Privacy email: [INSERT PRIVACY EMAIL]
+        </p>
+      </LegalSection>
+
+      <LegalSection title="20. Fields to Complete Before Publication">
+        <p>Before publishing this Privacy Policy, make sure to complete:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Registered address</li>
+          <li>Privacy email</li>
+          <li>Last updated date</li>
+          <li>any specific third-party tools you want to name explicitly</li>
+          <li>any cookie / analytics tools you actually use</li>
+        </ul>
+      </LegalSection>
+    </LegalLayout>
+  );
+};
+
+
 // --- APP PRINCIPALE (Le Chef d'Orchestre) ---
 
 export default function App() {
@@ -966,6 +1488,11 @@ export default function App() {
         {currentPage === 'alumni' && <AlumniPage />}
         {currentPage === 'checkout' && <CheckoutPage navigate={setCurrentPage} />}
         {currentPage === 'thankyou' && <ThankYouPage />}
+        
+        {/* Pages Légales */}
+        {currentPage === 'cgv' && <CGVPage navigate={setCurrentPage} />}
+        {currentPage === 'legal' && <LegalNoticePage navigate={setCurrentPage} />}
+        {currentPage === 'privacy' && <PrivacyPolicyPage navigate={setCurrentPage} />}
       </main>
 
       {/* PIED DE PAGE PREMIUM */}
@@ -996,9 +1523,9 @@ export default function App() {
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-xs mb-6">Légal & Conditions</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-zinc-500 hover:text-white transition-colors text-sm">Conditions Générales de Vente</a></li>
-                <li><a href="#" className="text-zinc-500 hover:text-white transition-colors text-sm">Mentions Légales</a></li>
-                <li><a href="#" className="text-zinc-500 hover:text-white transition-colors text-sm">Politique de Confidentialité</a></li>
+                <li><button onClick={() => setCurrentPage('cgv')} className={`${currentPage === 'cgv' ? 'text-white' : 'text-zinc-500 hover:text-white'} transition-colors text-sm`}>Conditions Générales de Vente</button></li>
+                <li><button onClick={() => setCurrentPage('legal')} className={`${currentPage === 'legal' ? 'text-white' : 'text-zinc-500 hover:text-white'} transition-colors text-sm`}>Mentions Légales</button></li>
+                <li><button onClick={() => setCurrentPage('privacy')} className={`${currentPage === 'privacy' ? 'text-white' : 'text-zinc-500 hover:text-white'} transition-colors text-sm`}>Politique de Confidentialité</button></li>
               </ul>
             </div>
           </div>

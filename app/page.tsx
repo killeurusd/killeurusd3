@@ -596,7 +596,7 @@ const HomePage = ({ navigate }: any) => {
 // --- PAGES SECONDAIRES ---
 
 const AboutPage = ({ navigate }: any) => {
-  useSEO("La Vision | KILLEURUSD", "Découvrez la vision de KILLEURUSD. Une approche sans bullshit, basée sur la structure du marché et la discipline pour গঠন de vrais traders.");
+  useSEO("La Vision | KILLEURUSD", "Découvrez la vision de KILLEURUSD. Une approche sans bullshit, basée sur la structure du marché et la discipline pour former de vrais traders.");
   
   return (
     <div className="pt-32 pb-24 max-w-6xl mx-auto px-6 min-h-screen">
@@ -611,31 +611,49 @@ const AboutPage = ({ navigate }: any) => {
         </div>
 
         <div className="md:col-span-7 text-zinc-400 leading-relaxed text-lg">
-          <p className="text-xl text-white font-medium mb-8">
-            <strong>KILLEURUSD</strong> n'est pas né d'une envie de vendre des formations. C'est né d'une frustration profonde. La frustration de voir 95% des traders débutants se faire tondre par un marché impitoyable et des mentors qui vendent du rêve.
+          <p className="text-xl text-white font-medium mb-6">
+            <strong>KILLEURUSD</strong> n’est pas né d’une envie de vendre des formations. Il est né d’un parcours réel, d’années de terrain, et d’une frustration profonde face à tout ce que l’industrie du trading vend de faux aux débutants.
+          </p>
+          <p className="mb-8">
+            J’ai grandi dans une famille de commerçants et j’ai commencé à travailler très jeune. À 13 ans, je lançais déjà mon premier business en vendant sur les réseaux sociaux. C’est en achetant mes produits en Chine que j’ai découvert l’impact réel des devises et compris une chose simple : quand on ne comprend pas l’argent, on le subit. C’est ce qui m’a conduit au trading, puis à plus de dix années d’étude, d’expérimentation et de pratique.
           </p>
           
-          <h3 className="text-white font-bold text-2xl mt-12 mb-4">Le constat d'un marché malade</h3>
+          <h3 className="text-white font-bold text-2xl mt-12 mb-4">Le constat d’un marché malade</h3>
+          <p className="mb-4">
+            Avec les années, j’ai vu toujours la même réalité : des débutants qui se font broyer parce qu’on leur vend des raccourcis au lieu de leur apprendre un cadre. Des stratégies miracles, des indicateurs magiques, des signaux, des promesses de richesse rapide… mais presque jamais le vrai travail de fond.
+          </p>
+          <p className="mb-4">
+            À 18 ans, un accident grave a marqué un tournant dans ma vie et m’a forcé à me recentrer totalement. C’est aussi à cette période que j’ai lu <em>Mémoires d’un spéculateur</em> de Jesse Livermore. Ce livre a eu un impact profond sur moi. Je suis tombé sous le charme de sa vie, de son expérience, de son talent, et j’y ai reconnu une manière de vivre les marchés qui me parlait profondément.
+          </p>
+          <p className="mb-4">
+            C’est à ce moment-là que j’ai compris une chose essentielle : pour obtenir quelque chose, il faut écouter quelqu’un qui a réussi à obtenir cette chose, mais il faut aussi écouter quelqu’un qui a commencé là où toi tu es aujourd’hui. C’est pour cela que la trajectoire de Jesse Livermore m’a autant marqué.
+          </p>
           <p>
-            Avec les années passées sur les graphiques, on voit tout. Les stratégies miracles à la mode, les indicateurs magiques censés prédire l'avenir, les robots de trading 100% automatisés. Rien de tout cela ne fonctionne sur le long terme. Le marché est conçu pour prendre l'argent des impatients et le donner aux disciplinés.
+            À partir de là, j’ai poursuivi mon éducation à travers les plus grandes lectures et les plus grands penseurs des marchés : Jesse Livermore, Richard Wyckoff, Elliott et bien d’autres. Mais je ne me suis jamais contenté de lire. J’ai étudié leurs concepts, je les ai testés, expérimentés, intégrés, puis adaptés à ma propre méthode au fil des années et de la pratique réelle.
           </p>
 
           <div className="bg-[#111114] border-l-4 border-[#C9A227] p-8 my-10">
             <p className="text-white text-xl font-bold italic m-0">
-              "La seule chose qui sépare un trader rentable d'un parieur, c'est la méthode, la discipline et la gestion stricte du risque."
+              "La seule chose qui sépare un trader sérieux d’un parieur, ce n’est pas la motivation. C’est la méthode, la discipline et la gestion stricte du risque."
             </p>
           </div>
 
           <h3 className="text-white font-bold text-2xl mt-12 mb-4">La Mission de KILLEURUSD</h3>
-          <p>
-            Notre mission est simple mais radicale : apprendre aux gens à faire de l'analyse technique sérieusement. Nous enseignons des principes de marché anciens et universels (l'action des prix brute, la structure, la liquidité). 
+          <p className="mb-4">
+            KILLEURUSD a été créé pour transmettre exactement ce qui manque à la majorité des traders débutants : un cadre clair, une vraie lecture du marché, une logique d’exécution, et une discipline capable de transformer une pratique désordonnée en progression réelle.
+          </p>
+          <p className="mb-4">
+            Depuis 2019, je partage cette vision à travers ma communauté, mes accompagnements et mes formations. Mon objectif n’est pas de créer des gens dépendants de moi. Mon objectif est de former des traders lucides, structurés, capables de penser par eux-mêmes et de traiter le trading comme un vrai métier.
+          </p>
+          <p className="mb-4">
+            Aujourd’hui, c’est précisément ce que j’enseigne : des méthodes et des techniques issues des plus grands principes de marché, affinées par l’expérience, et qui fonctionnent depuis plus de 100 ans. Ce n’est pas une mode. Ce n’est pas un raccourci. C’est un socle solide, intemporel, que chacun peut apprendre à maîtriser avec sérieux.
           </p>
           <p className="mt-4">
-            Ce n'est pas sexy. Ça ne te rendra pas millionnaire demain matin. Ça demande du travail de fond, des remises en question, et des heures passées sur les graphiques. Mais c'est la seule et unique voie vers la constance.
+            Ce n’est pas sexy. Ça ne te promet pas d’être millionnaire demain matin. Ça demande du travail, des remises en question, et des heures passées sur les graphiques. Mais pour ceux qui veulent construire quelque chose de solide, c’est la seule voie sérieuse vers la constance.
           </p>
 
           <div className="mt-16 pt-8 border-t border-zinc-800">
-             <p className="text-white font-bold mb-8">Si tu es prêt à traiter le trading comme un vrai métier, ta place est avec nous.</p>
+             <p className="text-white font-bold mb-8">Si tu es prêt à arrêter le hasard, sortir du bruit et construire une vraie manière de trader, alors ta place est ici.</p>
              <Button onClick={() => navigate('checkout')}>Rejoindre le programme</Button>
           </div>
         </div>

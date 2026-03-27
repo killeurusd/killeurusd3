@@ -146,7 +146,7 @@ const HomePage = ({ navigate }: any) => {
     },
     {
       q: "Est-ce que j'ai accès à vie à la formation ?",
-      a: "Oui. Le paiement de 997$ est unique. Tu as un accès à vie à la plateforme VOD, aux futures mises à jour, et au groupe privé."
+      a: "Oui. Le paiement de 997$ est unique. Tu as un accès à vie à la plateforme VOD, aux futures mises à jour et au groupe privé."
     },
     {
       q: "Ai-je besoin d'un gros capital pour commencer ?",
@@ -224,7 +224,7 @@ const HomePage = ({ navigate }: any) => {
             title="Pourquoi tu n’avances pas, même si tu passes des heures sur les marchés." 
           />
           <p className="text-center text-zinc-400 max-w-3xl mx-auto mb-16 text-lg">
-            La majorité des traders ne manquent pas de motivation. Ils manquent d’un cadre. Ils consomment trop d’informations, changent trop souvent de stratégie, prennent des trades sans vraie logique, et finissent par confondre trading et gambling.
+            La majorité des traders ne manquent pas de motivation. Ils manquent d’un cadre. Ils consomment trop d’informations, changent trop souvent de stratégie, prennent des trades sans vraie logique et finissent par confondre trading et gambling.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -367,7 +367,7 @@ const HomePage = ({ navigate }: any) => {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-[#111114] p-4 border border-zinc-800">
                       <Clock className="w-6 h-6 text-[#7A0F0F] mb-2" />
-                      <h4 className="text-white font-bold text-sm mb-1">1h Coaching / Mois</h4>
+                      <h4 className="text-white font-bold text-sm mb-1">1h de coaching / mois</h4>
                       <p className="text-xs text-zinc-500">Corrections ciblées en privé.</p>
                     </div>
                     <div className="bg-[#111114] p-4 border border-zinc-800">
@@ -390,7 +390,7 @@ const HomePage = ({ navigate }: any) => {
                   </div>
 
                   <div className="text-5xl font-extrabold text-white mb-2">997$</div>
-                  <div className="text-zinc-500 text-sm mb-8 text-center">Paiement unique.<br/>Accès à vie garantit.</div>
+                  <div className="text-zinc-500 text-sm mb-8 text-center">Paiement unique.<br/>Accès à vie garanti.</div>
                   
                   <Button onClick={() => navigate('checkout')} className="w-full mb-4">
                     Rejoindre la formation
@@ -451,7 +451,7 @@ const HomePage = ({ navigate }: any) => {
       {/* 7. PREUVES & TÉMOIGNAGES */}
       <section className="py-24 bg-[#111114] border-y border-zinc-900">
         <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading subtitle="Preuve Sociale" title="Ils ont arrêté de parier. Ils ont commencé à comprendre." />
+          <SectionHeading subtitle="Preuve sociale" title="Ils ont arrêté de parier. Ils ont commencé à comprendre." />
           
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
@@ -499,15 +499,15 @@ const HomePage = ({ navigate }: any) => {
              </div>
           </div>
           <div>
-            <SectionHeading subtitle="Le Cadre" title="Tu n'as pas besoin d'un gourou." align="left" />
+            <SectionHeading subtitle="Le cadre" title="Tu n'as pas besoin d'un gourou." align="left" />
             <h3 className="text-2xl font-bold text-white mb-6">Tu as besoin d'une méthode et d'un suivi.</h3>
             <div className="text-zinc-400 space-y-6 leading-relaxed text-base">
-              <p>Je ne suis pas là pour te vendre une illusion de richesse rapide. Je suis là pour transmettre une méthode sérieuse, appliquée dans le réel, et t'aider à corriger ce qui te bloque vraiment.</p>
+              <p>Je ne suis pas là pour te vendre une illusion de richesse rapide. Je suis là pour transmettre une méthode sérieuse, appliquée dans le réel et t'aider à corriger ce qui te bloque vraiment.</p>
               <p>L'industrie du trading est infestée de vendeurs de rêve. Mais la réalité des marchés est froide, mathématique et impitoyable. Elle punit l'indiscipline et récompense la méthode.</p>
               <div className="border-l-2 border-[#C9A227] pl-6 my-8">
                 <p className="text-white font-bold italic">"La rentabilité ne vient pas d'un indicateur secret. Elle vient d'une exécution sans faille d'un plan préétabli."</p>
               </div>
-              <p>Mon objectif avec KILLEURUSD est de bâtir une communauté de traders indépendants, qui réfléchissent par eux-mêmes et opèrent comme de véritables professionnels.</p>
+              <p>Mon objectif avec KILLEURUSD est de bâtir une communauté de traders indépendants qui réfléchissent par eux-mêmes et opèrent comme de véritables professionnels.</p>
             </div>
             <div className="mt-10">
               <Button variant="outline" onClick={() => navigate('about')}>Lire la vision complète</Button>
@@ -550,7 +550,7 @@ const HomePage = ({ navigate }: any) => {
       {/* 10. FAQ */}
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-3xl mx-auto px-6">
-          <SectionHeading subtitle="Vos Objections" title="Questions Fréquentes" />
+          <SectionHeading subtitle="Vos objections" title="Questions fréquentes" />
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <div key={idx} className="border border-zinc-800 bg-[#111114]">
@@ -575,9 +575,9 @@ const HomePage = ({ navigate }: any) => {
       {/* 11. CTA FINAL */}
       <section className="py-32 bg-[#111114] border-t border-zinc-900 text-center relative">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <SectionHeading subtitle="La Décision" title="Le trading n’est pas un jeu. C’est une méthode." />
+          <SectionHeading subtitle="La décision" title="Le trading n’est pas un jeu. C’est une méthode." />
           <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-            Si tu veux arrêter de t’éparpiller, comprendre enfin ce que tu fais, et construire un vrai cadre de progression, ta place est ici.
+            Si tu veux arrêter de t’éparpiller, comprendre enfin ce que tu fais et construire un vrai cadre de progression, ta place est ici.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Button onClick={() => navigate('checkout')} variant="primary" className="text-lg px-12 py-5">

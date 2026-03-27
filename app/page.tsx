@@ -9,9 +9,11 @@ import {
 } from 'lucide-react';
 
 // --- GESTION SEO (Simulation du Head de Next.js) ---
-const useSEO = (title: string, description: string) => {
+const useSEO = (title: string, description: string, ogTitle?: string, ogDescription?: string) => {
   useEffect(() => {
     document.title = title;
+    
+    // Description classique
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
@@ -21,7 +23,33 @@ const useSEO = (title: string, description: string) => {
       meta.content = description;
       document.head.appendChild(meta);
     }
-  }, [title, description]);
+
+    // OpenGraph Title
+    if (ogTitle) {
+      const metaOgTitle = document.querySelector('meta[property="og:title"]');
+      if (metaOgTitle) {
+        metaOgTitle.setAttribute('content', ogTitle);
+      } else {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:title');
+        meta.content = ogTitle;
+        document.head.appendChild(meta);
+      }
+    }
+
+    // OpenGraph Description
+    if (ogDescription) {
+      const metaOgDescription = document.querySelector('meta[property="og:description"]');
+      if (metaOgDescription) {
+        metaOgDescription.setAttribute('content', ogDescription);
+      } else {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:description');
+        meta.content = ogDescription;
+        document.head.appendChild(meta);
+      }
+    }
+  }, [title, description, ogTitle, ogDescription]);
 };
 
 // --- COMPOSANTS DE BASE UI PREMIUM ---
@@ -82,8 +110,10 @@ const LegalLayout = ({ title, lastUpdated, children, navigate }: any) => (
 
 const HomePage = ({ navigate }: any) => {
   useSEO(
-    "KILLEURUSD | Formation Trading Premium & Méthode d’Analyse Technique",
-    "Arrête de trader au hasard. Rejoins la formation premium KILLEURUSD et maîtrise une méthode d’analyse technique éprouvée, structurée et appliquée dans le réel."
+    "KILLEUR USD | Formation Trading Premium & Méthode d’Analyse Technique",
+    "Arrête de trader au hasard. Rejoins KILLEUR USD et maîtrise une méthode d’analyse technique fondée sur des principes éprouvés depuis plus de 100 ans.",
+    "KILLEUR USD | Formation Trading Premium",
+    "Une méthode réelle, un cadre sérieux, un accompagnement privé pour sortir du trading au hasard."
   );
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);

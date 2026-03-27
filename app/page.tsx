@@ -1472,7 +1472,7 @@ export default function App() {
             className="flex items-center cursor-pointer group"
             onClick={() => setCurrentPage('home')}
           >
-            <Target className="w-8 h-8 text-[#7A0F0F] mr-3 group-hover:rotate-90 transition-transform duration-500" />
+            <img src="/logo.png" alt="Logo KILLEUR USD" className="w-8 h-8 mr-3 object-contain" />
             <span className="text-2xl font-black text-white tracking-tighter uppercase">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
           </div>
 
@@ -1547,7 +1547,7 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <div className="flex items-center mb-6">
-                <Target className="w-6 h-6 text-[#7A0F0F] mr-2" />
+                <img src="/logo.png" alt="Logo KILLEUR USD" className="w-6 h-6 mr-2 object-contain" />
                 <span className="text-xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
               </div>
               <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mb-6">

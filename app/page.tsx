@@ -596,7 +596,7 @@ const HomePage = ({ navigate }: any) => {
 // --- PAGES SECONDAIRES ---
 
 const AboutPage = ({ navigate }: any) => {
-  useSEO("La Vision | KILLEURUSD", "Découvrez la vision de KILLEURUSD. Une approche sans bullshit, basée sur la structure du marché et la discipline pour former de vrais traders.");
+  useSEO("La Vision | KILLEURUSD", "Découvrez la vision de KILLEURUSD. Une approche sans bullshit, basée sur la structure du marché et la discipline pour গঠন de vrais traders.");
   
   return (
     <div className="pt-32 pb-24 max-w-6xl mx-auto px-6 min-h-screen">
@@ -1472,7 +1472,7 @@ export default function App() {
             className="flex items-center cursor-pointer group"
             onClick={() => setCurrentPage('home')}
           >
-            <img src="/logo.png" alt="Logo KILLEUR USD" className="w-8 h-8 mr-3 object-contain" />
+            <img src="/logo.png" alt="Logo KILLEUR USD" className="w-12 h-12 md:w-14 md:h-14 mr-4 object-contain" />
             <span className="text-2xl font-black text-white tracking-tighter uppercase">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
           </div>
 
@@ -1547,7 +1547,7 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <div className="flex items-center mb-6">
-                <img src="/logo.png" alt="Logo KILLEUR USD" className="w-6 h-6 mr-2 object-contain" />
+                <img src="/logo.png" alt="Logo KILLEUR USD" className="w-10 h-10 mr-3 object-contain" />
                 <span className="text-xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
               </div>
               <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mb-6">

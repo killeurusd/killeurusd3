@@ -1449,9 +1449,20 @@ export default function App() {
     <div className="min-h-screen bg-[#0B0B0D] text-zinc-200 font-sans selection:bg-[#7A0F0F] selection:text-white pt-10">
       
       {/* BANDEAU D'URGENCE GLOBAL EN HAUT */}
-      <div className="fixed top-0 left-0 w-full h-10 bg-[#7A0F0F] text-white flex items-center justify-center z-[60] text-xs md:text-sm font-bold tracking-widest uppercase">
-        <span className="w-2 h-2 rounded-full bg-white animate-pulse mr-3"></span> 
-        Session de coaching : Plus que 3 places disponibles.
+      <div className="fixed top-0 left-0 w-full h-10 bg-[#7A0F0F] text-white flex items-center overflow-hidden z-[60] text-xs md:text-sm font-bold tracking-widest uppercase">
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+          }
+          .animate-marquee {
+            animation: marquee 20s linear infinite;
+          }
+        `}</style>
+        <div className="animate-marquee whitespace-nowrap flex items-center">
+          <span className="w-2 h-2 rounded-full bg-white animate-pulse mr-3"></span> 
+          Session de coaching : Plus que 3 places disponibles.
+        </div>
       </div>
 
       {/* EN-TÊTE PREMIUM */}

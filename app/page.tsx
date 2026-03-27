@@ -453,6 +453,7 @@ const HomePage = ({ navigate }: any) => {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading subtitle="Preuve sociale" title="Ils ont arrêté de parier. Ils ont commencé à comprendre." />
           
+          {/* TÉMOIGNAGES TEXTE */}
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
               { name: "Thomas", level: "2 ans de trading", text: "Je passais d’une méthode à l’autre sans jamais progresser. La formation m’a permis de simplifier mon approche, de nettoyer mes graphiques et de mieux comprendre mes erreurs." },
@@ -472,6 +473,39 @@ const HomePage = ({ navigate }: any) => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* NOUVELLE SECTION : GALERIE DE CAPTURES D'ÉCRAN */}
+          <div className="mt-20 mb-16">
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">Les résultats de nos élèves</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Le tableau contient les noms de fichiers. Modifie "/avis-1.png" par le nom exact de ton image ! */}
+              {[
+                "/avis-1.png",
+                "/avis-2.png",
+                "/avis-3.png",
+                "/avis-4.png",
+                "/avis-5.png",
+                "/avis-6.png"
+              ].map((imgSrc, idx) => (
+                <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-2 rounded-sm group relative overflow-hidden">
+                  <div className="bg-[#111114] aspect-video flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={imgSrc} 
+                      alt={`Retour élève ${idx + 1}`} 
+                      className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        if (e.currentTarget.parentElement) {
+                           e.currentTarget.parentElement.innerHTML = `<span class="text-zinc-700 text-xs font-mono uppercase tracking-widest">En attente de ${imgSrc}</span>`;
+                        }
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-zinc-500 text-xs mt-6 uppercase tracking-wider">Aperçus tirés de notre groupe privé communautaire.</p>
           </div>
 
           <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm text-center">

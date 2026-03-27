@@ -10,6 +10,11 @@ import {
 
 // --- GESTION SEO (Simulation du Head de Next.js) ---
 const useSEO = (title: string, description: string, ogTitle?: string, ogDescription?: string) => {
+  // Force le titre immédiatement côté client avant même la fin du rendu
+  if (typeof document !== 'undefined') {
+    document.title = title;
+  }
+
   useEffect(() => {
     document.title = title;
     

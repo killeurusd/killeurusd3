@@ -1547,8 +1547,8 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <div className="flex items-center mb-6">
-                <img src="/logo.png" alt="Logo KILLEUR USD" className="w-10 h-10 mr-3 object-contain" />
-                <span className="text-xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
+                <img src="/logo.png" alt="Logo KILLEUR USD" className="w-24 h-24 md:w-28 md:h-28 mr-4 object-contain" />
+                <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
               </div>
               <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mb-6">
                 La formation de trading qui refuse le gambling. Uniquement du price action pur, de la gestion de risque asymétrique et une discipline de fer.

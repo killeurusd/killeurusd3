@@ -2,51 +2,52 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-  ChevronRight, Target, TrendingUp, ShieldAlert, CheckCircle2, 
+  ChevronRight, Target, TrendingUp, ShieldAlert, CheckCircle, 
   BookOpen, ArrowRight, Menu, X, Lock, Clock, Award, AlertTriangle,
-  Mail, MessageSquare, CheckCircle, Download, Crosshair, 
-  Brain, BarChart2, ShieldCheck, Activity, Users, Star,
-  PlayCircle, Wrench, Calendar, Radio, Compass, ListChecks
+  Mail, MessageSquare, Download, Crosshair, 
+  Brain, BarChart, ShieldCheck, Activity, Users, Star,
+  PlayCircle, Wrench, Calendar, Radio, Compass, ListChecks,
+  CheckCircle2
 } from 'lucide-react';
 
-// --- GESTION SEO (Simulation du Head de Next.js) ---
+// --- GESTION SEO (Simulation du Head de Next.js - SSR Safe) ---
 const useSEO = (title, description, ogTitle, ogDescription) => {
   useEffect(() => {
-    if (typeof document !== 'undefined') {
-      document.title = title;
-      
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', description);
+    if (typeof document === 'undefined') return;
+
+    document.title = title;
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', description);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = description;
+      document.head.appendChild(meta);
+    }
+
+    if (ogTitle) {
+      const metaOgTitle = document.querySelector('meta[property="og:title"]');
+      if (metaOgTitle) {
+        metaOgTitle.setAttribute('content', ogTitle);
       } else {
         const meta = document.createElement('meta');
-        meta.name = 'description';
-        meta.content = description;
+        meta.setAttribute('property', 'og:title');
+        meta.content = ogTitle;
         document.head.appendChild(meta);
       }
+    }
 
-      if (ogTitle) {
-        const metaOgTitle = document.querySelector('meta[property="og:title"]');
-        if (metaOgTitle) {
-          metaOgTitle.setAttribute('content', ogTitle);
-        } else {
-          const meta = document.createElement('meta');
-          meta.setAttribute('property', 'og:title');
-          meta.content = ogTitle;
-          document.head.appendChild(meta);
-        }
-      }
-
-      if (ogDescription) {
-        const metaOgDescription = document.querySelector('meta[property="og:description"]');
-        if (metaOgDescription) {
-          metaOgDescription.setAttribute('content', ogDescription);
-        } else {
-          const meta = document.createElement('meta');
-          meta.setAttribute('property', 'og:description');
-          meta.content = ogDescription;
-          document.head.appendChild(meta);
-        }
+    if (ogDescription) {
+      const metaOgDescription = document.querySelector('meta[property="og:description"]');
+      if (metaOgDescription) {
+        metaOgDescription.setAttribute('content', ogDescription);
+      } else {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'og:description');
+        meta.content = ogDescription;
+        document.head.appendChild(meta);
       }
     }
   }, [title, description, ogTitle, ogDescription]);
@@ -192,7 +193,7 @@ const HomePage = ({ navigate }) => {
           <div className="hidden lg:block relative">
              <div className="aspect-[4/3] bg-[#0B0B0D] border border-zinc-800 rounded-sm overflow-hidden relative shadow-[0_0_50px_rgba(0,0,0,0.8)]">
                <div className="absolute inset-0 bg-[#111114] flex items-center justify-center opacity-30 mix-blend-luminosity">
-                 <BarChart2 className="w-32 h-32 text-zinc-700" />
+                 <BarChart className="w-32 h-32 text-zinc-700" />
                </div>
                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-transparent to-transparent"></div>
                <div className="absolute inset-x-8 bottom-8 top-12 border border-zinc-800/50 bg-[#111114]/80 backdrop-blur flex flex-col p-4">
@@ -204,8 +205,8 @@ const HomePage = ({ navigate }) => {
                     </div>
                     <span className="text-[10px] text-zinc-500 font-mono uppercase">Analyse Structurelle</span>
                   </div>
-                  <div className="flex-1 border border-dashed border-zinc-700/50 flex items-center justify-center">
-                    <BarChart2 className="w-16 h-16 text-zinc-700/50" />
+                  <div className="flex-1 border border-dashed border-zinc-700/50 flex items-center justify-center text-zinc-700/50">
+                    <BarChart size={64} />
                   </div>
                </div>
              </div>
@@ -616,7 +617,9 @@ const HomePage = ({ navigate }) => {
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="aspect-[4/5] bg-[#111114] border border-zinc-800 relative overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"></div>
+             <div className="absolute inset-0 bg-[#0B0B0D] flex items-center justify-center">
+                <Users className="w-32 h-32 text-zinc-800" />
+             </div>
              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/60 to-transparent"></div>
              <div className="absolute bottom-6 left-6 right-6">
                 <div className="border-l-4 border-[#7A0F0F] pl-4">
@@ -645,7 +648,7 @@ const HomePage = ({ navigate }) => {
 
       {/* 9. LEAD CAPTURE */}
       <section className="py-24 bg-[#7A0F0F] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-10 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Download className="w-12 h-12 text-white/50 mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Pas encore prêt à rejoindre le programme ?</h2>
@@ -720,8 +723,6 @@ const HomePage = ({ navigate }) => {
   );
 };
 
-// --- PAGES SECONDAIRES ---
-
 const AboutPage = ({ navigate }) => {
   useSEO("La Vision | KILLEURUSD", "Découvrez la vision de KILLEURUSD. Une approche sans bullshit, basée sur la structure du marché et la discipline pour former de vrais traders.");
   
@@ -731,8 +732,8 @@ const AboutPage = ({ navigate }) => {
       
       <div className="grid md:grid-cols-12 gap-12 mt-16">
         <div className="md:col-span-5">
-          <div className="sticky top-32 aspect-[3/4] bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 grayscale mix-blend-overlay"></div>
+          <div className="sticky top-32 aspect-[3/4] bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden shadow-2xl flex items-center justify-center">
+            <Users className="w-32 h-32 text-zinc-900" />
             <div className="absolute inset-0 bg-gradient-to-tr from-[#7A0F0F]/20 to-transparent"></div>
           </div>
         </div>
@@ -750,13 +751,13 @@ const AboutPage = ({ navigate }) => {
             Avec les années, j’ai vu toujours la même réalité : des débutants qui se font broyer parce qu’on leur vend des raccourcis au lieu de leur apprendre un cadre. Des stratégies miracles, des indicateurs magiques, des signaux, des promesses de richesse rapide… mais presque jamais le vrai travail de fond.
           </p>
           <p className="mb-4">
-            À 18 ans, un accident grave a marqué un tournant dans ma vie et m’a forcé à me recentrer totally. C’est aussi à cette période que j’ai lu <em>Mémoires d’un spéculateur</em> de Jesse Livermore. Ce livre a eu un impact profond sur moi. Je suis tombé sous le charme de sa vie, de son expérience, de son talent, et j’y ai reconnu une manière de vivre les marchés qui me parlait profondément.
+            À 18 ans, un accident grave a marqué un tournant dans ma vie et m’a forcé à me recentrer totalement. C’est aussi à cette période que j’ai lu <em>Mémoires d’un spéculateur</em> de Jesse Livermore. Ce livre a eu un impact profond sur moi. Je suis tombé sous le charme de sa vie, de son expérience, de son talent, et j’y ai reconnu une manière de vivre les marchés qui me parlait profondément.
           </p>
           <p className="mb-4">
             C’est à ce moment-là que j’ai compris une chose essentielle : pour obtenir quelque chose, il faut écouter quelqu’un qui a réussi à obtenir cette chose, mais il faut aussi écouter quelqu’un qui a commencé là où toi tu es aujourd’hui. C’est pour cela que la trajectoire de Jesse Livermore m’a autant marqué.
           </p>
           <p>
-            À partir de là, j’ai poursuivi mon éducation à travers les plus grandes lectures et les plus grands penseurs des marchés : Jesse Livermore, Richard Wyckoff, Elliott et bien d’others. Mais je ne me suis jamais contenté de lire. J’ai étudié leurs concepts, je les ai testés, expérimentés, intégrés, puis adaptés à ma propre méthode au fil des années et de la pratique réelle.
+            À partir de là, j’ai poursuivi mon éducation à travers les plus grandes lectures et les plus grands penseurs des marchés : Jesse Livermore, Richard Wyckoff, Elliott et bien d’autres. Mais je ne me suis jamais contenté de lire. J’ai étudié leurs concepts, je les ai testés, expérimentés, intégrés, puis adaptés à ma propre méthode au fil des années et de la pratique réelle.
           </p>
 
           <div className="bg-[#111114] border-l-4 border-[#C9A227] p-8 my-10">
@@ -866,8 +867,8 @@ const BlogPage = ({ navigate }) => {
       <div className="grid md:grid-cols-3 gap-8 mt-12">
         {articles.map(article => (
           <div key={article.id} className="bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden flex flex-col group cursor-pointer" onClick={() => navigate('article')}>
-            <div className="aspect-[16/9] bg-[#0B0B0D] relative overflow-hidden">
-               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700"></div>
+            <div className="aspect-[16/9] bg-[#0B0B0D] relative overflow-hidden flex items-center justify-center text-zinc-800">
+               <BookOpen size={48} />
             </div>
             <div className="p-6 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-4">
@@ -901,7 +902,7 @@ const ArticlePage = ({ navigate }) => {
           <span className="text-[#C9A227] font-bold tracking-wider uppercase text-xs block mb-4">Psychologie • 5 min de lecture</span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8">Pourquoi 90% des traders échouent et comment faire partie des 10%.</h1>
           <div className="flex items-center border-b border-zinc-800 pb-8">
-            <div className="w-10 h-10 bg-zinc-800 rounded-full mr-4 flex items-center justify-center"><Users size={20}/></div>
+            <div className="w-10 h-10 bg-zinc-800 rounded-full mr-4 flex items-center justify-center text-zinc-500"><Users size={20} /></div>
             <div>
               <div className="text-white font-bold text-sm">Alexandre</div>
               <div className="text-zinc-500 text-xs">Head Trader, KILLEURUSD</div>
@@ -998,9 +999,9 @@ const CheckoutPage = ({ navigate }) => {
       </div>
 
       <div className="w-full bg-[#111114] border border-zinc-800 p-8 md:p-10 shadow-2xl rounded-sm">
-        <div className="flex justify-between items-start mb-8 pb-8 border-b border-zinc-800">
+        <div className="flex justify-between items-start mb-8 pb-8 border-b border-zinc-800 text-white">
           <div>
-            <h3 className="text-xl font-bold text-white mb-2">Programme Complet + Coaching</h3>
+            <h3 className="text-xl font-bold mb-2">Programme Complet + Coaching</h3>
             <ul className="text-sm text-zinc-500 space-y-2 mt-4">
               <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Accès à vie aux modules VOD</li>
               <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> <strong>1h coaching privé / semaine (3 mois)</strong></li>
@@ -1008,7 +1009,7 @@ const CheckoutPage = ({ navigate }) => {
               <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Accès au groupe privé & Boîte à outils</li>
             </ul>
           </div>
-          <div className="text-3xl font-extrabold text-white">997$</div>
+          <div className="text-3xl font-extrabold">997$</div>
         </div>
         
         <Button onClick={() => navigate('thankyou')} variant="accent" className="w-full mb-6">

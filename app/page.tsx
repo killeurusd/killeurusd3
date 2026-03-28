@@ -451,7 +451,7 @@ const HomePage = ({ navigate }: any) => {
       {/* 7. PREUVES & TÉMOIGNAGES */}
       <section className="py-24 bg-[#111114] border-y border-zinc-900">
         <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading subtitle="Preuve sociale" title="Ils ont arrêté de parier. Ils ont commencé à comprendre." />
+          <SectionHeading subtitle="Avis des élèves" title="Ils ont arrêté de parier. Ils ont commencé à comprendre." />
           
           {/* TÉMOIGNAGES TEXTE */}
           <div className="grid md:grid-cols-3 gap-6 mb-16">

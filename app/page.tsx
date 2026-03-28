@@ -1636,9 +1636,7 @@ export default function App() {
             className="flex items-center cursor-pointer group"
             onClick={() => setCurrentPage('home')}
           >
-            <div className="w-10 h-10 bg-[#7A0F0F] rounded-sm flex items-center justify-center mr-3 shadow-[0_0_15px_rgba(122,15,15,0.5)] group-hover:scale-105 transition-transform">
-              <TrendingUp className="text-white w-6 h-6" />
-            </div>
+            <img src="/favicon.ico" alt="Killeur USD Logo" className="w-10 h-10 mr-3 group-hover:scale-105 transition-transform object-contain" />
             <span className="text-2xl font-black text-white tracking-tighter uppercase">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
           </div>
 
@@ -1701,9 +1699,7 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-[#7A0F0F] rounded-sm flex items-center justify-center mr-3">
-                  <TrendingUp className="text-white w-6 h-6" />
-                </div>
+                <img src="/favicon.ico" alt="Killeur USD Logo" className="w-10 h-10 mr-3 object-contain" />
                 <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
               </div>
               <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mb-6">

@@ -350,12 +350,13 @@ const HomePage = ({ navigate }: any) => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {/* LIGNE 1 */}
             {/* CARTE 1: MODULES */}
-            <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors">
+            <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
               <PlayCircle className="w-10 h-10 text-[#7A0F0F] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Les modules de formation</h3>
               <p className="text-zinc-400 mb-6 text-sm">Tu accèdes immédiatement à l’ensemble des modules de la formation. Ces modules ont été conçus pour t’aider à :</p>
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-3 mb-6 flex-1">
                 {["mieux lire le marché", "comprendre ce que tu fais vraiment en position", "arrêter d’accumuler des notions sans logique", "et construire une approche claire, structurée et applicable dans le réel"].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-3 shrink-0 mt-0.5" />
@@ -363,30 +364,31 @@ const HomePage = ({ navigate }: any) => {
                   </li>
                 ))}
               </ul>
-              <div className="bg-[#111114] p-4 border-l-2 border-[#7A0F0F] text-xs text-zinc-400 italic">
+              <div className="bg-[#111114] p-4 border-l-2 border-[#7A0F0F] text-xs text-zinc-400 italic mt-auto">
                 Autrement dit, tu ne regardes pas simplement des vidéos : tu poses les bases d’un trading plus propre, plus lucide et plus maîtrisé.
               </div>
             </div>
 
             {/* CARTE 2: GROUPE PRIVÉ */}
-            <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors">
+            <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
               <Users className="w-10 h-10 text-[#7A0F0F] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Le groupe privé d’analyses et de trades</h3>
               <p className="text-zinc-400 mb-6 text-sm">
                 Tu rejoins un groupe privé dans lequel tu reçois mes analyses en direct, mes lectures de marché et les trades que je prends.
               </p>
-              <div className="bg-[#111114] p-4 border-l-2 border-[#C9A227] text-sm text-white font-medium">
+              <div className="bg-[#111114] p-4 border-l-2 border-[#C9A227] text-sm text-white font-medium mt-auto">
                 Le but n’est pas que tu copies aveuglément. Le but est que tu comprennes la logique derrière les décisions, pour apprendre à lire le marché avec plus de justesse et développer progressivement ta propre autonomie.
               </div>
             </div>
 
+            {/* LIGNE 2 */}
             {/* CARTE 3: COACHING PRIVÉ */}
-            <div className="bg-[#111114] border border-[#7A0F0F]/50 p-8 rounded-sm shadow-[0_0_30px_rgba(122,15,15,0.05)] relative overflow-hidden">
+            <div className="bg-[#111114] border border-[#7A0F0F]/50 p-8 rounded-sm shadow-[0_0_30px_rgba(122,15,15,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#7A0F0F] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1">Accélérateur</div>
               <Target className="w-10 h-10 text-[#C9A227] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">1 coaching privé / semaine (3 mois)</h3>
               <p className="text-zinc-400 mb-6 text-sm">Pendant 3 mois, tu bénéficies d’1 heure de coaching privé par semaine avec moi. C’est ici qu’on accélère vraiment les choses. Ces séances servent à :</p>
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-3 mb-6 flex-1">
                 {["corriger ce qui te bloque réellement", "retravailler les points mal compris", "faire des exercices pratiques", "affiner ton exécution", "t’éviter de perdre des semaines ou des mois sur des erreurs répétées"].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
                     <CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-3 shrink-0 mt-0.5" />
@@ -394,38 +396,67 @@ const HomePage = ({ navigate }: any) => {
                   </li>
                 ))}
               </ul>
-              <div className="text-sm font-bold text-white">
+              <div className="text-sm font-bold text-white mt-auto pt-5 border-t border-zinc-800/50">
                 Tu ne restes pas seul face à tes doutes. Tu avances avec un suivi précis, ciblé et concret.
               </div>
             </div>
 
-            <div className="flex flex-col gap-8">
-              {/* CARTE 4: LIVES */}
-              <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex-1">
-                <Radio className="w-10 h-10 text-[#7A0F0F] mb-6" />
-                <h3 className="text-xl font-bold text-white mb-4">1 live de groupe par semaine</h3>
-                <p className="text-zinc-400 mb-4 text-sm">Chaque semaine, tu as également accès à un live de groupe d’une heure minimum pour :</p>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-start text-xs text-zinc-300"><CheckCircle2 className="w-3 h-3 text-[#C9A227] mr-2 shrink-0 mt-0.5" /> suivre les marchés avec plus de recul</li>
-                  <li className="flex items-start text-xs text-zinc-300"><CheckCircle2 className="w-3 h-3 text-[#C9A227] mr-2 shrink-0 mt-0.5" /> revenir sur les points importants</li>
-                  <li className="flex items-start text-xs text-zinc-300"><CheckCircle2 className="w-3 h-3 text-[#C9A227] mr-2 shrink-0 mt-0.5" /> approfondir certains sujets en direct</li>
-                </ul>
-                <p className="text-xs text-zinc-500 font-bold">Tu évolues dans un cadre vivant, régulier et structuré.</p>
-              </div>
-
-              {/* CARTE 5: BOITE A OUTILS */}
-              <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex-1">
-                <Wrench className="w-10 h-10 text-[#7A0F0F] mb-6" />
-                <h3 className="text-xl font-bold text-white mb-4">Une boîte à outils exclusive</h3>
-                <p className="text-zinc-400 mb-4 text-sm">Ressources conçues pour accompagner concrètement ta progression :</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-3 py-1 rounded-sm">Outils d'IA</span>
-                  <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-3 py-1 rounded-sm">Indicateurs techniques</span>
-                  <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-3 py-1 rounded-sm">Journal de trading en ligne</span>
-                </div>
-                <p className="text-xs text-zinc-500 font-bold">Te faire gagner du temps et améliorer ta rigueur.</p>
+            {/* CARTE 4: LIVES */}
+            <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Communauté</div>
+              <Radio className="w-10 h-10 text-[#7A0F0F] mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-4">1 live de groupe par semaine</h3>
+              <p className="text-zinc-400 mb-6 text-sm">Chaque semaine, tu as également accès à un live de groupe d’une heure minimum pour :</p>
+              <ul className="space-y-3 mb-6 flex-1">
+                {[
+                  "suivre les marchés avec plus de recul", 
+                  "revenir sur les points importants de la semaine", 
+                  "approfondir certains sujets complexes en direct",
+                  "poser tes questions et interagir avec le groupe"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start text-sm text-zinc-300">
+                    <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-3 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="text-sm font-bold text-white mt-auto pt-5 border-t border-zinc-800/50">
+                Tu évolues dans un cadre vivant, régulier et structuré.
               </div>
             </div>
+
+            {/* LIGNE 3 */}
+            {/* CARTE 5: BOITE A OUTILS */}
+            <div className="lg:col-span-2 bg-gradient-to-r from-[#0B0B0D] to-[#111114] border border-zinc-800 p-8 md:p-10 rounded-sm hover:border-[#7A0F0F]/40 transition-colors flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group">
+              <div className="absolute -inset-24 bg-gradient-to-r from-[#7A0F0F]/0 via-[#7A0F0F]/5 to-[#7A0F0F]/0 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700"></div>
+              
+              <div className="relative z-10 w-16 h-16 md:w-20 md:h-20 bg-[#111114] border border-zinc-800 rounded-full flex items-center justify-center shrink-0 group-hover:border-[#C9A227] transition-colors shadow-lg">
+                <Wrench className="w-8 h-8 md:w-10 md:h-10 text-[#C9A227]" />
+              </div>
+              
+              <div className="relative z-10 flex-1 text-center md:text-left">
+                <div className="inline-block bg-[#111114] border border-[#C9A227]/30 text-[#C9A227] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm mb-3">
+                  Bonus Inclus
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">Une boîte à outils exclusive</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl mx-auto md:mx-0">
+                  Accède à des ressources professionnelles conçues pour accompagner concrètement ta progression. Gagne du temps et améliore considérablement ta rigueur d'exécution au quotidien.
+                </p>
+              </div>
+              
+              <div className="relative z-10 flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto shrink-0">
+                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Outils d'IA
+                </span>
+                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Indicateurs techniques
+                </span>
+                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Journal de trading
+                </span>
+              </div>
+            </div>
+
           </div>
 
           {/* SECTION ONBOARDING */}

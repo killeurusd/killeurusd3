@@ -5,7 +5,7 @@ import {
   ChevronRight, Target, TrendingUp, ShieldAlert, CheckCircle2, 
   BookOpen, ArrowRight, Menu, X, Lock, Clock, Award, AlertTriangle,
   Mail, MessageSquare, CheckCircle, Download, FileText, Crosshair, 
-  Brain, BarChart2, ShieldCheck, UserCheck, Activity, Users
+  Brain, BarChart2, ShieldCheck, UserCheck, Activity, Users, Star
 } from 'lucide-react';
 
 // --- GESTION SEO (Simulation du Head de Next.js) ---
@@ -456,14 +456,14 @@ const HomePage = ({ navigate }: any) => {
           {/* TÉMOIGNAGES TEXTE */}
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
-              { name: "Thomas", level: "2 ans de trading", text: "Je passais d’une méthode à l’autre sans jamais progresser. La formation m’a permis de simplifier mon approche, de nettoyer mes graphiques et de mieux comprendre mes erreurs." },
-              { name: "Julien", level: "Débutant", text: "Le meilleur investissement. Au lieu de cramer mon capital en faisant n'importe quoi, j'ai appris un vrai métier. Les coachings mensuels sont d'une valeur inestimable." },
-              { name: "Sarah", level: "3 ans de trading", text: "J'avais les bases mais aucune discipline. Le cadre de KILLEURUSD est strict, militaire, et c'est exactement ce qu'il me fallait pour enfin atteindre la constance." }
+              { name: "Thomas", level: "2 ans de trading · autodidacte trop dispersé", text: "Je passais d’une méthode à l’autre sans jamais construire une vraie base. La formation m’a permis de simplifier mon trading, de nettoyer mes graphiques et surtout de comprendre mes erreurs avec plus de lucidité." },
+              { name: "Julien", level: "Débutant · voulait éviter les erreurs classiques", text: "Au lieu de brûler mon capital en testant tout et n’importe quoi, j’ai enfin trouvé un vrai cadre de progression. Les coachings mensuels apportent une valeur énorme parce qu’ils permettent de corriger ce qui bloque vraiment." },
+              { name: "Sarah", level: "3 ans de trading · base technique mais exécution instable", text: "J’avais déjà les bases techniques, mais pas la discipline nécessaire pour être constante. KILLEURUSD m’a apporté un cadre plus strict, plus structuré, et exactement le niveau d’exigence qu’il me fallait." }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-8 flex flex-col justify-between">
                 <div>
                   <div className="flex text-[#C9A227] mb-6">
-                    {[...Array(5)].map((_, i) => <Award key={i} className="w-4 h-4 fill-current" />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                   </div>
                   <p className="text-zinc-300 italic mb-8 leading-relaxed text-sm">"{testimonial.text}"</p>
                 </div>
@@ -654,7 +654,7 @@ const AboutPage = ({ navigate }: any) => {
             Avec les années, j’ai vu toujours la même réalité : des débutants qui se font broyer parce qu’on leur vend des raccourcis au lieu de leur apprendre un cadre. Des stratégies miracles, des indicateurs magiques, des signaux, des promesses de richesse rapide… mais presque jamais le vrai travail de fond.
           </p>
           <p className="mb-4">
-            À 18 ans, un accident grave a marqué un tournant dans ma vie et m’a forcé à me recentrer totalement. C’est aussi à cette période que j’ai lu <em>Mémoires d’un spéculateur</em> de Jesse Livermore. Ce livre a eu un impact profond sur moi. Je suis tombé sous le charme de sa vie, de son expérience, de son talent, et j’y ai reconnu une manière de vivre les marchés qui me parlait profondément.
+            À 18 ans, un accident grave a marqué un tournant dans ma vie et m’a forcé à me recentrer totally. C’est aussi à cette période que j’ai lu <em>Mémoires d’un spéculateur</em> de Jesse Livermore. Ce livre a eu un impact profond sur moi. Je suis tombé sous le charme de sa vie, de son expérience, de son talent, et j’y ai reconnu une manière de vivre les marchés qui me parlait profondément.
           </p>
           <p className="mb-4">
             C’est à ce moment-là que j’ai compris une chose essentielle : pour obtenir quelque chose, il faut écouter quelqu’un qui a réussi à obtenir cette chose, mais il faut aussi écouter quelqu’un qui a commencé là où toi tu es aujourd’hui. C’est pour cela que la trajectoire de Jesse Livermore m’a autant marqué.

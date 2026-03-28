@@ -11,44 +11,42 @@ import {
 
 // --- GESTION SEO (Simulation du Head de Next.js) ---
 const useSEO = (title, description, ogTitle, ogDescription) => {
-  if (typeof document !== 'undefined') {
-    document.title = title;
-  }
-
   useEffect(() => {
-    document.title = title;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', description);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = description;
-      document.head.appendChild(meta);
-    }
-
-    if (ogTitle) {
-      const metaOgTitle = document.querySelector('meta[property="og:title"]');
-      if (metaOgTitle) {
-        metaOgTitle.setAttribute('content', ogTitle);
+    if (typeof document !== 'undefined') {
+      document.title = title;
+      
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', description);
       } else {
         const meta = document.createElement('meta');
-        meta.setAttribute('property', 'og:title');
-        meta.content = ogTitle;
+        meta.name = 'description';
+        meta.content = description;
         document.head.appendChild(meta);
       }
-    }
 
-    if (ogDescription) {
-      const metaOgDescription = document.querySelector('meta[property="og:description"]');
-      if (metaOgDescription) {
-        metaOgDescription.setAttribute('content', ogDescription);
-      } else {
-        const meta = document.createElement('meta');
-        meta.setAttribute('property', 'og:description');
-        meta.content = ogDescription;
-        document.head.appendChild(meta);
+      if (ogTitle) {
+        const metaOgTitle = document.querySelector('meta[property="og:title"]');
+        if (metaOgTitle) {
+          metaOgTitle.setAttribute('content', ogTitle);
+        } else {
+          const meta = document.createElement('meta');
+          meta.setAttribute('property', 'og:title');
+          meta.content = ogTitle;
+          document.head.appendChild(meta);
+        }
+      }
+
+      if (ogDescription) {
+        const metaOgDescription = document.querySelector('meta[property="og:description"]');
+        if (metaOgDescription) {
+          metaOgDescription.setAttribute('content', ogDescription);
+        } else {
+          const meta = document.createElement('meta');
+          meta.setAttribute('property', 'og:description');
+          meta.content = ogDescription;
+          document.head.appendChild(meta);
+        }
       }
     }
   }, [title, description, ogTitle, ogDescription]);
@@ -193,7 +191,9 @@ const HomePage = ({ navigate }) => {
 
           <div className="hidden lg:block relative">
              <div className="aspect-[4/3] bg-[#0B0B0D] border border-zinc-800 rounded-sm overflow-hidden relative shadow-[0_0_50px_rgba(0,0,0,0.8)]">
-               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
+               <div className="absolute inset-0 bg-[#111114] flex items-center justify-center opacity-30 mix-blend-luminosity">
+                 <BarChart2 className="w-32 h-32 text-zinc-700" />
+               </div>
                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-transparent to-transparent"></div>
                <div className="absolute inset-x-8 bottom-8 top-12 border border-zinc-800/50 bg-[#111114]/80 backdrop-blur flex flex-col p-4">
                   <div className="flex justify-between items-center border-b border-zinc-800/50 pb-3 mb-4">
@@ -756,7 +756,7 @@ const AboutPage = ({ navigate }) => {
             C’est à ce moment-là que j’ai compris une chose essentielle : pour obtenir quelque chose, il faut écouter quelqu’un qui a réussi à obtenir cette chose, mais il faut aussi écouter quelqu’un qui a commencé là où toi tu es aujourd’hui. C’est pour cela que la trajectoire de Jesse Livermore m’a autant marqué.
           </p>
           <p>
-            À partir de là, j’ai poursuivi mon éducation à travers les plus grandes lectures et les plus grands penseurs des marchés : Jesse Livermore, Richard Wyckoff, Elliott et bien d’autres. Mais je ne me suis jamais contenté de lire. J’ai étudié leurs concepts, je les ai testés, expérimentés, intégrés, puis adaptés à ma propre méthode au fil des années et de la pratique réelle.
+            À partir de là, j’ai poursuivi mon éducation à travers les plus grandes lectures et les plus grands penseurs des marchés : Jesse Livermore, Richard Wyckoff, Elliott et bien d’others. Mais je ne me suis jamais contenté de lire. J’ai étudié leurs concepts, je les ai testés, expérimentés, intégrés, puis adaptés à ma propre méthode au fil des années et de la pratique réelle.
           </p>
 
           <div className="bg-[#111114] border-l-4 border-[#C9A227] p-8 my-10">
@@ -901,7 +901,7 @@ const ArticlePage = ({ navigate }) => {
           <span className="text-[#C9A227] font-bold tracking-wider uppercase text-xs block mb-4">Psychologie • 5 min de lecture</span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8">Pourquoi 90% des traders échouent et comment faire partie des 10%.</h1>
           <div className="flex items-center border-b border-zinc-800 pb-8">
-            <div className="w-10 h-10 bg-zinc-800 rounded-full mr-4 flex items-center justify-center text-white"><Users size={16}/></div>
+            <div className="w-10 h-10 bg-zinc-800 rounded-full mr-4 flex items-center justify-center"><Users size={20}/></div>
             <div>
               <div className="text-white font-bold text-sm">Alexandre</div>
               <div className="text-zinc-500 text-xs">Head Trader, KILLEURUSD</div>
@@ -1598,7 +1598,7 @@ export default function App() {
       case 'contact': return <ContactPage />;
       case 'blog': return <BlogPage navigate={setCurrentPage} />;
       case 'article': return <ArticlePage navigate={setCurrentPage} />;
-      case 'alumni': return <AlumniPage />;
+      case 'alumni': return <AlumniPage navigate={setCurrentPage} />;
       case 'checkout': return <CheckoutPage navigate={setCurrentPage} />;
       case 'thankyou': return <ThankYouPage />;
       case 'cgv': return <CGVPage navigate={setCurrentPage} />;

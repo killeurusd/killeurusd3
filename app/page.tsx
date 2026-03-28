@@ -1699,7 +1699,7 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <div className="flex items-center mb-6">
-                <img src="/favicon.ico" alt="Killeur USD Logo" className="w-10 h-10 mr-3 object-contain" />
+                <img src="/favicon.ico" alt="Killeur USD Logo" className="w-20 h-20 mr-4 object-contain" />
                 <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
               </div>
               <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mb-6">

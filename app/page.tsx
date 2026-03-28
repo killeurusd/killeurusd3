@@ -486,7 +486,7 @@ const HomePage = ({ navigate }: any) => {
                 "/avis-3.png"
               ].map((imgSrc, idx) => (
                 <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-2 rounded-sm group relative overflow-hidden">
-                  <div className="bg-[#111114] aspect-video flex items-center justify-center overflow-hidden">
+                  <div className="bg-[#111114] flex items-center justify-center overflow-hidden rounded-sm">
                     <img 
                       src={imgSrc} 
                       alt={`Retour élève ${idx + 1}`} 

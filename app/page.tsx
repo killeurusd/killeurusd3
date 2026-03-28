@@ -483,10 +483,7 @@ const HomePage = ({ navigate }: any) => {
               {[
                 "/avis-1.png",
                 "/avis-2.png",
-                "/avis-3.png",
-                "/avis-4.png",
-                "/avis-5.png",
-                "/avis-6.png"
+                "/avis-3.png"
               ].map((imgSrc, idx) => (
                 <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-2 rounded-sm group relative overflow-hidden">
                   <div className="bg-[#111114] aspect-video flex items-center justify-center overflow-hidden">

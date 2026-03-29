@@ -290,11 +290,11 @@ const HomePage = ({ navigate }: any) => {
               <h3 className="text-2xl font-bold text-white mb-8 border-b border-zinc-800 pb-4">Le trading amateur</h3>
               <ul className="space-y-6 relative z-10">
                 {[
-                  "Sauter frénétiquement d'une stratégie à l'autre",
-                  "Prendre des positions guidées par l'émotion",
-                  "Polluer ses graphiques avec des indicateurs en retard",
-                  "Sous-traiter ses décisions (signaux, alertes)",
-                  "Opérer sans aucun plan de gestion du risque"
+                  "sauter frénétiquement d'une stratégie à l'autre,",
+                  "prendre des positions guidées par l'émotion,",
+                  "polluer ses graphiques avec des indicateurs en retard,",
+                  "sous-traiter ses décisions (signaux, alertes),",
+                  "opérer sans aucun plan de gestion du risque."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-zinc-400">
                     <X className="w-5 h-5 text-[#7A0F0F] mr-4 shrink-0 mt-0.5" />
@@ -311,11 +311,11 @@ const HomePage = ({ navigate }: any) => {
               <h3 className="text-2xl font-bold text-[#C9A227] mb-8 border-b border-[#C9A227]/20 pb-4">L'approche professionnelle</h3>
               <ul className="space-y-6 relative z-10">
                 {[
-                  "Identifier précisément les zones clés à fort potentiel",
-                  "Savoir justifier factuellement chaque entrée en position",
-                  "Appliquer un processus d'analyse répétable et épuré",
-                  "Gérer son exposition financière de manière chirurgicale",
-                  "Traiter le trading avec l'exigence d'un véritable métier"
+                  "identifier précisément les zones clés à fort potentiel,",
+                  "savoir justifier factuellement chaque entrée en position,",
+                  "appliquer un processus d'analyse répétable et épuré,",
+                  "gérer son exposition financière de manière chirurgicale,",
+                  "traiter le trading avec l'exigence d'un véritable métier."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-white font-medium">
                     <CheckCircle2 className="w-5 h-5 text-[#C9A227] mr-4 shrink-0 mt-0.5" />
@@ -339,13 +339,10 @@ const HomePage = ({ navigate }: any) => {
           
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-xl text-white font-medium mb-4">
-              Plus qu'une série de vidéos : un écosystème d'apprentissage conçu pour forger des traders autonomes.
+              Tu ne rejoins pas ici une simple formation de plus.
             </p>
             <p className="text-zinc-400 leading-relaxed mb-4">
-              Nous avons bâti l'environnement exact dont nous aurions eu besoin à nos débuts. Un équilibre parfait entre l'assimilation théorique de haut niveau et la correction brutale sur les marchés en temps réel.
-            </p>
-            <p className="text-[#C9A227] font-bold">
-              Le résultat : un condensé de valeur pratique pour accélérer ta courbe d'expérience et éliminer les pertes évitables.
+              Tu rejoins un programme conçu pour t’aider à comprendre le marché, corriger tes erreurs et progresser avec un accompagnement réel.
             </p>
           </div>
 
@@ -354,14 +351,14 @@ const HomePage = ({ navigate }: any) => {
             {/* CARTE 1: MODULES */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
               <PlayCircle className="w-10 h-10 text-[#7A0F0F] mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">La Fondation Technique (VOD)</h3>
-              <p className="text-zinc-400 mb-6 text-sm">L'accès intégral et immédiat à tous nos modules théoriques. Le socle indispensable pour :</p>
+              <h3 className="text-2xl font-bold text-white mb-4">Les modules de formation</h3>
+              <p className="text-zinc-400 mb-6 text-sm">Tu accèdes immédiatement à l’ensemble de nos ressources théoriques. Ces modules ont été conçus pour t’aider à :</p>
               <ul className="space-y-3 mb-6 flex-1">
                 {[
-                  "Maîtriser la lecture du prix sans indicateurs", 
-                  "Comprendre la véritable nature de la liquidité", 
-                  "Bâtir un plan d'intervention strict et sans faille", 
-                  "Intégrer les probabilités à ton avantage"
+                  "maîtriser la lecture du prix sans indicateurs,", 
+                  "comprendre la véritable nature de la liquidité,", 
+                  "bâtir un plan d'intervention strict et sans faille,", 
+                  "intégrer les probabilités à ton avantage."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-3 shrink-0 mt-0.5" />
@@ -369,24 +366,21 @@ const HomePage = ({ navigate }: any) => {
                   </li>
                 ))}
               </ul>
-              <div className="bg-[#111114] p-4 border-l-2 border-[#7A0F0F] text-xs text-zinc-400 italic mt-auto">
-                Tu ne regardes pas du contenu passif : tu poses les fondations d’un trading lucide et pérenne.
-              </div>
             </div>
 
             {/* CARTE 2: GROUPE PRIVÉ */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
               <Users className="w-10 h-10 text-[#C9A227] mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">L'Immersion Quotidienne</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Le groupe privé d’analyses et de trades</h3>
               <p className="text-zinc-400 mb-6 text-sm">
-                Le canal privé exclusif où je partage quotidiennement mes lectures de marché, mes setups et la gestion de mes positions en direct.
+                Tu rejoins un canal exclusif où je partage quotidiennement mes lectures de marché, mes setups et la gestion de mes positions en direct.
               </p>
               <ul className="space-y-3 mb-6 flex-1">
                 {[
-                  "Suivi de l'action des prix au jour le jour", 
-                  "Explication factuelle des décisions prises", 
-                  "Mise en garde sur les pièges de marché imminents", 
-                  "Échanges qualitatifs entre membres confirmés"
+                  "suivre l'action des prix au jour le jour,", 
+                  "comprendre factuellement les décisions prises,", 
+                  "éviter les pièges de marché imminents,", 
+                  "échanger avec des membres confirmés."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
                     <CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-3 shrink-0 mt-0.5" />
@@ -394,9 +388,6 @@ const HomePage = ({ navigate }: any) => {
                   </li>
                 ))}
               </ul>
-              <div className="bg-[#111114] p-4 border-l-2 border-[#C9A227] text-sm text-white font-medium mt-auto">
-                L'objectif n’est pas de copier. L'objectif est de confronter ton analyse à la réalité du terrain pour développer ta propre acuité.
-              </div>
             </div>
 
             {/* LIGNE 2 */}
@@ -404,14 +395,14 @@ const HomePage = ({ navigate }: any) => {
             <div className="bg-[#111114] border border-[#7A0F0F]/50 p-8 rounded-sm shadow-[0_0_30px_rgba(122,15,15,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#7A0F0F] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1">Accélérateur</div>
               <Target className="w-10 h-10 text-[#7A0F0F] mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Le Mentoring Individuel (3 mois)</h3>
-              <p className="text-zinc-400 mb-6 text-sm">L'avantage déloyal. 1 heure par semaine en face-à-face exclusif avec moi. C’est ici que s'opère la véritable bascule. Au programme :</p>
+              <h3 className="text-2xl font-bold text-white mb-4">1 coaching privé / semaine (3 mois)</h3>
+              <p className="text-zinc-400 mb-6 text-sm">Pendant 3 mois, tu bénéficies d’1 heure de mentoring individuel par semaine en face-à-face. Au programme :</p>
               <ul className="space-y-3 mb-6 flex-1">
                 {[
-                  "Audit complet de tes trades de la semaine", 
-                  "Mise en lumière et correction de tes biais psychologiques", 
-                  "Affinement chirurgical de tes points d'entrée", 
-                  "Mise en place d'objectifs de rigueur mesurables"
+                  "audit complet de tes trades de la semaine,", 
+                  "mise en lumière et correction de tes biais psychologiques,", 
+                  "affinement chirurgical de tes points d'entrée,", 
+                  "mise en place d'objectifs de rigueur mesurables."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-3 shrink-0 mt-0.5" />
@@ -419,23 +410,20 @@ const HomePage = ({ navigate }: any) => {
                   </li>
                 ))}
               </ul>
-              <div className="text-sm font-bold text-white mt-auto pt-5 border-t border-zinc-800/50">
-                Un regard clinique sur ton exécution pour ne plus jamais stagner dans l'erreur.
-              </div>
             </div>
 
             {/* CARTE 4: LIVES */}
             <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Communauté</div>
               <Radio className="w-10 h-10 text-[#C9A227] mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Les Sessions Live Hebdomadaires</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">1 live de groupe par semaine</h3>
               <p className="text-zinc-400 mb-6 text-sm">Le rendez-vous immanquable de la communauté. Un live de groupe d’une heure minimum chaque semaine pour :</p>
               <ul className="space-y-3 mb-6 flex-1">
                 {[
-                  "Prendre du recul macro-économique sur la semaine écoulée", 
-                  "Décortiquer à froid les configurations complexes", 
-                  "Désamorcer les pièges du marché à venir",
-                  "Répondre en direct à tes interrogations techniques"
+                  "prendre du recul macro-économique sur la semaine écoulée,", 
+                  "décortiquer à froid les configurations complexes,", 
+                  "désamorcer les pièges du marché à venir,",
+                  "répondre en direct à tes interrogations techniques."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
                     <CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-3 shrink-0 mt-0.5" />
@@ -443,40 +431,53 @@ const HomePage = ({ navigate }: any) => {
                   </li>
                 ))}
               </ul>
-              <div className="text-sm font-bold text-white mt-auto pt-5 border-t border-zinc-800/50">
-                Un ancrage hebdomadaire puissant pour maintenir le cap et la motivation.
-              </div>
             </div>
 
             {/* LIGNE 3 */}
             {/* CARTE 5: BOITE A OUTILS */}
-            <div className="lg:col-span-2 bg-gradient-to-r from-[#0B0B0D] to-[#111114] border border-zinc-800 p-8 md:p-10 rounded-sm hover:border-[#7A0F0F]/40 transition-colors flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group">
+            <div className="lg:col-span-2 bg-gradient-to-r from-[#0B0B0D] to-[#111114] border border-zinc-800 p-8 md:p-12 rounded-sm hover:border-[#7A0F0F]/40 transition-colors flex flex-col gap-8 relative overflow-hidden group">
               <div className="absolute -inset-24 bg-gradient-to-r from-[#7A0F0F]/0 via-[#7A0F0F]/5 to-[#7A0F0F]/0 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700"></div>
               
-              <div className="relative z-10 w-16 h-16 md:w-20 md:h-20 bg-[#111114] border border-zinc-800 rounded-full flex items-center justify-center shrink-0 group-hover:border-[#C9A227] transition-colors shadow-lg">
-                <Wrench className="w-8 h-8 md:w-10 md:h-10 text-[#C9A227]" />
-              </div>
-              
-              <div className="relative z-10 flex-1 text-center md:text-left">
-                <div className="inline-block bg-[#111114] border border-[#C9A227]/30 text-[#C9A227] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm mb-3">
-                  Bonus Premium
+              <div className="relative z-10 flex items-center mb-2">
+                <div className="w-16 h-16 bg-[#111114] border border-zinc-800 rounded-full flex items-center justify-center shrink-0 group-hover:border-[#C9A227] transition-colors shadow-lg mr-6">
+                  <Wrench className="w-8 h-8 text-[#C9A227]" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">L'Arsenal du Trader Pro</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl mx-auto md:mx-0">
-                  Le trading moderne exige de l'organisation. Accède à des ressources exclusives conçues pour systématiser ton approche, optimiser ton temps et verrouiller ta discipline opérationnelle.
-                </p>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Une boîte à outils exclusive</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+                    Des outils conçus pour t’aider à progresser avec plus de rigueur, plus de clarté et plus d’efficacité.
+                  </p>
+                </div>
               </div>
               
-              <div className="relative z-10 flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto shrink-0">
-                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium shadow-sm">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Assistants IA personnalisés
-                </span>
-                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium shadow-sm">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Indicateurs Institutionnels
-                </span>
-                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium shadow-sm">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Journal de Trading Avancé
-                </span>
+              <div className="relative z-10 grid md:grid-cols-3 gap-6 w-full">
+                <div className="bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm">
+                  <h4 className="text-white font-bold text-sm flex items-center mb-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Outils d’IA
+                  </h4>
+                  <p className="text-zinc-500 text-xs leading-relaxed">Pour gagner du temps, mieux structurer ton analyse et accélérer ton travail.</p>
+                </div>
+                <div className="bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm">
+                  <h4 className="text-white font-bold text-sm flex items-center mb-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Indicateurs techniques
+                  </h4>
+                  <p className="text-zinc-500 text-xs leading-relaxed">Développés pour t’aider à lire le marché avec plus de précision.</p>
+                </div>
+                <div className="bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm">
+                  <h4 className="text-white font-bold text-sm flex items-center mb-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Journal de trading en ligne
+                  </h4>
+                  <p className="text-zinc-500 text-xs leading-relaxed">Pour suivre tes performances, comprendre tes erreurs et mesurer ta progression.</p>
+                </div>
+              </div>
+
+              <div className="relative z-10 mt-2 border-t border-zinc-800 pt-6">
+                <p className="text-sm text-zinc-300 font-medium mb-2">
+                  Ce ne sont pas des gadgets décoratifs. Ce sont des outils pensés pour accompagner concrètement ta progression et renforcer ton cadre de travail.
+                </p>
+                <p className="text-xs text-zinc-500">
+                  Tu ne repars pas seulement avec une méthode. Tu repars aussi avec un véritable arsenal de travail pour mieux analyser, mieux exécuter et mieux progresser dans le temps.
+                </p>
               </div>
             </div>
 
@@ -484,58 +485,47 @@ const HomePage = ({ navigate }: any) => {
 
           {/* SECTION ONBOARDING */}
           <div className="bg-[#0B0B0D] border border-[#C9A227]/20 p-8 md:p-12 rounded-sm mt-12 shadow-[0_0_40px_rgba(201,162,39,0.03)]">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-10 text-center">Ton intégration pas à pas</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center">Comment se passe ton inscription ?</h3>
+            <p className="text-center text-zinc-400 max-w-2xl mx-auto mb-12">
+              Tout est mis en place pour que tu puisses démarrer rapidement, être accompagné dès le départ et savoir exactement par où commencer.
+            </p>
             
-            <div className="relative border-l border-zinc-800 ml-4 md:ml-8 space-y-12 pb-8">
+            <div className="grid md:grid-cols-4 gap-6">
               
               {/* Step 1 */}
-              <div className="relative pl-8 md:pl-12">
-                <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-[#7A0F0F] rounded-full flex items-center justify-center border-4 border-[#0B0B0D] shadow-lg">
-                  <span className="text-white text-xs md:text-sm font-black">1</span>
+              <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
+                <div className="w-8 h-8 bg-[#7A0F0F] rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-white text-sm font-black">1</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">Immédiatement</h4>
-                <p className="text-sm text-zinc-400">Dès confirmation, ton accès à la plateforme est débloqué. Tu entames la VOD et réserves immédiatement ton premier créneau de mentoring via le calendrier privé.</p>
+                <h4 className="text-base font-bold text-white mb-3">Validation de ton inscription</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">Dès que ton paiement est validé, tu accèdes immédiatement aux modules de formation ainsi qu’aux outils inclus dans le programme.</p>
               </div>
 
               {/* Step 2 */}
-              <div className="relative pl-8 md:pl-12">
-                <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-[#C9A227] rounded-full flex items-center justify-center border-4 border-[#0B0B0D] shadow-lg">
-                  <span className="text-[#0B0B0D] text-xs md:text-sm font-black">2</span>
+              <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
+                <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-[#0B0B0D] text-sm font-black">2</span>
                 </div>
-                <h4 className="text-lg font-bold text-[#C9A227] mb-2">Sous 24 heures</h4>
-                <p className="text-sm text-zinc-400">Tu intègres officiellement les canaux sécurisés de la communauté. Tu reçois mes premières analyses et observes l'application réelle de la méthode.</p>
+                <h4 className="text-base font-bold text-[#C9A227] mb-3">Planification de ta première séance</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">Tu peux réserver directement ta première heure de coaching privé pour lancer ton accompagnement dans les meilleures conditions.</p>
               </div>
 
               {/* Step 3 */}
-              <div className="relative pl-8 md:pl-12">
-                <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-zinc-800 rounded-full flex items-center justify-center border-4 border-[#0B0B0D]">
-                  <span className="text-zinc-400 text-xs md:text-sm font-black">3</span>
+              <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
+                <div className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center mb-6">
+                  <span className="text-zinc-400 text-sm font-black">3</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">Ta première séance</h4>
-                <p className="text-sm text-zinc-400 mb-3">La séance de calibrage. Un rendez-vous critique pour :</p>
-                <ul className="grid sm:grid-cols-2 gap-2">
-                  {["Auditer ton historique", "Nettoyer tes graphiques", "Fixer tes métriques", "Valider ton plan d'action"].map((item, i) => (
-                    <li key={i} className="flex items-center text-xs text-zinc-300">
-                      <ChevronRight className="w-3 h-3 text-[#C9A227] mr-1" /> {item}
-                    </li>
-                  ))}
-                </ul>
+                <h4 className="text-base font-bold text-white mb-3">Accès aux groupes privés</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">Sous 24 heures maximum, tu reçois tes accès aux différents groupes privés de la communauté pour suivre les analyses, les prises de position et la dynamique du programme.</p>
               </div>
 
               {/* Step 4 */}
-              <div className="relative pl-8 md:pl-12">
-                <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-zinc-800 rounded-full flex items-center justify-center border-4 border-[#0B0B0D]">
-                  <span className="text-zinc-400 text-xs md:text-sm font-black">4</span>
+              <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
+                <div className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center mb-6">
+                  <span className="text-zinc-400 text-sm font-black">4</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">Le suivi chirurgical</h4>
-                <p className="text-sm text-zinc-400 mb-3">Le rythme s'installe. Chaque semaine :</p>
-                <ul className="grid sm:grid-cols-2 gap-2 mb-4">
-                  {["Analyse de tes exécutions", "Correction implacable des erreurs", "Assistance communautaire", "Répétition jusqu'à la maîtrise"].map((item, i) => (
-                    <li key={i} className="flex items-center text-xs text-zinc-300">
-                      <ChevronRight className="w-3 h-3 text-[#7A0F0F] mr-1" /> {item}
-                    </li>
-                  ))}
-                </ul>
+                <h4 className="text-base font-bold text-white mb-3">Intégration puis suivi personnalisé</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">La première séance sert à faire le point sur ton niveau, t’expliquer le fonctionnement du programme et poser les bases de ton suivi. Les séances suivantes sont consacrées à la correction, à la pratique et à ta progression.</p>
               </div>
 
             </div>
@@ -544,15 +534,15 @@ const HomePage = ({ navigate }: any) => {
           {/* PRICE BLOCK */}
           <div className="mt-16 bg-[#111114] border border-zinc-800 p-8 md:p-12 text-center rounded-sm max-w-3xl mx-auto shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#7A0F0F] blur-[100px] opacity-20"></div>
-            <h3 className="text-3xl font-extrabold text-white mb-2">L'Accès Intégral</h3>
-            <p className="text-zinc-400 mb-8">Rejoins un environnement exigeant, mets fin au trading d'espoir et construis ta rentabilité sur des bases mathématiques.</p>
+            <h3 className="text-3xl font-extrabold text-white mb-2">Ce que tu rejoins vraiment</h3>
+            <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">Tu n’investis donc pas dans de simples modules. Tu rejoins une méthode, un suivi et un environnement de travail conçus pour faire évoluer ton trading dans le réel.</p>
             <div className="text-6xl font-black text-white mb-4">997$</div>
             <div className="text-zinc-500 text-sm mb-8 font-medium">Paiement unique. Accès à vie garanti à la plateforme.<br/>Inclus : L'accompagnement privé (1h/semaine) pendant 3 mois.</div>
             <Button onClick={() => navigate('checkout')} className="w-full sm:w-auto px-16 py-5 text-lg">
               Sécuriser ma place
             </Button>
-            <p className="text-xs text-zinc-600 mt-6 max-w-lg mx-auto">
-              Afin de garantir l'excellence et la disponibilité du mentoring individuel, <strong className="text-zinc-400">les places sont strictement contingentées.</strong>
+            <p className="text-xs text-zinc-500 mt-6 max-w-lg mx-auto">
+              Le programme reste volontairement limité en nombre de places. <strong className="text-zinc-400">Cette exigence permet de préserver un vrai niveau de suivi dans l’accompagnement.</strong>
             </p>
           </div>
 
@@ -563,14 +553,14 @@ const HomePage = ({ navigate }: any) => {
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#C9A227] pl-4">Ce programme est conçu pour toi si...</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#C9A227] pl-4">Cette formation est faite pour toi si...</h3>
             <ul className="space-y-4">
               {[
-                "Tu en as assez de sauter d'une stratégie à l'autre.",
-                "Tu veux comprendre la véritable logique derrière chaque mouvement de prix.",
-                "Tu acceptes qu'une progression réelle exige du temps et de l'effort.",
-                "Tu cherches un cadre strict pour encadrer ta prise de décision.",
-                "Tu es prêt à te remettre en question et à être audité."
+                "Tu en as marre de changer sans cesse de méthode.",
+                "Tu veux enfin comprendre ce que tu fais sur un graphique.",
+                "Tu es prêt à apprendre sérieusement.",
+                "Tu veux arrêter le trading au pif.",
+                "Tu acceptes qu'une progression réelle demande du travail."
               ].map((item, i) => (
                 <li key={i} className="flex items-start text-zinc-400">
                   <CheckCircle className="w-5 h-5 text-[#C9A227] mr-3 shrink-0" />
@@ -580,14 +570,14 @@ const HomePage = ({ navigate }: any) => {
             </ul>
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#7A0F0F] pl-4">Passe ton chemin si...</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#7A0F0F] pl-4">Ce n'est PAS pour toi si...</h3>
             <ul className="space-y-4">
               {[
-                "Tu cherches encore une configuration miracle avec 100% de réussite.",
-                "Ton seul but est de copier passivement des signaux.",
-                "Tu refuses d'appliquer des règles de gestion du risque strictes.",
-                "Tu vois les marchés comme un casino pour t'enrichir d'ici demain.",
-                "Tu es incapable d'accepter la critique constructive."
+                "Tu cherches un miracle ou une pilule magique.",
+                "Tu veux juste copier-coller des signaux Telegram.",
+                "Tu refuses d'appliquer une discipline stricte.",
+                "Tu veux gagner vite sans prendre le temps d'apprendre.",
+                "Tu n'es pas prêt à te remettre en question."
               ].map((item, i) => (
                 <li key={i} className="flex items-start text-zinc-500">
                   <X className="w-5 h-5 text-[#7A0F0F] mr-3 shrink-0" />
@@ -626,7 +616,7 @@ const HomePage = ({ navigate }: any) => {
           </div>
 
           <div className="mt-20 mb-16">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Analyses & Exécutions</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">Les résultats de nos élèves</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 "/avis-1.png",
@@ -650,7 +640,7 @@ const HomePage = ({ navigate }: any) => {
                 </div>
               ))}
             </div>
-            <p className="text-center text-zinc-500 text-xs mt-6 uppercase tracking-wider">Résultats et configurations partagés en transparence au sein de l'écosystème.</p>
+            <p className="text-center text-zinc-500 text-xs mt-6 uppercase tracking-wider">Extraits issus de notre groupe privé et du suivi des élèves.</p>
           </div>
 
           <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm text-center">
@@ -674,8 +664,8 @@ const HomePage = ({ navigate }: any) => {
              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/60 to-transparent"></div>
              <div className="absolute bottom-6 left-6 right-6">
                 <div className="border-l-4 border-[#7A0F0F] pl-4">
-                  <p className="text-white font-black uppercase tracking-widest text-xl mb-1">Alexandre</p>
-                  <p className="text-zinc-400 font-bold text-xs uppercase tracking-wider">Fondateur KILLEURUSD</p>
+                  <p className="text-white font-black uppercase tracking-widest text-xl mb-1">RAYANE "RAYSS"</p>
+                  <p className="text-zinc-400 font-bold text-xs uppercase tracking-wider">FONDATEUR & HEAD TRADER</p>
                 </div>
              </div>
           </div>
@@ -721,7 +711,7 @@ const HomePage = ({ navigate }: any) => {
               required 
             />
             <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm">
-              Obtenir l'Audit
+              Télécharger la checklist
             </button>
           </form>
           <p className="text-white/50 text-xs mt-4">Accès immédiat. Désinscription en un clic.</p>
@@ -731,7 +721,7 @@ const HomePage = ({ navigate }: any) => {
       {/* 10. FAQ */}
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-3xl mx-auto px-6">
-          <SectionHeading subtitle="Vos objections" title="Questions fréquentes" />
+          <SectionHeading subtitle="Réponses aux questions les plus fréquentes" title="Questions fréquentes" />
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <div key={idx} className="border border-zinc-800 bg-[#111114]">
@@ -756,7 +746,7 @@ const HomePage = ({ navigate }: any) => {
       {/* 11. CTA FINAL */}
       <section className="py-32 bg-[#111114] border-t border-zinc-900 text-center relative">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <SectionHeading subtitle="L'Étape Décisive" title="Le trading n'est pas un pari. C'est une discipline." />
+          <SectionHeading subtitle="La prochaine étape" title="Le trading n'est pas un pari. C'est une discipline." />
           <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
             Si tu es résolu à cesser l'improvisation, à comprendre la dynamique institutionnelle et à te soumettre à un cadre de progression strict, ta place est ici.
           </p>
@@ -952,8 +942,8 @@ const ArticlePage = ({ navigate }: any) => {
           <div className="flex items-center border-b border-zinc-800 pb-8">
             <div className="w-10 h-10 bg-zinc-800 rounded-full mr-4 flex items-center justify-center text-zinc-500"><Users size={20} /></div>
             <div>
-              <div className="text-white font-bold text-sm">Alexandre</div>
-              <div className="text-zinc-500 text-xs">Fondateur, KILLEURUSD</div>
+              <div className="text-white font-bold text-sm">RAYANE "RAYSS"</div>
+              <div className="text-zinc-500 text-xs">FONDATEUR & HEAD TRADER</div>
             </div>
           </div>
         </div>
@@ -1042,7 +1032,7 @@ const CheckoutPage = ({ navigate }: any) => {
          <AlertTriangle className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-1" />
          <div>
            <h4 className="text-white font-bold mb-1">Information de Capacité</h4>
-           <p className="text-sm text-zinc-300 leading-relaxed">Il ne reste actuellement que <strong>3 places</strong> pour l'accompagnement individuel de ce cycle. Une fois ce plafond atteint, le protocole d'inscription sera suspendu pour garantir le niveau d'exigence des coachings.</p>
+           <p className="text-sm text-zinc-300 leading-relaxed">Le programme reste volontairement limité en nombre de places. Cette exigence permet de préserver un vrai niveau de suivi dans l’accompagnement de ce cycle.</p>
          </div>
       </div>
 
@@ -1108,7 +1098,7 @@ const ThankYouPage = () => {
             <span className="flex-shrink-0 w-8 h-8 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">3</span>
             <div>
               <strong className="text-white block mb-1">Planification du calibrage</strong>
-              Utilise le système de réservation interne pour programmer ton heure de mentoring initiale avec Alexandre.
+              Utilise le système de réservation interne pour programmer ton heure de mentoring initiale avec RAYANE "RAYSS".
             </div>
           </li>
         </ol>
@@ -1673,7 +1663,7 @@ export default function App() {
         `}</style>
         <div className="animate-marquee whitespace-nowrap flex items-center">
           <span className="w-2 h-2 rounded-full bg-white animate-pulse mr-3"></span> 
-          Accompagnement privé : 3 places restantes pour le trimestre en cours.
+          Le programme reste volontairement limité en nombre de places pour préserver un suivi d'excellence.
         </div>
       </div>
 

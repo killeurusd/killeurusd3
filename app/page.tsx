@@ -371,7 +371,7 @@ const HomePage = ({ navigate }: any) => {
 
             {/* CARTE 2: GROUPE PRIVÉ */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
-              <Users className="w-10 h-10 text-[#7A0F0F] mb-6" />
+              <Users className="w-10 h-10 text-[#C9A227] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Le groupe privé d’analyses et de trades</h3>
               <p className="text-zinc-400 mb-6 text-sm">
                 Tu rejoins un groupe privé dans lequel tu reçois mes analyses en direct, mes lectures de marché et les trades que je prends.
@@ -385,7 +385,7 @@ const HomePage = ({ navigate }: any) => {
             {/* CARTE 3: COACHING PRIVÉ */}
             <div className="bg-[#111114] border border-[#7A0F0F]/50 p-8 rounded-sm shadow-[0_0_30px_rgba(122,15,15,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#7A0F0F] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1">Accélérateur</div>
-              <Target className="w-10 h-10 text-[#C9A227] mb-6" />
+              <Target className="w-10 h-10 text-[#7A0F0F] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">1 coaching privé / semaine (3 mois)</h3>
               <p className="text-zinc-400 mb-6 text-sm">Pendant 3 mois, tu bénéficies d’1 heure de coaching privé par semaine avec moi. C’est ici qu’on accélère vraiment les choses. Ces séances servent à :</p>
               <ul className="space-y-3 mb-6 flex-1">
@@ -404,7 +404,7 @@ const HomePage = ({ navigate }: any) => {
             {/* CARTE 4: LIVES */}
             <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Communauté</div>
-              <Radio className="w-10 h-10 text-[#7A0F0F] mb-6" />
+              <Radio className="w-10 h-10 text-[#C9A227] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">1 live de groupe par semaine</h3>
               <p className="text-zinc-400 mb-6 text-sm">Chaque semaine, tu as également accès à un live de groupe d’une heure minimum pour :</p>
               <ul className="space-y-3 mb-6 flex-1">
@@ -802,7 +802,7 @@ const AboutPage = ({ navigate }: any) => {
             KILLEURUSD a été créé pour transmettre exactement ce qui manque à la majorité des traders débutants : un cadre clair, une vraie lecture du marché, une logique d’exécution, et une discipline capable de transformer une pratique désordonnée en progression réelle.
           </p>
           <p className="mb-4">
-            Depuis 2019, je partage cette vision à travers ma communauté, mes accompagnements et mes formations. Mon objectif n’est pas de créer des gens dépendants de moi. Mon objectif est de former des traders lucides, structurés, capables de penser par eux-mêmes et de traiter le trading comme un vrai métier.
+            Depuis 2019, je partage cette vision à travers ma communauté, mes accompagnements et mes formations. Mon objectif n’est pas de créer des gens dépendants de moi. Mon objectif est de former traders lucides, structurés, capables de penser par eux-mêmes et de traiter le trading comme un vrai métier.
           </p>
           <p className="mb-4">
             Aujourd’hui, c’est précisément ce que j’enseigne : des méthodes et des techniques issues des plus grands principes de marché, affinées par l’expérience, et qui fonctionnent depuis plus de 100 ans. Ce n’est pas une mode. Ce n’est pas un raccourci. C’est un socle solide, intemporel, que chacun peut apprendre à maîtriser avec sérieux.

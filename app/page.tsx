@@ -111,46 +111,46 @@ const LegalLayout = ({ title, lastUpdated, children, navigate }: any) => (
 
 const HomePage = ({ navigate }: any) => {
   useSEO(
-    "KILLEUR USD | Formation Trading Premium & Méthode d’Analyse Technique",
-    "Arrête de trader au hasard. Rejoins KILLEUR USD et maîtrise une méthode d’analyse technique fondée sur des principes éprouvés depuis plus de 100 ans.",
-    "KILLEUR USD | Formation Trading Premium",
-    "Une méthode réelle, un cadre sérieux, un accompagnement privé pour sortir du trading au hasard."
+    "KILLEUR USD | L'Excellence en Analyse Technique",
+    "Arrête de trader au hasard. Rejoins KILLEUR USD et maîtrise une approche d’analyse technique fondée sur des principes éprouvés, l'exécution stricte et la gestion du risque.",
+    "KILLEUR USD | L'Excellence en Analyse Technique",
+    "Un cadre rigoureux, une méthode éprouvée et un accompagnement individuel pour les traders exigeants."
   );
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const faqs = [
     {
-      q: "Est-ce que cette formation convient aux débutants ?",
-      a: "Oui, à condition d'être enseignable. Si tu cherches un bouton magique ou des signaux à copier, fuis. Si tu es prêt à apprendre les fondamentaux et à appliquer une discipline stricte, cette formation te fera gagner des années."
+      q: "Ce programme est-il adapté aux débutants absolus ?",
+      a: "Absolument. La seule condition est d'être enseignable et rigoureux. Si tu cherches un bouton magique ou des signaux à copier, passe ton chemin. Si tu es prêt à assimiler les fondamentaux et à appliquer une discipline stricte, ce cadre te fera gagner des années d'errance."
     },
     {
-      q: "Est-ce que c'est fait pour quelqu'un qui a déjà de l'expérience ?",
-      a: "Absolument. 80% de nos élèves ont déjà de l'expérience, mais ne sont pas constants. La formation permet de détruire les mauvaises habitudes (gambling, sur-trading) et d'installer un cadre chirurgical."
+      q: "J'ai déjà de l'expérience, vais-je vraiment apprendre quelque chose ?",
+      a: "Oui. 80% de nos membres ont déjà une expérience des marchés, mais souffrent d'inconstance. Notre processus permet de déconstruire les mauvaises habitudes (gambling, sur-trading, fomo) et d'installer une logique d'exécution clinique."
     },
     {
-      q: "Pourquoi ce prix (997$) ?",
-      a: "Parce que tu n'achètes pas juste des vidéos. Tu accèdes à une méthode complète et surtout à 1h de coaching privé par semaine pendant 3 mois pour corriger tes propres erreurs. Ce prix filtre les touristes et garantit la qualité de l'accompagnement."
+      q: "Comment justifiez-vous cet investissement (997$) ?",
+      a: "Tu n'achètes pas une simple série de vidéos. Tu accèdes à un écosystème complet, intégrant des outils exclusifs, une communauté active, et surtout 1 heure de mentoring individuel par semaine pendant 3 mois. Cet investissement filtre les curieux et garantit un niveau d'accompagnement irréprochable."
     },
     {
-      q: "Est-ce que tu donnes des signaux ?",
-      a: "Non. Jamais. Le but de KILLEURUSD est de te rendre indépendant, pas de te garder sous perfusion de signaux qui ne marchent jamais sur le long terme."
+      q: "Partagez-vous des signaux de trading ?",
+      a: "Non. L'objectif de KILLEURUSD est de forger des traders autonomes, capables de lire le marché et de prendre leurs propres décisions, et non de créer une dépendance à des signaux externes."
     },
     {
-      q: "Combien de temps avant de voir des résultats ?",
-      a: "Compte 3 mois de travail sérieux pour maîtriser la structure de la méthode, arrêter de faire des erreurs de débutant et commencer à voir la différence dans ton exécution et ta gestion du risque."
+      q: "Combien de temps faut-il pour obtenir des résultats ?",
+      a: "Compte 3 mois de travail assidu pour maîtriser l'architecture de la méthode, éradiquer les erreurs de débutant et constater une nette amélioration dans ta lecture du prix et ta gestion du risque."
     },
     {
-      q: "Est-ce que j'ai accès à vie à la formation ?",
-      a: "Oui. Le paiement de 997$ est unique. Tu as un accès à vie à la plateforme VOD, aux futures mises à jour et au groupe privé."
+      q: "L'accès à la formation est-il limité dans le temps ?",
+      a: "Non. Le paiement est unique. Tu bénéficies d'un accès à vie à la plateforme VOD, aux futures mises à jour des modules et au groupe privé."
     },
     {
-      q: "Ai-je besoin d'un gros capital pour commencer ?",
-      a: "Non. La méthode s'applique sur n'importe quel capital. Nous te recommandons même de t'entraîner sur un compte démo ou de passer les tests de Prop Firms une fois la méthode parfaitement maîtrisée."
+      q: "Faut-il un capital important pour démarrer ?",
+      a: "Aucunement. L'approche s'applique indépendamment de la taille du compte. Nous recommandons d'ailleurs de s'entraîner en simulation (démo) dans un premier temps, puis de valider ses acquis via les évaluations des Prop Firms."
     },
     {
-      q: "Comment se passe le coaching privé ?",
-      a: "Chaque semaine pendant 3 mois, tu réserves ton créneau d'1h via notre calendrier interne. On analyse ensemble tes trades de la semaine, on corrige tes erreurs en direct sur les graphiques, et on fixe tes objectifs pour la semaine suivante."
+      q: "Concrètement, comment se déroule le mentoring individuel ?",
+      a: "Chaque semaine durant 3 mois, tu réserves un créneau d'une heure via notre calendrier interne. Nous auditons tes positions, corrigeons tes biais en direct sur les graphiques, et définissons ton plan d'action pour la semaine suivante."
     }
   ];
 
@@ -162,30 +162,30 @@ const HomePage = ({ navigate }: any) => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(122,15,15,0.08),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center space-x-2 bg-[#111114] border border-zinc-800 rounded-sm px-4 py-1.5 mb-8">
+            <div className="inline-flex items-center space-x-2 bg-[#111114] border border-zinc-800 rounded-sm px-4 py-1.5 mb-8 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#7A0F0F] animate-pulse"></span>
-              <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider">Stop au gambling</span>
+              <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider">L'excellence technique</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-8">
               ARRÊTE DE TRADER <br /> AU HASARD.
             </h1>
             <p className="text-lg md:text-xl text-zinc-400 mb-10 leading-relaxed font-medium">
-              Maîtrise une méthode d’analyse technique éprouvée depuis plus de 100 ans, et transforme enfin ton trading en approche structurée, disciplinée et concrète.
+              Maîtrise une approche d’analyse technique fondée sur des principes éprouvés depuis plus d'un siècle. Transforme tes sessions en une exécution structurée, disciplinée et professionnelle.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button onClick={() => navigate('checkout')} variant="primary" className="group">
-                Rejoindre la formation
+                Accéder au programme
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="secondary" onClick={() => navigate('contact')}>
-                Réserver un appel
+                Planifier un échange
               </Button>
             </div>
             
             <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-500 font-medium">
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Programme Complet</div>
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Coaching Hebdomadaire</div>
+              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Écosystème Complet</div>
+              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Mentoring Hebdomadaire</div>
               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Accès à vie</div>
             </div>
           </div>
@@ -218,18 +218,18 @@ const HomePage = ({ navigate }: any) => {
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading 
-            subtitle="La réalité du terrain" 
-            title="Pourquoi tu n’avances pas, même si tu passes des heures sur les marchés." 
+            subtitle="Le constat" 
+            title="Pourquoi accumuler les heures sur les graphiques ne suffit plus." 
           />
           <p className="text-center text-zinc-400 max-w-3xl mx-auto mb-16 text-lg">
-            La majorité des traders ne manquent pas de motivation. Ils manquent d’un cadre. Ils consomment trop d’informations, changent trop souvent de stratégie, prennent des trades sans vraie logique et finissent par confondre trading et gambling.
+            La motivation n'est pas le problème. C'est l'absence de processus. S'éparpiller entre quinze stratégies et chercher le signal miracle transforme irrémédiablement le trading en pari.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Target, title: "Tu changes de méthode à chaque perte", desc: "Tu testes une stratégie, puis une autre, puis une autre encore. À force de tout essayer, tu ne maîtrises absolument rien." },
-              { icon: ShieldAlert, title: "Tu cherches encore le setup miracle", desc: "Tu crois qu’il existe un raccourci, un indicateur magique ou un signal qui va tout régler. Résultat : tu restes dépendant." },
-              { icon: TrendingUp, title: "Tu prends des trades sans cadre réel", desc: "Tu entres trop tôt, trop tard, sans plan clair, sans vraie discipline, puis tu t’étonnes de ne pas progresser." }
+              { icon: Target, title: "L'instabilité stratégique", desc: "Tu testes une méthode, puis une autre à la première série de pertes. À force de tout effleurer, tu ne maîtrises absolument rien en profondeur." },
+              { icon: ShieldAlert, title: "L'illusion du setup parfait", desc: "Tu crois encore qu’il existe un raccourci, un indicateur magique ou un canal VIP qui réglera tout. Résultat : tu restes totalement dépendant." },
+              { icon: TrendingUp, title: "L'exécution émotionnelle", desc: "Tu entres par FOMO, tu coupes par peur. Sans logique mathématique ni plan strict, tu t'étonnes de voir ton capital s'éroder." }
             ].map((item, idx) => (
               <div key={idx} className="bg-[#111114] border border-zinc-800 p-8 rounded-sm hover:border-[#7A0F0F] transition-colors duration-300">
                 <item.icon className="w-10 h-10 text-[#7A0F0F] mb-6" />
@@ -241,7 +241,7 @@ const HomePage = ({ navigate }: any) => {
           
           <div className="mt-16 text-center">
             <p className="text-[#C9A227] font-bold text-xl uppercase tracking-wider">
-              Le problème n’est pas ton potentiel.<br/>Le problème, c’est l’absence de méthode.
+              Le problème n’est pas ton potentiel.<br/>C’est le désordre de ton approche.
             </p>
           </div>
         </div>
@@ -251,19 +251,19 @@ const HomePage = ({ navigate }: any) => {
       <section className="py-24 bg-[#111114] border-y border-zinc-900">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading 
-            subtitle="La Solution" 
-            title="Une méthode simple à comprendre. Difficile à maîtriser. Puissante avec discipline." 
+            subtitle="Le Changement de Paradigme" 
+            title="Une méthode limpide. Une exécution clinique. Une discipline mathématique." 
           />
           <p className="text-center text-zinc-400 max-w-3xl mx-auto mb-16 text-lg">
-            Chez KILLEURUSD, tu n’apprends pas à empiler 15 stratégies. Tu apprends à lire le marché avec une méthode claire, fondée sur des principes éprouvés depuis plus d’un siècle, puis à l’appliquer avec rigueur dans le réel.
+            Chez KILLEURUSD, tu n’apprends pas à empiler les indicateurs. Tu apprends à déchiffrer le marché grâce à des concepts institutionnels intemporels, pour ensuite les appliquer avec une rigueur absolue dans le réel.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Crosshair, title: "Lecture du marché", desc: "Structure, zones clés, contexte institutionnel, lecture propre du prix sans bruit." },
-              { icon: Activity, title: "Exécution", desc: "Entrées chirurgicales, niveaux d'invalidation, timing, logique stricte d’intervention." },
-              { icon: ShieldCheck, title: "Gestion du risque", desc: "Protection absolue du capital, ratios asymétriques, survie et discipline mathématique." },
-              { icon: Brain, title: "Psychologie", desc: "Patience, répétition, lucidité, contrôle émotionnel pour une exécution froide." }
+              { icon: Crosshair, title: "Lecture Spatiale", desc: "Compréhension de la structure, identification des zones de liquidité et lecture pure de l'action du prix, sans bruit." },
+              { icon: Activity, title: "Exécution Clinique", desc: "Définition stricte des points d'entrée, placement des niveaux d'invalidation et respect intransigeant du timing." },
+              { icon: ShieldCheck, title: "Gestion Asymétrique", desc: "Protection obsessionnelle du capital. Utilisation de ratios risque/récompense pour une survie mathématique à long terme." },
+              { icon: Brain, title: "Maîtrise Psychologique", desc: "Cultiver la patience, accepter la probabilité, et forger le contrôle émotionnel nécessaire pour opérer froidement." }
             ].map((pillar, idx) => (
               <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm group hover:bg-zinc-900 transition-all">
                 <div className="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-sm flex items-center justify-center mb-6 group-hover:border-[#C9A227] transition-colors">
@@ -280,21 +280,21 @@ const HomePage = ({ navigate }: any) => {
       {/* 4. TRANSFORMATION */}
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading subtitle="Avant / Après" title="Passe du chaos à une méthode réelle" />
+          <SectionHeading subtitle="L'Évolution" title="Passe du bruit à la clarté" />
           
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-stretch">
             <div className="bg-[#111114] border border-zinc-800 p-8 md:p-10 rounded-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <X className="w-24 h-24 text-red-500" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-8 border-b border-zinc-800 pb-4">Actuellement</h3>
+              <h3 className="text-2xl font-bold text-white mb-8 border-b border-zinc-800 pb-4">Le trading amateur</h3>
               <ul className="space-y-6 relative z-10">
                 {[
-                  "Tu changes sans cesse de stratégie",
-                  "Tu prends des trades de manière émotionnelle",
-                  "Tu te disperses avec trop d'indicateurs",
-                  "Tu écoutes les mauvaises personnes (signaux)",
-                  "Tu avances sans aucune structure"
+                  "Sauter frénétiquement d'une stratégie à l'autre",
+                  "Prendre des positions guidées par l'émotion",
+                  "Polluer ses graphiques avec des indicateurs en retard",
+                  "Sous-traiter ses décisions (signaux, alertes)",
+                  "Opérer sans aucun plan de gestion du risque"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-zinc-400">
                     <X className="w-5 h-5 text-[#7A0F0F] mr-4 shrink-0 mt-0.5" />
@@ -308,14 +308,14 @@ const HomePage = ({ navigate }: any) => {
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <CheckCircle className="w-24 h-24 text-[#C9A227]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#C9A227] mb-8 border-b border-[#C9A227]/20 pb-4">Avec KILLEURUSD</h3>
+              <h3 className="text-2xl font-bold text-[#C9A227] mb-8 border-b border-[#C9A227]/20 pb-4">L'approche professionnelle</h3>
               <ul className="space-y-6 relative z-10">
                 {[
-                  "Tu sais exactement quoi regarder",
-                  "Tu comprends pourquoi tu entres en position",
-                  "Tu suis une méthode d'analyse claire",
-                  "Tu gères ton risque comme un professionnel",
-                  "Tu traites enfin le trading comme un vrai métier"
+                  "Identifier précisément les zones clés à fort potentiel",
+                  "Savoir justifier factuellement chaque entrée en position",
+                  "Appliquer un processus d'analyse répétable et épuré",
+                  "Gérer son exposition financière de manière chirurgicale",
+                  "Traiter le trading avec l'exigence d'un véritable métier"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-white font-medium">
                     <CheckCircle2 className="w-5 h-5 text-[#C9A227] mr-4 shrink-0 mt-0.5" />
@@ -327,7 +327,7 @@ const HomePage = ({ navigate }: any) => {
           </div>
 
           <p className="text-center text-zinc-500 mt-12 font-bold max-w-2xl mx-auto">
-            L’objectif n’est pas de te vendre un rêve. L’objectif est de te donner une méthode que tu peux comprendre, appliquer et travailler sérieusement.
+            Notre objectif n'est pas de vendre de l'illusion. Notre mission est d'inculquer une méthode concrète, applicable et pensée pour durer.
           </p>
         </div>
       </section>
@@ -335,17 +335,17 @@ const HomePage = ({ navigate }: any) => {
       {/* 5. DÉTAIL DE L'OFFRE (NOUVELLE VERSION) */}
       <section className="py-24 bg-gradient-to-b from-[#111114] to-[#0B0B0D] border-y border-zinc-900">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading subtitle="Le Programme" title="Ce que tu rejoins vraiment" />
+          <SectionHeading subtitle="L'Écosystème KILLEURUSD" title="Ce que tu rejoins vraiment" />
           
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-xl text-white font-medium mb-4">
-              Tu ne rejoins pas ici une simple formation de plus.
+              Plus qu'une série de vidéos : un écosystème d'apprentissage conçu pour forger des traders autonomes.
             </p>
             <p className="text-zinc-400 leading-relaxed mb-4">
-              Tu rejoins un cadre complet de progression pensé pour t’aider à sortir du flou, arrêter de trader au hasard, et construire une méthode de travail sérieuse, avec un accompagnement réel. L’objectif n’est pas de te noyer sous l’information.
+              Nous avons bâti l'environnement exact dont nous aurions eu besoin à nos débuts. Un équilibre parfait entre l'assimilation théorique de haut niveau et la correction brutale sur les marchés en temps réel.
             </p>
             <p className="text-[#C9A227] font-bold">
-              L’objectif est de te donner une méthode claire, un suivi régulier, des analyses concrètes et les bons outils pour progresser plus vite, avec plus de structure et moins d’erreurs évitables.
+              Le résultat : un condensé de valeur pratique pour accélérer ta courbe d'expérience et éliminer les pertes évitables.
             </p>
           </div>
 
@@ -354,10 +354,15 @@ const HomePage = ({ navigate }: any) => {
             {/* CARTE 1: MODULES */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
               <PlayCircle className="w-10 h-10 text-[#7A0F0F] mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Les modules de formation</h3>
-              <p className="text-zinc-400 mb-6 text-sm">Tu accèdes immédiatement à l’ensemble des modules de la formation. Ces modules ont été conçus pour t’aider à :</p>
+              <h3 className="text-2xl font-bold text-white mb-4">La Fondation Technique (VOD)</h3>
+              <p className="text-zinc-400 mb-6 text-sm">L'accès intégral et immédiat à tous nos modules théoriques. Le socle indispensable pour :</p>
               <ul className="space-y-3 mb-6 flex-1">
-                {["mieux lire le marché", "comprendre ce que tu fais vraiment en position", "arrêter d’accumuler des notions sans logique", "et construire une approche claire, structurée et applicable dans le réel"].map((item, i) => (
+                {[
+                  "Maîtriser la lecture du prix sans indicateurs", 
+                  "Comprendre la véritable nature de la liquidité", 
+                  "Bâtir un plan d'intervention strict et sans faille", 
+                  "Intégrer les probabilités à ton avantage"
+                ].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-3 shrink-0 mt-0.5" />
                     <span>{item}</span>
@@ -365,19 +370,32 @@ const HomePage = ({ navigate }: any) => {
                 ))}
               </ul>
               <div className="bg-[#111114] p-4 border-l-2 border-[#7A0F0F] text-xs text-zinc-400 italic mt-auto">
-                Autrement dit, tu ne regardes pas simplement des vidéos : tu poses les bases d’un trading plus propre, plus lucide et plus maîtrisé.
+                Tu ne regardes pas du contenu passif : tu poses les fondations d’un trading lucide et pérenne.
               </div>
             </div>
 
             {/* CARTE 2: GROUPE PRIVÉ */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
               <Users className="w-10 h-10 text-[#C9A227] mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Le groupe privé d’analyses et de trades</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">L'Immersion Quotidienne</h3>
               <p className="text-zinc-400 mb-6 text-sm">
-                Tu rejoins un groupe privé dans lequel tu reçois mes analyses en direct, mes lectures de marché et les trades que je prends.
+                Le canal privé exclusif où je partage quotidiennement mes lectures de marché, mes setups et la gestion de mes positions en direct.
               </p>
+              <ul className="space-y-3 mb-6 flex-1">
+                {[
+                  "Suivi de l'action des prix au jour le jour", 
+                  "Explication factuelle des décisions prises", 
+                  "Mise en garde sur les pièges de marché imminents", 
+                  "Échanges qualitatifs entre membres confirmés"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start text-sm text-zinc-300">
+                    <CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-3 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="bg-[#111114] p-4 border-l-2 border-[#C9A227] text-sm text-white font-medium mt-auto">
-                Le but n’est pas que tu copies aveuglément. Le but est que tu comprennes la logique derrière les décisions, pour apprendre à lire le marché avec plus de justesse et développer progressivement ta propre autonomie.
+                L'objectif n’est pas de copier. L'objectif est de confronter ton analyse à la réalité du terrain pour développer ta propre acuité.
               </div>
             </div>
 
@@ -386,33 +404,14 @@ const HomePage = ({ navigate }: any) => {
             <div className="bg-[#111114] border border-[#7A0F0F]/50 p-8 rounded-sm shadow-[0_0_30px_rgba(122,15,15,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#7A0F0F] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1">Accélérateur</div>
               <Target className="w-10 h-10 text-[#7A0F0F] mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">1 coaching privé / semaine (3 mois)</h3>
-              <p className="text-zinc-400 mb-6 text-sm">Pendant 3 mois, tu bénéficies d’1 heure de coaching privé par semaine avec moi. C’est ici qu’on accélère vraiment les choses. Ces séances servent à :</p>
-              <ul className="space-y-3 mb-6 flex-1">
-                {["corriger ce qui te bloque réellement", "retravailler les points mal compris", "faire des exercices pratiques", "affiner ton exécution", "t’éviter de perdre des semaines ou des mois sur des erreurs répétées"].map((item, i) => (
-                  <li key={i} className="flex items-start text-sm text-zinc-300">
-                    <CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-3 shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="text-sm font-bold text-white mt-auto pt-5 border-t border-zinc-800/50">
-                Tu ne restes pas seul face à tes doutes. Tu avances avec un suivi précis, ciblé et concret.
-              </div>
-            </div>
-
-            {/* CARTE 4: LIVES */}
-            <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
-              <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Communauté</div>
-              <Radio className="w-10 h-10 text-[#C9A227] mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">1 live de groupe par semaine</h3>
-              <p className="text-zinc-400 mb-6 text-sm">Chaque semaine, tu as également accès à un live de groupe d’une heure minimum pour :</p>
+              <h3 className="text-2xl font-bold text-white mb-4">Le Mentoring Individuel (3 mois)</h3>
+              <p className="text-zinc-400 mb-6 text-sm">L'avantage déloyal. 1 heure par semaine en face-à-face exclusif avec moi. C’est ici que s'opère la véritable bascule. Au programme :</p>
               <ul className="space-y-3 mb-6 flex-1">
                 {[
-                  "suivre les marchés avec plus de recul", 
-                  "revenir sur les points importants de la semaine", 
-                  "approfondir certains sujets complexes en direct",
-                  "poser tes questions et interagir avec le groupe"
+                  "Audit complet de tes trades de la semaine", 
+                  "Mise en lumière et correction de tes biais psychologiques", 
+                  "Affinement chirurgical de tes points d'entrée", 
+                  "Mise en place d'objectifs de rigueur mesurables"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-3 shrink-0 mt-0.5" />
@@ -421,7 +420,31 @@ const HomePage = ({ navigate }: any) => {
                 ))}
               </ul>
               <div className="text-sm font-bold text-white mt-auto pt-5 border-t border-zinc-800/50">
-                Tu évolues dans un cadre vivant, régulier et structuré.
+                Un regard clinique sur ton exécution pour ne plus jamais stagner dans l'erreur.
+              </div>
+            </div>
+
+            {/* CARTE 4: LIVES */}
+            <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Communauté</div>
+              <Radio className="w-10 h-10 text-[#C9A227] mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-4">Les Sessions Live Hebdomadaires</h3>
+              <p className="text-zinc-400 mb-6 text-sm">Le rendez-vous immanquable de la communauté. Un live de groupe d’une heure minimum chaque semaine pour :</p>
+              <ul className="space-y-3 mb-6 flex-1">
+                {[
+                  "Prendre du recul macro-économique sur la semaine écoulée", 
+                  "Décortiquer à froid les configurations complexes", 
+                  "Désamorcer les pièges du marché à venir",
+                  "Répondre en direct à tes interrogations techniques"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start text-sm text-zinc-300">
+                    <CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-3 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="text-sm font-bold text-white mt-auto pt-5 border-t border-zinc-800/50">
+                Un ancrage hebdomadaire puissant pour maintenir le cap et la motivation.
               </div>
             </div>
 
@@ -436,23 +459,23 @@ const HomePage = ({ navigate }: any) => {
               
               <div className="relative z-10 flex-1 text-center md:text-left">
                 <div className="inline-block bg-[#111114] border border-[#C9A227]/30 text-[#C9A227] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm mb-3">
-                  Bonus Inclus
+                  Bonus Premium
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Une boîte à outils exclusive</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">L'Arsenal du Trader Pro</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl mx-auto md:mx-0">
-                  Accède à des ressources professionnelles conçues pour accompagner concrètement ta progression. Gagne du temps et améliore considérablement ta rigueur d'exécution au quotidien.
+                  Le trading moderne exige de l'organisation. Accède à des ressources exclusives conçues pour systématiser ton approche, optimiser ton temps et verrouiller ta discipline opérationnelle.
                 </p>
               </div>
               
               <div className="relative z-10 flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto shrink-0">
-                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Outils d'IA
+                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium shadow-sm">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Assistants IA personnalisés
                 </span>
-                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Indicateurs techniques
+                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium shadow-sm">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Indicateurs Institutionnels
                 </span>
-                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Journal de trading
+                <span className="bg-[#111114] border border-zinc-800 text-zinc-300 text-xs px-4 py-2.5 rounded-sm flex items-center font-medium shadow-sm">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] mr-3 shrink-0" /> Journal de Trading Avancé
                 </span>
               </div>
             </div>
@@ -461,37 +484,37 @@ const HomePage = ({ navigate }: any) => {
 
           {/* SECTION ONBOARDING */}
           <div className="bg-[#0B0B0D] border border-[#C9A227]/20 p-8 md:p-12 rounded-sm mt-12 shadow-[0_0_40px_rgba(201,162,39,0.03)]">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-10 text-center">Comment ça se passe après ton inscription ?</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-10 text-center">Ton intégration pas à pas</h3>
             
             <div className="relative border-l border-zinc-800 ml-4 md:ml-8 space-y-12 pb-8">
               
               {/* Step 1 */}
               <div className="relative pl-8 md:pl-12">
-                <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-[#7A0F0F] rounded-full flex items-center justify-center border-4 border-[#0B0B0D]">
-                  <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-[#7A0F0F] rounded-full flex items-center justify-center border-4 border-[#0B0B0D] shadow-lg">
+                  <span className="text-white text-xs md:text-sm font-black">1</span>
                 </div>
                 <h4 className="text-lg font-bold text-white mb-2">Immédiatement</h4>
-                <p className="text-sm text-zinc-400">Dès que ton paiement est validé, tu peux immédiatement : accéder aux modules de formation, accéder aux outils inclus dans le programme, et programmer ta première séance de coaching privé.</p>
+                <p className="text-sm text-zinc-400">Dès confirmation, ton accès à la plateforme est débloqué. Tu entames la VOD et réserves immédiatement ton premier créneau de mentoring via le calendrier privé.</p>
               </div>
 
               {/* Step 2 */}
               <div className="relative pl-8 md:pl-12">
-                <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-zinc-800 rounded-full flex items-center justify-center border-4 border-[#0B0B0D]">
-                  <Clock className="w-3 h-3 md:w-4 md:h-4 text-zinc-400" />
+                <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-[#C9A227] rounded-full flex items-center justify-center border-4 border-[#0B0B0D] shadow-lg">
+                  <span className="text-[#0B0B0D] text-xs md:text-sm font-black">2</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">Sous 24 heures</h4>
-                <p className="text-sm text-zinc-400">Tu reçois tes accès aux différents groupes privés de la communauté, dans lesquels tu pourras suivre mes analyses, mes prises de position et l’activité du programme.</p>
+                <h4 className="text-lg font-bold text-[#C9A227] mb-2">Sous 24 heures</h4>
+                <p className="text-sm text-zinc-400">Tu intègres officiellement les canaux sécurisés de la communauté. Tu reçois mes premières analyses et observes l'application réelle de la méthode.</p>
               </div>
 
               {/* Step 3 */}
               <div className="relative pl-8 md:pl-12">
                 <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-zinc-800 rounded-full flex items-center justify-center border-4 border-[#0B0B0D]">
-                  <Compass className="w-3 h-3 md:w-4 md:h-4 text-zinc-400" />
+                  <span className="text-zinc-400 text-xs md:text-sm font-black">3</span>
                 </div>
-                <h4 className="text-lg font-bold text-[#C9A227] mb-2">La première séance</h4>
-                <p className="text-sm text-zinc-400 mb-3">C'est une séance d’intégration. Elle serve à :</p>
+                <h4 className="text-lg font-bold text-white mb-2">Ta première séance</h4>
+                <p className="text-sm text-zinc-400 mb-3">La séance de calibrage. Un rendez-vous critique pour :</p>
                 <ul className="grid sm:grid-cols-2 gap-2">
-                  {["Faire le point sur ton niveau", "T'expliquer le programme", "Te montrer les espaces", "Poser les bases de ton suivi"].map((item, i) => (
+                  {["Auditer ton historique", "Nettoyer tes graphiques", "Fixer tes métriques", "Valider ton plan d'action"].map((item, i) => (
                     <li key={i} className="flex items-center text-xs text-zinc-300">
                       <ChevronRight className="w-3 h-3 text-[#C9A227] mr-1" /> {item}
                     </li>
@@ -502,20 +525,17 @@ const HomePage = ({ navigate }: any) => {
               {/* Step 4 */}
               <div className="relative pl-8 md:pl-12">
                 <div className="absolute -left-3 md:-left-4 top-0 w-6 h-6 md:w-8 md:h-8 bg-zinc-800 rounded-full flex items-center justify-center border-4 border-[#0B0B0D]">
-                  <ListChecks className="w-3 h-3 md:w-4 md:h-4 text-zinc-400" />
+                  <span className="text-zinc-400 text-xs md:text-sm font-black">4</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">Les séances suivantes</h4>
-                <p className="text-sm text-zinc-400 mb-3">Des séances de suivi personnalisées pour :</p>
+                <h4 className="text-lg font-bold text-white mb-2">Le suivi chirurgical</h4>
+                <p className="text-sm text-zinc-400 mb-3">Le rythme s'installe. Chaque semaine :</p>
                 <ul className="grid sm:grid-cols-2 gap-2 mb-4">
-                  {["Corriger ce qui bloque", "Retravailler les points mal compris", "Renforcer ta discipline", "Améliorer ton exécution"].map((item, i) => (
+                  {["Analyse de tes exécutions", "Correction implacable des erreurs", "Assistance communautaire", "Répétition jusqu'à la maîtrise"].map((item, i) => (
                     <li key={i} className="flex items-center text-xs text-zinc-300">
-                      <ChevronRight className="w-3 h-3 text-zinc-500 mr-1" /> {item}
+                      <ChevronRight className="w-3 h-3 text-[#7A0F0F] mr-1" /> {item}
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-zinc-500 italic">
-                  En parallèle, tu avances dans les modules, tu suis les lives de groupe, tu bénéficies des analyses, et tu évolues dans un environnement conçu pour t’éviter l’isolement, la confusion et la dispersion.
-                </p>
               </div>
 
             </div>
@@ -524,15 +544,15 @@ const HomePage = ({ navigate }: any) => {
           {/* PRICE BLOCK */}
           <div className="mt-16 bg-[#111114] border border-zinc-800 p-8 md:p-12 text-center rounded-sm max-w-3xl mx-auto shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#7A0F0F] blur-[100px] opacity-20"></div>
-            <h3 className="text-3xl font-extrabold text-white mb-2">Le Programme Complet</h3>
-            <p className="text-zinc-400 mb-8">Au final, tu ne rejoins pas simplement une formation vidéo. Tu rejoins un programme complet, pensé pour t’aider à comprendre le marché, travailler avec méthode, et progresser dans un cadre sérieux.</p>
+            <h3 className="text-3xl font-extrabold text-white mb-2">L'Accès Intégral</h3>
+            <p className="text-zinc-400 mb-8">Rejoins un environnement exigeant, mets fin au trading d'espoir et construis ta rentabilité sur des bases mathématiques.</p>
             <div className="text-6xl font-black text-white mb-4">997$</div>
-            <div className="text-zinc-500 text-sm mb-8 font-medium">Paiement unique. Accès à vie garanti à la VOD.<br/>Inclus : 1 coaching/semaine pendant 3 mois.</div>
+            <div className="text-zinc-500 text-sm mb-8 font-medium">Paiement unique. Accès à vie garanti à la plateforme.<br/>Inclus : L'accompagnement privé (1h/semaine) pendant 3 mois.</div>
             <Button onClick={() => navigate('checkout')} className="w-full sm:w-auto px-16 py-5 text-lg">
-              Rejoindre le programme
+              Sécuriser ma place
             </Button>
             <p className="text-xs text-zinc-600 mt-6 max-w-lg mx-auto">
-              Pour garder un vrai niveau de suivi et assurer les coachings, <strong className="text-zinc-400">les places sont limitées.</strong>
+              Afin de garantir l'excellence et la disponibilité du mentoring individuel, <strong className="text-zinc-400">les places sont strictement contingentées.</strong>
             </p>
           </div>
 
@@ -543,14 +563,14 @@ const HomePage = ({ navigate }: any) => {
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#C9A227] pl-4">Cette formation est faite pour toi si...</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#C9A227] pl-4">Ce programme est conçu pour toi si...</h3>
             <ul className="space-y-4">
               {[
-                "Tu en as marre de changer sans cesse de méthode.",
-                "Tu veux enfin comprendre ce que tu fais sur un graphique.",
-                "Tu es prêt à apprendre sérieusement.",
-                "Tu veux arrêter le trading au pif.",
-                "Tu acceptes qu'une vraie progression demande du travail."
+                "Tu en as assez de sauter d'une stratégie à l'autre.",
+                "Tu veux comprendre la véritable logique derrière chaque mouvement de prix.",
+                "Tu acceptes qu'une progression réelle exige du temps et de l'effort.",
+                "Tu cherches un cadre strict pour encadrer ta prise de décision.",
+                "Tu es prêt à te remettre en question et à être audité."
               ].map((item, i) => (
                 <li key={i} className="flex items-start text-zinc-400">
                   <CheckCircle className="w-5 h-5 text-[#C9A227] mr-3 shrink-0" />
@@ -560,14 +580,14 @@ const HomePage = ({ navigate }: any) => {
             </ul>
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#7A0F0F] pl-4">Ce n'est PAS pour toi si...</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#7A0F0F] pl-4">Passe ton chemin si...</h3>
             <ul className="space-y-4">
               {[
-                "Tu cherches un miracle ou une pilule magique.",
-                "Tu veux juste copier-coller des signaux Telegram.",
-                "Tu refuses d'appliquer une discipline stricte.",
-                "Tu veux gagner vite sans prendre le temps d'apprendre.",
-                "Tu n'es pas prêt à te remettre en question."
+                "Tu cherches encore une configuration miracle avec 100% de réussite.",
+                "Ton seul but est de copier passivement des signaux.",
+                "Tu refuses d'appliquer des règles de gestion du risque strictes.",
+                "Tu vois les marchés comme un casino pour t'enrichir d'ici demain.",
+                "Tu es incapable d'accepter la critique constructive."
               ].map((item, i) => (
                 <li key={i} className="flex items-start text-zinc-500">
                   <X className="w-5 h-5 text-[#7A0F0F] mr-3 shrink-0" />
@@ -582,13 +602,13 @@ const HomePage = ({ navigate }: any) => {
       {/* 7. PREUVES & TÉMOIGNAGES */}
       <section className="py-24 bg-[#111114] border-y border-zinc-900">
         <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading subtitle="Avis des élèves" title="Ils ont arrêté de parier. Ils ont commencé à comprendre." />
+          <SectionHeading subtitle="Preuves du Terrain" title="Ils ont arrêté d'espérer. Ils exécutent." />
           
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
-              { name: "Thomas", level: "2 ans de trading · autodidacte trop dispersé", text: "Je passais d’une méthode à l’autre sans jamais construire une vraie base. La formation m’a permis de simplifier mon trading, de nettoyer mes graphiques et surtout de comprendre mes erreurs avec plus de lucidité." },
-              { name: "Julien", level: "Débutant · voulait éviter les erreurs classiques", text: "Au lieu de brûler mon capital en testant tout et n’importe quoi, j’ai enfin trouvé un vrai cadre de progression. Les coachings hebdomadaires apportent une valeur énorme parce qu’ils permettent de corriger ce qui bloque vraiment." },
-              { name: "Sarah", level: "3 ans de trading · base technique mais exécution instable", text: "J’avais déjà les bases techniques, mais pas la discipline nécessaire pour être constante. KILLEURUSD m’a apporté un cadre plus strict, plus structuré, et exactement le niveau d’exigence qu’il me fallait." }
+              { name: "Thomas", level: "2 ans de trading · autodidacte trop dispersé", text: "Je passais d’une méthode à l’autre sans jamais construire une vraie base. Ce cadre m’a permis de nettoyer mes graphiques, de simplifier mes prises de décision et surtout d'identifier mes biais cognitifs récurrents." },
+              { name: "Julien", level: "Débutant · structuration depuis zéro", text: "Au lieu de brûler mon capital en testant des indicateurs inutiles, j’ai posé des bases saines. Le mentoring hebdomadaire apporte une valeur inestimable, car il ne laisse aucune erreur sous silence." },
+              { name: "Sarah", level: "3 ans de trading · exécution instable", text: "J’avais déjà le bagage technique, mais je manquais cruellement de discipline. KILLEURUSD m’a imposé l'exigence clinique qu'il me manquait pour enfin lisser ma courbe de résultats." }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-8 flex flex-col justify-between">
                 <div>
@@ -606,7 +626,7 @@ const HomePage = ({ navigate }: any) => {
           </div>
 
           <div className="mt-20 mb-16">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Les résultats de nos élèves</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">Analyses & Exécutions</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 "/avis-1.png",
@@ -617,12 +637,12 @@ const HomePage = ({ navigate }: any) => {
                   <div className="bg-[#111114] flex items-center justify-center overflow-hidden rounded-sm min-h-[200px]">
                     <img 
                       src={imgSrc} 
-                      alt={`Retour élève ${idx + 1}`} 
+                      alt={`Preuve d'exécution ${idx + 1}`} 
                       className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                       onError={(e: any) => {
                         e.currentTarget.style.display = 'none';
                         if (e.currentTarget.parentElement) {
-                           e.currentTarget.parentElement.innerHTML = `<span class="text-zinc-700 text-xs font-mono uppercase tracking-widest">En attente de ${imgSrc}</span>`;
+                           e.currentTarget.parentElement.innerHTML = `<span class="text-zinc-700 text-xs font-mono uppercase tracking-widest">Aperçu Visuel ${idx + 1}</span>`;
                         }
                       }}
                     />
@@ -630,15 +650,15 @@ const HomePage = ({ navigate }: any) => {
                 </div>
               ))}
             </div>
-            <p className="text-center text-zinc-500 text-xs mt-6 uppercase tracking-wider">Aperçus tirés de notre groupe privé communautaire.</p>
+            <p className="text-center text-zinc-500 text-xs mt-6 uppercase tracking-wider">Résultats et configurations partagés en transparence au sein de l'écosystème.</p>
           </div>
 
           <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm text-center">
-             <h4 className="text-white font-bold uppercase tracking-wider mb-6">Pourquoi faire confiance à KILLEURUSD ?</h4>
+             <h4 className="text-white font-bold uppercase tracking-wider mb-6">Pourquoi faire confiance à cette approche ?</h4>
              <div className="flex flex-wrap justify-center gap-8 text-sm text-zinc-400">
-               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> +7 ans de terrain</div>
-               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> Zéro fausse promesse</div>
-               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> Accompagnement direct</div>
+               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> +7 ans de pratique réelle</div>
+               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> Zéro illusion marketing</div>
+               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> Audit des performances</div>
              </div>
           </div>
         </div>
@@ -655,23 +675,23 @@ const HomePage = ({ navigate }: any) => {
              <div className="absolute bottom-6 left-6 right-6">
                 <div className="border-l-4 border-[#7A0F0F] pl-4">
                   <p className="text-white font-black uppercase tracking-widest text-xl mb-1">Alexandre</p>
-                  <p className="text-zinc-400 font-bold text-xs uppercase tracking-wider">Fondateur & Head Trader</p>
+                  <p className="text-zinc-400 font-bold text-xs uppercase tracking-wider">Fondateur KILLEURUSD</p>
                 </div>
              </div>
           </div>
           <div>
-            <SectionHeading subtitle="Le cadre" title="Tu n'as pas besoin d'un gourou." align="left" />
-            <h3 className="text-2xl font-bold text-white mb-6">Tu as besoin d'une méthode et d'un suivi.</h3>
+            <SectionHeading subtitle="L'Expertise" title="Tu n'as pas besoin de promesses, mais d'une méthode." align="left" />
+            <h3 className="text-2xl font-bold text-white mb-6">Le marché récompense la discipline, pas la motivation.</h3>
             <div className="text-zinc-400 space-y-6 leading-relaxed text-base">
-              <p>Je ne suis pas là pour te vendre une illusion de richesse rapide. Je suis là pour transmettre une méthode sérieuse, appliquée dans le réel et t'aider à corriger ce qui te bloque vraiment.</p>
-              <p>L'industrie du trading est infestée de vendeurs de rêve. Mais la réalité des marchés est froide, mathématique et impitoyable. Elle punit l'indiscipline et récompense la méthode.</p>
+              <p>Je n'ai aucun intérêt à te vendre l'illusion d'une richesse éclair. Mon rôle est de te transmettre un processus chirurgical, éprouvé sur le terrain, et de forcer la correction de tes erreurs jusqu'à l'autonomie.</p>
+              <p>L'industrie du trading s'est transformée en un marché de l'attention toxique. Mais derrière l'écran, le marché reste un environnement mathématique impitoyable. Il sanctionne l'improvisation et paie l'exécution clinique.</p>
               <div className="border-l-2 border-[#C9A227] pl-6 my-8">
-                <p className="text-white font-bold italic">"La rentabilité ne vient pas d'un indicateur secret. Elle vient d'une exécution sans faille d'un plan préétabli."</p>
+                <p className="text-white font-bold italic">"La régularité ne se trouve pas dans un setup caché. Elle découle de l'exécution implacable d'un plan préétabli."</p>
               </div>
-              <p>Mon objectif avec KILLEURUSD est de bâtir une communauté de traders indépendants qui réfléchissent par eux-mêmes et opèrent comme de véritables professionnels.</p>
+              <p>KILLEURUSD a été fondé sur cette exigence : forger un cercle de traders indépendants, capables d'analyser sans biais et d'exécuter avec la froideur des professionnels.</p>
             </div>
             <div className="mt-10">
-              <Button variant="outline" onClick={() => navigate('about')}>Lire la vision complète</Button>
+              <Button variant="outline" onClick={() => navigate('about')}>Découvrir notre philosophie</Button>
             </div>
           </div>
         </div>
@@ -682,9 +702,9 @@ const HomePage = ({ navigate }: any) => {
         <div className="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Download className="w-12 h-12 text-white/50 mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Pas encore prêt à rejoindre le programme ?</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Poursuis ta réflexion.</h2>
           <p className="text-white/80 mb-10 text-lg max-w-2xl mx-auto">
-            Récupère notre ressource gratuite : <strong className="text-white">"La Checklist du Trader Discipliné"</strong>. 10 points à vérifier avant chaque session pour éviter 80% des pertes inutiles.
+            Télécharge gratuitement <strong className="text-white">"L'Audit du Trader Discipliné"</strong>. 10 points de contrôle non-négociables avant d'ouvrir la moindre position sur les marchés.
           </p>
           
           <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto" onSubmit={(e: any) => e.preventDefault()}>
@@ -701,10 +721,10 @@ const HomePage = ({ navigate }: any) => {
               required 
             />
             <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm">
-              Recevoir
+              Obtenir l'Audit
             </button>
           </form>
-          <p className="text-white/50 text-xs mt-4">100% gratuit. Zéro spam. Désinscription en un clic.</p>
+          <p className="text-white/50 text-xs mt-4">Accès immédiat. Désinscription en un clic.</p>
         </div>
       </section>
 
@@ -716,14 +736,14 @@ const HomePage = ({ navigate }: any) => {
             {faqs.map((faq, idx) => (
               <div key={idx} className="border border-zinc-800 bg-[#111114]">
                 <button 
-                  className="w-full text-left px-6 py-5 flex justify-between items-center text-white font-bold hover:text-[#C9A227] transition-colors"
+                  className="w-full text-left px-8 py-6 flex justify-between items-center text-white font-bold hover:text-[#C9A227] transition-colors"
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                 >
-                  <span className="pr-4">{faq.q}</span>
+                  <span className="pr-6 text-lg">{faq.q}</span>
                   <ChevronRight className={`w-5 h-5 shrink-0 transition-transform ${openFaq === idx ? 'rotate-90 text-[#C9A227]' : 'text-zinc-600'}`} />
                 </button>
                 {openFaq === idx && (
-                  <div className="px-6 pb-6 text-zinc-400 mt-2 leading-relaxed text-sm">
+                  <div className="px-8 pb-8 text-zinc-400 mt-2 leading-relaxed text-base border-t border-zinc-800/50 pt-6">
                     {faq.a}
                   </div>
                 )}
@@ -736,16 +756,16 @@ const HomePage = ({ navigate }: any) => {
       {/* 11. CTA FINAL */}
       <section className="py-32 bg-[#111114] border-t border-zinc-900 text-center relative">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <SectionHeading subtitle="La décision" title="Le trading n’est pas un jeu. C’est une méthode." />
+          <SectionHeading subtitle="L'Étape Décisive" title="Le trading n'est pas un pari. C'est une discipline." />
           <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-            Si tu veux arrêter de t’éparpiller, comprendre enfin ce que tu fais et construire un vrai cadre de progression, ta place est ici.
+            Si tu es résolu à cesser l'improvisation, à comprendre la dynamique institutionnelle et à te soumettre à un cadre de progression strict, ta place est ici.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Button onClick={() => navigate('checkout')} variant="primary" className="text-lg px-12 py-5">
-              Rejoindre le programme
+              Passer à l'action
             </Button>
             <Button variant="outline" onClick={() => navigate('contact')} className="text-lg px-12 py-5 border-zinc-700">
-              J'ai encore des questions
+              Contacter l'équipe
             </Button>
           </div>
         </div>
@@ -755,11 +775,11 @@ const HomePage = ({ navigate }: any) => {
 };
 
 const AboutPage = ({ navigate }: any) => {
-  useSEO("La Vision | KILLEURUSD", "Découvrez la vision de KILLEURUSD. Une approche sans bullshit, basée sur la structure du marché et la discipline pour former de vrais traders.", "", "");
+  useSEO("La Vision | KILLEURUSD", "Découvrez la vision de KILLEURUSD. Une approche sans illusion, basée sur la structure du marché et la discipline pour former des traders exigeants.", "", "");
   
   return (
     <div className="pt-32 pb-24 max-w-6xl mx-auto px-6 min-h-screen">
-      <SectionHeading subtitle="La Vision" title="Pas de mensonges. Que du terrain." align="center" />
+      <SectionHeading subtitle="La Philosophie" title="Pas de promesses. Que du terrain." align="center" />
       
       <div className="grid md:grid-cols-12 gap-12 mt-16">
         <div className="md:col-span-5">
@@ -771,49 +791,46 @@ const AboutPage = ({ navigate }: any) => {
 
         <div className="md:col-span-7 text-zinc-400 leading-relaxed text-lg">
           <p className="text-xl text-white font-medium mb-6">
-            <strong>KILLEURUSD</strong> n’est pas né d’une envie de vendre des formations. Il est né d’un parcours réel, d’années de terrain, et d’une frustration profonde face à tout ce que l’industrie du trading vend de faux aux débutants.
+            <strong>KILLEURUSD</strong> n’est pas le fruit d’une volonté de vendre de la formation. C'est la résultante d’un parcours réel, forgé par le terrain, et d’un rejet viscéral des illusions vendues aux débutants.
           </p>
           <p className="mb-8">
-            J’ai grandi dans une famille de commerçants et j’ai commencé à travailler très jeune. À 13 ans, je lançais déjà mon premier business en vendant sur les réseaux sociaux. C’est en achetant mes produits en Chine que j’ai découvert l’impact réel des devises et compris une chose simple : quand on ne comprend pas l’argent, on le subit. C’est ce qui m’a conduit au trading, puis à plus de dix années d’étude, d’expérimentation et de pratique.
+            Mon immersion dans les dynamiques transactionnelles a débuté très tôt. À 13 ans, j'importais des produits depuis l'Asie, ce qui m'a brutalement confronté à l'impact des devises. Le constat fut limpide : l'ignorance financière se paie comptant. Cette réalité m’a conduit vers le trading, amorçant plus d'une décennie d’étude, de tests et d'exécution sur les marchés.
           </p>
           
-          <h3 className="text-white font-bold text-2xl mt-12 mb-4">Le constat d’un marché malade</h3>
+          <h3 className="text-white font-bold text-2xl mt-12 mb-4">Le diagnostic d’une industrie biaisée</h3>
           <p className="mb-4">
-            Avec les années, j’ai vu toujours la même réalité : des débutants qui se font broyer parce qu’on leur vend des raccourcis au lieu de leur apprendre un cadre. Des stratégies miracles, des indicateurs magiques, des signaux, des promesses de richesse rapide… mais presque jamais le vrai travail de fond.
+            Le schéma est perpétuellement le même : des particuliers se font aspirer par la promesse de raccourcis, armés de stratégies miraculeuses et d'indicateurs miracles, contournant le véritable travail de compréhension des prix.
           </p>
           <p className="mb-4">
-            À 18 ans, un accident grave a marqué un tournant dans ma vie et m’a forcé à me recentrer totalement. C’est aussi à cette période que j’ai lu <em>Mémoires d’un spéculateur</em> de Jesse Livermore. Ce livre a eu un impact profond sur moi. Je suis tombé sous le charme de sa vie, de son expérience, de son talent, et j’y ai reconnu une manière de vivre les marchés qui me parlait profondément.
+            Un accident majeur à mes 18 ans a forcé ma réorientation. C'est durant cette période que j'ai découvert <em>Mémoires d’un spéculateur</em> de Jesse Livermore. Son approche, sa gestion implacable du risque et sa résilience m'ont fourni la matrice psychologique nécessaire pour aborder les marchés de manière clinique.
           </p>
           <p className="mb-4">
-            C’est à ce moment-là que j’ai compris une chose essentielle : pour obtenir quelque chose, il faut écouter quelqu’un qui a réussi à obtenir cette chose, mais il faut aussi écouter quelqu’un qui a commencé là où toi tu es aujourd’hui. C’est pour cela que la trajectoire de Jesse Livermore m’a autant marqué.
-          </p>
-          <p>
-            À partir de là, j’ai poursuivi mon éducation à travers les plus grandes lectures et les plus grands penseurs des marchés : Jesse Livermore, Richard Wyckoff, Elliott et bien d’autres. Mais je ne me suis jamais contenté de lire. J’ai étudié leurs concepts, je les ai testés, expérimentés, intégrés, puis adaptés à ma propre méthode au fil des années et de la pratique réelle.
+            Mon apprentissage s'est prolongé avec Richard Wyckoff et Ralph Nelson Elliott. Mais la théorie sans confrontation au marché est stérile. Ces fondements ont été digérés, éprouvés en temps réel et synthétisés pour créer ma propre méthodologie.
           </p>
 
           <div className="bg-[#111114] border-l-4 border-[#C9A227] p-8 my-10">
             <p className="text-white text-xl font-bold italic m-0">
-              "La seule chose qui sépare un trader sérieux d’un parieur, ce n’est pas la motivation. C’est la méthode, la discipline et la gestion stricte du risque."
+              "Ce qui différencie un professionnel d'un amateur n’est pas la motivation initiale. C’est la capacité à exécuter un plan ennuyeux avec une précision mathématique."
             </p>
           </div>
 
-          <h3 className="text-white font-bold text-2xl mt-12 mb-4">La Mission de KILLEURUSD</h3>
+          <h3 className="text-white font-bold text-2xl mt-12 mb-4">La vocation de KILLEURUSD</h3>
           <p className="mb-4">
-            KILLEURUSD a été créé pour transmettre exactement ce qui manque à la majorité des traders débutants : un cadre clair, une vraie lecture du marché, une logique d’exécution, et une discipline capable de transformer une pratique désordonnée en progression réelle.
+            L'écosystème KILLEURUSD comble un vide majeur : l'absence d'un cadre strict. Nous enseignons une lecture institutionnelle du marché, assortie d'une logique de gestion du risque asymétrique.
           </p>
           <p className="mb-4">
-            Depuis 2019, je partage cette vision à travers ma communauté, mes accompagnements et mes formations. Mon objectif n’est pas de créer des gens dépendants de moi. Mon objectif est de former traders lucides, structurés, capables de penser par eux-mêmes et de traiter le trading comme un vrai métier.
+            Depuis 2019, mon seul objectif est la transmission de cette méthode. Je ne crée pas de dépendance via des signaux. Je forme des opérateurs lucides, méthodiques, traitant la spéculation avec le sérieux d'une activité professionnelle.
           </p>
           <p className="mb-4">
-            Aujourd’hui, c’est précisément ce que j’enseigne : des méthodes et des techniques issues des plus grands principes de marché, affinées par l’expérience, et qui fonctionnent depuis plus de 100 ans. Ce n’est pas une mode. Ce n’est pas un raccourci. C’est un socle solide, intemporel, que chacun peut apprendre à maîtriser avec sérieux.
+            Les techniques enseignées reposent sur les dynamiques fondamentales de la liquidité et de l'offre et la demande, éprouvées depuis plus d'un siècle. Ce n'est ni une mode, ni une faille algorithmique. C'est un métier.
           </p>
           <p className="mt-4">
-            Ce n’est pas sexy. Ça ne te promet pas d’être millionnaire demain matin. Ça demande du travail, des remises en question, et des heures passées sur les graphiques. Mais pour ceux qui veulent construire quelque chose de solide, c’est la seule voie sérieuse vers la constance.
+            L'approche est aride. Elle exige de la remise en question, du travail, et de la résilience face à la perte de capital. Mais pour l'individu déterminé à bâtir une rentabilité solide, c'est l'unique voie sérieuse.
           </p>
 
           <div className="mt-16 pt-8 border-t border-zinc-800">
-             <p className="text-white font-bold mb-8">Si tu es prêt à arrêter le hasard, sortir du bruit et construire une vraie manière de trader, alors ta place est ici.</p>
-             <Button onClick={() => navigate('checkout')}>Rejoindre le programme</Button>
+             <p className="text-white font-bold mb-8">Si tu es résolu à intégrer ce standard d'exigence et à abandonner les illusions, tu es au bon endroit.</p>
+             <Button onClick={() => navigate('checkout')}>Sécuriser ma place</Button>
           </div>
         </div>
       </div>
@@ -826,8 +843,8 @@ const ContactPage = () => {
 
   return (
     <div className="pt-32 pb-24 max-w-3xl mx-auto px-6 min-h-screen text-center">
-      <SectionHeading subtitle="Support" title="Contacte-nous" />
-      <p className="text-zinc-400 mb-12 text-lg">Une question sur le programme, la méthode ou le coaching ? Notre équipe te répond sous 24h ouvrées.</p>
+      <SectionHeading subtitle="Assistance" title="Contacter l'Équipe" />
+      <p className="text-zinc-400 mb-12 text-lg">Une question sur la méthodologie ou le mentoring individuel ? Notre équipe traite les demandes sous 24h ouvrées.</p>
       
       <div className="bg-[#111114] border border-zinc-800 p-8 rounded-sm mb-12 shadow-lg">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
@@ -859,24 +876,24 @@ const ContactPage = () => {
             <input type="text" className="w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm" />
           </div>
           <div>
-            <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Email</label>
+            <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Adresse Email</label>
             <input type="email" className="w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm" />
           </div>
         </div>
         <div>
-          <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Sujet</label>
+          <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Objet de la demande</label>
           <select className="w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm appearance-none">
-            <option>Question sur le programme</option>
-            <option>Support technique espace membre</option>
-            <option>Demande de partenariat</option>
+            <option>Information sur l'écosystème</option>
+            <option>Assistance technique membre</option>
+            <option>Requête professionnelle</option>
             <option>Autre</option>
           </select>
         </div>
         <div>
-          <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Message</label>
+          <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Message détaillé</label>
           <textarea rows={5} className="w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm"></textarea>
         </div>
-        <Button type="submit" className="w-full">Envoyer le message</Button>
+        <Button type="submit" className="w-full">Transmettre la demande</Button>
       </form>
     </div>
   );
@@ -886,14 +903,14 @@ const BlogPage = ({ navigate }: any) => {
   useSEO("Blog & Analyses | KILLEURUSD", "Articles, analyses techniques et psychologie de marché. Découvrez la méthode KILLEURUSD en détail.", "", "");
 
   const articles = [
-    { id: 1, title: "Pourquoi 90% des traders échouent et comment faire partie des 10%", category: "Psychologie", date: "12 Octobre 2023", readTime: "5 min" },
-    { id: 2, title: "La vraie définition du Price Action institutionnel", category: "Technique", date: "28 Septembre 2023", readTime: "8 min" },
-    { id: 3, title: "Comment construire une routine de trading indestructible", category: "Discipline", date: "15 Septembre 2023", readTime: "6 min" }
+    { id: 1, title: "Pourquoi 90% des traders échouent et comment intégrer le décile supérieur", category: "Psychologie", date: "12 Octobre 2023", readTime: "5 min" },
+    { id: 2, title: "La mécanique sous-jacente du Price Action institutionnel", category: "Méthode", date: "28 Septembre 2023", readTime: "8 min" },
+    { id: 3, title: "Structurer une routine d'exécution imperméable", category: "Rigueur", date: "15 Septembre 2023", readTime: "6 min" }
   ];
 
   return (
     <div className="pt-32 pb-24 max-w-6xl mx-auto px-6 min-h-screen">
-      <SectionHeading subtitle="Ressources" title="Le Blog KILLEURUSD" align="center" />
+      <SectionHeading subtitle="Ressources Pédagogiques" title="Analyses & Théorie" align="center" />
       
       <div className="grid md:grid-cols-3 gap-8 mt-12">
         {articles.map(article => (
@@ -909,7 +926,7 @@ const BlogPage = ({ navigate }: any) => {
               <h3 className="text-lg font-bold text-white mb-4 group-hover:text-[#7A0F0F] transition-colors line-clamp-2">{article.title}</h3>
               <div className="mt-auto flex justify-between items-center text-zinc-500 text-xs font-medium border-t border-zinc-800/50 pt-4">
                 <span>{article.date}</span>
-                <span className="flex items-center uppercase tracking-wider font-bold group-hover:text-white transition-colors">Lire <ChevronRight className="w-4 h-4 ml-1" /></span>
+                <span className="flex items-center uppercase tracking-wider font-bold group-hover:text-white transition-colors">Lire l'article <ChevronRight className="w-4 h-4 ml-1" /></span>
               </div>
             </div>
           </div>
@@ -926,47 +943,47 @@ const ArticlePage = ({ navigate }: any) => {
     <div className="pt-32 pb-24 min-h-screen">
       <div className="max-w-3xl mx-auto px-6">
         <button onClick={() => navigate('blog')} className="flex items-center text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider mb-12">
-          <ChevronRight className="w-4 h-4 mr-1 rotate-180" /> Retour au blog
+          <ChevronRight className="w-4 h-4 mr-1 rotate-180" /> Retour aux articles
         </button>
         
         <div className="mb-12">
           <span className="text-[#C9A227] font-bold tracking-wider uppercase text-xs block mb-4">Psychologie • 5 min de lecture</span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8">Pourquoi 90% des traders échouent et comment faire partie des 10%.</h1>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8">Pourquoi 90% des traders échouent et comment intégrer le décile supérieur.</h1>
           <div className="flex items-center border-b border-zinc-800 pb-8">
             <div className="w-10 h-10 bg-zinc-800 rounded-full mr-4 flex items-center justify-center text-zinc-500"><Users size={20} /></div>
             <div>
               <div className="text-white font-bold text-sm">Alexandre</div>
-              <div className="text-zinc-500 text-xs">Head Trader, KILLEURUSD</div>
+              <div className="text-zinc-500 text-xs">Fondateur, KILLEURUSD</div>
             </div>
           </div>
         </div>
 
         <div className="prose prose-invert prose-zinc max-w-none text-zinc-300 leading-relaxed text-lg">
           <p className="lead text-xl text-white font-medium mb-8">
-            Le chiffre fait peur, mais il est réel. Sur les marchés financiers, l'immense majorité des particuliers perd de l'argent. Mais contrairement à ce que l'on croit, ce n'est pas parce que le marché est "truqué" ou trop complexe. C'est un problème d'approche.
+            Le chiffre fait peur, mais il est factuel. Sur les marchés financiers, l'immense majorité des spéculateurs particuliers détruit son capital. Mais contrairement à ce que suggère la croyance populaire, ce n'est pas dû à un "algorithme truqué". C'est un échec systématique d'exécution.
           </p>
 
-          <h2 className="text-2xl font-bold text-white mt-12 mb-6">Le mythe du Setup Parfait</h2>
+          <h2 className="text-2xl font-bold text-white mt-12 mb-6">Le mythe de l'Indicateur Miracle</h2>
           <p className="mb-6">
-            L'erreur numéro un est la quête incessante du "Graal". Un indicateur qui ne se trompe jamais. Une stratégie avec 95% de win-rate. Cela n'existe pas. Le marché est par nature probabiliste. Un trader professionnel accepte la perte comme faisant partie de son modèle d'affaires. Un amateur cherche à l'éviter à tout prix, ce qui l'amène à prendre des risques démesurés.
+            L'erreur cardinale réside dans la quête d'infaillibilité. Un indicateur prédictif parfait n'existe pas. Le marché évolue par définition dans un spectre probabiliste. Un opérateur aguerri intègre la perte comme un frais de fonctionnement inhérent à son activité. L'amateur la redoute, la fuit, et finit par s'exposer à un risque systémique.
           </p>
 
           <div className="bg-[#111114] border-l-4 border-[#7A0F0F] p-6 my-10">
             <p className="font-bold text-white m-0">
-              "L'amateur focus sur l'entrée. Le professionnel focus sur la gestion du risque."
+              "L'amateur est obsédé par l'entrée. L'expert est obsédé par l'exposition de son capital."
             </p>
           </div>
 
-          <h2 className="text-2xl font-bold text-white mt-12 mb-6">Le syndrome du Casino</h2>
+          <h2 className="text-2xl font-bold text-white mt-12 mb-6">Le comportement stochastique</h2>
           <p className="mb-6">
-            Sans plan strict, le trading devient du casino. Vous entrez parce que "ça monte fort", vous coupez parce que "vous avez peur". C'est de la réaction émotionnelle, pas de l'exécution d'un plan. La différence fondamentale est là : la méthode.
+            L'absence de règles d'engagement strictes transforme l'analyse en jeu de hasard. Entrer sous le coup d'une impulsion haussière, clôturer par aversion au risque. L'action est pilotée par les émotions au lieu d'être régie par des données. La frontière entre la rentabilité et la ruine se situe exactement ici : dans la capacité à respecter un protocole.
           </p>
         </div>
 
         <div className="mt-16 bg-gradient-to-br from-[#0B0B0D] to-[#111114] border border-zinc-800 p-8 rounded-sm text-center">
-          <h3 className="text-xl font-bold text-white mb-4">Prêt à arrêter de jouer au hasard ?</h3>
-          <p className="text-zinc-400 text-sm mb-6 max-w-md mx-auto">Rejoins le programme KILLEURUSD et maîtrise une approche chirurgicale du marché.</p>
-          <Button onClick={() => navigate('checkout')}>Découvrir le programme</Button>
+          <h3 className="text-xl font-bold text-white mb-4">Prêt à imposer ta rigueur au marché ?</h3>
+          <p className="text-zinc-400 text-sm mb-6 max-w-md mx-auto">Rejoins l'écosystème KILLEURUSD et déploie une gestion asymétrique de ton portefeuille.</p>
+          <Button onClick={() => navigate('checkout')}>Intégrer le programme</Button>
         </div>
       </div>
     </div>
@@ -978,21 +995,21 @@ const AlumniPage = ({ navigate }: any) => {
 
   return (
     <div className="pt-32 pb-24 max-w-2xl mx-auto px-6 min-h-screen flex flex-col items-center">
-      <SectionHeading subtitle="Mise à jour V2" title="Accès Anciens Élèves" />
+      <SectionHeading subtitle="Mise à jour d'Infrastructure" title="Accès Membres Historiques" />
       
       <div className="bg-[#111114] border border-[#C9A227]/30 p-8 md:p-10 rounded-sm w-full shadow-lg">
         <div className="flex items-center mb-6 border-b border-zinc-800 pb-6">
           <Award className="w-8 h-8 text-[#C9A227] mr-4" />
-          <h3 className="text-2xl font-bold text-white">Tu étais là aux débuts ?</h3>
+          <h3 className="text-2xl font-bold text-white">Validation de statut</h3>
         </div>
         <p className="text-zinc-400 text-base mb-8 leading-relaxed">
-          Comme promis historiquement, ton accès à cette nouvelle structure t'est <strong>offert à vie</strong>. Remplis les informations exactes de ton premier achat pour que nous puissions vérifier nos registres et t'ajouter manuellement à la nouvelle plateforme.
+          Conformément à nos engagements initiaux, ton accès à cette nouvelle infrastructure pédagogique t'est <strong>assuré à vie</strong>. Renseigne les coordonnées exactes de ta transaction originelle afin que notre équipe procède à la migration manuelle de ton compte.
         </p>
 
         <form className="space-y-6" onSubmit={(e: any) => e.preventDefault()}>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Prénom lors de l'achat</label>
+              <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Prénom d'inscription</label>
               <input type="text" className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
             </div>
             <div>
@@ -1001,11 +1018,11 @@ const AlumniPage = ({ navigate }: any) => {
             </div>
           </div>
           <div>
-            <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Email exact utilisé</label>
+            <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Adresse Email d'origine</label>
             <input type="email" className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
           </div>
-          <Button type="submit" variant="accent" className="w-full">Réclamer mon accès gratuit</Button>
-          <p className="text-center text-xs text-zinc-500 mt-4">Vérification manuelle sous 48h ouvrées. Tu recevras tes nouveaux accès par email.</p>
+          <Button type="submit" variant="accent" className="w-full">Confirmer mon identité</Button>
+          <p className="text-center text-xs text-zinc-500 mt-4">Vérification des registres sous 48h ouvrées. Tes nouveaux accès seront transmis par courrier électronique.</p>
         </form>
       </div>
     </div>
@@ -1019,36 +1036,36 @@ const CheckoutPage = ({ navigate }: any) => {
     <div className="pt-32 pb-24 max-w-2xl mx-auto px-6 min-h-screen flex flex-col items-center">
       <Lock className="w-10 h-10 text-zinc-600 mb-6" />
       <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4 text-center">Validation Sécurisée</h1>
-      <p className="text-zinc-400 text-center mb-10 text-lg">Tu es sur le point de rejoindre le programme complet KILLEURUSD.</p>
+      <p className="text-zinc-400 text-center mb-10 text-lg">Tu finalises l'accès intégral à l'écosystème KILLEURUSD.</p>
       
       <div className="w-full mb-8 bg-[#7A0F0F]/10 border border-[#7A0F0F]/50 p-6 flex items-start rounded-sm">
          <AlertTriangle className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-1" />
          <div>
-           <h4 className="text-white font-bold mb-1">Attention : Clôture imminente</h4>
-           <p className="text-sm text-zinc-300 leading-relaxed">Il ne reste actuellement que <strong>3 places</strong> pour l'accompagnement de ce trimestre. Une fois la limite atteinte, les inscriptions seront verrouillées pour garantir la qualité du suivi hebdomadaire.</p>
+           <h4 className="text-white font-bold mb-1">Information de Capacité</h4>
+           <p className="text-sm text-zinc-300 leading-relaxed">Il ne reste actuellement que <strong>3 places</strong> pour l'accompagnement individuel de ce cycle. Une fois ce plafond atteint, le protocole d'inscription sera suspendu pour garantir le niveau d'exigence des coachings.</p>
          </div>
       </div>
 
       <div className="w-full bg-[#111114] border border-zinc-800 p-8 md:p-10 shadow-2xl rounded-sm">
         <div className="flex justify-between items-start mb-8 pb-8 border-b border-zinc-800 text-white">
           <div>
-            <h3 className="text-xl font-bold mb-2">Programme Complet + Coaching</h3>
+            <h3 className="text-xl font-bold mb-2">L'Accès Intégral + Mentoring</h3>
             <ul className="text-sm text-zinc-500 space-y-2 mt-4">
-              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Accès à vie aux modules VOD</li>
-              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> <strong>1h coaching privé / semaine (3 mois)</strong></li>
-              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> 1 live de groupe par semaine</li>
-              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Accès au groupe privé & Boîte à outils</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Accès définitif aux modules VOD</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> <strong>1h de mentoring privé / semaine (3 mois)</strong></li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Sessions d'analyse Live hebdomadaires</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Accès au canal institutionnel & Outils Pro</li>
             </ul>
           </div>
           <div className="text-3xl font-extrabold">997$</div>
         </div>
         
         <Button onClick={() => navigate('thankyou')} variant="accent" className="w-full mb-6">
-          Procéder au paiement
+          Valider mon inscription
         </Button>
         
         <div className="flex justify-center items-center space-x-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">
-           <Lock className="w-4 h-4" /> <span>Paiement sécurisé 256-bit par Stripe</span>
+           <Lock className="w-4 h-4" /> <span>Paiement crypté & sécurisé par Stripe</span>
         </div>
       </div>
       
@@ -1067,31 +1084,31 @@ const ThankYouPage = () => {
       <div className="w-24 h-24 bg-[#0B0B0D] border-2 border-[#C9A227] rounded-full flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(201,162,39,0.2)]">
         <CheckCircle className="w-12 h-12 text-[#C9A227]" />
       </div>
-      <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Paiement Confirmé</h1>
-      <p className="text-xl text-zinc-400 mb-12">Bienvenue dans l'écosystème KILLEURUSD.</p>
+      <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Accès Autorisé</h1>
+      <p className="text-xl text-zinc-400 mb-12">Bienvenue au sein de l'écosystème KILLEURUSD.</p>
       
       <div className="bg-[#111114] border border-zinc-800 p-8 md:p-12 rounded-sm w-full text-left">
-        <h3 className="text-white font-bold text-xl mb-6">Tes prochaines étapes :</h3>
+        <h3 className="text-white font-bold text-xl mb-6">Protocole de Démarrage :</h3>
         <ol className="text-zinc-400 space-y-6">
           <li className="flex items-start">
             <span className="flex-shrink-0 w-8 h-8 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">1</span>
             <div>
-              <strong className="text-white block mb-1">Vérifie ta boîte mail</strong>
-              Tu vas recevoir tes accès de connexion d'ici 5 minutes.
+              <strong className="text-white block mb-1">Réception des identifiants</strong>
+              Tes clés d'accès à la plateforme seront délivrées sur ta boîte mail d'ici quelques minutes.
             </div>
           </li>
           <li className="flex items-start">
             <span className="flex-shrink-0 w-8 h-8 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">2</span>
             <div>
-              <strong className="text-white block mb-1">Rejoins le groupe privé</strong>
-              Le lien Telegram sécurisé se trouve sur ton tableau de bord.
+              <strong className="text-white block mb-1">Connexion aux canaux sécurisés</strong>
+              Les liens d'accès aux flux Telegram privés sont disponibles directement sur ton tableau de bord.
             </div>
           </li>
           <li className="flex items-start">
             <span className="flex-shrink-0 w-8 h-8 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">3</span>
             <div>
-              <strong className="text-white block mb-1">Planifie ta séance d'intégration</strong>
-              Utilise le calendrier de la plateforme pour réserver ta première heure de coaching.
+              <strong className="text-white block mb-1">Planification du calibrage</strong>
+              Utilise le système de réservation interne pour programmer ton heure de mentoring initiale avec Alexandre.
             </div>
           </li>
         </ol>
@@ -1656,7 +1673,7 @@ export default function App() {
         `}</style>
         <div className="animate-marquee whitespace-nowrap flex items-center">
           <span className="w-2 h-2 rounded-full bg-white animate-pulse mr-3"></span> 
-          Session de coaching : Plus que 3 places disponibles ce trimestre.
+          Accompagnement privé : 3 places restantes pour le trimestre en cours.
         </div>
       </div>
 
@@ -1734,7 +1751,7 @@ export default function App() {
                 <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
               </div>
               <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mb-6">
-                La formation de trading qui refuse le gambling. Uniquement du price action pur, de la gestion de risque asymétrique et une discipline de fer.
+                L'écosystème d'apprentissage dédié au Price Action pur, à la gestion de risque asymétrique et à la rigueur d'exécution.
               </p>
             </div>
             

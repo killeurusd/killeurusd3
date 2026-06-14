@@ -63,7 +63,8 @@ export default function EnHome() {
           </a>
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#program" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">The Program</a>
-            <a href="#founder" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Vision</a>
+            <a href="/en/vision" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Vision</a>
+            <a href="/en/blog" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Blog</a>
             <a href="#contact" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Contact</a>
             <a href="/" aria-label="Version française" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">FR</a>
             <Button href="#program" className="ml-4 !py-2.5 !px-6 !text-xs">Join</Button>
@@ -438,6 +439,13 @@ export default function EnHome() {
       {/* FOOTER */}
       <footer className="bg-[#0B0B0D] border-t border-zinc-900 pt-16 pb-10">
         <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center mb-8 text-sm">
+            <a href="/en/terms" className="text-zinc-400 hover:text-white transition-colors">Terms of Sale</a>
+            <a href="/en/legal" className="text-zinc-400 hover:text-white transition-colors">Legal Notice</a>
+            <a href="/en/privacy" className="text-zinc-400 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/en/blog" className="text-zinc-400 hover:text-white transition-colors">Blog</a>
+            <a href="/en/vision" className="text-zinc-400 hover:text-white transition-colors">Vision</a>
+          </div>
           <div className="bg-[#111114] border border-zinc-900 p-6 rounded-sm mb-8">
             <p className="text-[10px] md:text-xs text-zinc-400 text-justify leading-relaxed uppercase tracking-wide">
               <strong>Risk warning:</strong> Trading financial markets (Forex, Indices, Crypto) carries a very high level of risk and may not be suitable for all investors. Leverage can work against you as well as for you. You could lose part or all of your initial capital. Never speculate with money you cannot afford to lose. KILLEURUSD provides purely educational content based on technical analysis. No information, chart or video on this site constitutes investment advice.

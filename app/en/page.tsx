@@ -43,26 +43,40 @@ export default function EnHome() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0B0B0D] text-zinc-200 font-sans selection:bg-[#7A0F0F] selection:text-white">
+    <div id="top" className="min-h-screen bg-[#0B0B0D] text-zinc-200 font-sans selection:bg-[#7A0F0F] selection:text-white pt-10">
+
+      {/* URGENCY BANNER */}
+      <div className="fixed top-0 left-0 w-full h-10 bg-[#7A0F0F] text-white flex items-center overflow-hidden z-[60] text-xs md:text-sm font-bold tracking-widest uppercase">
+        <style>{`@keyframes marquee {0%{transform:translateX(100vw);}100%{transform:translateX(-100%);}} .animate-marquee{animation:marquee 20s linear infinite;}`}</style>
+        <div className="animate-marquee whitespace-nowrap flex items-center">
+          <span className="w-2 h-2 rounded-full bg-white animate-pulse mr-3"></span>
+          Seats are deliberately limited to preserve a standard of excellence in the mentoring.
+        </div>
+      </div>
 
       {/* HEADER */}
-      <header className="fixed top-0 w-full z-50 bg-[#0B0B0D]/90 backdrop-blur-md border-b border-zinc-900">
+      <header className="fixed top-10 w-full z-50 bg-[#0B0B0D]/90 backdrop-blur-md border-b border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <a href="#top" className="flex items-center group">
             <img src="/favicon.ico" alt="Killeur USD Logo" className="w-10 h-10 mr-3 object-contain" />
             <span className="text-2xl font-black text-white tracking-tighter uppercase">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
           </a>
-          <div className="flex items-center gap-5">
-            <a href="/" className="text-xs font-bold text-zinc-400 hover:text-white uppercase tracking-wider">FR</a>
-            <Button href="#program" className="!py-2 !px-5">Join the program</Button>
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="#program" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">The Program</a>
+            <a href="#founder" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Vision</a>
+            <a href="#contact" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Contact</a>
+            <a href="/" aria-label="Version française" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">FR</a>
+            <Button href="#program" className="ml-4 !py-2.5 !px-6 !text-xs">Join</Button>
+          </nav>
+          <div className="md:hidden flex items-center gap-4">
+            <a href="/" aria-label="Version française" className="text-xs font-bold text-zinc-400 hover:text-white uppercase tracking-wider">FR</a>
+            <Button href="#program" className="!py-2 !px-4 !text-xs">Join</Button>
           </div>
         </div>
       </header>
 
-      <div id="top" className="pt-20" />
-
       {/* 1. HERO */}
-      <section className="relative pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden border-b border-zinc-900">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b border-zinc-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(122,15,15,0.08),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-3xl">

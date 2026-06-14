@@ -94,7 +94,7 @@ const LegalSection = ({ title, children }: any) => (
 
 const LegalLayout = ({ title, lastUpdated, children, navigate }: any) => (
   <div className="pt-32 pb-24 max-w-4xl mx-auto px-6 min-h-screen">
-    <button onClick={() => navigate('home')} className="flex items-center text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider mb-12">
+    <button onClick={() => navigate('home')} className="flex items-center text-zinc-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider mb-12">
       <ChevronRight className="w-4 h-4 mr-1 rotate-180" /> Retour à l'accueil
     </button>
     <div className="mb-12 border-b border-zinc-800 pb-8">
@@ -183,7 +183,7 @@ const HomePage = ({ navigate }: any) => {
               </Button>
             </div>
             
-            <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-500 font-medium">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-400 font-medium">
               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Écosystème Complet</div>
               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Mentoring Hebdomadaire</div>
               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Accès à vie</div>
@@ -203,7 +203,7 @@ const HomePage = ({ navigate }: any) => {
                       <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                       <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                     </div>
-                    <span className="text-[10px] text-zinc-500 font-mono uppercase">Analyse Structurelle</span>
+                    <span className="text-[10px] text-zinc-400 font-mono uppercase">Analyse Structurelle</span>
                   </div>
                   <div className="flex-1 border border-dashed border-zinc-700/50 flex items-center justify-center text-zinc-700/50">
                     <BarChart size={64} />
@@ -270,7 +270,7 @@ const HomePage = ({ navigate }: any) => {
                   <pillar.icon className="w-6 h-6 text-[#C9A227]" />
                 </div>
                 <h4 className="text-white font-bold mb-3">{pillar.title}</h4>
-                <p className="text-zinc-500 text-sm leading-relaxed">{pillar.desc}</p>
+                <p className="text-zinc-400 text-sm leading-relaxed">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -326,7 +326,7 @@ const HomePage = ({ navigate }: any) => {
             </div>
           </div>
 
-          <p className="text-center text-zinc-500 mt-12 font-bold max-w-2xl mx-auto">
+          <p className="text-center text-zinc-400 mt-12 font-bold max-w-2xl mx-auto">
             Notre objectif n'est pas de vendre de l'illusion. Notre mission est d'inculquer une méthode concrète, applicable et pensée pour durer.
           </p>
         </div>
@@ -455,19 +455,19 @@ const HomePage = ({ navigate }: any) => {
                   <h4 className="text-white font-bold text-sm flex items-center mb-3">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Outils d’IA
                   </h4>
-                  <p className="text-zinc-500 text-xs leading-relaxed">Pour gagner du temps, mieux structurer ton analyse et accélérer ton travail.</p>
+                  <p className="text-zinc-400 text-xs leading-relaxed">Pour gagner du temps, mieux structurer ton analyse et accélérer ton travail.</p>
                 </div>
                 <div className="bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm">
                   <h4 className="text-white font-bold text-sm flex items-center mb-3">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Indicateurs techniques
                   </h4>
-                  <p className="text-zinc-500 text-xs leading-relaxed">Développés pour t’aider à lire le marché avec plus de précision.</p>
+                  <p className="text-zinc-400 text-xs leading-relaxed">Développés pour t’aider à lire le marché avec plus de précision.</p>
                 </div>
                 <div className="bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm">
                   <h4 className="text-white font-bold text-sm flex items-center mb-3">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Journal de trading en ligne
                   </h4>
-                  <p className="text-zinc-500 text-xs leading-relaxed">Pour suivre tes performances, comprendre tes erreurs et mesurer ta progression.</p>
+                  <p className="text-zinc-400 text-xs leading-relaxed">Pour suivre tes performances, comprendre tes erreurs et mesurer ta progression.</p>
                 </div>
               </div>
 
@@ -475,7 +475,7 @@ const HomePage = ({ navigate }: any) => {
                 <p className="text-sm text-zinc-300 font-medium mb-2">
                   Ce ne sont pas des gadgets décoratifs. Ce sont des outils pensés pour accompagner concrètement ta progression et renforcer ton cadre de travail.
                 </p>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-zinc-400">
                   Tu ne repars pas seulement avec une méthode. Tu repars aussi avec un véritable arsenal de travail pour mieux analyser, mieux exécuter et mieux progresser dans le temps.
                 </p>
               </div>
@@ -537,12 +537,15 @@ const HomePage = ({ navigate }: any) => {
             <h3 className="text-3xl font-extrabold text-white mb-2">Ce que tu rejoins vraiment</h3>
             <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">Tu n’investis donc pas dans de simples modules. Tu rejoins une méthode, un suivi et un environnement de travail conçus pour faire évoluer ton trading dans le réel.</p>
             <div className="text-6xl font-black text-white mb-4">997$</div>
-            <div className="text-zinc-500 text-sm mb-8 font-medium">Paiement unique. Accès à vie garanti à la plateforme.<br/>Inclus : L'accompagnement privé (1h/semaine) pendant 3 mois.</div>
+            <div className="text-zinc-400 text-sm mb-8 font-medium">Paiement unique. Accès à vie garanti à la plateforme.<br/>Inclus : L'accompagnement privé (1h/semaine) pendant 3 mois.</div>
             <Button onClick={() => navigate('checkout')} className="w-full sm:w-auto px-16 py-5 text-lg">
               Sécuriser ma place
             </Button>
-            <p className="text-xs text-zinc-500 mt-6 max-w-lg mx-auto">
+            <p className="text-xs text-zinc-400 mt-6 max-w-lg mx-auto">
               Le programme reste volontairement limité en nombre de places. <strong className="text-zinc-400">Cette exigence permet de préserver un vrai niveau de suivi dans l’accompagnement.</strong>
+            </p>
+            <p className="text-xs text-zinc-400 mt-4 max-w-lg mx-auto">
+              ⚠️ Le trading comporte un risque élevé de perte en capital. Ce programme est <strong>éducatif</strong> et ne constitue pas un conseil en investissement. Les performances passées ne préjugent pas des performances futures.
             </p>
           </div>
 
@@ -579,7 +582,7 @@ const HomePage = ({ navigate }: any) => {
                 "Tu veux gagner vite sans prendre le temps d'apprendre.",
                 "Tu n'es pas prêt à te remettre en question."
               ].map((item, i) => (
-                <li key={i} className="flex items-start text-zinc-500">
+                <li key={i} className="flex items-start text-zinc-400">
                   <X className="w-5 h-5 text-[#7A0F0F] mr-3 shrink-0" />
                   <span>{item}</span>
                 </li>
@@ -640,7 +643,7 @@ const HomePage = ({ navigate }: any) => {
                 </div>
               ))}
             </div>
-            <p className="text-center text-zinc-500 text-xs mt-6 uppercase tracking-wider">Extraits issus de notre groupe privé et du suivi des élèves.</p>
+            <p className="text-center text-zinc-400 text-xs mt-6 uppercase tracking-wider">Extraits issus de notre groupe privé et du suivi des élèves.</p>
           </div>
 
           <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm text-center">
@@ -843,7 +846,7 @@ const ContactPage = () => {
               <Mail className="w-5 h-5 text-[#7A0F0F]" />
             </div>
             <div className="text-left">
-              <div className="text-xs text-zinc-500 uppercase font-bold tracking-wider mb-1">Par Email</div>
+              <div className="text-xs text-zinc-400 uppercase font-bold tracking-wider mb-1">Par Email</div>
               <span className="font-bold">contact@killeurusd.com</span>
             </div>
           </div>
@@ -852,7 +855,7 @@ const ContactPage = () => {
               <MessageSquare className="w-5 h-5 text-[#7A0F0F]" />
             </div>
             <div className="text-left">
-              <div className="text-xs text-zinc-500 uppercase font-bold tracking-wider mb-1">Sur Telegram</div>
+              <div className="text-xs text-zinc-400 uppercase font-bold tracking-wider mb-1">Sur Telegram</div>
               <span className="font-bold">@KILLEURUSD_Support</span>
             </div>
           </div>
@@ -862,16 +865,16 @@ const ContactPage = () => {
       <form className="space-y-6 text-left bg-[#0B0B0D] border border-zinc-800 p-8 md:p-10 rounded-sm" onSubmit={(e: any) => e.preventDefault()}>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Nom complet</label>
+            <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Nom complet</label>
             <input type="text" className="w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm" />
           </div>
           <div>
-            <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Adresse Email</label>
+            <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Adresse Email</label>
             <input type="email" className="w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm" />
           </div>
         </div>
         <div>
-          <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Objet de la demande</label>
+          <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Objet de la demande</label>
           <select className="w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm appearance-none">
             <option>Information sur l'écosystème</option>
             <option>Assistance technique membre</option>
@@ -880,7 +883,7 @@ const ContactPage = () => {
           </select>
         </div>
         <div>
-          <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Message détaillé</label>
+          <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Message détaillé</label>
           <textarea rows={5} className="w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm"></textarea>
         </div>
         <Button type="submit" className="w-full">Transmettre la demande</Button>
@@ -914,7 +917,7 @@ const BlogPage = ({ navigate }: any) => {
                 <span className="text-xs text-zinc-600">{article.readTime} de lecture</span>
               </div>
               <h3 className="text-lg font-bold text-white mb-4 group-hover:text-[#7A0F0F] transition-colors line-clamp-2">{article.title}</h3>
-              <div className="mt-auto flex justify-between items-center text-zinc-500 text-xs font-medium border-t border-zinc-800/50 pt-4">
+              <div className="mt-auto flex justify-between items-center text-zinc-400 text-xs font-medium border-t border-zinc-800/50 pt-4">
                 <span>{article.date}</span>
                 <span className="flex items-center uppercase tracking-wider font-bold group-hover:text-white transition-colors">Lire l'article <ChevronRight className="w-4 h-4 ml-1" /></span>
               </div>
@@ -932,7 +935,7 @@ const ArticlePage = ({ navigate }: any) => {
   return (
     <div className="pt-32 pb-24 min-h-screen">
       <div className="max-w-3xl mx-auto px-6">
-        <button onClick={() => navigate('blog')} className="flex items-center text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider mb-12">
+        <button onClick={() => navigate('blog')} className="flex items-center text-zinc-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider mb-12">
           <ChevronRight className="w-4 h-4 mr-1 rotate-180" /> Retour aux articles
         </button>
         
@@ -940,10 +943,10 @@ const ArticlePage = ({ navigate }: any) => {
           <span className="text-[#C9A227] font-bold tracking-wider uppercase text-xs block mb-4">Psychologie • 5 min de lecture</span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8">Pourquoi 90% des traders échouent et comment intégrer le décile supérieur.</h1>
           <div className="flex items-center border-b border-zinc-800 pb-8">
-            <div className="w-10 h-10 bg-zinc-800 rounded-full mr-4 flex items-center justify-center text-zinc-500"><Users size={20} /></div>
+            <div className="w-10 h-10 bg-zinc-800 rounded-full mr-4 flex items-center justify-center text-zinc-400"><Users size={20} /></div>
             <div>
               <div className="text-white font-bold text-sm">RAYANE "RAYSS"</div>
-              <div className="text-zinc-500 text-xs">FONDATEUR & HEAD TRADER</div>
+              <div className="text-zinc-400 text-xs">FONDATEUR & HEAD TRADER</div>
             </div>
           </div>
         </div>
@@ -999,20 +1002,20 @@ const AlumniPage = ({ navigate }: any) => {
         <form className="space-y-6" onSubmit={(e: any) => e.preventDefault()}>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Prénom d'inscription</label>
+              <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Prénom d'inscription</label>
               <input type="text" className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
             </div>
             <div>
-              <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Nom</label>
+              <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Nom</label>
               <input type="text" className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
             </div>
           </div>
           <div>
-            <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Adresse Email d'origine</label>
+            <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Adresse Email d'origine</label>
             <input type="email" className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
           </div>
           <Button type="submit" variant="accent" className="w-full">Confirmer mon identité</Button>
-          <p className="text-center text-xs text-zinc-500 mt-4">Vérification des registres sous 48h ouvrées. Tes nouveaux accès seront transmis par courrier électronique.</p>
+          <p className="text-center text-xs text-zinc-400 mt-4">Vérification des registres sous 48h ouvrées. Tes nouveaux accès seront transmis par courrier électronique.</p>
         </form>
       </div>
     </div>
@@ -1040,7 +1043,7 @@ const CheckoutPage = ({ navigate }: any) => {
         <div className="flex justify-between items-start mb-8 pb-8 border-b border-zinc-800 text-white">
           <div>
             <h3 className="text-xl font-bold mb-2">L'Accès Intégral + Mentoring</h3>
-            <ul className="text-sm text-zinc-500 space-y-2 mt-4">
+            <ul className="text-sm text-zinc-400 space-y-2 mt-4">
               <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Accès définitif aux modules VOD</li>
               <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> <strong>1h de mentoring privé / semaine (3 mois)</strong></li>
               <li className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-[#C9A227]" /> Sessions d'analyse Live hebdomadaires</li>
@@ -1054,12 +1057,12 @@ const CheckoutPage = ({ navigate }: any) => {
           Valider mon inscription
         </Button>
         
-        <div className="flex justify-center items-center space-x-4 text-xs font-medium text-zinc-500 uppercase tracking-wider">
+        <div className="flex justify-center items-center space-x-4 text-xs font-medium text-zinc-400 uppercase tracking-wider">
            <Lock className="w-4 h-4" /> <span>Paiement crypté & sécurisé par Stripe</span>
         </div>
       </div>
       
-      <button onClick={() => navigate('home')} className="mt-12 text-sm text-zinc-500 hover:text-white font-bold uppercase tracking-wider transition-colors">
+      <button onClick={() => navigate('home')} className="mt-12 text-sm text-zinc-400 hover:text-white font-bold uppercase tracking-wider transition-colors">
         Retour à l'accueil
       </button>
     </div>
@@ -1685,7 +1688,7 @@ export default function App() {
                 key={link.id}
                 onClick={() => setCurrentPage(link.id)}
                 className={`text-xs font-bold uppercase tracking-widest transition-colors ${
-                  currentPage === link.id || (currentPage === 'article' && link.id === 'blog') ? 'text-[#C9A227]' : 'text-zinc-500 hover:text-white'
+                  currentPage === link.id || (currentPage === 'article' && link.id === 'blog') ? 'text-[#C9A227]' : 'text-zinc-400 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -1697,7 +1700,10 @@ export default function App() {
           </nav>
 
           {/* Bouton Mobile */}
-          <button 
+          <button
+            type="button"
+            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={isMobileMenuOpen}
             className="md:hidden text-white hover:text-[#C9A227] transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -1740,7 +1746,7 @@ export default function App() {
                 <img src="/favicon.ico" alt="Killeur USD Logo" className="w-20 h-20 mr-4 object-contain" />
                 <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
               </div>
-              <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mb-6">
+              <p className="text-zinc-400 text-sm leading-relaxed max-w-sm mb-6">
                 L'écosystème d'apprentissage dédié au Price Action pur, à la gestion de risque asymétrique et à la rigueur d'exécution.
               </p>
             </div>
@@ -1748,10 +1754,10 @@ export default function App() {
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-xs mb-6">Navigation</h4>
               <ul className="space-y-3">
-                <li><button onClick={() => setCurrentPage('home')} className="text-zinc-500 hover:text-white transition-colors text-sm">Le Programme</button></li>
-                <li><button onClick={() => setCurrentPage('about')} className="text-zinc-500 hover:text-white transition-colors text-sm">Vision & Fondateur</button></li>
-                <li><button onClick={() => setCurrentPage('blog')} className="text-zinc-500 hover:text-white transition-colors text-sm">Blog & Analyses</button></li>
-                <li><button onClick={() => setCurrentPage('contact')} className="text-zinc-500 hover:text-white transition-colors text-sm">Support</button></li>
+                <li><button onClick={() => setCurrentPage('home')} className="text-zinc-400 hover:text-white transition-colors text-sm">Le Programme</button></li>
+                <li><button onClick={() => setCurrentPage('about')} className="text-zinc-400 hover:text-white transition-colors text-sm">Vision & Fondateur</button></li>
+                <li><button onClick={() => setCurrentPage('blog')} className="text-zinc-400 hover:text-white transition-colors text-sm">Blog & Analyses</button></li>
+                <li><button onClick={() => setCurrentPage('contact')} className="text-zinc-400 hover:text-white transition-colors text-sm">Support</button></li>
                 <li><button onClick={() => setCurrentPage('alumni')} className="text-[#C9A227] hover:text-white transition-colors text-sm font-medium mt-2 block">Accès Anciens Élèves</button></li>
               </ul>
             </div>
@@ -1759,9 +1765,9 @@ export default function App() {
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-xs mb-6">Légal & Conditions</h4>
               <ul className="space-y-3">
-                <li><button onClick={() => setCurrentPage('cgv')} className={`${currentPage === 'cgv' ? 'text-white' : 'text-zinc-500 hover:text-white'} transition-colors text-sm`}>Conditions Générales de Vente</button></li>
-                <li><button onClick={() => setCurrentPage('legal')} className={`${currentPage === 'legal' ? 'text-white' : 'text-zinc-500 hover:text-white'} transition-colors text-sm`}>Mentions Légales</button></li>
-                <li><button onClick={() => setCurrentPage('privacy')} className={`${currentPage === 'privacy' ? 'text-white' : 'text-zinc-500 hover:text-white'} transition-colors text-sm`}>Politique de Confidentialité</button></li>
+                <li><button onClick={() => setCurrentPage('cgv')} className={`${currentPage === 'cgv' ? 'text-white' : 'text-zinc-400 hover:text-white'} transition-colors text-sm`}>Conditions Générales de Vente</button></li>
+                <li><button onClick={() => setCurrentPage('legal')} className={`${currentPage === 'legal' ? 'text-white' : 'text-zinc-400 hover:text-white'} transition-colors text-sm`}>Mentions Légales</button></li>
+                <li><button onClick={() => setCurrentPage('privacy')} className={`${currentPage === 'privacy' ? 'text-white' : 'text-zinc-400 hover:text-white'} transition-colors text-sm`}>Politique de Confidentialité</button></li>
               </ul>
             </div>
           </div>

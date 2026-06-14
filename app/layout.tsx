@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.killeurusd.com"),
   title: "KILLEUR USD | Formation Trading Premium & Méthode d’Analyse Technique",
   description: "Arrête de trader au hasard. Rejoins KILLEUR USD et maîtrise une méthode d’analyse technique fondée sur des principes éprouvés depuis plus de 100 ans.",
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "fr-FR": "/", en: "/en", "x-default": "/" } },
   openGraph: {
     title: "KILLEUR USD | Formation Trading Premium",
     description: "Une méthode réelle, un cadre sérieux, un accompagnement privé pour sortir du trading au hasard.",

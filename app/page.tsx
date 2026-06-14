@@ -1748,6 +1748,7 @@ export default function App() {
                 {link.name}
               </button>
             ))}
+            <a href="/en" aria-label="English version" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">EN</a>
             <Button onClick={() => setCurrentPage('checkout')} variant="primary" className="ml-4 !py-2.5 !px-6 !text-xs">
               Rejoindre
             </Button>

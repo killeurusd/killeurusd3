@@ -40,10 +40,10 @@ Textes sources dans `../annexe/`. À compléter dans :
   email + l'envoi du PDF.
 - [ ] **Accès Anciens Élèves** (`Alumni.tsx`) : brancher la soumission.
 
-## ⚖️ Décision en attente (intégrité)
-- [ ] **Allégation de rareté** : bandeau marquee + bloc checkout « places volontairement limitées ».
-  À **rendre vérifiable** (nb de places/cohorte + date) **ou** atténuer, pour rester conforme
-  (DGCCRF / Directive Omnibus) et préserver la confiance.
+## 🔁 Maintenance par cohorte (rareté honnête — RÉSOLU, à tenir à jour)
+- [ ] **Mettre à jour `app/_site/offer.ts`** (`COHORT` : `seats` + `dateFr`/`dateEn`) à **chaque nouvelle
+  cohorte**. Actuellement : **5 places, bootcamp du 1ᵉʳ août**. Affiché dans le bandeau, le bloc prix
+  et le checkout (FR + EN). Ne jamais afficher un nombre/date non réel.
 
 ---
 _Maj : 2026-06-15 — Phase 1 de la refonte (routage FR, a11y, CTA, consentement) livrée sur la branche `refonte/phase-1-routage-fr`._

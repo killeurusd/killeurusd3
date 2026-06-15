@@ -6,47 +6,17 @@ import {
   CheckCircle2, Crosshair, Activity, ShieldCheck, Brain, X,
   PlayCircle, Users, Wrench, Radio, Star, Download, ChevronRight, BarChart,
 } from "lucide-react";
+import Image from "next/image";
 import { Button, SectionHeading } from "../ui";
 import { useGo } from "../useGo";
+import { faqs } from "../faq";
+import avis1 from "../../../public/avis-1.png";
+import avis2 from "../../../public/avis-2.png";
+import avis3 from "../../../public/avis-3.png";
 
 export default function Home() {
   const navigate = useGo();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      q: "Ce programme est-il adapté aux débutants absolus ?",
-      a: "Absolument. La seule condition est d'être enseignable et rigoureux. Si tu cherches un bouton magique ou des signaux à copier, passe ton chemin. Si tu es prêt à assimiler les fondamentaux et à appliquer une discipline stricte, ce cadre te fera gagner des années d'errance.",
-    },
-    {
-      q: "J'ai déjà de l'expérience, vais-je vraiment apprendre quelque chose ?",
-      a: "Oui. 80% de nos membres ont déjà une expérience des marchés, mais souffrent d'inconstance. Notre processus permet de déconstruire les mauvaises habitudes (gambling, sur-trading, fomo) et d'installer une logique d'exécution clinique.",
-    },
-    {
-      q: "Comment justifiez-vous cet investissement (997$) ?",
-      a: "Tu n'achètes pas une simple série de vidéos. Tu accèdes à un écosystème complet, intégrant des outils exclusifs, une communauté active, et surtout 1 heure de mentoring individuel par semaine pendant 3 mois. Cet investissement filtre les curieux et garantit un niveau d'accompagnement irréprochable.",
-    },
-    {
-      q: "Partagez-vous des signaux de trading ?",
-      a: "Non. L'objectif de KILLEURUSD est de forger des traders autonomes, capables de lire le marché et de prendre leurs propres décisions, et non de créer une dépendance à des signaux externes.",
-    },
-    {
-      q: "Combien de temps faut-il pour obtenir des résultats ?",
-      a: "Compte 3 mois de travail assidu pour maîtriser l'architecture de la méthode, éradiquer les erreurs de débutant et constater une nette amélioration dans ta lecture du prix et ta gestion du risque.",
-    },
-    {
-      q: "L'accès à la formation est-il limité dans le temps ?",
-      a: "Non. Le paiement est unique. Tu bénéficies d'un accès à vie à la plateforme VOD, aux futures mises à jour des modules et au groupe privé.",
-    },
-    {
-      q: "Faut-il un capital important pour démarrer ?",
-      a: "Aucunement. L'approche s'applique indépendamment de la taille du compte. Nous recommandons d'ailleurs de s'entraîner en simulation (démo) dans un premier temps, puis de valider ses acquis via les évaluations des Prop Firms.",
-    },
-    {
-      q: "Concrètement, comment se déroule le mentoring individuel ?",
-      a: "Chaque semaine durant 3 mois, tu réserves un créneau d'une heure via notre calendrier interne. Nous auditons tes positions, corrigeons tes biais en direct sur les graphiques, et définissons ton plan d'action pour la semaine suivante.",
-    },
-  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -425,6 +395,11 @@ export default function Home() {
             <Button onClick={() => navigate("checkout")} className="w-full sm:w-auto px-16 py-5 text-lg">
               Accéder au programme
             </Button>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-8 text-xs text-zinc-300 font-medium">
+              <span className="flex items-center"><ShieldCheck className="w-4 h-4 text-[#C9A227] mr-2" /> Paiement sécurisé par Stripe</span>
+              <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Droit de rétractation 14 jours</span>
+              <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Sans abonnement caché</span>
+            </div>
             <p className="text-xs text-zinc-400 mt-6 max-w-lg mx-auto">
               Le programme reste volontairement limité en nombre de places. <strong className="text-zinc-400">Cette exigence permet de préserver un vrai niveau de suivi dans l’accompagnement.</strong>
             </p>
@@ -504,12 +479,13 @@ export default function Home() {
           <div className="mt-20 mb-16">
             <h3 className="text-2xl font-bold text-white mb-8 text-center">Les résultats de nos élèves</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {["/avis-1.png", "/avis-2.png", "/avis-3.png"].map((imgSrc, idx) => (
+              {[avis1, avis2, avis3].map((img, idx) => (
                 <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-2 rounded-sm group relative overflow-hidden">
                   <div className="bg-[#111114] flex items-center justify-center overflow-hidden rounded-sm min-h-[200px]">
-                    <img
-                      src={imgSrc}
-                      alt={`Preuve d'exécution ${idx + 1}`}
+                    <Image
+                      src={img}
+                      alt={`Capture d'un retour d'élève dans le groupe privé (${idx + 1})`}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>

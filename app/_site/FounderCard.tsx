@@ -5,7 +5,7 @@ import logo from "../../public/logo.png";
 // un panneau de marque DÉLIBÉRÉ (logo en filigrane + halo + plaque nom/titre) plutôt
 // qu'un placeholder d'image manquante. Pour brancher la vraie photo : remplacer le
 // <Image logo> par la photo en `fill object-cover`.
-export default function FounderCard({ className = "" }: { className?: string }) {
+export default function FounderCard({ className = "", role = "FONDATEUR & HEAD TRADER" }: { className?: string; role?: string }) {
   return (
     <div className={`relative overflow-hidden bg-[#0B0B0D] border border-zinc-800 ${className}`}>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(122,15,15,0.20),transparent_65%)]" />
@@ -16,7 +16,7 @@ export default function FounderCard({ className = "" }: { className?: string }) 
       <div className="absolute bottom-6 left-6 right-6">
         <div className="border-l-4 border-[#7A0F0F] pl-4">
           <p className="text-white font-black uppercase tracking-widest text-xl mb-1">RAYANE &quot;RAYSS&quot;</p>
-          <p className="text-zinc-400 font-bold text-xs uppercase tracking-wider">FONDATEUR &amp; HEAD TRADER</p>
+          <p className="text-zinc-400 font-bold text-xs uppercase tracking-wider">{role}</p>
         </div>
       </div>
     </div>

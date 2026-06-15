@@ -1,3 +1,5 @@
+import { COHORT } from "./offer";
+
 // Bandeau marquee global (haut de page).
 export default function Banner() {
   return (
@@ -13,7 +15,7 @@ export default function Banner() {
       `}</style>
       <div className="animate-marquee whitespace-nowrap flex items-center">
         <span className="w-2 h-2 rounded-full bg-white animate-pulse mr-3"></span>
-        Le programme reste volontairement limité en nombre de places pour préserver un suivi d'excellence.
+        Bootcamp du {COHORT.dateFr} · {COHORT.seats} places seulement — accompagnement en petit comité.
       </div>
     </aside>
   );

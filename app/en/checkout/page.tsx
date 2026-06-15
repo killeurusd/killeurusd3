@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { EnShell, Btn } from "../../components/EnUI";
 import { Lock, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { COHORT } from "../../_site/offer";
 
 export const metadata: Metadata = {
   title: "Checkout | KILLEURUSD",
@@ -19,8 +20,8 @@ export default function CheckoutEn() {
         <div className="w-full mb-8 bg-[#7A0F0F]/10 border border-[#7A0F0F]/50 p-6 flex items-start rounded-sm">
           <AlertTriangle className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-1" />
           <div>
-            <h4 className="text-white font-bold mb-1">Capacity notice</h4>
-            <p className="text-sm text-zinc-300 leading-relaxed">Seats are deliberately limited. This keeps the level of personal support genuinely high for this cohort.</p>
+            <h4 className="text-white font-bold mb-1">{COHORT.dateEn} bootcamp — {COHORT.seats} seats</h4>
+            <p className="text-sm text-zinc-300 leading-relaxed">This cohort is capped at {COHORT.seats} participants to guarantee genuine small-group support. Once the {COHORT.seats} seats are filled, sign-ups move to the next cohort.</p>
           </div>
         </div>
 

@@ -12,6 +12,7 @@ import { useGo } from "../useGo";
 import { faqs } from "../faq";
 import HeroChart from "../HeroChart";
 import FounderCard from "../FounderCard";
+import { COHORT } from "../offer";
 import avis1 from "../../../public/avis-1.png";
 import avis2 from "../../../public/avis-2.png";
 import avis3 from "../../../public/avis-3.png";
@@ -400,7 +401,7 @@ export default function Home() {
               <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Sans abonnement caché</span>
             </div>
             <p className="text-xs text-zinc-400 mt-6 max-w-lg mx-auto">
-              Le programme reste volontairement limité en nombre de places. <strong className="text-zinc-400">Cette exigence permet de préserver un vrai niveau de suivi dans l’accompagnement.</strong>
+              Prochaine cohorte : <strong className="text-white">Bootcamp du {COHORT.dateFr} — {COHORT.seats} places</strong>. Un effectif réduit pour garantir un vrai suivi en petit comité.
             </p>
             <p className="text-xs text-zinc-400 mt-4 max-w-lg mx-auto">
               ⚠️ Le trading comporte un risque élevé de perte en capital. Ce programme est <strong>éducatif</strong> et ne constitue pas un conseil en investissement. Les performances passées ne préjugent pas des performances futures.

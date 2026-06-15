@@ -5,6 +5,7 @@ import { Lock, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { Button } from "../ui";
 import { PATHS } from "../nav";
 import { useGo } from "../useGo";
+import { COHORT } from "../offer";
 
 export default function Checkout() {
   const navigate = useGo();
@@ -18,8 +19,8 @@ export default function Checkout() {
       <div className="w-full mb-8 bg-[#7A0F0F]/10 border border-[#7A0F0F]/50 p-6 flex items-start rounded-sm">
         <AlertTriangle className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-1" />
         <div>
-          <h4 className="text-white font-bold mb-1">Information de Capacité</h4>
-          <p className="text-sm text-zinc-300 leading-relaxed">Le programme reste volontairement limité en nombre de places. Cette exigence permet de préserver un vrai niveau de suivi dans l’accompagnement de ce cycle.</p>
+          <h4 className="text-white font-bold mb-1">Bootcamp du {COHORT.dateFr} — {COHORT.seats} places</h4>
+          <p className="text-sm text-zinc-300 leading-relaxed">La cohorte est limitée à {COHORT.seats} participants pour garantir un vrai suivi en petit comité. Une fois les {COHORT.seats} places prises, les inscriptions basculent sur la cohorte suivante.</p>
         </div>
       </div>
 

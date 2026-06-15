@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import {
-  ChevronRight, Target, TrendingUp, ShieldAlert, CheckCircle, ArrowRight,
+  ChevronRight, Target, TrendingUp, ShieldAlert, CheckCircle, ArrowRight, Menu,
   X, Crosshair, Brain, ShieldCheck, Activity, Users, Star,
   PlayCircle, Wrench, Radio, Download, CheckCircle2, Mail, MessageSquare,
 } from "lucide-react";
@@ -14,14 +14,14 @@ import FounderCard from "../_site/FounderCard";
 import { COHORT } from "../_site/offer";
 
 // --- Primitives locales (la page EN est autonome ; le site FR n'est pas modifié) ---
-const Button = ({ children, variant = "primary", className = "", href = "#" }: any) => {
+const Button = ({ children, variant = "primary", className = "", href = "#", onClick }: any) => {
   const base = "inline-flex items-center justify-center font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-sm transition-all";
   const styles: any = {
     primary: "bg-[#7A0F0F] text-white hover:bg-[#950f0f]",
     secondary: "bg-white text-[#0B0B0D] hover:bg-zinc-200",
     outline: "border border-zinc-700 text-white hover:border-[#C9A227] hover:text-[#C9A227]",
   };
-  return <a href={href} className={`${base} ${styles[variant]} ${className}`}>{children}</a>;
+  return <a href={href} onClick={onClick} className={`${base} ${styles[variant]} ${className}`}>{children}</a>;
 };
 const SectionHeading = ({ subtitle, title, align = "center" }: any) => (
   <div className={`mb-12 ${align === "center" ? "text-center" : "text-left"}`}>
@@ -33,6 +33,7 @@ const SectionHeading = ({ subtitle, title, align = "center" }: any) => (
 export default function EnHome() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [sent, setSent] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const fld = "w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm";
   const lbl = "block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2";
 
@@ -79,7 +80,7 @@ export default function EnHome() {
             <Image src={logo} alt="KILLEURUSD logo" width={40} height={40} priority className="w-10 h-10 mr-3 object-contain" />
             <span className="text-2xl font-black text-white tracking-tighter uppercase">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
           </a>
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             <a href="#program" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">The Program</a>
             <a href="/en/vision" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Vision</a>
             <a href="/en/blog" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Blog</a>
@@ -87,11 +88,33 @@ export default function EnHome() {
             <a href="/" aria-label="Version française" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">FR</a>
             <Button href="#program" className="ml-4 !py-2.5 !px-6 !text-xs">Join</Button>
           </nav>
-          <div className="md:hidden flex items-center gap-4">
-            <a href="/" aria-label="Version française" className="text-xs font-bold text-zinc-400 hover:text-white uppercase tracking-wider">FR</a>
-            <Button href="#program" className="!py-2 !px-4 !text-xs">Join</Button>
-          </div>
+          <button
+            type="button"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            className="lg:hidden text-white hover:text-[#C9A227] transition-colors"
+            onClick={() => setMobileOpen((o) => !o)}
+          >
+            {mobileOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+          </button>
         </div>
+
+        {mobileOpen && (
+          <div className="lg:hidden bg-[#0B0B0D] border-b border-zinc-900 absolute w-full left-0 p-6 flex flex-col space-y-5 shadow-2xl">
+            {[
+              { label: "The Program", href: "#program" },
+              { label: "Vision", href: "/en/vision" },
+              { label: "Blog", href: "/en/blog" },
+              { label: "Contact", href: "#contact" },
+              { label: "Français", href: "/" },
+            ].map((l) => (
+              <a key={l.label} href={l.href} onClick={() => setMobileOpen(false)} className="text-left text-lg font-bold text-white uppercase tracking-wider hover:text-[#C9A227]">{l.label}</a>
+            ))}
+            <div className="pt-4 border-t border-zinc-900">
+              <Button href="#program" className="w-full" onClick={() => setMobileOpen(false)}>Join the program</Button>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* 1. HERO */}

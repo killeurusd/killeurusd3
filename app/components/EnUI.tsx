@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import ChatWidget from "./ChatWidget";
 import logo from "../../public/logo.png";
 
@@ -32,6 +33,7 @@ const navLinks = [
 
 // --- Shell (header + footer + chatbot) réutilisé par les pages secondaires EN ---
 export function EnShell({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#0B0B0D] text-zinc-200 font-sans selection:bg-[#7A0F0F] selection:text-white">
       <header className="fixed top-0 w-full z-50 bg-[#0B0B0D]/90 backdrop-blur-md border-b border-zinc-900">
@@ -47,11 +49,27 @@ export function EnShell({ children }: { children: React.ReactNode }) {
             <a href="/" aria-label="Version française" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">FR</a>
             <Btn href="/en/checkout" className="ml-4 !py-2.5 !px-6 !text-xs">Join</Btn>
           </nav>
-          <div className="lg:hidden flex items-center gap-4">
-            <a href="/" className="text-xs font-bold text-zinc-400 hover:text-white uppercase tracking-wider">FR</a>
-            <Btn href="/en/checkout" className="!py-2 !px-4 !text-xs">Join</Btn>
-          </div>
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="lg:hidden text-white hover:text-[#C9A227] transition-colors"
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+          </button>
         </div>
+        {open && (
+          <div className="lg:hidden bg-[#0B0B0D] border-b border-zinc-900 absolute w-full left-0 p-6 flex flex-col space-y-5 shadow-2xl">
+            {navLinks.map((l) => (
+              <a key={l.name} href={l.href} onClick={() => setOpen(false)} className="text-left text-lg font-bold text-white uppercase tracking-wider hover:text-[#C9A227]">{l.name}</a>
+            ))}
+            <a href="/" onClick={() => setOpen(false)} className="text-left text-lg font-bold text-white uppercase tracking-wider hover:text-[#C9A227]">Français</a>
+            <div className="pt-4 border-t border-zinc-900">
+              <Btn href="/en/checkout" className="w-full">Join the program</Btn>
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="pt-20">{children}</main>

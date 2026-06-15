@@ -1,26 +1,22 @@
-"use client";
-
-import { useState } from "react";
 import {
   ArrowRight, Target, TrendingUp, ShieldAlert, CheckCircle,
   CheckCircle2, Crosshair, Activity, ShieldCheck, Brain, X,
-  PlayCircle, Users, Wrench, Radio, Star, Download, ChevronRight,
+  PlayCircle, Users, Wrench, Radio, Star, Download,
 } from "lucide-react";
 import Image from "next/image";
-import { Button, SectionHeading } from "../ui";
-import { useGo } from "../useGo";
-import { faqs } from "../faq";
+import { SectionHeading, LinkButton } from "../primitives";
 import HeroChart from "../HeroChart";
 import FounderCard from "../FounderCard";
+import FaqAccordion from "../FaqAccordion";
+import LeadForm from "../LeadForm";
 import { COHORT } from "../offer";
 import avis1 from "../../../public/avis-1.png";
 import avis2 from "../../../public/avis-2.png";
 import avis3 from "../../../public/avis-3.png";
 
+// Server Component : aucune hydratation pour le gros du contenu. Les seules parties
+// interactives sont isolées en îlots client (Faq, LeadForm) ; les CTA sont des <Link>.
 export default function Home() {
-  const navigate = useGo();
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <div className="flex flex-col min-h-screen">
 
@@ -41,13 +37,13 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button onClick={() => navigate("checkout")} variant="primary" className="group">
+              <LinkButton href="/checkout" variant="primary" className="group">
                 Accéder au programme
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="secondary" onClick={() => navigate("contact")}>
+              </LinkButton>
+              <LinkButton href="/contact" variant="secondary">
                 Planifier un échange
-              </Button>
+              </LinkButton>
             </div>
 
             <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-400 font-medium">
@@ -392,9 +388,9 @@ export default function Home() {
             <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">Tu n’investis donc pas dans de simples modules. Tu rejoins une méthode, un suivi et un environnement de travail conçus pour faire évoluer ton trading dans le réel.</p>
             <div className="text-6xl font-black text-white mb-4">997$</div>
             <div className="text-zinc-400 text-sm mb-8 font-medium">Paiement unique. Accès à vie garanti à la plateforme.<br />Inclus : L'accompagnement privé (1h/semaine) pendant 3 mois.</div>
-            <Button onClick={() => navigate("checkout")} className="w-full sm:w-auto px-16 py-5 text-lg">
+            <LinkButton href="/checkout" className="w-full sm:w-auto px-16 py-5 text-lg">
               Accéder au programme
-            </Button>
+            </LinkButton>
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-8 text-xs text-zinc-300 font-medium">
               <span className="flex items-center"><ShieldCheck className="w-4 h-4 text-[#C9A227] mr-2" /> Paiement sécurisé par Stripe</span>
               <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Droit de rétractation 14 jours</span>
@@ -522,7 +518,7 @@ export default function Home() {
               <p>KILLEURUSD a été fondé sur cette exigence : forger un cercle de traders indépendants, capables d'analyser sans biais et d'exécuter avec la froideur des professionnels.</p>
             </div>
             <div className="mt-10">
-              <Button variant="outline" onClick={() => navigate("about")}>Découvrir notre philosophie</Button>
+              <LinkButton href="/vision" variant="outline">Découvrir notre philosophie</LinkButton>
             </div>
           </div>
         </div>
@@ -538,26 +534,7 @@ export default function Home() {
             Télécharge gratuitement <strong className="text-white">&quot;L'Audit du Trader Discipliné&quot;</strong>. 10 points de contrôle non-négociables avant d'ouvrir la moindre position sur les marchés.
           </p>
 
-          <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto" onSubmit={(e: any) => e.preventDefault()}>
-            <input
-              type="text"
-              placeholder="Ton prénom"
-              aria-label="Ton prénom"
-              className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/3 rounded-sm"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Ton adresse email"
-              aria-label="Ton adresse email"
-              className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/2 rounded-sm"
-              required
-            />
-            <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm">
-              Télécharger la checklist
-            </button>
-          </form>
-          <p className="text-white/70 text-xs mt-4">Accès immédiat. Désinscription en un clic.</p>
+          <LeadForm />
         </div>
       </section>
 
@@ -565,25 +542,7 @@ export default function Home() {
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-3xl mx-auto px-6">
           <SectionHeading subtitle="Réponses aux questions les plus fréquentes" title="Questions fréquentes" />
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-zinc-800 bg-[#111114]">
-                <button
-                  className="w-full text-left px-8 py-6 flex justify-between items-center text-white font-bold hover:text-[#C9A227] transition-colors"
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  aria-expanded={openFaq === idx}
-                >
-                  <span className="pr-6 text-lg">{faq.q}</span>
-                  <ChevronRight className={`w-5 h-5 shrink-0 transition-transform ${openFaq === idx ? "rotate-90 text-[#C9A227]" : "text-zinc-600"}`} />
-                </button>
-                {openFaq === idx && (
-                  <div className="px-8 pb-8 text-zinc-400 mt-2 leading-relaxed text-base border-t border-zinc-800/50 pt-6">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <FaqAccordion />
         </div>
       </section>
 
@@ -595,12 +554,12 @@ export default function Home() {
             Si tu es résolu à cesser l'improvisation, à comprendre la dynamique institutionnelle et à te soumettre à un cadre de progression strict, ta place est ici.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Button onClick={() => navigate("checkout")} variant="primary" className="text-lg px-12 py-5">
+            <LinkButton href="/checkout" variant="primary" className="text-lg px-12 py-5">
               Accéder au programme
-            </Button>
-            <Button variant="outline" onClick={() => navigate("contact")} className="text-lg px-12 py-5 border-zinc-700">
+            </LinkButton>
+            <LinkButton href="/contact" variant="outline" className="text-lg px-12 py-5 border-zinc-700">
               Contacter l'équipe
-            </Button>
+            </LinkButton>
           </div>
         </div>
       </section>

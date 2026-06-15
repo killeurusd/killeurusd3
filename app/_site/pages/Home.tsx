@@ -209,7 +209,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
             {/* CARTE 1: MODULES */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
-              <PlayCircle className="w-10 h-10 text-[#7A0F0F] mb-6" />
+              <PlayCircle className="w-10 h-10 text-[#C9A227] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Les modules de formation</h3>
               <p className="text-zinc-400 mb-6 text-sm">Tu accèdes immédiatement à l’ensemble de nos ressources théoriques. Ces modules ont été conçus pour t’aider à :</p>
               <ul className="space-y-3 mb-6 flex-1">
@@ -242,7 +242,7 @@ export default function Home() {
                   "échanger avec des membres confirmés.",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
-                    <CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-3 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-3 shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -250,9 +250,9 @@ export default function Home() {
             </div>
 
             {/* CARTE 3: COACHING PRIVÉ */}
-            <div className="bg-[#111114] border border-[#7A0F0F]/50 p-8 rounded-sm shadow-[0_0_30px_rgba(122,15,15,0.05)] relative overflow-hidden flex flex-col h-full">
-              <div className="absolute top-0 right-0 bg-[#7A0F0F] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1">Accélérateur</div>
-              <Target className="w-10 h-10 text-[#7A0F0F] mb-6" />
+            <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Accélérateur</div>
+              <Target className="w-10 h-10 text-[#C9A227] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">1 coaching privé / semaine (3 mois)</h3>
               <p className="text-zinc-400 mb-6 text-sm">Pendant 3 mois, tu bénéficies d’1 heure de mentoring individuel par semaine en face-à-face. Au programme :</p>
               <ul className="space-y-3 mb-6 flex-1">
@@ -284,7 +284,7 @@ export default function Home() {
                   "répondre en direct à tes interrogations techniques.",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-zinc-300">
-                    <CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-3 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-3 shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -348,8 +348,8 @@ export default function Home() {
 
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
-                <div className="w-8 h-8 bg-[#7A0F0F] rounded-full flex items-center justify-center mb-6 shadow-lg">
-                  <span className="text-white text-sm font-black">1</span>
+                <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-[#0B0B0D] text-sm font-black">1</span>
                 </div>
                 <h4 className="text-base font-bold text-white mb-3">Validation de ton inscription</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">Dès que ton paiement est validé, tu accèdes immédiatement aux modules de formation ainsi qu’aux outils inclus dans le programme.</p>
@@ -494,9 +494,9 @@ export default function Home() {
           <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm text-center">
             <h4 className="text-white font-bold uppercase tracking-wider mb-6">Pourquoi faire confiance à cette approche ?</h4>
             <div className="flex flex-wrap justify-center gap-8 text-sm text-zinc-400">
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> +7 ans de pratique réelle</div>
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> Zéro illusion marketing</div>
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7A0F0F] mr-2" /> Audit des performances</div>
+              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> +7 ans de pratique réelle</div>
+              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Zéro illusion marketing</div>
+              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Audit des performances</div>
             </div>
           </div>
         </div>

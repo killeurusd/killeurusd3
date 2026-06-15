@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { MessageSquare, X, Send } from "lucide-react";
 
 type Msg = { from: "bot" | "user"; text: string };
@@ -65,6 +66,7 @@ const DICT = {
 
 export default function ChatWidget({ navigate, lang = "fr" }: { navigate?: (page: string) => void; lang?: Lang }) {
   const T = DICT[lang];
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([{ from: "bot", text: T.greeting }]);
   const [chips, setChips] = useState<Chip[]>([]);
@@ -119,7 +121,7 @@ export default function ChatWidget({ navigate, lang = "fr" }: { navigate?: (page
     user(T.menu.human);
     setTimeout(() => {
       bot(T.toHuman);
-      if (navigate) navigate("contact"); else window.location.hash = "contact";
+      if (navigate) navigate("contact"); else router.push(lang === "en" ? "/en#contact" : "/contact");
       setOpen(false);
     }, 300);
   };

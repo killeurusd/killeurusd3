@@ -359,21 +359,21 @@ export default function Home() {
                 <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
                   <span className="text-[#0B0B0D] text-sm font-black">2</span>
                 </div>
-                <h4 className="text-base font-bold text-[#C9A227] mb-3">Planification de ta première séance</h4>
+                <h4 className="text-base font-bold text-white mb-3">Planification de ta première séance</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">Tu peux réserver directement ta première heure de coaching privé pour lancer ton accompagnement dans les meilleures conditions.</p>
               </div>
 
               <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
-                <div className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center mb-6">
-                  <span className="text-zinc-400 text-sm font-black">3</span>
+                <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-[#0B0B0D] text-sm font-black">3</span>
                 </div>
                 <h4 className="text-base font-bold text-white mb-3">Accès aux groupes privés</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">Sous 24 heures maximum, tu reçois tes accès aux différents groupes privés de la communauté pour suivre les analyses, les prises de position et la dynamique du programme.</p>
               </div>
 
               <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
-                <div className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center mb-6">
-                  <span className="text-zinc-400 text-sm font-black">4</span>
+                <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-[#0B0B0D] text-sm font-black">4</span>
                 </div>
                 <h4 className="text-base font-bold text-white mb-3">Intégration puis suivi personnalisé</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">La première séance sert à faire le point sur ton niveau, t’expliquer le fonctionnement du programme et poser les bases de ton suivi. Les séances suivantes sont consacrées à la correction, à la pratique et à ta progression.</p>

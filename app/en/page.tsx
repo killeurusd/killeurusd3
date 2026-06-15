@@ -6,7 +6,9 @@ import {
   X, Crosshair, Brain, BarChart, ShieldCheck, Activity, Users, Star,
   PlayCircle, Wrench, Radio, Download, CheckCircle2, Mail, MessageSquare,
 } from "lucide-react";
+import Image from "next/image";
 import ChatWidget from "../components/ChatWidget";
+import logo from "../../public/logo.png";
 
 // --- Primitives locales (la page EN est autonome ; le site FR n'est pas modifié) ---
 const Button = ({ children, variant = "primary", className = "", href = "#" }: any) => {
@@ -45,6 +47,19 @@ export default function EnHome() {
   return (
     <div id="top" className="min-h-screen bg-[#0B0B0D] text-zinc-200 font-sans selection:bg-[#7A0F0F] selection:text-white pt-10">
 
+      {/* FAQ structured data (FAQPage) — extractable by Google & AI engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            inLanguage: "en",
+            mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
+
       {/* URGENCY BANNER */}
       <div className="fixed top-0 left-0 w-full h-10 bg-[#7A0F0F] text-white flex items-center overflow-hidden z-[60] text-xs md:text-sm font-bold tracking-widest uppercase">
         <style>{`@keyframes marquee {0%{transform:translateX(100vw);}100%{transform:translateX(-100%);}} .animate-marquee{animation:marquee 20s linear infinite;}`}</style>
@@ -58,7 +73,7 @@ export default function EnHome() {
       <header className="fixed top-10 w-full z-50 bg-[#0B0B0D]/90 backdrop-blur-md border-b border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <a href="#top" className="flex items-center group">
-            <img src="/favicon.ico" alt="Killeur USD Logo" className="w-10 h-10 mr-3 object-contain" />
+            <Image src={logo} alt="KILLEURUSD logo" width={40} height={40} priority className="w-10 h-10 mr-3 object-contain" />
             <span className="text-2xl font-black text-white tracking-tighter uppercase">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
           </a>
           <nav className="hidden md:flex items-center space-x-8">

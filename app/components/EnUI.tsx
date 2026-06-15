@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import ChatWidget from "./ChatWidget";
+import logo from "../../public/logo.png";
 
 // --- Boutons & titres (version EN, autonome) ---
 export const Btn = ({ children, variant = "primary", className = "", href = "#" }: any) => {
@@ -35,17 +37,17 @@ export function EnShell({ children }: { children: React.ReactNode }) {
       <header className="fixed top-0 w-full z-50 bg-[#0B0B0D]/90 backdrop-blur-md border-b border-zinc-900">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <a href="/en" className="flex items-center group">
-            <img src="/favicon.ico" alt="Killeur USD Logo" className="w-10 h-10 mr-3 object-contain" />
+            <Image src={logo} alt="KILLEURUSD logo" width={40} height={40} priority className="w-10 h-10 mr-3 object-contain" />
             <span className="text-2xl font-black text-white tracking-tighter uppercase">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
           </a>
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navLinks.map((l) => (
               <a key={l.name} href={l.href} className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">{l.name}</a>
             ))}
             <a href="/" aria-label="Version française" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">FR</a>
             <Btn href="/en/checkout" className="ml-4 !py-2.5 !px-6 !text-xs">Join</Btn>
           </nav>
-          <div className="md:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-4">
             <a href="/" className="text-xs font-bold text-zinc-400 hover:text-white uppercase tracking-wider">FR</a>
             <Btn href="/en/checkout" className="!py-2 !px-4 !text-xs">Join</Btn>
           </div>

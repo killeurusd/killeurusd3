@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "../globals.css";
+
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.killeurusd.com"),
   title: "KILLEUR USD | Premium Trading Training & Technical-Analysis Method",
   description:
     "Stop trading at random. Join KILLEUR USD and master a technical-analysis method built on century-old proven principles, strict execution and risk management.",
@@ -19,6 +25,11 @@ export const metadata: Metadata = {
   },
 };
 
+// Root layout EN — possède <html lang="en">.
 export default function EnLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col">{children}</body>
+    </html>
+  );
 }

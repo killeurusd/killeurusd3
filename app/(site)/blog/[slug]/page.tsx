@@ -1,23 +1,50 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Article from "../../../_site/pages/Article";
-import { ARTICLE_SLUG } from "../../../_site/nav";
+import { articles, getArticle, AUTHOR } from "../../../_site/articles";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return [{ slug: ARTICLE_SLUG }];
+  return articles.map((a) => ({ slug: a.slug }));
 }
 
-export const metadata: Metadata = {
-  title: "Pourquoi 90% des traders échouent | KILLEURUSD",
-  description:
-    "Analyse psychologique et technique sur les raisons de l'échec en trading et comment inverser la tendance.",
-  alternates: { canonical: `/blog/${ARTICLE_SLUG}` },
-};
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticle(slug);
+  if (!article) return {};
+  return {
+    title: article.metaTitle,
+    description: article.metaDescription,
+    alternates: { canonical: `/blog/${article.slug}` },
+    openGraph: { type: "article", title: article.title, description: article.excerpt, publishedTime: article.date },
+  };
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  if (slug !== ARTICLE_SLUG) notFound();
-  return <Article />;
+  const article = getArticle(slug);
+  if (!article) notFound();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.excerpt,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: { "@type": "Person", name: AUTHOR },
+    publisher: { "@type": "Organization", name: "KILLEUR USD", logo: { "@type": "ImageObject", url: "https://www.killeurusd.com/logo.png" } },
+    mainEntityOfPage: `https://www.killeurusd.com/blog/${article.slug}`,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
+      <Article article={article} />
+    </>
+  );
 }

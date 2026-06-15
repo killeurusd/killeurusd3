@@ -1,8 +1,8 @@
 "use client";
 
-import { Users } from "lucide-react";
 import { Button, SectionHeading } from "../ui";
 import { useGo } from "../useGo";
+import FounderCard from "../FounderCard";
 
 export default function Vision() {
   const navigate = useGo();
@@ -13,10 +13,7 @@ export default function Vision() {
 
       <div className="grid md:grid-cols-12 gap-12 mt-16">
         <div className="md:col-span-5">
-          <div className="sticky top-32 aspect-[3/4] bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden shadow-2xl flex items-center justify-center">
-            <Users className="w-32 h-32 text-zinc-900" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#7A0F0F]/20 to-transparent"></div>
-          </div>
+          <FounderCard className="sticky top-32 aspect-[3/4] rounded-sm shadow-2xl" />
         </div>
 
         <div className="md:col-span-7 text-zinc-400 leading-relaxed text-lg">

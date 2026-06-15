@@ -4,12 +4,14 @@ import { useState } from "react";
 import {
   ArrowRight, Target, TrendingUp, ShieldAlert, CheckCircle,
   CheckCircle2, Crosshair, Activity, ShieldCheck, Brain, X,
-  PlayCircle, Users, Wrench, Radio, Star, Download, ChevronRight, BarChart,
+  PlayCircle, Users, Wrench, Radio, Star, Download, ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
 import { Button, SectionHeading } from "../ui";
 import { useGo } from "../useGo";
 import { faqs } from "../faq";
+import HeroChart from "../HeroChart";
+import FounderCard from "../FounderCard";
 import avis1 from "../../../public/avis-1.png";
 import avis2 from "../../../public/avis-2.png";
 import avis3 from "../../../public/avis-3.png";
@@ -56,21 +58,18 @@ export default function Home() {
 
           <div className="hidden lg:block relative">
             <div className="aspect-[4/3] bg-[#0B0B0D] border border-zinc-800 rounded-sm overflow-hidden relative shadow-[0_0_50px_rgba(0,0,0,0.8)]">
-              <div className="absolute inset-0 bg-[#111114] flex items-center justify-center opacity-30 mix-blend-luminosity">
-                <BarChart className="w-32 h-32 text-zinc-700" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-transparent to-transparent"></div>
-              <div className="absolute inset-x-8 bottom-8 top-12 border border-zinc-800/50 bg-[#111114]/80 backdrop-blur flex flex-col p-4">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_15%,rgba(122,15,15,0.12),transparent_60%)]"></div>
+              <div className="absolute inset-x-8 bottom-8 top-12 border border-zinc-800/50 bg-[#111114]/80 backdrop-blur flex flex-col p-4 rounded-sm">
                 <div className="flex justify-between items-center border-b border-zinc-800/50 pb-3 mb-4">
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                     <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                     <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                   </div>
-                  <span className="text-[10px] text-zinc-400 font-mono uppercase">Analyse Structurelle</span>
+                  <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">Analyse Structurelle</span>
                 </div>
-                <div className="flex-1 border border-dashed border-zinc-700/50 flex items-center justify-center text-zinc-700/50">
-                  <BarChart size={64} />
+                <div className="flex-1 flex items-center justify-center min-h-0">
+                  <HeroChart />
                 </div>
               </div>
             </div>
@@ -509,18 +508,7 @@ export default function Home() {
       {/* 8. SECTION FONDATEUR */}
       <section className="py-24 bg-[#0B0B0D]">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <div className="aspect-[4/5] bg-[#111114] border border-zinc-800 relative overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-            <div className="absolute inset-0 bg-[#0B0B0D] flex items-center justify-center">
-              <Users className="w-32 h-32 text-zinc-800" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/60 to-transparent"></div>
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="border-l-4 border-[#7A0F0F] pl-4">
-                <p className="text-white font-black uppercase tracking-widest text-xl mb-1">RAYANE &quot;RAYSS&quot;</p>
-                <p className="text-zinc-400 font-bold text-xs uppercase tracking-wider">FONDATEUR & HEAD TRADER</p>
-              </div>
-            </div>
-          </div>
+          <FounderCard className="aspect-[4/5] shadow-[0_0_30px_rgba(0,0,0,0.5)]" />
           <div>
             <SectionHeading subtitle="L'Expertise" title="Tu n'as pas besoin de promesses, mais d'une méthode." align="left" />
             <h3 className="text-2xl font-bold text-white mb-6">Le marché récompense la discipline, pas la motivation.</h3>

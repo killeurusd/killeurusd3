@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { footerNav, footerLegal } from "./nav";
+import logo from "../../public/logo.png";
 
 export default function Footer() {
   return (
@@ -8,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
-              <img src="/favicon.ico" alt="Killeur USD Logo" className="w-20 h-20 mr-4 object-contain" />
+              <Image src={logo} alt="Logo KILLEURUSD" width={80} height={80} className="w-20 h-20 mr-4 object-contain" />
               <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
             </div>
             <p className="text-zinc-400 text-sm leading-relaxed max-w-sm mb-6">

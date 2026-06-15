@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { navLinks, PATHS } from "./nav";
+import logo from "../../public/logo.png";
 
 export default function Header() {
   const pathname = usePathname();
@@ -17,12 +19,12 @@ export default function Header() {
     <header className="fixed top-10 w-full z-50 bg-[#0B0B0D]/90 backdrop-blur-md border-b border-zinc-900 transition-all">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center cursor-pointer group">
-          <img src="/favicon.ico" alt="Killeur USD Logo" className="w-10 h-10 mr-3 group-hover:scale-105 transition-transform object-contain" />
+          <Image src={logo} alt="Logo KILLEURUSD" width={40} height={40} priority className="w-10 h-10 mr-3 group-hover:scale-105 transition-transform object-contain" />
           <span className="text-2xl font-black text-white tracking-tighter uppercase">KILLEUR<span className="text-[#7A0F0F]">USD</span></span>
         </Link>
 
         {/* Navigation Desktop */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -48,7 +50,7 @@ export default function Header() {
           type="button"
           aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={isMobileMenuOpen}
-          className="md:hidden text-white hover:text-[#C9A227] transition-colors"
+          className="lg:hidden text-white hover:text-[#C9A227] transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
@@ -57,7 +59,7 @@ export default function Header() {
 
       {/* Menu Mobile */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#0B0B0D] border-b border-zinc-900 absolute w-full left-0 p-6 flex flex-col space-y-6 shadow-2xl">
+        <div className="lg:hidden bg-[#0B0B0D] border-b border-zinc-900 absolute w-full left-0 p-6 flex flex-col space-y-6 shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}

@@ -25,7 +25,7 @@ export default function Blog() {
             <div className="p-6 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#C9A227] bg-[#C9A227]/10 px-2 py-1">{article.category}</span>
-                <span className="text-xs text-zinc-500">{article.readTime} de lecture</span>
+                <span className="text-xs text-zinc-400">{article.readTime} de lecture</span>
               </div>
               <h2 className="text-lg font-bold text-white mb-4 group-hover:text-[#7A0F0F] transition-colors line-clamp-2">{article.title}</h2>
               <div className="mt-auto flex justify-between items-center text-zinc-400 text-xs font-medium border-t border-zinc-800/50 pt-4">

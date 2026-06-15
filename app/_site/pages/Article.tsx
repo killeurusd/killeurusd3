@@ -53,7 +53,7 @@ export default function Article() {
         <div className="mt-16 bg-gradient-to-br from-[#0B0B0D] to-[#111114] border border-zinc-800 p-8 rounded-sm text-center">
           <h3 className="text-xl font-bold text-white mb-4">Prêt à imposer ta rigueur au marché ?</h3>
           <p className="text-zinc-400 text-sm mb-6 max-w-md mx-auto">Rejoins l'écosystème KILLEURUSD et déploie une gestion asymétrique de ton portefeuille.</p>
-          <Button onClick={() => navigate("checkout")}>Intégrer le programme</Button>
+          <Button onClick={() => navigate("checkout")}>Accéder au programme</Button>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import Banner from "../_site/Banner";
 import Header from "../_site/Header";
 import Footer from "../_site/Footer";
+import Consent from "../_site/Consent";
 import ChatWidget from "../components/ChatWidget";
 
 // Chrome commun à toutes les pages FR (ex-`App()` du SPA, désormais partagé via le layout).
@@ -12,6 +13,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <main>{children}</main>
       <Footer />
       <ChatWidget />
+      <Consent />
     </div>
   );
 }

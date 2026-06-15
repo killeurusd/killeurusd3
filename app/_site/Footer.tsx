@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-wider text-xs mb-6">Navigation</h4>
+            <h3 className="text-white font-bold uppercase tracking-wider text-xs mb-6">Navigation</h3>
             <ul className="space-y-3">
               {footerNav.map((l) => (
                 <li key={l.href}>
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-wider text-xs mb-6">Légal & Conditions</h4>
+            <h3 className="text-white font-bold uppercase tracking-wider text-xs mb-6">Légal & Conditions</h3>
             <ul className="space-y-3">
               {footerLegal.map((l) => (
                 <li key={l.href}>
@@ -47,12 +47,12 @@ export default function Footer() {
         </div>
 
         <div className="bg-[#111114] border border-zinc-900 p-6 rounded-sm mb-8">
-          <p className="text-[10px] md:text-xs text-zinc-600 text-justify leading-relaxed uppercase tracking-wide">
+          <p className="text-[10px] md:text-xs text-zinc-400 text-justify leading-relaxed uppercase tracking-wide">
             <strong>Avertissement sur les risques :</strong> Le trading sur les marchés financiers (Forex, Indices, Crypto) comporte un niveau de risque très élevé et peut ne pas convenir à tous les investisseurs. L'effet de levier peut jouer en votre défaveur comme en votre faveur. Vous pourriez subir la perte d'une partie ou de la totalité de votre capital initial. Ne spéculez jamais avec un capital que vous ne pouvez pas vous permettre de perdre. KILLEURUSD fournit un contenu purement éducatif basé sur l'analyse technique. Aucune information, graphique ou vidéo présentée sur ce site ne constitue un conseil en investissement.
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-zinc-900 text-xs text-zinc-600">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-zinc-900 text-xs text-zinc-400">
           <div>&copy; {new Date().getFullYear()} KILLEURUSD. Tous droits réservés.</div>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <span className="uppercase tracking-widest font-bold">Discipline.</span>

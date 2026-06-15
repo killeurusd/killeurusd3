@@ -60,7 +60,7 @@ export default function Vision() {
 
           <div className="mt-16 pt-8 border-t border-zinc-800">
             <p className="text-white font-bold mb-8">Si tu es résolu à intégrer ce standard d'exigence et à abandonner les illusions, tu es au bon endroit.</p>
-            <Button onClick={() => navigate("checkout")}>Sécuriser ma place</Button>
+            <Button onClick={() => navigate("checkout")}>Accéder au programme</Button>
           </div>
         </div>
       </div>

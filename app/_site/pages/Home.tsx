@@ -423,7 +423,7 @@ export default function Home() {
             <div className="text-6xl font-black text-white mb-4">997$</div>
             <div className="text-zinc-400 text-sm mb-8 font-medium">Paiement unique. Accès à vie garanti à la plateforme.<br />Inclus : L'accompagnement privé (1h/semaine) pendant 3 mois.</div>
             <Button onClick={() => navigate("checkout")} className="w-full sm:w-auto px-16 py-5 text-lg">
-              Sécuriser ma place
+              Accéder au programme
             </Button>
             <p className="text-xs text-zinc-400 mt-6 max-w-lg mx-auto">
               Le programme reste volontairement limité en nombre de places. <strong className="text-zinc-400">Cette exigence permet de préserver un vrai niveau de suivi dans l’accompagnement.</strong>
@@ -495,7 +495,7 @@ export default function Home() {
                 </div>
                 <div className="border-t border-zinc-800 pt-4">
                   <div className="font-bold text-white uppercase tracking-wider text-sm">{testimonial.name}</div>
-                  <div className="text-xs text-[#7A0F0F] font-bold mt-1 uppercase tracking-widest">{testimonial.level}</div>
+                  <div className="text-xs text-[#E5605C] font-bold mt-1 uppercase tracking-widest">{testimonial.level}</div>
                 </div>
               </div>
             ))}
@@ -592,7 +592,7 @@ export default function Home() {
               Télécharger la checklist
             </button>
           </form>
-          <p className="text-white/60 text-xs mt-4">Accès immédiat. Désinscription en un clic.</p>
+          <p className="text-white/70 text-xs mt-4">Accès immédiat. Désinscription en un clic.</p>
         </div>
       </section>
 
@@ -631,7 +631,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Button onClick={() => navigate("checkout")} variant="primary" className="text-lg px-12 py-5">
-              Passer à l'action
+              Accéder au programme
             </Button>
             <Button variant="outline" onClick={() => navigate("contact")} className="text-lg px-12 py-5 border-zinc-700">
               Contacter l'équipe

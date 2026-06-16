@@ -9,6 +9,19 @@ export default function Contact() {
   const fld = "w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm";
   const lbl = "block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2";
 
+  async function handleSubmit(e: any) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    setSent(true); // confirmation optimiste
+    try {
+      await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formType: "contact", page: "/contact", ...data }),
+      });
+    } catch {}
+  }
+
   return (
     <div className="pt-32 pb-24 max-w-3xl mx-auto px-6 min-h-screen text-center">
       <SectionHeading subtitle="Assistance" title="Contacter l'Équipe" />
@@ -46,8 +59,9 @@ export default function Contact() {
       ) : (
         <form
           className="space-y-6 text-left bg-[#0B0B0D] border border-zinc-800 p-8 md:p-10 rounded-sm"
-          onSubmit={(e: any) => { e.preventDefault(); /* [À BRANCHER] : envoyer new FormData(e.currentTarget) vers email/CRM */ setSent(true); }}
+          onSubmit={handleSubmit}
         >
+          <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
           <p className="text-sm text-zinc-400 -mt-2">Quelques précisions nous permettent de mieux t'orienter et de personnaliser notre réponse.</p>
 
           <div className="grid md:grid-cols-2 gap-6">

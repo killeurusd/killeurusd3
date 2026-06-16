@@ -1,16 +1,19 @@
 import type { MetadataRoute } from "next";
-import { articles } from "./_site/articles";
-import { articlesEn } from "./_site/articles-en";
+import { getArticles } from "./_site/articles-source";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const revalidate = 60;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://www.killeurusd.com";
   const now = new Date();
 
+  const [frArts, enArts] = await Promise.all([getArticles("fr"), getArticles("en")]);
+
   // Pages indexables (on exclut checkout / merci / acces-anciens, en noindex).
   const fr = ["", "/vision", "/blog", "/contact", "/cgv", "/mentions-legales", "/confidentialite"];
-  const frArticles = articles.map((a) => `/blog/${a.slug}`);
+  const frArticles = frArts.map((a) => `/blog/${a.slug}`);
   const en = ["/en", "/en/vision", "/en/blog", "/en/terms", "/en/legal", "/en/privacy"];
-  const enArticles = articlesEn.map((a) => `/en/blog/${a.slug}`);
+  const enArticles = enArts.map((a) => `/en/blog/${a.slug}`);
 
   return [...fr, ...frArticles, ...en, ...enArticles].map((p) => ({
     url: base + p,

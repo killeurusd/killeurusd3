@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { EnShell, SectionHeading } from "../../components/EnUI";
 import { Brain, Activity, ShieldCheck, BookOpen, ChevronRight, type LucideIcon } from "lucide-react";
-import { articlesEn } from "../../_site/articles-en";
+import { getArticles } from "../../_site/articles-source";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Analysis & Theory | KILLEURUSD",
@@ -15,7 +17,8 @@ const THUMBS: Record<string, { Icon: LucideIcon; glow: string; color: string }> 
   Rigor: { Icon: ShieldCheck, glow: "rgba(228,228,231,0.12)", color: "#e4e4e7" },
 };
 
-export default function BlogEn() {
+export default async function BlogEn() {
+  const articlesEn = await getArticles("en");
   return (
     <EnShell>
       <div className="pt-12 pb-24 max-w-6xl mx-auto px-6 min-h-screen">

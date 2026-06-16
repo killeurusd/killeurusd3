@@ -34,7 +34,20 @@ const SectionHeading = ({ subtitle, title, align = "center" }: any) => (
 export default function EnHome() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [sent, setSent] = useState(false);
+  const [leadSent, setLeadSent] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  async function postForm(e: any, formType: string) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    try {
+      await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formType, page: "/en", ...data }),
+      });
+    } catch {}
+  }
   const fld = "w-full bg-[#111114] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#7A0F0F] transition-colors rounded-sm";
   const lbl = "block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2";
 
@@ -413,12 +426,20 @@ export default function EnHome() {
           <Download className="w-12 h-12 text-white/50 mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Keep going.</h2>
           <p className="text-white/80 mb-10 text-lg max-w-2xl mx-auto">Download <strong className="text-white">"The Disciplined Trader's Audit"</strong> for free. 10 non-negotiable checkpoints before opening any position.</p>
-          <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto" onSubmit={(e: any) => e.preventDefault()}>
-            <input type="text" placeholder="Your first name" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/3 rounded-sm" required />
-            <input type="email" placeholder="Your email" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/2 rounded-sm" required />
+          {leadSent ? (
+            <div className="max-w-2xl mx-auto bg-[#0B0B0D]/40 border border-white/20 p-6 rounded-sm text-center">
+              <p className="text-white font-bold">Thanks 👍 Check your inbox.</p>
+              <p className="text-white/70 text-sm mt-1">The checklist is on its way.</p>
+            </div>
+          ) : (
+          <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto" onSubmit={(e: any) => { setLeadSent(true); postForm(e, "lead"); }}>
+            <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+            <input type="text" name="prenom" placeholder="Your first name" aria-label="Your first name" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/3 rounded-sm" required />
+            <input type="email" name="email" placeholder="Your email" aria-label="Your email" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/2 rounded-sm" required />
             <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm">Get the checklist</button>
           </form>
-          <p className="text-white/50 text-xs mt-4">Instant access. One-click unsubscribe.</p>
+          )}
+          <p className="text-white/70 text-xs mt-4">Instant access. One-click unsubscribe.</p>
         </div>
       </section>
 
@@ -455,7 +476,8 @@ export default function EnHome() {
               <p className="text-zinc-400">Thanks. We'll get back to you within 24 business hours with an answer tailored to your profile.</p>
             </div>
           ) : (
-          <form className="space-y-6 text-left bg-[#0B0B0D] border border-zinc-800 p-8 md:p-10 rounded-sm" onSubmit={(e: any) => { e.preventDefault(); /* [À BRANCHER] email/CRM */ setSent(true); }}>
+          <form className="space-y-6 text-left bg-[#0B0B0D] border border-zinc-800 p-8 md:p-10 rounded-sm" onSubmit={(e: any) => { setSent(true); postForm(e, "contact"); }}>
+            <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
             <p className="text-sm text-zinc-400 -mt-2">A few details help us guide you and personalize our reply.</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div><label className={lbl}>Full name *</label><input name="name" type="text" required className={fld} /></div>

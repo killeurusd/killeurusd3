@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Article from "../../../_site/pages/Article";
-import { articles, getArticle, AUTHOR } from "../../../_site/articles";
+import { AUTHOR } from "../../../_site/articles";
+import { getArticles, getArticle } from "../../../_site/articles-source";
 
-export const dynamicParams = false;
+export const revalidate = 60;
+// Autorise les slugs ajoutés dans la feuille après le build (rendus à la demande).
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  const arts = await getArticles("fr");
+  return arts.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle("fr", slug);
   if (!article) return {};
   return {
     title: article.metaTitle,
@@ -23,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle("fr", slug);
   if (!article) notFound();
 
   const jsonLd = {
@@ -40,10 +44,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <Article article={article} />
     </>
   );

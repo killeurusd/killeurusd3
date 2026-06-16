@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Brain, Activity, ShieldCheck, BookOpen, ChevronRight, type LucideIcon } from "lucide-react";
 import { SectionHeading } from "../ui";
-import { articles } from "../articles";
+import { type Article } from "../articles";
 
 // Vignette de marque par catégorie (au lieu d'une icône générique identique).
 const THUMBS: Record<string, { Icon: LucideIcon; glow: string; color: string }> = {
@@ -10,7 +10,7 @@ const THUMBS: Record<string, { Icon: LucideIcon; glow: string; color: string }> 
   Rigueur: { Icon: ShieldCheck, glow: "rgba(228,228,231,0.12)", color: "#e4e4e7" },
 };
 
-export default function Blog() {
+export default function Blog({ articles }: { articles: Article[] }) {
   return (
     <div className="pt-32 pb-24 max-w-6xl mx-auto px-6 min-h-screen">
       <SectionHeading subtitle="Ressources Pédagogiques" title="Analyses & Théorie" align="center" />

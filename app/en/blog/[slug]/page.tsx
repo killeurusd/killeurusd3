@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EnShell, Btn } from "../../../components/EnUI";
 import { ChevronRight, Users } from "lucide-react";
-import { articlesEn, getArticleEn } from "../../../_site/articles-en";
 import { AUTHOR } from "../../../_site/articles";
+import { getArticles, getArticle } from "../../../_site/articles-source";
 
-export const dynamicParams = false;
+export const revalidate = 60;
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return articlesEn.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  const arts = await getArticles("en");
+  return arts.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const a = getArticleEn(slug);
+  const a = await getArticle("en", slug);
   if (!a) return {};
   return {
     title: a.metaTitle,
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ArticleEn({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const article = getArticleEn(slug);
+  const article = await getArticle("en", slug);
   if (!article) notFound();
 
   const jsonLd = {

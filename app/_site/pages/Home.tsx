@@ -209,7 +209,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
             {/* CARTE 1: MODULES */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
-              <PlayCircle className="w-10 h-10 text-[#C9A227] mb-6" />
+              <PlayCircle className="w-10 h-10 text-white mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Les modules de formation</h3>
               <p className="text-zinc-400 mb-6 text-sm">Tu accèdes immédiatement à l’ensemble de nos ressources théoriques. Ces modules ont été conçus pour t’aider à :</p>
               <ul className="space-y-3 mb-6 flex-1">
@@ -229,7 +229,7 @@ export default function Home() {
 
             {/* CARTE 2: GROUPE PRIVÉ */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
-              <Users className="w-10 h-10 text-[#C9A227] mb-6" />
+              <Users className="w-10 h-10 text-white mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Le groupe privé d’analyses et de trades</h3>
               <p className="text-zinc-400 mb-6 text-sm">
                 Tu rejoins un canal exclusif où je partage quotidiennement mes lectures de marché, mes setups et la gestion de mes positions en direct.
@@ -252,7 +252,7 @@ export default function Home() {
             {/* CARTE 3: COACHING PRIVÉ */}
             <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Accélérateur</div>
-              <Target className="w-10 h-10 text-[#C9A227] mb-6" />
+              <Target className="w-10 h-10 text-white mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">1 coaching privé / semaine (3 mois)</h3>
               <p className="text-zinc-400 mb-6 text-sm">Pendant 3 mois, tu bénéficies d’1 heure de mentoring individuel par semaine en face-à-face. Au programme :</p>
               <ul className="space-y-3 mb-6 flex-1">
@@ -273,7 +273,7 @@ export default function Home() {
             {/* CARTE 4: LIVES */}
             <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Communauté</div>
-              <Radio className="w-10 h-10 text-[#C9A227] mb-6" />
+              <Radio className="w-10 h-10 text-white mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">1 live de groupe par semaine</h3>
               <p className="text-zinc-400 mb-6 text-sm">Le rendez-vous immanquable de la communauté. Un live de groupe d’une heure minimum chaque semaine pour :</p>
               <ul className="space-y-3 mb-6 flex-1">
@@ -297,7 +297,7 @@ export default function Home() {
 
               <div className="relative z-10 flex items-center mb-2">
                 <div className="w-16 h-16 bg-[#111114] border border-zinc-800 rounded-full flex items-center justify-center shrink-0 group-hover:border-[#C9A227] transition-colors shadow-lg mr-6">
-                  <Wrench className="w-8 h-8 text-[#C9A227]" />
+                  <Wrench className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Une boîte à outils exclusive</h3>
@@ -348,32 +348,32 @@ export default function Home() {
 
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
-                <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
-                  <span className="text-[#0B0B0D] text-sm font-black">1</span>
+                <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
+                  <span className="text-white text-sm font-black">1</span>
                 </div>
                 <h4 className="text-base font-bold text-white mb-3">Validation de ton inscription</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">Dès que ton paiement est validé, tu accèdes immédiatement aux modules de formation ainsi qu’aux outils inclus dans le programme.</p>
               </div>
 
               <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
-                <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
-                  <span className="text-[#0B0B0D] text-sm font-black">2</span>
+                <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
+                  <span className="text-white text-sm font-black">2</span>
                 </div>
                 <h4 className="text-base font-bold text-white mb-3">Planification de ta première séance</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">Tu peux réserver directement ta première heure de coaching privé pour lancer ton accompagnement dans les meilleures conditions.</p>
               </div>
 
               <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
-                <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
-                  <span className="text-[#0B0B0D] text-sm font-black">3</span>
+                <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
+                  <span className="text-white text-sm font-black">3</span>
                 </div>
                 <h4 className="text-base font-bold text-white mb-3">Accès aux groupes privés</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">Sous 24 heures maximum, tu reçois tes accès aux différents groupes privés de la communauté pour suivre les analyses, les prises de position et la dynamique du programme.</p>
               </div>
 
               <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
-                <div className="w-8 h-8 bg-[#C9A227] rounded-full flex items-center justify-center mb-6 shadow-lg">
-                  <span className="text-[#0B0B0D] text-sm font-black">4</span>
+                <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
+                  <span className="text-white text-sm font-black">4</span>
                 </div>
                 <h4 className="text-base font-bold text-white mb-3">Intégration puis suivi personnalisé</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">La première séance sert à faire le point sur ton niveau, t’expliquer le fonctionnement du programme et poser les bases de ton suivi. Les séances suivantes sont consacrées à la correction, à la pratique et à ta progression.</p>

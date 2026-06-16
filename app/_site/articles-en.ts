@@ -37,6 +37,7 @@ export const articlesEn: Article[] = [
     metaTitle: "The mechanics of institutional Price Action | KILLEURUSD",
     metaDescription:
       "Liquidity, supply and demand, imbalance zones: understand the real mechanics of institutional price instead of stacking indicators.",
+    cover: "/blog/price-action-cover-en.svg",
     blocks: [
       { t: "lead", text: "“Price Action” has become a catch-all term. For most people it means recognizing three candles. For an institutional player it's the opposite: a read of where liquidity sits, and who has an interest in taking it." },
       { t: "h2", text: "The market is an auction, not a chart" },
@@ -46,6 +47,7 @@ export const articlesEn: Article[] = [
       { t: "quote", text: "Price doesn't trap you. It simply goes where the orders institutions need to fill are sitting." },
       { t: "h2", text: "Imbalance, return, continuation" },
       { t: "p", text: "A violent impulse leaves behind an imbalance zone: a price range crossed too fast for every order to be filled. The market has a statistical tendency to return and fill that void before resuming its direction. Identifying these zones, waiting for the return, and acting only once the imbalance is confirmed — that's a spatial read that depends on no lagging indicator." },
+      { t: "image", src: "/blog/price-action-liquidity-en.svg", alt: "Price pulling back into a demand zone then continuing toward liquidity", caption: "Pullback into the demand zone, then continuation toward liquidity." },
       { t: "h2", text: "From theory to execution" },
       { t: "p", text: "This mechanic is worthless without an execution framework. Knowing where liquidity sits is useless if you enter with no clear invalidation or risk management. Method and discipline are two sides of the same coin: one tells you where to look, the other tells you when to act and how much to risk." },
     ],

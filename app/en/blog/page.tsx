@@ -29,9 +29,15 @@ export default async function BlogEn() {
             const Icon = t.Icon;
             return (
               <a key={a.slug} href={`/en/blog/${a.slug}`} className="bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden flex flex-col group hover:border-zinc-700 transition-colors">
-                <div className="aspect-[16/9] relative overflow-hidden flex items-center justify-center" style={{ background: `radial-gradient(circle at 50% 38%, ${t.glow}, #0B0B0D 72%)` }}>
-                  <Icon className="w-12 h-12 transition-transform duration-500 group-hover:scale-110" style={{ color: t.color }} strokeWidth={1.5} />
-                  <span className="absolute bottom-2 right-3 text-[10px] font-black uppercase tracking-[0.25em] text-white/15">{a.category}</span>
+                <div className="aspect-[16/9] relative overflow-hidden flex items-center justify-center" style={a.cover ? undefined : { background: `radial-gradient(circle at 50% 38%, ${t.glow}, #0B0B0D 72%)` }}>
+                  {a.cover ? (
+                    <img src={a.cover} alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  ) : (
+                    <>
+                      <Icon className="w-12 h-12 transition-transform duration-500 group-hover:scale-110" style={{ color: t.color }} strokeWidth={1.5} />
+                      <span className="absolute bottom-2 right-3 text-[10px] font-black uppercase tracking-[0.25em] text-white/15">{a.category}</span>
+                    </>
+                  )}
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-4">

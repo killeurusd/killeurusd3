@@ -5,7 +5,9 @@ export type Block =
   | { t: "lead"; text: string }
   | { t: "p"; text: string }
   | { t: "h2"; text: string }
-  | { t: "quote"; text: string };
+  | { t: "quote"; text: string }
+  // Image / graphique au milieu de l'article (src = chemin dans /public ou URL).
+  | { t: "image"; src: string; alt?: string; caption?: string };
 
 export type Article = {
   slug: string;
@@ -17,6 +19,7 @@ export type Article = {
   excerpt: string;
   metaTitle: string;
   metaDescription: string;
+  cover?: string; // image de couverture (chemin /public ou URL)
   blocks: Block[];
 };
 
@@ -58,6 +61,7 @@ export const articles: Article[] = [
     metaTitle: "La mécanique du Price Action institutionnel | KILLEURUSD",
     metaDescription:
       "Liquidité, offre et demande, zones de déséquilibre : comprendre la mécanique réelle du prix institutionnel au lieu d'empiler les indicateurs.",
+    cover: "/blog/price-action-cover.svg",
     blocks: [
       { t: "lead", text: "Le « Price Action » est devenu un mot-valise. Pour la plupart, il se résume à reconnaître trois bougies. Pour un acteur institutionnel, c'est tout l'inverse : une lecture de l'endroit où se trouve la liquidité, et de qui a intérêt à la prendre." },
       { t: "h2", text: "Le marché est une enchère, pas un graphique" },
@@ -67,6 +71,7 @@ export const articles: Article[] = [
       { t: "quote", text: "Le prix ne te piège pas. Il va simplement là où se trouvent les ordres dont les institutions ont besoin pour se remplir." },
       { t: "h2", text: "Déséquilibre, retour, continuation" },
       { t: "p", text: "Une impulsion violente laisse derrière elle une zone de déséquilibre : un intervalle de prix traversé trop vite pour que tous les ordres y soient servis. Le marché a une tendance statistique à revenir y combler ce vide avant de reprendre sa direction. Identifier ces zones, attendre le retour, et n'agir que lorsque le déséquilibre est confirmé : voilà une lecture spatiale qui ne dépend d'aucun indicateur en retard." },
+      { t: "image", src: "/blog/price-action-liquidity.svg", alt: "Repli du prix dans une zone de demande puis continuation vers la liquidité", caption: "Repli dans la zone de demande, puis continuation vers la liquidité." },
       { t: "h2", text: "De la théorie à l'exécution" },
       { t: "p", text: "Cette mécanique n'a aucune valeur sans cadre d'exécution. Savoir où se trouve la liquidité ne sert à rien si l'on entre sans invalidation claire ni gestion du risque. La méthode et la discipline sont les deux faces d'une même pièce : l'une dit où regarder, l'autre dit quand agir et combien risquer." },
     ],

@@ -29,6 +29,10 @@ export default function Article({ article }: { article: ArticleType }) {
           </div>
         </div>
 
+        {article.cover && (
+          <img src={article.cover} alt="" className="w-full h-auto rounded-sm border border-zinc-800 mb-12" />
+        )}
+
         <div className="max-w-none text-zinc-300 leading-relaxed text-lg">
           {article.blocks.map((b, i) => {
             if (b.t === "lead") return <p key={i} className="text-xl text-white font-medium mb-8">{b.text}</p>;
@@ -37,6 +41,12 @@ export default function Article({ article }: { article: ArticleType }) {
               <div key={i} className="bg-[#111114] border-l-4 border-[#7A0F0F] p-6 my-10">
                 <p className="font-bold text-white m-0">&quot;{b.text}&quot;</p>
               </div>
+            );
+            if (b.t === "image") return (
+              <figure key={i} className="my-10">
+                <img src={b.src} alt={b.alt || ""} loading="lazy" className="w-full h-auto rounded-sm border border-zinc-800" />
+                {b.caption && <figcaption className="text-center text-zinc-500 text-xs mt-3 uppercase tracking-wider">{b.caption}</figcaption>}
+              </figure>
             );
             return <p key={i} className="mb-6">{b.text}</p>;
           })}

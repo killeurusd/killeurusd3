@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="1000" height="440" fill="#0B0B0D"/>
+  <!-- grille -->
+  <g stroke="#27272a" stroke-width="1" stroke-dasharray="2 7" opacity="0.5">
+    <line x1="40" y1="90" x2="960" y2="90"/>
+    <line x1="40" y1="170" x2="960" y2="170"/>
+    <line x1="40" y1="250" x2="960" y2="250"/>
+    <line x1="40" y1="330" x2="960" y2="330"/>
+  </g>
+  <!-- zone de demande -->
+  <rect x="430" y="300" width="270" height="70" fill="#C9A227" opacity="0.07"/>
+  <rect x="430" y="300" width="270" height="70" fill="none" stroke="#C9A227" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.5"/>
+  <text x="440" y="392" fill="#C9A227" font-size="14" font-weight="700" letter-spacing="2">ZONE DE DEMANDE</text>
+  <!-- ligne de liquidité -->
+  <line x1="40" y1="80" x2="960" y2="80" stroke="#A8201A" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.75"/>
+  <text x="820" y="68" fill="#A8201A" font-size="14" font-weight="700" letter-spacing="2">LIQUIDITÉ</text>
+  <!-- bougies baissières (repli vers la zone) -->
+  <g fill="#A8201A">
+    <rect x="92" y="96" width="22" height="60" rx="2"/><rect x="140" y="130" width="22" height="70" rx="2"/>
+    <rect x="188" y="170" width="22" height="78" rx="2"/><rect x="236" y="218" width="22" height="78" rx="2"/>
+    <rect x="284" y="262" width="22" height="74" rx="2"/><rect x="332" y="300" width="22" height="56" rx="2"/>
+  </g>
+  <g stroke="#A8201A" stroke-width="2">
+    <line x1="103" y1="82" x2="103" y2="166"/><line x1="151" y1="116" x2="151" y2="210"/>
+    <line x1="199" y1="156" x2="199" y2="258"/><line x1="247" y1="204" x2="247" y2="306"/>
+    <line x1="295" y1="248" x2="295" y2="346"/><line x1="343" y1="286" x2="343" y2="368"/>
+  </g>
+  <!-- bougies haussières (continuation vers la liquidité) -->
+  <g fill="#C9A227">
+    <rect x="430" y="300" width="22" height="56" rx="2"/><rect x="478" y="250" width="22" height="74" rx="2"/>
+    <rect x="526" y="200" width="22" height="78" rx="2"/><rect x="574" y="150" width="22" height="78" rx="2"/>
+    <rect x="622" y="116" width="22" height="64" rx="2"/><rect x="670" y="86" width="22" height="56" rx="2"/>
+  </g>
+  <g stroke="#C9A227" stroke-width="2">
+    <line x1="441" y1="286" x2="441" y2="368"/><line x1="489" y1="236" x2="489" y2="336"/>
+    <line x1="537" y1="186" x2="537" y2="290"/><line x1="585" y1="136" x2="585" y2="240"/>
+    <line x1="633" y1="102" x2="633" y2="192"/><line x1="681" y1="72" x2="681" y2="154"/>
+  </g>
+</svg>

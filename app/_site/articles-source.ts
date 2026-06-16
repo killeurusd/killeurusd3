@@ -18,9 +18,11 @@ function parseBody(body: string): Block[] {
     .split(/\n\s*\n/)
     .map((p) => p.trim())
     .filter(Boolean);
-  return paras.map((p, i) => {
+  return paras.map((p, i): Block => {
     if (p.startsWith("## ")) return { t: "h2", text: p.slice(3).trim() };
     if (p.startsWith("> ")) return { t: "quote", text: p.slice(2).replace(/^"|"$/g, "").trim() };
+    const img = p.match(/^!\[(.*?)\]\((.*?)\)$/); // ![texte alternatif](/chemin)
+    if (img) return { t: "image", src: img[2].trim(), alt: img[1].trim() };
     if (i === 0) return { t: "lead", text: p };
     return { t: "p", text: p };
   });
@@ -40,6 +42,7 @@ function rowToArticle(r: Record<string, string>): Article | null {
     excerpt: String(r.excerpt || "").trim(),
     metaTitle: String(r.metaTitle || title).trim(),
     metaDescription: String(r.metaDescription || r.excerpt || "").trim(),
+    cover: String(r.cover || "").trim() || undefined,
     blocks: parseBody(r.body || ""),
   };
 }

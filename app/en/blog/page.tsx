@@ -23,12 +23,12 @@ export default async function BlogEn() {
     <EnShell>
       <div className="pt-12 pb-24 max-w-6xl mx-auto px-6 min-h-screen">
         <SectionHeading subtitle="Educational resources" title="Analysis & Theory" align="center" />
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
+        <div data-reveal-stagger className="grid md:grid-cols-3 gap-8 mt-12">
           {articlesEn.map((a) => {
             const t = THUMBS[a.category] ?? { Icon: BookOpen, glow: "rgba(122,15,15,0.2)", color: "#7A0F0F" };
             const Icon = t.Icon;
             return (
-              <a key={a.slug} href={`/en/blog/${a.slug}`} className="bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden flex flex-col group hover:border-zinc-700 transition-colors">
+              <a key={a.slug} href={`/en/blog/${a.slug}`} className="card-rise bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden flex flex-col group hover:border-zinc-700">
                 <div className="aspect-[16/9] relative overflow-hidden flex items-center justify-center" style={a.cover ? undefined : { background: `radial-gradient(circle at 50% 38%, ${t.glow}, #0B0B0D 72%)` }}>
                   {a.cover ? (
                     <img src={a.cover} alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />

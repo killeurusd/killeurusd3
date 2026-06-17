@@ -5,6 +5,7 @@ import Banner from "../_site/Banner";
 import Header from "../_site/Header";
 import Footer from "../_site/Footer";
 import Consent from "../_site/Consent";
+import Motion from "../_site/Motion";
 import ChatWidget from "../components/ChatWidget";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -69,6 +70,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <ChatWidget />
           <Consent />
+          <Motion />
         </div>
       </body>
     </html>

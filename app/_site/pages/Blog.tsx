@@ -15,12 +15,12 @@ export default function Blog({ articles }: { articles: Article[] }) {
     <div className="pt-32 pb-24 max-w-6xl mx-auto px-6 min-h-screen">
       <SectionHeading subtitle="Ressources Pédagogiques" title="Analyses & Théorie" align="center" />
 
-      <div className="grid md:grid-cols-3 gap-8 mt-12">
+      <div data-reveal-stagger className="grid md:grid-cols-3 gap-8 mt-12">
         {articles.map((article) => {
           const t = THUMBS[article.category] ?? { Icon: BookOpen, glow: "rgba(122,15,15,0.2)", color: "#7A0F0F" };
           const Icon = t.Icon;
           return (
-            <Link key={article.slug} href={`/blog/${article.slug}`} className="bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden flex flex-col group cursor-pointer hover:border-zinc-700 transition-colors">
+            <Link key={article.slug} href={`/blog/${article.slug}`} className="card-rise bg-[#111114] border border-zinc-800 rounded-sm overflow-hidden flex flex-col group cursor-pointer hover:border-zinc-700">
               <div
                 className="aspect-[16/9] relative overflow-hidden flex items-center justify-center"
                 style={article.cover ? undefined : { background: `radial-gradient(circle at 50% 38%, ${t.glow}, #0B0B0D 72%)` }}

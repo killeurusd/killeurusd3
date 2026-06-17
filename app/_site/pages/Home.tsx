@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b border-zinc-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(122,15,15,0.08),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl hero-in">
             <div className="inline-flex items-center space-x-2 bg-[#111114] border border-zinc-800 rounded-sm px-4 py-1.5 mb-8 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#7A0F0F] animate-pulse"></span>
               <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider">L'excellence technique</span>
@@ -85,13 +85,13 @@ export default function Home() {
             La motivation n'est pas le problème. C'est l'absence de processus. S'éparpiller entre quinze stratégies et chercher le signal miracle transforme irrémédiablement le trading en pari.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div data-reveal-stagger className="grid md:grid-cols-3 gap-8">
             {[
               { icon: Target, title: "L'instabilité stratégique", desc: "Tu testes une méthode, puis une autre à la première série de pertes. À force de tout effleurer, tu ne maîtrises absolument rien en profondeur." },
               { icon: ShieldAlert, title: "L'illusion du setup parfait", desc: "Tu crois encore qu’il existe un raccourci, un indicateur magique ou un canal VIP qui réglera tout. Résultat : tu restes totalement dépendant." },
               { icon: TrendingUp, title: "L'exécution émotionnelle", desc: "Tu entres par FOMO, tu coupes par peur. Sans logique mathématique ni plan strict, tu t'étonnes de voir ton capital s'éroder." },
             ].map((item, idx) => (
-              <div key={idx} className="bg-[#111114] border border-zinc-800 p-8 rounded-sm hover:border-[#7A0F0F] transition-colors duration-300">
+              <div key={idx} className="card-rise bg-[#111114] border border-zinc-800 p-8 rounded-sm hover:border-[#7A0F0F]">
                 <item.icon className="w-10 h-10 text-[#7A0F0F] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4 leading-tight">{item.title}</h3>
                 <p className="text-zinc-400 leading-relaxed text-sm">{item.desc}</p>
@@ -118,14 +118,14 @@ export default function Home() {
             Chez KILLEURUSD, tu n’apprends pas à empiler les indicateurs. Tu apprends à déchiffrer le marché grâce à des concepts institutionnels intemporels, pour ensuite les appliquer avec une rigueur absolue dans le réel.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div data-reveal-stagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Crosshair, title: "Lecture Spatiale", desc: "Compréhension de la structure, identification des zones de liquidité et lecture pure de l'action du prix, sans bruit." },
               { icon: Activity, title: "Exécution Clinique", desc: "Définition stricte des points d'entrée, placement des niveaux d'invalidation et respect intransigeant du timing." },
               { icon: ShieldCheck, title: "Gestion Asymétrique", desc: "Protection obsessionnelle du capital. Utilisation de ratios risque/récompense pour une survie mathématique à long terme." },
               { icon: Brain, title: "Maîtrise Psychologique", desc: "Cultiver la patience, accepter la probabilité, et forger le contrôle émotionnel nécessaire pour opérer froidement." },
             ].map((pillar, idx) => (
-              <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm group hover:bg-zinc-900 transition-all">
+              <div key={idx} className="card-rise bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm group hover:bg-zinc-900 hover:border-[#C9A227]/40">
                 <div className="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-sm flex items-center justify-center mb-6 group-hover:border-[#C9A227] transition-colors">
                   <pillar.icon className="w-6 h-6 text-[#C9A227]" />
                 </div>
@@ -142,7 +142,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading subtitle="L'Évolution" title="Passe du bruit à la clarté" />
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-stretch">
+          <div data-reveal-stagger className="grid md:grid-cols-2 gap-8 lg:gap-16 items-stretch">
             <div className="bg-[#111114] border border-zinc-800 p-8 md:p-10 rounded-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <X className="w-24 h-24 text-red-500" />
@@ -206,7 +206,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <div data-reveal-stagger className="grid lg:grid-cols-2 gap-8 mb-16">
             {/* CARTE 1: MODULES */}
             <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
               <PlayCircle className="w-10 h-10 text-white mb-6" />
@@ -346,7 +346,7 @@ export default function Home() {
               Tout est mis en place pour que tu puisses démarrer rapidement, être accompagné dès le départ et savoir exactement par où commencer.
             </p>
 
-            <div className="grid md:grid-cols-4 gap-6">
+            <div data-reveal-stagger className="grid md:grid-cols-4 gap-6">
               <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
                 <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
                   <span className="text-white text-sm font-black">1</span>
@@ -408,7 +408,7 @@ export default function Home() {
 
       {/* 6. À QUI C'EST DESTINÉ */}
       <section className="py-24 bg-[#0B0B0D]">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+        <div data-reveal-stagger className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl font-bold text-white mb-8 border-l-4 border-[#C9A227] pl-4">Cette formation est faite pour toi si...</h3>
             <ul className="space-y-4">
@@ -451,13 +451,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading subtitle="Preuves du Terrain" title="Ils ont arrêté d'espérer. Ils exécutent." />
 
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div data-reveal-stagger className="grid md:grid-cols-3 gap-6 mb-16">
             {[
               { name: "Thomas", level: "2 ans de trading · autodidacte trop dispersé", text: "Je passais d’une méthode à l’autre sans jamais construire une vraie base. Ce cadre m’a permis de nettoyer mes graphiques, de simplifier mes prises de décision et surtout d'identifier mes biais cognitifs récurrents." },
               { name: "Julien", level: "Débutant · structuration depuis zéro", text: "Au lieu de brûler mon capital en testant des indicateurs inutiles, j’ai posé des bases saines. Le mentoring hebdomadaire apporte une valeur inestimable, car il ne laisse aucune erreur sous silence." },
               { name: "Sarah", level: "3 ans de trading · exécution instable", text: "J’avais déjà le bagage technique, mais je manquais cruellement de discipline. KILLEURUSD m’a imposé l'exigence clinique qu'il me manquait pour enfin lisser ma courbe de résultats." },
             ].map((testimonial, idx) => (
-              <div key={idx} className="bg-[#0B0B0D] border border-zinc-800 p-8 flex flex-col justify-between">
+              <div key={idx} className="card-rise bg-[#0B0B0D] border border-zinc-800 p-8 flex flex-col justify-between hover:border-zinc-700">
                 <div>
                   <div className="flex text-[#C9A227] mb-6">
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}

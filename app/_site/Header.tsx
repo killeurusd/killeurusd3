@@ -29,7 +29,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-xs font-bold uppercase tracking-widest transition-colors ${
+              className={`link-underline text-xs font-bold uppercase tracking-widest transition-colors ${
                 isActive(link.href) ? "text-[#C9A227]" : "text-zinc-400 hover:text-white"
               }`}
             >

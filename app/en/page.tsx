@@ -135,7 +135,7 @@ export default function EnHome() {
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b border-zinc-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(122,15,15,0.08),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl hero-in">
             <div className="inline-flex items-center space-x-2 bg-[#111114] border border-zinc-800 rounded-sm px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-[#7A0F0F] animate-pulse"></span>
               <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider">Technical excellence</span>
@@ -182,7 +182,7 @@ export default function EnHome() {
           <p className="text-center text-zinc-400 max-w-3xl mx-auto mb-16 text-lg">
             Motivation isn't the problem. The lack of a process is. Scattering across fifteen strategies and chasing the miracle signal turns trading into gambling.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div data-reveal-stagger className="grid md:grid-cols-3 gap-8">
             {[
               { icon: Target, title: "Strategic instability", desc: "You test one method, then another at the first losing streak. By skimming everything, you truly master nothing." },
               { icon: ShieldAlert, title: "The perfect-setup illusion", desc: "You still believe there's a shortcut, a magic indicator or a VIP channel that fixes everything. The result: total dependence." },
@@ -208,7 +208,7 @@ export default function EnHome() {
           <p className="text-center text-zinc-400 max-w-3xl mx-auto mb-16 text-lg">
             At KILLEURUSD you don't learn to stack indicators. You learn to decode the market through timeless institutional concepts, then apply them with absolute rigor in the real world.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div data-reveal-stagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Crosshair, title: "Spatial reading", desc: "Understand structure, identify liquidity zones and read pure price action, without noise." },
               { icon: Activity, title: "Clinical execution", desc: "Strict entry definition, invalidation levels and uncompromising respect for timing." },
@@ -361,7 +361,7 @@ export default function EnHome() {
       <section className="py-24 bg-[#111114] border-y border-zinc-900">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading subtitle="Field proof" title="They stopped hoping. They execute." />
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div data-reveal-stagger className="grid md:grid-cols-3 gap-6 mb-16">
             {[
               { name: "Thomas", level: "2 years trading · scattered self-taught", text: "I kept jumping from one method to another without ever building a real base. This framework let me clean up my charts, simplify my decisions and, above all, spot my recurring cognitive biases." },
               { name: "Julien", level: "Beginner · building from scratch", text: "Instead of burning my capital testing useless indicators, I laid healthy foundations. The weekly mentoring is invaluable — it leaves no mistake unaddressed." },

@@ -208,7 +208,7 @@ export default function Home() {
 
           <div data-reveal-stagger className="grid lg:grid-cols-2 gap-8 mb-16">
             {/* CARTE 1: MODULES */}
-            <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
+            <div className="card-rise bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 flex flex-col h-full">
               <PlayCircle className="w-10 h-10 text-white mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Les modules de formation</h3>
               <p className="text-zinc-400 mb-6 text-sm">Tu accèdes immédiatement à l’ensemble de nos ressources théoriques. Ces modules ont été conçus pour t’aider à :</p>
@@ -228,7 +228,7 @@ export default function Home() {
             </div>
 
             {/* CARTE 2: GROUPE PRIVÉ */}
-            <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 transition-colors flex flex-col h-full">
+            <div className="card-rise bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm hover:border-zinc-700 flex flex-col h-full">
               <Users className="w-10 h-10 text-white mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Le groupe privé d’analyses et de trades</h3>
               <p className="text-zinc-400 mb-6 text-sm">
@@ -250,7 +250,7 @@ export default function Home() {
             </div>
 
             {/* CARTE 3: COACHING PRIVÉ */}
-            <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
+            <div className="card-rise bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Accélérateur</div>
               <Target className="w-10 h-10 text-white mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">1 coaching privé / semaine (3 mois)</h3>
@@ -271,7 +271,7 @@ export default function Home() {
             </div>
 
             {/* CARTE 4: LIVES */}
-            <div className="bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
+            <div className="card-rise bg-[#111114] border border-[#C9A227]/40 p-8 rounded-sm shadow-[0_0_30px_rgba(201,162,39,0.05)] relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 bg-[#C9A227] text-[#0B0B0D] text-[10px] font-bold uppercase tracking-widest px-3 py-1">Communauté</div>
               <Radio className="w-10 h-10 text-white mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">1 live de groupe par semaine</h3>
@@ -308,19 +308,19 @@ export default function Home() {
               </div>
 
               <div className="relative z-10 grid md:grid-cols-3 gap-6 w-full">
-                <div className="bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm">
+                <div className="card-rise bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm hover:border-zinc-700">
                   <h4 className="text-white font-bold text-sm flex items-center mb-3">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Outils d’IA
                   </h4>
                   <p className="text-zinc-400 text-xs leading-relaxed">Pour gagner du temps, mieux structurer ton analyse et accélérer ton travail.</p>
                 </div>
-                <div className="bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm">
+                <div className="card-rise bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm hover:border-zinc-700">
                   <h4 className="text-white font-bold text-sm flex items-center mb-3">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Indicateurs techniques
                   </h4>
                   <p className="text-zinc-400 text-xs leading-relaxed">Développés pour t’aider à lire le marché avec plus de précision.</p>
                 </div>
-                <div className="bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm">
+                <div className="card-rise bg-[#0B0B0D] border border-zinc-800/50 p-6 rounded-sm hover:border-zinc-700">
                   <h4 className="text-white font-bold text-sm flex items-center mb-3">
                     <CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2 shrink-0" /> Journal de trading en ligne
                   </h4>
@@ -347,7 +347,7 @@ export default function Home() {
             </p>
 
             <div data-reveal-stagger className="grid md:grid-cols-4 gap-6">
-              <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
+              <div className="card-rise bg-[#111114] border border-zinc-800 p-6 rounded-sm relative hover:border-[#C9A227]/40">
                 <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
                   <span className="text-white text-sm font-black">1</span>
                 </div>
@@ -355,7 +355,7 @@ export default function Home() {
                 <p className="text-sm text-zinc-400 leading-relaxed">Dès que ton paiement est validé, tu accèdes immédiatement aux modules de formation ainsi qu’aux outils inclus dans le programme.</p>
               </div>
 
-              <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
+              <div className="card-rise bg-[#111114] border border-zinc-800 p-6 rounded-sm relative hover:border-[#C9A227]/40">
                 <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
                   <span className="text-white text-sm font-black">2</span>
                 </div>
@@ -363,7 +363,7 @@ export default function Home() {
                 <p className="text-sm text-zinc-400 leading-relaxed">Tu peux réserver directement ta première heure de coaching privé pour lancer ton accompagnement dans les meilleures conditions.</p>
               </div>
 
-              <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
+              <div className="card-rise bg-[#111114] border border-zinc-800 p-6 rounded-sm relative hover:border-[#C9A227]/40">
                 <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
                   <span className="text-white text-sm font-black">3</span>
                 </div>
@@ -371,7 +371,7 @@ export default function Home() {
                 <p className="text-sm text-zinc-400 leading-relaxed">Sous 24 heures maximum, tu reçois tes accès aux différents groupes privés de la communauté pour suivre les analyses, les prises de position et la dynamique du programme.</p>
               </div>
 
-              <div className="bg-[#111114] border border-zinc-800 p-6 rounded-sm relative">
+              <div className="card-rise bg-[#111114] border border-zinc-800 p-6 rounded-sm relative hover:border-[#C9A227]/40">
                 <div className="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center mb-6">
                   <span className="text-white text-sm font-black">4</span>
                 </div>
@@ -491,7 +491,7 @@ export default function Home() {
             <p className="text-center text-zinc-400 text-xs mt-6 uppercase tracking-wider">Extraits issus de notre groupe privé et du suivi des élèves.</p>
           </div>
 
-          <div className="bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm text-center">
+          <div className="card-rise bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm text-center hover:border-zinc-700">
             <h4 className="text-white font-bold uppercase tracking-wider mb-6">Pourquoi faire confiance à cette approche ?</h4>
             <div className="flex flex-wrap justify-center gap-8 text-sm text-zinc-400">
               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> +7 ans de pratique réelle</div>

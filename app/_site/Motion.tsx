@@ -18,11 +18,12 @@ export default function Motion() {
     ).filter((el) => !el.classList.contains("is-visible"));
 
     const reveal = (el: Element) => el.classList.add("is-visible");
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const vh = window.innerHeight || document.documentElement.clientHeight || 0;
 
-    // Cas dégradés : pas d'IO, mouvement réduit, ou viewport inconnu → tout visible.
-    if (reduce || !("IntersectionObserver" in window) || vh === 0) {
+    // Cas où l'observation est impossible (pas d'IO, ou viewport inconnu) → tout visible.
+    // NB : on NE court-circuite PAS "réduire les animations" — le CSS gère alors un simple
+    // fondu (sans mouvement), donc on laisse l'IO déclencher la révélation normalement.
+    if (!("IntersectionObserver" in window) || vh === 0) {
       els.forEach(reveal);
       return;
     }
@@ -39,19 +40,13 @@ export default function Motion() {
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
 
-    // Révèle d'emblée ce qui est déjà à l'écran ; observe le reste.
+    // Révèle d'emblée ce qui est déjà à l'écran ; observe le reste (révélé au scroll).
     els.forEach((el) => {
       if (el.getBoundingClientRect().top < vh * 0.92) reveal(el);
       else io.observe(el);
     });
 
-    // Filet de sécurité : rien ne doit JAMAIS rester caché si l'IO échoue.
-    const failsafe = window.setTimeout(() => els.forEach(reveal), 2500);
-
-    return () => {
-      io.disconnect();
-      window.clearTimeout(failsafe);
-    };
+    return () => io.disconnect();
   }, [pathname]);
 
   return null;

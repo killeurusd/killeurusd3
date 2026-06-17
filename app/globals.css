@@ -26,56 +26,54 @@ body {
 }
 
 /* =========================================================================
-   ANIMATIONS — sobres et premium. Désactivées si "réduire les animations".
-   Le JS ajoute la classe `js` sur <html> + `is-visible` quand l'élément entre
-   à l'écran (composant Motion). Sans JS : tout reste visible (aucun contenu caché).
+   ANIMATIONS. Le JS (Motion) ajoute `js` sur <html> + `is-visible` à l'entrée
+   à l'écran. Sans JS : tout reste visible. En "réduire les animations" : on
+   conserve un simple FONDU (opacité), sans mouvement (respect accessibilité).
    ========================================================================= */
-@media (prefers-reduced-motion: no-preference) {
-  /* Révélation au scroll : fondu + montée */
-  html.js [data-reveal] {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
-  }
-  html.js [data-reveal].is-visible {
-    opacity: 1;
-    transform: none;
-  }
+@keyframes kuHeroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes kuFade { from { opacity: 0; } to { opacity: 1; } }
 
-  /* Cascade : enfants directs décalés */
+/* Révélation au scroll : fondu + montée */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+html.js [data-reveal].is-visible { opacity: 1; transform: none; }
+
+/* Cascade : enfants directs décalés */
+html.js [data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+html.js [data-reveal-stagger].is-visible > * { opacity: 1; transform: none; }
+html.js [data-reveal-stagger].is-visible > *:nth-child(2) { transition-delay: 0.09s; }
+html.js [data-reveal-stagger].is-visible > *:nth-child(3) { transition-delay: 0.18s; }
+html.js [data-reveal-stagger].is-visible > *:nth-child(4) { transition-delay: 0.27s; }
+html.js [data-reveal-stagger].is-visible > *:nth-child(5) { transition-delay: 0.36s; }
+html.js [data-reveal-stagger].is-visible > *:nth-child(6) { transition-delay: 0.45s; }
+
+/* Entrée du hero au chargement (cascade) */
+.hero-in > * { animation: kuHeroUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-in > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-in > *:nth-child(2) { animation-delay: 0.14s; }
+.hero-in > *:nth-child(3) { animation-delay: 0.23s; }
+.hero-in > *:nth-child(4) { animation-delay: 0.32s; }
+.hero-in > *:nth-child(5) { animation-delay: 0.41s; }
+
+/* "Réduire les animations" : on garde le fondu, on enlève le mouvement */
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal],
   html.js [data-reveal-stagger] > * {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: none !important;
+    transition: opacity 0.5s linear !important;
   }
-  html.js [data-reveal-stagger].is-visible > * {
-    opacity: 1;
-    transform: none;
-  }
-  html.js [data-reveal-stagger].is-visible > *:nth-child(1) { transition-delay: 0s; }
-  html.js [data-reveal-stagger].is-visible > *:nth-child(2) { transition-delay: 0.08s; }
-  html.js [data-reveal-stagger].is-visible > *:nth-child(3) { transition-delay: 0.16s; }
-  html.js [data-reveal-stagger].is-visible > *:nth-child(4) { transition-delay: 0.24s; }
-  html.js [data-reveal-stagger].is-visible > *:nth-child(5) { transition-delay: 0.32s; }
-  html.js [data-reveal-stagger].is-visible > *:nth-child(6) { transition-delay: 0.4s; }
-
-  /* Entrée du hero au chargement (cascade) */
-  .hero-in > * { animation: kuHeroUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
-  .hero-in > *:nth-child(1) { animation-delay: 0.05s; }
-  .hero-in > *:nth-child(2) { animation-delay: 0.13s; }
-  .hero-in > *:nth-child(3) { animation-delay: 0.21s; }
-  .hero-in > *:nth-child(4) { animation-delay: 0.29s; }
-  .hero-in > *:nth-child(5) { animation-delay: 0.37s; }
-  @keyframes kuHeroUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: none; }
-  }
+  .hero-in > * { animation: kuFade 0.5s linear both !important; }
 }
 
-/* Survol : carte qui se soulève + ombre (sans dépendre des animations off) */
+/* Survol : carte qui se soulève + ombre */
 .card-rise {
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.35s, background-color 0.3s;
 }

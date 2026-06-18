@@ -49,5 +49,19 @@ export default function Motion() {
     return () => io.disconnect();
   }, [pathname]);
 
+  // Halo qui suit la souris : met à jour --mx/--my sur la carte .card-rise survolée.
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      const card = (e.target as HTMLElement)?.closest?.(".card-rise") as HTMLElement | null;
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${((e.clientX - r.left) / r.width) * 100}%`);
+      card.style.setProperty("--my", `${((e.clientY - r.top) / r.height) * 100}%`);
+    };
+    document.addEventListener("mousemove", onMove, { passive: true });
+    return () => document.removeEventListener("mousemove", onMove);
+  }, []);
+
   return null;
 }
+

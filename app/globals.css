@@ -73,14 +73,32 @@ html.js [data-reveal-stagger].is-visible > *:nth-child(6) { transition-delay: 0.
   .hero-in > * { animation: kuFade 0.5s linear both !important; }
 }
 
-/* Survol : carte qui se soulève + ombre */
+/* Survol premium : la carte se soulève + halo rouge/or qui suit la souris */
 .card-rise {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.35s, background-color 0.3s;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.4s, background-color 0.3s;
+}
+.card-rise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(201, 162, 39, 0.13),
+    rgba(122, 15, 15, 0.06) 40%,
+    transparent 62%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
 }
 .card-rise:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.55);
 }
+.card-rise:hover::after { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .card-rise:hover { transform: none; }
 }

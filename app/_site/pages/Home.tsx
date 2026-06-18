@@ -9,6 +9,7 @@ import HeroChart from "../HeroChart";
 import FounderCard from "../FounderCard";
 import FaqAccordion from "../FaqAccordion";
 import LeadForm from "../LeadForm";
+import CountUp from "../CountUp";
 import { COHORT } from "../offer";
 import avis1 from "../../../public/avis-1.png";
 import avis2 from "../../../public/avis-2.png";
@@ -386,7 +387,7 @@ export default function Home() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#7A0F0F] blur-[100px] opacity-20"></div>
             <h3 className="text-3xl font-extrabold text-white mb-2">Ce que tu rejoins vraiment</h3>
             <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">Tu n’investis donc pas dans de simples modules. Tu rejoins une méthode, un suivi et un environnement de travail conçus pour faire évoluer ton trading dans le réel.</p>
-            <div className="text-6xl font-black text-white mb-4">997$</div>
+            <div className="text-6xl font-black text-white mb-4"><CountUp end={997} suffix="$" /></div>
             <div className="text-zinc-400 text-sm mb-8 font-medium">Paiement unique. Accès à vie garanti à la plateforme.<br />Inclus : L'accompagnement privé (1h/semaine) pendant 3 mois.</div>
             <LinkButton href="/checkout" className="w-full sm:w-auto px-16 py-5 text-lg">
               Accéder au programme
@@ -520,6 +521,28 @@ export default function Home() {
             <div className="mt-10">
               <LinkButton href="/vision" variant="outline">Découvrir notre philosophie</LinkButton>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8b. CHIFFRES CLÉS (compteurs animés) */}
+      <section className="py-20 bg-[#111114] border-y border-zinc-900">
+        <div data-reveal-stagger className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-white tracking-tight"><CountUp end={997} suffix="$" /></div>
+            <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">Paiement unique</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-[#C9A227] tracking-tight"><CountUp end={3} /></div>
+            <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">Mois d'accompagnement</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-white tracking-tight"><CountUp end={1} suffix="h" /></div>
+            <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">De coaching / semaine</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-[#C9A227] tracking-tight"><CountUp end={7} prefix="+" /></div>
+            <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">Ans d'expérience</div>
           </div>
         </div>
       </section>

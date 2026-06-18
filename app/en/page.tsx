@@ -11,6 +11,7 @@ import ChatWidget from "../components/ChatWidget";
 import logo from "../../public/logo.png";
 import HeroChart from "../_site/HeroChart";
 import FounderCard from "../_site/FounderCard";
+import CountUp from "../_site/CountUp";
 import { COHORT } from "../_site/offer";
 
 // --- Primitives locales (la page EN est autonome ; le site FR n'est pas modifié) ---
@@ -326,7 +327,7 @@ export default function EnHome() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#7A0F0F] blur-[100px] opacity-20"></div>
             <h3 className="text-3xl font-extrabold text-white mb-2">What you really join</h3>
             <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">You're not investing in mere modules. You join a method, ongoing support and a work environment built to grow your trading in the real world.</p>
-            <div className="text-6xl font-black text-white mb-4">$997</div>
+            <div className="text-6xl font-black text-white mb-4"><CountUp end={997} prefix="$" /></div>
             <div className="text-zinc-400 text-sm mb-8 font-medium">One-time payment. Guaranteed lifetime platform access.<br />Includes: private mentoring (1h/week) for 3 months.</div>
             <Button href="#contact" className="w-full sm:w-auto px-16 py-5 text-lg">Secure my spot</Button>
             <p className="text-xs text-zinc-400 mt-6 max-w-lg mx-auto">Next cohort: <strong className="text-white">{COHORT.dateEn} bootcamp — {COHORT.seats} seats</strong>. A small group to guarantee genuine, hands-on support.</p>
@@ -416,6 +417,28 @@ export default function EnHome() {
               <div className="border-l-2 border-[#C9A227] pl-6 my-8"><p className="text-white font-bold italic">"Consistency isn't found in a hidden setup. It comes from the relentless execution of a predefined plan."</p></div>
               <p>KILLEURUSD was founded on that standard: to forge a circle of independent traders, able to analyze without bias and execute with professional composure.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8b. KEY NUMBERS (animated counters) */}
+      <section className="py-20 bg-[#111114] border-y border-zinc-900">
+        <div data-reveal-stagger className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-white tracking-tight"><CountUp end={997} prefix="$" /></div>
+            <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">One-time payment</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-[#C9A227] tracking-tight"><CountUp end={3} /></div>
+            <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">Months of support</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-white tracking-tight"><CountUp end={1} suffix="h" /></div>
+            <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">Coaching / week</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-[#C9A227] tracking-tight"><CountUp end={7} prefix="+" /></div>
+            <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">Years of experience</div>
           </div>
         </div>
       </section>

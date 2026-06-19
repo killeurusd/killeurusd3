@@ -2,156 +2,156 @@ import { LegalLayout, LegalSection } from "../ui";
 
 export default function LegalNotice() {
   return (
-    <LegalLayout title="Legal Notice" lastUpdated="[INSERT DATE]">
-      <LegalSection title="1. Website Publisher">
-        <p>This website is published and operated by:</p>
+    <LegalLayout title="Mentions Légales" lastUpdated="[À COMPLÉTER : DATE]">
+      <LegalSection title="1. Éditeur du site">
+        <p>Le présent site est édité et exploité par :</p>
         <p>
           <strong>RAYSS RESEARCH LLC</strong><br />
-          A New Mexico limited liability company<br />
-          Registered in the State of New Mexico, USA<br />
-          Registered address: [INSERT REGISTERED ADDRESS]<br />
-          Support / legal email: [INSERT EMAIL ADDRESS]
+          Société à responsabilité limitée (LLC) de droit du Nouveau-Mexique<br />
+          Immatriculée dans l’État du Nouveau-Mexique, États-Unis<br />
+          Adresse du siège : [À COMPLÉTER : ADRESSE DU SIÈGE]<br />
+          E-mail support / juridique : [À COMPLÉTER : ADRESSE E-MAIL]
         </p>
-        <p>Throughout this Legal Notice, “Company,” “we,” “us,” and “our” refer to RAYSS RESEARCH LLC.</p>
+        <p>Dans l’ensemble des présentes Mentions Légales, les termes « Société », « nous » et « notre » désignent RAYSS RESEARCH LLC.</p>
       </LegalSection>
 
-      <LegalSection title="2. Website Brand">
-        <p>This website is operated under the brand name: <strong>KILLEUR USD / KILLER USD</strong></p>
-        <p>Unless otherwise stated, all content, offers, products, and services presented under this brand are provided by RAYSS RESEARCH LLC.</p>
+      <LegalSection title="2. Marque du site">
+        <p>Le présent site est exploité sous la marque : <strong>KILLEUR USD / KILLER USD</strong></p>
+        <p>Sauf mention contraire, l’ensemble des contenus, offres, produits et services présentés sous cette marque sont fournis par RAYSS RESEARCH LLC.</p>
       </LegalSection>
 
-      <LegalSection title="3. Website Purpose">
-        <p>This website is intended to provide information, educational content, digital training, coaching-related offers, and related business services under the KILLEUR USD / KILLER USD brand.</p>
-        <p>Nothing on this website should be interpreted as personalized legal, tax, financial, or investment advice.</p>
+      <LegalSection title="3. Objet du site">
+        <p>Le présent site a pour objet de fournir des informations, des contenus pédagogiques, des formations numériques, des offres liées au coaching ainsi que des services commerciaux associés sous la marque KILLEUR USD / KILLER USD.</p>
+        <p>Aucun élément du présent site ne saurait être interprété comme un conseil personnalisé d’ordre juridique, fiscal, financier ou en matière d’investissement.</p>
       </LegalSection>
 
-      <LegalSection title="4. Hosting Provider">
-        <p>This website is hosted by:</p>
+      <LegalSection title="4. Hébergeur">
+        <p>Le présent site est hébergé par :</p>
         <p>
-          [INSERT HOSTING PROVIDER NAME]<br />
-          [INSERT HOSTING PROVIDER ADDRESS]<br />
-          [INSERT HOSTING PROVIDER WEBSITE OR CONTACT DETAILS]
+          [À COMPLÉTER : NOM DE L’HÉBERGEUR]<br />
+          [À COMPLÉTER : ADRESSE DE L’HÉBERGEUR]<br />
+          [À COMPLÉTER : SITE WEB OU COORDONNÉES DE L’HÉBERGEUR]
         </p>
-        <p>If the website is deployed through a platform such as Vercel or another hosting provider, replace this section with the exact legal details of that provider.</p>
+        <p>Si le site est déployé via une plateforme telle que Vercel ou un autre hébergeur, remplacez cette section par les informations légales exactes de ce prestataire.</p>
       </LegalSection>
 
       <LegalSection title="5. Contact">
-        <p>For support, legal inquiries, or general contact requests, you may contact:</p>
+        <p>Pour toute demande de support, demande juridique ou demande de contact générale, vous pouvez nous joindre :</p>
         <p>
           RAYSS RESEARCH LLC<br />
-          Email: [INSERT EMAIL ADDRESS]
+          E-mail : [À COMPLÉTER : ADRESSE E-MAIL]
         </p>
-        <p>If you provide a dedicated support address and a separate legal address, you may distinguish them here.</p>
+        <p>Si vous disposez d’une adresse de support dédiée et d’une adresse juridique distincte, vous pouvez les différencier ici.</p>
       </LegalSection>
 
-      <LegalSection title="6. Intellectual Property">
-        <p>Unless otherwise stated, all elements of this website are the exclusive property of RAYSS RESEARCH LLC or are used under appropriate license.</p>
-        <p>This includes, without limitation:</p>
+      <LegalSection title="6. Propriété intellectuelle">
+        <p>Sauf mention contraire, l’ensemble des éléments du présent site sont la propriété exclusive de RAYSS RESEARCH LLC ou sont utilisés sous licence appropriée.</p>
+        <p>Cela inclut, de manière non limitative :</p>
         <ul className="list-disc pl-6 space-y-2">
-          <li>texts,</li>
-          <li>brand names,</li>
-          <li>logos,</li>
-          <li>graphics,</li>
-          <li>training materials,</li>
-          <li>visual identity,</li>
-          <li>page structures,</li>
-          <li>educational frameworks,</li>
-          <li>downloadable materials,</li>
-          <li>videos,</li>
-          <li>and other website content.</li>
+          <li>les textes,</li>
+          <li>les noms de marque,</li>
+          <li>les logos,</li>
+          <li>les éléments graphiques,</li>
+          <li>les supports de formation,</li>
+          <li>l’identité visuelle,</li>
+          <li>la structure des pages,</li>
+          <li>les cadres pédagogiques,</li>
+          <li>les documents téléchargeables,</li>
+          <li>les vidéos,</li>
+          <li>et tout autre contenu du site.</li>
         </ul>
-        <p>No part of this website may be copied, reproduced, republished, uploaded, transmitted, distributed, sold, licensed, or otherwise exploited without prior written authorization from the Company.</p>
-        <p>Unauthorized use of any part of the website may result in legal action.</p>
+        <p>Aucune partie du présent site ne peut être copiée, reproduite, republiée, téléversée, transmise, distribuée, vendue, concédée sous licence ou exploitée de quelque manière que ce soit sans autorisation écrite préalable de la Société.</p>
+        <p>Toute utilisation non autorisée d’une partie quelconque du site est susceptible de donner lieu à des poursuites judiciaires.</p>
       </LegalSection>
 
-      <LegalSection title="7. Trademarks and Brand Elements">
-        <p>The names KILLEUR USD and KILLER USD, along with any associated logos, slogans, design elements, and branding components, may be protected under applicable intellectual property laws.</p>
-        <p>Any unauthorized use, imitation, or misuse of the brand identity is prohibited.</p>
+      <LegalSection title="7. Marques et éléments de marque">
+        <p>Les noms KILLEUR USD et KILLER USD, ainsi que tout logo, slogan, élément de conception et composant de marque associés, peuvent être protégés au titre des lois applicables en matière de propriété intellectuelle.</p>
+        <p>Toute utilisation, imitation ou usage abusif non autorisé de l’identité de marque est interdit.</p>
       </LegalSection>
 
-      <LegalSection title="8. Website Access">
-        <p>The Company makes reasonable efforts to keep the website accessible and functional. However, access to the website may be suspended, interrupted, restricted, or limited at any time for maintenance, updates, technical issues, security reasons, or any other business reason.</p>
-        <p>The Company does not guarantee uninterrupted or error-free access to the website.</p>
+      <LegalSection title="8. Accès au site">
+        <p>La Société met en œuvre des efforts raisonnables pour maintenir le site accessible et fonctionnel. Toutefois, l’accès au site peut être suspendu, interrompu, restreint ou limité à tout moment pour des raisons de maintenance, de mise à jour, de problèmes techniques, de sécurité ou pour toute autre raison commerciale.</p>
+        <p>La Société ne garantit pas un accès au site ininterrompu ou exempt d’erreurs.</p>
       </LegalSection>
 
-      <LegalSection title="9. Website Content">
-        <p>The Company strives to provide content that is clear, accurate, and useful. However, the information published on this website may be updated, modified, corrected, or removed at any time without notice.</p>
-        <p>The Company does not guarantee that all information on the website is complete, current, or free of errors at all times.</p>
-        <p>Use of the website and reliance on its content remain at your own risk.</p>
+      <LegalSection title="9. Contenu du site">
+        <p>La Société s’efforce de fournir un contenu clair, exact et utile. Toutefois, les informations publiées sur le présent site peuvent être mises à jour, modifiées, corrigées ou supprimées à tout moment et sans préavis.</p>
+        <p>La Société ne garantit pas que l’ensemble des informations du site soient complètes, à jour ou exemptes d’erreurs en permanence.</p>
+        <p>L’utilisation du site et le recours à son contenu se font sous votre seule responsabilité.</p>
       </LegalSection>
 
-      <LegalSection title="10. No Professional or Investment Advice">
-        <p>The content made available on this website is provided for educational and informational purposes only.</p>
-        <p>The Company does not provide:</p>
+      <LegalSection title="10. Absence de conseil professionnel ou en investissement">
+        <p>Le contenu mis à disposition sur le présent site est fourni à des fins exclusivement pédagogiques et informatives.</p>
+        <p>La Société ne fournit pas :</p>
         <ul className="list-disc pl-6 space-y-2">
-          <li>personalized investment advice,</li>
-          <li>brokerage services,</li>
-          <li>portfolio management,</li>
-          <li>legal advice,</li>
-          <li>tax advice,</li>
-          <li>or any regulated advisory service unless expressly stated otherwise.</li>
+          <li>de conseil personnalisé en investissement,</li>
+          <li>de services de courtage,</li>
+          <li>de gestion de portefeuille,</li>
+          <li>de conseil juridique,</li>
+          <li>de conseil fiscal,</li>
+          <li>ni aucun service de conseil réglementé, sauf mention expresse contraire.</li>
         </ul>
-        <p>Any trading or financial decisions made after viewing this website remain solely your responsibility.</p>
+        <p>Toute décision de trading ou décision financière prise après consultation de ce site relève de votre seule responsabilité.</p>
       </LegalSection>
 
-      <LegalSection title="11. Limitation of Responsibility">
-        <p>To the fullest extent permitted by applicable law, RAYSS RESEARCH LLC shall not be held liable for:</p>
+      <LegalSection title="11. Limitation de responsabilité">
+        <p>Dans toute la mesure permise par la loi applicable, RAYSS RESEARCH LLC ne saurait être tenue responsable de :</p>
         <ul className="list-disc pl-6 space-y-2">
-          <li>errors or omissions on the website,</li>
-          <li>temporary or permanent website unavailability,</li>
-          <li>technical failures,</li>
-          <li>data loss,</li>
-          <li>unauthorized access,</li>
-          <li>reliance placed on website content,</li>
-          <li>business losses,</li>
-          <li>financial losses,</li>
-          <li>trading losses,</li>
-          <li>or any indirect, incidental, or consequential damages arising from the use of the website.</li>
-        </ul>
-      </LegalSection>
-
-      <LegalSection title="12. External Links">
-        <p>This website may contain links to third-party websites, platforms, tools, or services.</p>
-        <p>Such links are provided for convenience only.</p>
-        <p>The Company does not control and is not responsible for the content, terms, practices, availability, or privacy standards of third-party websites.</p>
-        <p>Accessing third-party websites is done at your own risk.</p>
-      </LegalSection>
-
-      <LegalSection title="13. User Responsibility">
-        <p>By using this website, you agree to do so lawfully and responsibly.</p>
-        <p>You agree not to:</p>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>misuse the website,</li>
-          <li>interfere with its operation,</li>
-          <li>attempt unauthorized access,</li>
-          <li>copy protected content,</li>
-          <li>engage in fraud or abusive conduct,</li>
-          <li>or use the website in a way that may damage the Company or its reputation.</li>
+          <li>erreurs ou omissions sur le site,</li>
+          <li>indisponibilité temporaire ou permanente du site,</li>
+          <li>défaillances techniques,</li>
+          <li>perte de données,</li>
+          <li>accès non autorisé,</li>
+          <li>du recours au contenu du site,</li>
+          <li>pertes d’exploitation,</li>
+          <li>pertes financières,</li>
+          <li>pertes liées au trading,</li>
+          <li>ou de tout dommage indirect, accessoire ou consécutif résultant de l’utilisation du site.</li>
         </ul>
       </LegalSection>
 
-      <LegalSection title="14. Applicable Documents">
-        <p>Use of this website may also be governed by additional legal documents, including: Terms &amp; Conditions and Privacy Policy.</p>
-        <p>In the event of a conflict between this Legal Notice and another contractual document, the more specific document shall prevail for the relevant subject matter.</p>
+      <LegalSection title="12. Liens externes">
+        <p>Le présent site peut contenir des liens vers des sites, plateformes, outils ou services tiers.</p>
+        <p>Ces liens sont fournis à titre de simple commodité.</p>
+        <p>La Société ne contrôle pas et n’est pas responsable du contenu, des conditions, des pratiques, de la disponibilité ou des normes de confidentialité des sites tiers.</p>
+        <p>L’accès aux sites tiers se fait sous votre seule responsabilité.</p>
       </LegalSection>
 
-      <LegalSection title="15. Governing Law">
-        <p>This Legal Notice shall be governed by and interpreted in accordance with the laws of the State of New Mexico, USA, without regard to conflict of laws principles.</p>
+      <LegalSection title="13. Responsabilité de l’utilisateur">
+        <p>En utilisant le présent site, vous vous engagez à le faire de manière licite et responsable.</p>
+        <p>Vous vous engagez à ne pas :</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>détourner l’usage du site,</li>
+          <li>perturber son fonctionnement,</li>
+          <li>tenter un accès non autorisé,</li>
+          <li>copier des contenus protégés,</li>
+          <li>vous livrer à une fraude ou à un comportement abusif,</li>
+          <li>ou utiliser le site d’une manière susceptible de porter préjudice à la Société ou à sa réputation.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="14. Documents applicables">
+        <p>L’utilisation du présent site peut également être régie par des documents juridiques complémentaires, notamment : les Conditions Générales de Vente et la Politique de Confidentialité.</p>
+        <p>En cas de contradiction entre les présentes Mentions Légales et un autre document contractuel, le document le plus spécifique prévaut pour la matière concernée.</p>
+      </LegalSection>
+
+      <LegalSection title="15. Droit applicable">
+        <p>Les présentes Mentions Légales sont régies et interprétées conformément au droit de l’État du Nouveau-Mexique, États-Unis, sans égard aux règles de conflit de lois.</p>
       </LegalSection>
 
       <LegalSection title="16. Modifications">
-        <p>The Company reserves the right to update, revise, or modify this Legal Notice at any time.</p>
-        <p>The updated version will be published on this page with the revised date.</p>
-        <p>Your continued use of the website after such changes are posted constitutes acceptance of the updated version.</p>
+        <p>La Société se réserve le droit de mettre à jour, réviser ou modifier les présentes Mentions Légales à tout moment.</p>
+        <p>La version mise à jour sera publiée sur cette page avec la date de révision.</p>
+        <p>La poursuite de votre utilisation du site après la publication de ces modifications vaut acceptation de la version mise à jour.</p>
       </LegalSection>
 
-      <LegalSection title="17. Information to Complete">
-        <p>Before publication, make sure to complete the following fields:</p>
+      <LegalSection title="17. Informations à compléter">
+        <p>Avant publication, veillez à compléter les champs suivants :</p>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Registered address</li>
-          <li>Email address</li>
-          <li>Hosting provider details</li>
-          <li>Last updated date</li>
+          <li>Adresse du siège</li>
+          <li>Adresse e-mail</li>
+          <li>Coordonnées de l’hébergeur</li>
+          <li>Date de dernière mise à jour</li>
         </ul>
       </LegalSection>
     </LegalLayout>

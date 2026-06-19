@@ -64,7 +64,14 @@ export default function Alumni() {
                 <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Téléphone *</label>
                 <PhoneField lang="fr" variant="dark" />
               </div>
-              <p className="text-xs text-zinc-500">* Champs obligatoires</p>
+              <label className="flex items-start gap-2.5 text-left text-xs text-zinc-400">
+                <input name="consent" type="checkbox" required className="mt-0.5 accent-[#C9A227]" />
+                <span>J&apos;accepte d&apos;être recontacté(e) par KILLEURUSD au sujet de la migration de mon accès. Mes données ne sont jamais revendues.</span>
+              </label>
+              <p className="text-xs text-zinc-500">
+                * Champs obligatoires · Conformément au RGPD, désinscription possible à tout moment.{" "}
+                <a href="/confidentialite" className="underline hover:text-zinc-300">Politique de confidentialité</a>.
+              </p>
               <Button type="submit" variant="accent" className="w-full">Confirmer mon identité</Button>
               <p className="text-center text-xs text-zinc-400 mt-4">Vérification des registres sous 48h ouvrées. Tes nouveaux accès seront transmis par courrier électronique.</p>
             </form>

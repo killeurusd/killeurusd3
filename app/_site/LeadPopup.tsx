@@ -26,6 +26,10 @@ const COPY = {
     email: "Ton adresse email",
     cta: "Recevoir la checklist",
     req: "* Champs obligatoires",
+    consent: "J'accepte d'être contacté(e) par KILLEURUSD et de recevoir la checklist. Mes données ne sont jamais revendues.",
+    rgpd: "Conformément au RGPD, désinscription possible à tout moment.",
+    privacy: "Politique de confidentialité",
+    privacyHref: "/confidentialite",
     fine: "Accès immédiat. Désinscription en un clic.",
     okTitle: "Merci 👍 Vérifie ta boîte mail.",
     okDesc: "La checklist arrive dans quelques instants.",
@@ -39,6 +43,10 @@ const COPY = {
     email: "Your email address",
     cta: "Get the checklist",
     req: "* Required fields",
+    consent: "I agree to be contacted by KILLEURUSD and to receive the checklist. My data is never sold.",
+    rgpd: "Under GDPR, you can unsubscribe at any time.",
+    privacy: "Privacy Policy",
+    privacyHref: "/en/privacy",
     fine: "Instant access. Unsubscribe in one click.",
     okTitle: "Thanks 👍 Check your inbox.",
     okDesc: "The checklist is on its way.",
@@ -179,7 +187,14 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
                   className="rounded-sm border border-white/20 bg-[#0B0B0D] px-4 py-3 text-white placeholder-white/40 focus:border-[#C9A227] focus:outline-none"
                 />
                 <PhoneField lang={lang} variant="dark" />
-                <p className="text-left text-[11px] text-white/40">{t.req}</p>
+                <label className="flex items-start gap-2.5 text-left text-xs text-white/60">
+                  <input name="consent" type="checkbox" required className="mt-0.5 accent-[#7A0F0F]" />
+                  <span>{t.consent}</span>
+                </label>
+                <p className="text-left text-[11px] text-white/40">
+                  {t.req} · {t.rgpd}{" "}
+                  <a href={t.privacyHref} className="underline hover:text-white">{t.privacy}</a>.
+                </p>
                 <button
                   type="submit"
                   className="rounded-sm bg-[#7A0F0F] px-6 py-3 font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#9A1414]"

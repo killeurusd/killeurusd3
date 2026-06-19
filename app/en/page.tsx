@@ -464,10 +464,17 @@ export default function EnHome() {
               <input type="email" name="email" placeholder="Your email *" aria-label="Your email" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 rounded-sm" required />
             </div>
             <PhoneField lang="en" variant="light" className="w-full" />
+            <label className="flex items-start gap-2.5 text-left text-xs text-white/70">
+              <input name="consent" type="checkbox" required className="mt-0.5 accent-white" />
+              <span>I agree to be contacted by KILLEURUSD and to receive the checklist. My data is never sold.</span>
+            </label>
             <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors rounded-sm w-full">Get the checklist</button>
           </form>
           )}
-          <p className="text-white/50 text-xs mt-4">* Required fields</p>
+          <p className="text-white/50 text-xs mt-4">
+            * Required fields · Under GDPR, you can unsubscribe at any time.{" "}
+            <a href="/en/privacy" className="underline hover:text-white">Privacy Policy</a>.
+          </p>
           <p className="text-white/70 text-xs mt-1">Instant access. One-click unsubscribe.</p>
         </div>
       </section>
@@ -529,7 +536,10 @@ export default function EnHome() {
             </div>
             <div><label className={lbl}>Message (optional)</label><textarea name="message" rows={4} className={fld}></textarea></div>
             <label className="flex items-start gap-3 text-xs text-zinc-400"><input name="consent" type="checkbox" required className="mt-1" /><span>I agree to be contacted by KILLEURUSD about my request. My data stays confidential and is never sold.</span></label>
-            <p className="text-xs text-zinc-500">* Required fields</p>
+            <p className="text-xs text-zinc-500">
+              * Required fields · Under GDPR, you can unsubscribe at any time.{" "}
+              <a href="/en/privacy" className="underline hover:text-zinc-300">Privacy Policy</a>.
+            </p>
             <button type="submit" className="w-full inline-flex items-center justify-center font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-sm transition-all bg-[#7A0F0F] text-white hover:bg-[#950f0f]">Send my request</button>
           </form>
           )}

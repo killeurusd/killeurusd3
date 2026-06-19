@@ -53,11 +53,18 @@ export default function LeadForm() {
           />
         </div>
         <PhoneField lang="fr" variant="light" className="w-full" />
+        <label className="flex items-start gap-2.5 text-left text-xs text-white/70">
+          <input name="consent" type="checkbox" required className="mt-0.5 accent-white" />
+          <span>J&apos;accepte d&apos;être contacté(e) par KILLEURUSD et de recevoir la checklist. Mes données ne sont jamais revendues.</span>
+        </label>
         <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors rounded-sm w-full">
           Télécharger la checklist
         </button>
       </form>
-      <p className="text-white/50 text-xs mt-4">* Champs obligatoires</p>
+      <p className="text-white/50 text-xs mt-4">
+        * Champs obligatoires · Conformément au RGPD, désinscription possible à tout moment.{" "}
+        <a href="/confidentialite" className="underline hover:text-white">Politique de confidentialité</a>.
+      </p>
       <p className="text-white/70 text-xs mt-1">Accès immédiat. Désinscription en un clic.</p>
     </>
   );

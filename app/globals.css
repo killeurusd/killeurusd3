@@ -32,6 +32,13 @@ body {
    ========================================================================= */
 @keyframes kuHeroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 @keyframes kuFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes kuPopIn { from { opacity: 0; transform: translateY(14px) scale(0.97); } to { opacity: 1; transform: none; } }
+
+/* Entrée du pop-up lead magnet : léger zoom + montée */
+.lp-in { animation: kuPopIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .lp-in { animation: kuFade 0.4s linear both; }
+}
 
 /* Révélation au scroll : fondu + montée */
 html.js [data-reveal] {

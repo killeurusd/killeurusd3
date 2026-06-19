@@ -7,15 +7,14 @@ import { captureAttribution, getAttribution } from "./tracking";
 // Pop-up lead magnet ("L'Audit du Trader Discipliné").
 // Déclenchement : intention de sortie (souris vers le haut, ordi) OU après un délai.
 // Réutilise le flux existant : /api/submit (formType "lead") → Google Sheets.
-// Mémoire visiteur (localStorage) : jamais réaffiché après inscription ; suspendu
-// quelques jours après une simple fermeture.
+// Mémoire visiteur (localStorage) : désactivé définitivement UNIQUEMENT après
+// inscription. Tant que le visiteur ne s'est pas inscrit, le pop-up se redéclenche
+// (une simple fermeture ne le met pas en sourdine).
 
 type Lang = "fr" | "en";
 
 const DELAY_MS = 30_000; // minuterie de secours (mobile + ordi)
-const DISMISS_DAYS = 7; // durée de silence après fermeture
 const KEY_DONE = "ku_lead_done"; // inscrit → permanent
-const KEY_DISMISS = "ku_lead_dismissed"; // fermé → horodatage
 
 const COPY = {
   fr: {
@@ -57,9 +56,8 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
     // Capture l'attribution dès l'arrivée (le pop-up est monté sur chaque page).
     captureAttribution();
     try {
+      // Seule l'inscription désactive le pop-up. Une fermeture ne le suspend pas.
       if (localStorage.getItem(KEY_DONE) === "1") return;
-      const dismissed = Number(localStorage.getItem(KEY_DISMISS) || 0);
-      if (dismissed && Date.now() - dismissed < DISMISS_DAYS * 86_400_000) return;
     } catch {
       return;
     }
@@ -103,10 +101,8 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
   }, [open]);
 
   function close() {
+    // Simple fermeture : on cache, sans rien mémoriser → il pourra réapparaître.
     setOpen(false);
-    try {
-      localStorage.setItem(KEY_DISMISS, String(Date.now()));
-    } catch {}
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

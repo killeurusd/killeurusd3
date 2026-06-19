@@ -136,6 +136,7 @@ export default function EnHome() {
 
       {/* 1. HERO */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b border-zinc-900">
+        <div className="ambient-halo" aria-hidden="true"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(122,15,15,0.08),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-3xl hero-in">

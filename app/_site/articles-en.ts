@@ -3,6 +3,32 @@ import type { Article } from "./articles";
 
 export const articlesEn: Article[] = [
   {
+    slug: "risk-management-the-only-variable-you-control",
+    title: "Risk management: the only variable you truly control",
+    category: "Rigor",
+    date: "2026-06-20",
+    dateLabel: "June 20, 2026",
+    readTime: "6 min",
+    excerpt:
+      "You control neither market direction nor the outcome of a single trade. You control your risk. That, and nothing else, is where your survival is decided.",
+    metaTitle: "Risk management in trading: the variable you control | KILLEURUSD",
+    metaDescription:
+      "Risk per trade, position sizing, thinking in R, drawdown: why risk management — not prediction — separates traders who last from those who blow up.",
+    blocks: [
+      { t: "lead", text: "You can spend ten years perfecting how you read the market: you will never know in advance whether the next trade wins or loses. Direction, exact timing, the outcome of a single position — none of it is under your control. Only one thing truly is, on every click: the risk you agree to put on the table." },
+      { t: "h2", text: "Prediction is an illusion, risk is a decision" },
+      { t: "p", text: "The beginner wants to be right. The professional wants to stay in the game. That's a difference in kind, not in degree. Anticipating a move stays a probability, never a certainty; deciding that a trade won't cost you more than 1% of your capital, however, is an absolute certainty you impose on the market. You shift your energy from what you endure to what you decide." },
+      { t: "quote", text: "A good trade can lose. A bad trade can win. Only the risk you commit is entirely under your control." },
+      { t: "h2", text: "Risk per trade: the fractional capital rule" },
+      { t: "p", text: "Setting a constant, small risk per position — typically 0.5% to 1% of capital — isn't excessive caution, it's survival arithmetic. At 1% per trade, it takes a losing streak of dozens of consecutive losses to seriously dent the account. At 10% per trade, one bad week is enough to take you down. The market doesn't reward whoever bets big; it removes whoever bets big for long enough." },
+      { t: "h2", text: "Think in R, not in dollars" },
+      { t: "p", text: "Express every trade in multiples of risk (R), where 1R = the amount you lose if your invalidation is hit. A target at +2R, a stop at -1R: you reason in ratios, not in amounts. This abstraction does two things. It detaches you emotionally from the dollar figure that triggers panic. And it makes your performance legible: a strategy that wins 40% of the time at +2R stays clearly positive over time, regardless of your account size." },
+      { t: "h2", text: "Drawdown: survive first, perform later" },
+      { t: "p", text: "Loss is mathematically asymmetric. Losing 50% of your capital then requires +100% just to break even. That's why capital preservation always comes before chasing maximum gains. Capping your drawdown, cutting size after a string of losses, refusing to “make it back”: these aren't signs of weakness, they're the reflexes of the people still standing ten years later." },
+      { t: "p", text: "No analytical method, however refined, saves you from absent risk management. Conversely, rigorous risk management buys you time — the time your edge needs to express itself, trade after trade. It's the least spectacular variable in trading, and the only one that truly decides who stays on the market." },
+    ],
+  },
+  {
     slug: "why-90-percent-of-traders-fail",
     title: "Why 90% of traders fail and how to join the top decile",
     category: "Psychology",

@@ -41,6 +41,40 @@ body {
   .lp-in { animation: kuFade 0.4s linear both; }
 }
 
+/* Hero chart : le décor apparaît en fondu, puis les bougies se dessinent (gauche→droite) */
+@keyframes kuCandleIn { from { opacity: 0; transform: translateY(10px) scaleY(0.5); } to { opacity: 1; transform: none; } }
+.hero-chart-bg { opacity: 0; animation: kuFade 0.6s ease-out 0.1s both; }
+.hero-chart .hero-candle {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: kuCandleIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-chart .hero-candle { transform: none !important; animation: kuFade 0.4s linear both !important; }
+}
+
+/* Halo d'ambiance derrière le hero : lent va-et-vient lumineux (rouge/or) */
+@keyframes kuHalo {
+  from { opacity: 0.55; transform: translateY(0) scale(1); }
+  to { opacity: 1; transform: translateY(-14px) scale(1.06); }
+}
+.ambient-halo {
+  position: absolute;
+  inset: -25% -10% auto -10%;
+  height: 130%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 50% at 78% 12%, rgba(122, 15, 15, 0.20), transparent 70%),
+    radial-gradient(34% 44% at 18% 32%, rgba(201, 162, 39, 0.10), transparent 72%);
+  filter: blur(8px);
+  animation: kuHalo 9s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-halo { animation: none; }
+}
+
 /* Révélation au scroll : fondu + montée */
 html.js [data-reveal] {
   opacity: 0;

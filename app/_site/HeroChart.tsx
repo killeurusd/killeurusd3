@@ -34,26 +34,29 @@ export default function HeroChart({
   ariaLabel = "Illustration d'une lecture d'analyse technique : repli dans une zone de demande puis continuation haussière.",
 }: { liquidityLabel?: string; zoneLabel?: string; ariaLabel?: string }) {
   return (
-    <svg viewBox="0 0 440 300" className="w-full h-full" role="img" aria-label={ariaLabel}>
-      {/* grille horizontale discrète */}
-      {[60, 110, 160, 210, 260].map((y) => (
-        <line key={y} x1="16" y1={y} x2="424" y2={y} stroke="#27272a" strokeWidth="1" strokeDasharray="2 6" opacity="0.5" />
-      ))}
+    <svg viewBox="0 0 440 300" className="w-full h-full hero-chart" role="img" aria-label={ariaLabel}>
+      {/* décor (grille, zone, liquidité) : fondu d'entrée */}
+      <g className="hero-chart-bg">
+        {/* grille horizontale discrète */}
+        {[60, 110, 160, 210, 260].map((y) => (
+          <line key={y} x1="16" y1={y} x2="424" y2={y} stroke="#27272a" strokeWidth="1" strokeDasharray="2 6" opacity="0.5" />
+        ))}
 
-      {/* zone de demande */}
-      <rect x="196" y="246" width="120" height="42" fill={GOLD} opacity="0.07" />
-      <rect x="196" y="246" width="120" height="42" fill="none" stroke={GOLD} strokeWidth="1" strokeDasharray="3 3" opacity="0.45" />
-      <text x="20" y="278" fill={GOLD} fontSize="9" fontWeight="700" letterSpacing="1.5" opacity="0.75">{zoneLabel}</text>
+        {/* zone de demande */}
+        <rect x="196" y="246" width="120" height="42" fill={GOLD} opacity="0.07" />
+        <rect x="196" y="246" width="120" height="42" fill="none" stroke={GOLD} strokeWidth="1" strokeDasharray="3 3" opacity="0.45" />
+        <text x="20" y="278" fill={GOLD} fontSize="9" fontWeight="700" letterSpacing="1.5" opacity="0.75">{zoneLabel}</text>
 
-      {/* ligne de liquidité (objectif structurel) */}
-      <line x1="16" y1="58" x2="424" y2="58" stroke={RED_BRIGHT} strokeWidth="1.2" strokeDasharray="5 4" opacity="0.7" />
-      <text x="360" y="52" fill={RED_BRIGHT} fontSize="9" fontWeight="700" letterSpacing="1.5" opacity="0.85">{liquidityLabel}</text>
+        {/* ligne de liquidité (objectif structurel) */}
+        <line x1="16" y1="58" x2="424" y2="58" stroke={RED_BRIGHT} strokeWidth="1.2" strokeDasharray="5 4" opacity="0.7" />
+        <text x="360" y="52" fill={RED_BRIGHT} fontSize="9" fontWeight="700" letterSpacing="1.5" opacity="0.85">{liquidityLabel}</text>
+      </g>
 
-      {/* bougies */}
+      {/* bougies : dessin progressif gauche → droite */}
       {candles.map((c, i) => {
         const color = c.up ? GOLD : RED_BRIGHT;
         return (
-          <g key={i}>
+          <g key={i} className="hero-candle" style={{ animationDelay: `${0.25 + i * 0.06}s` }}>
             <line x1={c.x} y1={c.wt} x2={c.x} y2={c.wb} stroke={color} strokeWidth="1.4" />
             <rect x={c.x - W / 2} y={c.bt} width={W} height={Math.max(2, c.bb - c.bt)} fill={color} rx="1" />
           </g>

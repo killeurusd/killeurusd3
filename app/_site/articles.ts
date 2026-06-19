@@ -27,6 +27,32 @@ export const AUTHOR = 'RAYANE "RAYSS"';
 
 export const articles: Article[] = [
   {
+    slug: "gestion-du-risque-la-variable-que-tu-controles",
+    title: "Gestion du risque : la seule variable que tu contrôles vraiment",
+    category: "Rigueur",
+    date: "2026-06-20",
+    dateLabel: "20 juin 2026",
+    readTime: "6 min",
+    excerpt:
+      "Tu ne contrôles ni la direction du marché, ni le résultat d'un trade isolé. Tu contrôles ton risque. C'est là, et nulle part ailleurs, que se joue ta survie.",
+    metaTitle: "Gestion du risque en trading : la variable que tu contrôles | KILLEURUSD",
+    metaDescription:
+      "Risque par trade, position sizing, pensée en R, drawdown : pourquoi la gestion du risque — et non la prédiction — sépare les traders qui durent de ceux qui sautent.",
+    blocks: [
+      { t: "lead", text: "Tu peux passer dix ans à perfectionner ta lecture du marché : tu ne sauras jamais à l'avance si le prochain trade gagne ou perd. La direction, le timing exact, le résultat d'une position isolée : rien de tout cela n'est sous ton contrôle. Une seule chose l'est vraiment, à chaque clic : le risque que tu acceptes de mettre sur la table." },
+      { t: "h2", text: "La prédiction est une illusion, le risque est une décision" },
+      { t: "p", text: "Le débutant cherche à avoir raison. Le professionnel cherche à rester en jeu. C'est une différence de nature, pas de degré. Anticiper un mouvement reste une probabilité, jamais une certitude ; en revanche, décider qu'un trade ne te coûtera pas plus de 1 % de ton capital, ça, c'est une certitude absolue que tu imposes au marché. Tu déplaces ton énergie de ce que tu subis vers ce que tu décides." },
+      { t: "quote", text: "Un bon trade peut perdre. Un mauvais trade peut gagner. Seul le risque que tu engages est entièrement sous ton contrôle." },
+      { t: "h2", text: "Le risque par trade : la règle du capital fractionné" },
+      { t: "p", text: "Fixer un risque constant et faible par position — typiquement 0,5 à 1 % du capital — n'est pas de la prudence excessive, c'est de l'arithmétique de survie. Avec 1 % par trade, il faut une série noire de plusieurs dizaines de pertes consécutives pour entamer sérieusement le compte. Avec 10 % par trade, une mauvaise semaine suffit à te mettre à terre. Le marché ne récompense pas celui qui parie gros ; il élimine celui qui parie gros assez longtemps." },
+      { t: "h2", text: "Penser en R, pas en euros" },
+      { t: "p", text: "Exprime chaque trade en multiples de risque (R), où 1R = la somme que tu perds si ton invalidation est touchée. Une cible à +2R, une perte à -1R : tu raisonnes en ratio, pas en montant. Cette abstraction fait deux choses. Elle te détache émotionnellement du chiffre en euros qui fait paniquer. Et elle rend ta performance lisible : une stratégie qui gagne 40 % du temps à +2R reste largement positive sur la durée, indépendamment de la taille de ton compte." },
+      { t: "h2", text: "Le drawdown : survivre d'abord, performer ensuite" },
+      { t: "p", text: "La perte est mathématiquement asymétrique. Perdre 50 % de ton capital exige ensuite +100 % juste pour revenir à l'équilibre. C'est pour cette raison que la préservation du capital prime toujours sur la recherche du gain maximal. Plafonner son drawdown, réduire la voilure après une série de pertes, refuser de « se refaire » : ce ne sont pas des signes de faiblesse, ce sont les réflexes de ceux qui sont encore là dix ans plus tard." },
+      { t: "p", text: "Aucune méthode d'analyse, aussi fine soit-elle, ne te sauve d'une gestion du risque absente. À l'inverse, une gestion du risque rigoureuse te laisse le temps — celui dont ton avantage a besoin pour s'exprimer, trade après trade. C'est la variable la moins spectaculaire du trading, et c'est la seule qui décide réellement de qui reste sur le marché." },
+    ],
+  },
+  {
     slug: "pourquoi-90-pourcent-des-traders-echouent",
     title: "Pourquoi 90% des traders échouent et comment intégrer le décile supérieur",
     category: "Psychologie",

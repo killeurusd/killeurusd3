@@ -1,11 +1,105 @@
 import { NextResponse } from "next/server";
+import { google } from "googleapis";
 
-// Réception serveur des soumissions de formulaire → transmet à Google Apps Script
-// (qui écrit dans Google Sheets). L'URL du script est privée (env serveur, pas NEXT_PUBLIC).
-// Sans config (branchement non fait), on répond OK pour ne pas casser l'UX.
-const ENDPOINT = process.env.SHEETS_WEBHOOK_URL;
+// Réception serveur des soumissions de formulaire → écriture directe dans Google
+// Sheets via un compte de service (API Sheets v4). Un onglet par type de
+// formulaire (Contacts / Leads / Anciens), en-têtes créés automatiquement.
+// Sans configuration (clés absentes), on répond OK pour ne pas casser l'UX.
+export const runtime = "nodejs";
 
 const ALLOWED_TYPES = new Set(["contact", "lead", "alumni"]);
+const TABS: Record<string, string> = { contact: "Contacts", lead: "Leads", alumni: "Anciens" };
+const DEFAULT_TAB = "Formulaires";
+
+const SHEET_ID = process.env.SHEET_ID;
+const SA_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+// La clé privée est stockée avec des \n littéraux dans les variables d'env → on restaure les sauts de ligne.
+const SA_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+
+const isConfigured = () => Boolean(SHEET_ID && SA_EMAIL && SA_KEY);
+
+function sheetsClient() {
+  const auth = new google.auth.JWT({
+    email: SA_EMAIL,
+    key: SA_KEY,
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+  return google.sheets({ version: "v4", auth });
+}
+
+type Sheets = ReturnType<typeof sheetsClient>;
+
+// Crée l'onglet si absent (avec en-tête en gras + ligne figée).
+async function ensureTab(sheets: Sheets, title: string): Promise<void> {
+  const meta = await sheets.spreadsheets.get({ spreadsheetId: SHEET_ID });
+  const exists = (meta.data.sheets || []).some((s) => s.properties?.title === title);
+  if (exists) return;
+  const res = await sheets.spreadsheets.batchUpdate({
+    spreadsheetId: SHEET_ID,
+    requestBody: { requests: [{ addSheet: { properties: { title } } }] },
+  });
+  const sheetId = res.data.replies?.[0]?.addSheet?.properties?.sheetId;
+  if (sheetId != null) {
+    await sheets.spreadsheets.batchUpdate({
+      spreadsheetId: SHEET_ID,
+      requestBody: {
+        requests: [
+          {
+            updateSheetProperties: {
+              properties: { sheetId, gridProperties: { frozenRowCount: 1 } },
+              fields: "gridProperties.frozenRowCount",
+            },
+          },
+          {
+            repeatCell: {
+              range: { sheetId, startRowIndex: 0, endRowIndex: 1 },
+              cell: { userEnteredFormat: { textFormat: { bold: true } } },
+              fields: "userEnteredFormat.textFormat.bold",
+            },
+          },
+        ],
+      },
+    });
+  }
+}
+
+// Ajoute une ligne, en alignant sur les en-têtes existants et en ajoutant les colonnes manquantes.
+async function appendRow(sheets: Sheets, tab: string, data: Record<string, string>): Promise<void> {
+  await ensureTab(sheets, tab);
+
+  const hdr = await sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: `${tab}!1:1` });
+  let headers = (hdr.data.values?.[0] as string[] | undefined) || [];
+
+  let headersChanged = false;
+  if (headers.length === 0) {
+    headers = Object.keys(data);
+    headersChanged = true;
+  } else {
+    for (const k of Object.keys(data)) {
+      if (!headers.includes(k)) {
+        headers.push(k);
+        headersChanged = true;
+      }
+    }
+  }
+  if (headersChanged) {
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: SHEET_ID,
+      range: `${tab}!1:1`,
+      valueInputOption: "RAW",
+      requestBody: { values: [headers] },
+    });
+  }
+
+  const row = headers.map((h) => (data[h] !== undefined ? data[h] : ""));
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: SHEET_ID,
+    range: `${tab}!A1`,
+    valueInputOption: "USER_ENTERED",
+    insertDataOption: "INSERT_ROWS",
+    requestBody: { values: [row] },
+  });
+}
 
 export async function POST(req: Request) {
   let body: Record<string, unknown>;
@@ -26,34 +120,27 @@ export async function POST(req: Request) {
   }
 
   // Pas encore branché : on accepte (l'UX de confirmation fonctionne déjà côté client).
-  if (!ENDPOINT) {
+  if (!isConfigured()) {
     return NextResponse.json({ ok: true, stored: false });
   }
 
-  // Nettoyage : on ne transmet que des chaînes, taille limitée.
+  // Nettoyage : uniquement des chaînes, taille limitée. Horodatage lisible (UTC).
   const payload: Record<string, string> = {
     formType,
-    submittedAt: new Date().toISOString(),
+    submittedAt: new Date().toISOString().replace("T", " ").slice(0, 19),
     page: typeof body.page === "string" ? body.page.slice(0, 300) : "",
   };
   for (const [k, v] of Object.entries(body)) {
-    if (k === "formType" || k === "company") continue;
+    if (k === "formType" || k === "company" || k === "page") continue;
     if (typeof v === "string") payload[k] = v.slice(0, 2000);
   }
 
   try {
-    const res = await fetch(ENDPOINT, {
-      method: "POST",
-      // text/plain = pas de pré-vol CORS côté Apps Script ; le script parse le JSON.
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(payload),
-      // évite de bloquer l'utilisateur si Sheets est lent
-      signal: AbortSignal.timeout(8000),
-    });
-    if (!res.ok) throw new Error("sheet_error");
+    await appendRow(sheetsClient(), TABS[formType] || DEFAULT_TAB, payload);
     return NextResponse.json({ ok: true, stored: true });
-  } catch {
-    // On ne révèle pas d'erreur à l'utilisateur ; à surveiller côté logs.
+  } catch (err) {
+    // On ne révèle pas d'erreur à l'utilisateur ; à surveiller côté logs Vercel.
+    console.error("[submit] sheets error:", err);
     return NextResponse.json({ ok: true, stored: false });
   }
 }

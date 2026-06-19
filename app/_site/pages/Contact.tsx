@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Mail, MessageSquare, CheckCircle2 } from "lucide-react";
 import { Button, SectionHeading } from "../ui";
 import { getAttribution } from "../tracking";
+import PhoneField from "../PhoneField";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -72,7 +73,7 @@ export default function Contact() {
 
           <div>
             <label className={lbl}>Téléphone *</label>
-            <input name="telephone" type="tel" required className={fld} />
+            <PhoneField lang="fr" variant="dark" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">

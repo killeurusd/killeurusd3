@@ -11,6 +11,7 @@ import ChatWidget from "../components/ChatWidget";
 import logo from "../../public/logo.png";
 import HeroChart from "../_site/HeroChart";
 import { getAttribution } from "../_site/tracking";
+import PhoneField from "../_site/PhoneField";
 import FounderCard from "../_site/FounderCard";
 import CountUp from "../_site/CountUp";
 import { COHORT } from "../_site/offer";
@@ -460,7 +461,7 @@ export default function EnHome() {
             <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
             <input type="text" name="prenom" placeholder="Your first name" aria-label="Your first name" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm" required />
             <input type="email" name="email" placeholder="Your email" aria-label="Your email" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[180px] rounded-sm" required />
-            <input type="tel" name="telephone" placeholder="Phone (optional)" aria-label="Phone (optional)" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm" />
+            <PhoneField lang="en" variant="light" className="w-full sm:flex-1 sm:min-w-[240px]" />
             <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm w-full sm:w-auto">Get the checklist</button>
           </form>
           )}
@@ -509,7 +510,7 @@ export default function EnHome() {
               <div><label className={lbl}>Email *</label><input name="email" type="email" required className={fld} /></div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              <div><label className={lbl}>Phone *</label><input name="telephone" type="tel" required className={fld} /></div>
+              <div><label className={lbl}>Phone *</label><PhoneField lang="en" variant="dark" /></div>
               <div><label className={lbl}>Your current level</label><select name="niveau" className={`${fld} appearance-none`}><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">

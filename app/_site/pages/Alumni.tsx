@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Award, CheckCircle2 } from "lucide-react";
 import { Button, SectionHeading } from "../ui";
 import { getAttribution } from "../tracking";
+import PhoneField from "../PhoneField";
 
 export default function Alumni() {
   const [sent, setSent] = useState(false);
@@ -60,8 +61,8 @@ export default function Alumni() {
                 <input name="email" type="email" required className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
               </div>
               <div>
-                <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Téléphone</label>
-                <input name="telephone" type="tel" required className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
+                <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Téléphone *</label>
+                <PhoneField lang="fr" variant="dark" />
               </div>
               <Button type="submit" variant="accent" className="w-full">Confirmer mon identité</Button>
               <p className="text-center text-xs text-zinc-400 mt-4">Vérification des registres sous 48h ouvrées. Tes nouveaux accès seront transmis par courrier électronique.</p>

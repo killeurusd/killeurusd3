@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getAttribution } from "./tracking";
+import PhoneField from "./PhoneField";
 
 // Îlot client : capture e-mail (lead magnet) → /api/submit → Google Sheets.
 export default function LeadForm() {
@@ -49,13 +50,7 @@ export default function LeadForm() {
           className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[180px] rounded-sm"
           required
         />
-        <input
-          type="tel"
-          name="telephone"
-          placeholder="Téléphone (optionnel)"
-          aria-label="Téléphone (optionnel)"
-          className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm"
-        />
+        <PhoneField lang="fr" variant="light" className="w-full sm:flex-1 sm:min-w-[240px]" />
         <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm w-full sm:w-auto">
           Télécharger la checklist
         </button>

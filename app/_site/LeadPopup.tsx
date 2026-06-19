@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { X, Download } from "lucide-react";
 import { captureAttribution, getAttribution } from "./tracking";
+import PhoneField from "./PhoneField";
 
 // Pop-up lead magnet ("L'Audit du Trader Discipliné").
 // Déclenchement : intention de sortie (souris vers le haut, ordi) OU après un délai.
@@ -177,13 +178,7 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
                   aria-label={t.email}
                   className="rounded-sm border border-white/20 bg-[#0B0B0D] px-4 py-3 text-white placeholder-white/40 focus:border-[#C9A227] focus:outline-none"
                 />
-                <input
-                  type="tel"
-                  name="telephone"
-                  placeholder={t.tel}
-                  aria-label={t.tel}
-                  className="rounded-sm border border-white/20 bg-[#0B0B0D] px-4 py-3 text-white placeholder-white/40 focus:border-[#C9A227] focus:outline-none"
-                />
+                <PhoneField lang={lang} variant="dark" />
                 <button
                   type="submit"
                   className="rounded-sm bg-[#7A0F0F] px-6 py-3 font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#9A1414]"

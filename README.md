@@ -4,6 +4,7 @@ Site de la formation trading KILLEURUSD. Next.js (App Router) + Tailwind, déplo
 (projet `killeurusd3` → `https://www.killeurusd.com`). FR à la racine, EN sous `/en`.
 
 ## 📚 Documentation (à lire en premier)
+- **[`AUTOMATISATION.md`](AUTOMATISATION.md)** — automatiser le site (paiement Stripe, livraison, stats). Comptes à créer + variables.
 - **[`GUIDE-BLOG.md`](GUIDE-BLOG.md)** — publier / modifier un article (couverture, graphiques, conventions). **Lire ça pour le blog.**
 - **[`backend/SETUP-BACKEND.md`](backend/SETUP-BACKEND.md)** — brancher Google Sheets (formulaires + articles) et GA4 (stats).
 - **[`BRANCHEMENTS-FINAL.md`](BRANCHEMENTS-FINAL.md)** — tous les raccordements externes restants (cert apex, légal FR, Stripe, GA4…).

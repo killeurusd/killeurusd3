@@ -7,6 +7,10 @@ import { PATHS } from "../nav";
 import { useGo } from "../useGo";
 import { COHORT } from "../offer";
 
+// Lien de paiement Stripe (Payment Link). Public par nature → NEXT_PUBLIC.
+// Non défini = repli sur l'ancien comportement (le site ne casse pas).
+const STRIPE_LINK = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK;
+
 export default function Checkout() {
   const navigate = useGo();
 
@@ -38,9 +42,18 @@ export default function Checkout() {
           <div className="text-3xl font-extrabold">997$</div>
         </div>
 
-        <Button onClick={() => navigate("thankyou")} variant="accent" className="w-full mb-6">
-          Valider mon inscription
-        </Button>
+        {STRIPE_LINK ? (
+          <a
+            href={STRIPE_LINK}
+            className="w-full mb-6 inline-flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-300 rounded-sm bg-[#C9A227] hover:bg-[#B38F22] text-[#0B0B0D] px-8 py-4 text-sm md:text-base shadow-[0_4px_14px_0_rgba(201,162,39,0.39)] hover:-translate-y-0.5"
+          >
+            Payer 997&nbsp;$ et accéder
+          </a>
+        ) : (
+          <Button onClick={() => navigate("thankyou")} variant="accent" className="w-full mb-6">
+            Valider mon inscription
+          </Button>
+        )}
 
         <div className="flex justify-center items-center space-x-4 text-xs font-medium text-zinc-400 uppercase tracking-wider">
           <Lock className="w-4 h-4" /> <span>Paiement crypté & sécurisé par Stripe</span>

@@ -39,7 +39,7 @@ export default function CheckoutEn() {
             <div className="text-3xl font-extrabold">$997</div>
           </div>
 
-          <Btn href="/en/thankyou" variant="accent" className="w-full mb-6">Confirm my enrollment</Btn>
+          <Btn href={process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK || "/en/thankyou"} variant="accent" className="w-full mb-6">{process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK ? "Pay $997 & get access" : "Confirm my enrollment"}</Btn>
 
           <div className="flex justify-center items-center space-x-4 text-xs font-medium text-zinc-400 uppercase tracking-wider">
             <Lock className="w-4 h-4" /> <span>Encrypted & secured by Stripe</span>

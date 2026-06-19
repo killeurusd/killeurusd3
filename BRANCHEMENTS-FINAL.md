@@ -40,8 +40,10 @@ Textes sources dans `../annexe/`. À compléter dans :
   (actuellement en anglais sur la version française).
 
 ## 💳 Conversion (back-ends à brancher)
-- [ ] **Paiement Stripe** : le bouton checkout (`Checkout.tsx`) mène à `/merci` sans transaction
-  réelle. Brancher Stripe Checkout / Payment Link.
+- [ ] **Paiement Stripe (automatisé)** : le bouton checkout pointe sur `NEXT_PUBLIC_STRIPE_PAYMENT_LINK`
+  dès qu'il est posé (sinon repli sur `/merci`). Procédure no-code (Payment Link = paiement + reçu +
+  livraison du lien d'accès Notion/Telegram/Drive) dans **[`AUTOMATISATION.md`](AUTOMATISATION.md)**.
+  Webhook clients/email sur-mesure = Phase 2 (à brancher une fois le compte Stripe créé).
 - [x] **Formulaires** (contact, lead magnet, anciens élèves — FR **et** EN) : désormais envoyés à
   `/api/submit` → Google Sheets. Ne reste qu'à poser `SHEETS_WEBHOOK_URL` (voir section Backend).
 - [ ] **Lead magnet** : brancher en plus l'**envoi du PDF** (« L'Audit du Trader Discipliné ») par email

@@ -92,10 +92,12 @@ async function appendRow(sheets: Sheets, tab: string, data: Record<string, strin
   }
 
   const row = headers.map((h) => (data[h] !== undefined ? data[h] : ""));
+  // RAW : on stocke les valeurs telles quelles (préserve les zéros initiaux des
+  // téléphones). L'horodatage "YYYY-MM-DD HH:mm:ss" reste trié correctement en texte.
   await sheets.spreadsheets.values.append({
     spreadsheetId: SHEET_ID,
     range: `${tab}!A1`,
-    valueInputOption: "USER_ENTERED",
+    valueInputOption: "RAW",
     insertDataOption: "INSERT_ROWS",
     requestBody: { values: [row] },
   });

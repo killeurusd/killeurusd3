@@ -10,6 +10,7 @@ import Image from "next/image";
 import ChatWidget from "../components/ChatWidget";
 import logo from "../../public/logo.png";
 import HeroChart from "../_site/HeroChart";
+import { getAttribution } from "../_site/tracking";
 import FounderCard from "../_site/FounderCard";
 import CountUp from "../_site/CountUp";
 import { COHORT } from "../_site/offer";
@@ -45,7 +46,7 @@ export default function EnHome() {
       await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ formType, page: "/en", ...data }),
+        body: JSON.stringify({ formType, page: "/en", lang: "en", ...getAttribution(), ...data }),
       });
     } catch {}
   }
@@ -455,11 +456,12 @@ export default function EnHome() {
               <p className="text-white/70 text-sm mt-1">The checklist is on its way.</p>
             </div>
           ) : (
-          <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto" onSubmit={(e: any) => { setLeadSent(true); postForm(e, "lead"); }}>
+          <form className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center max-w-2xl mx-auto" onSubmit={(e: any) => { setLeadSent(true); postForm(e, "lead"); }}>
             <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
-            <input type="text" name="prenom" placeholder="Your first name" aria-label="Your first name" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/3 rounded-sm" required />
-            <input type="email" name="email" placeholder="Your email" aria-label="Your email" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/2 rounded-sm" required />
-            <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm">Get the checklist</button>
+            <input type="text" name="prenom" placeholder="Your first name" aria-label="Your first name" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm" required />
+            <input type="email" name="email" placeholder="Your email" aria-label="Your email" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[180px] rounded-sm" required />
+            <input type="tel" name="telephone" placeholder="Phone (optional)" aria-label="Phone (optional)" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm" />
+            <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm w-full sm:w-auto">Get the checklist</button>
           </form>
           )}
           <p className="text-white/70 text-xs mt-4">Instant access. One-click unsubscribe.</p>
@@ -503,20 +505,23 @@ export default function EnHome() {
             <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
             <p className="text-sm text-zinc-400 -mt-2">A few details help us guide you and personalize our reply.</p>
             <div className="grid md:grid-cols-2 gap-6">
-              <div><label className={lbl}>Full name *</label><input name="name" type="text" required className={fld} /></div>
+              <div><label className={lbl}>Full name *</label><input name="nom" type="text" required className={fld} /></div>
               <div><label className={lbl}>Email *</label><input name="email" type="email" required className={fld} /></div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              <div><label className={lbl}>Your current level</label><select name="level" className={`${fld} appearance-none`}><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+              <div><label className={lbl}>Phone *</label><input name="telephone" type="tel" required className={fld} /></div>
+              <div><label className={lbl}>Your current level</label><select name="niveau" className={`${fld} appearance-none`}><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
               <div><label className={lbl}>How long have you traded?</label><select name="experience" className={`${fld} appearance-none`}><option>Never traded</option><option>Less than 1 year</option><option>1 to 3 years</option><option>More than 3 years</option></select></div>
+              <div><label className={lbl}>Main objective</label><select name="objectif" className={`${fld} appearance-none`}><option>Become consistently profitable</option><option>Structure my method</option><option>Manage my emotions / discipline</option><option>Trade for a living</option></select></div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              <div><label className={lbl}>Main objective</label><select name="objective" className={`${fld} appearance-none`}><option>Become consistently profitable</option><option>Structure my method</option><option>Manage my emotions / discipline</option><option>Trade for a living</option></select></div>
               <div><label className={lbl}>Starting capital (indicative)</label><select name="capital" className={`${fld} appearance-none`}><option>Under $1,000</option><option>$1,000 – $5,000</option><option>$5,000 – $20,000</option><option>Over $20,000</option></select></div>
+              <div><label className={lbl}>Your main blocker today</label><select name="blocage" className={`${fld} appearance-none`}><option>No clear method</option><option>Repeated losses</option><option>Emotions / impulsivity</option><option>Lack of time</option><option>Other</option></select></div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              <div><label className={lbl}>Your main blocker today</label><select name="blocker" className={`${fld} appearance-none`}><option>No clear method</option><option>Repeated losses</option><option>Emotions / impulsivity</option><option>Lack of time</option><option>Other</option></select></div>
-              <div><label className={lbl}>When do you want to start?</label><select name="timeline" className={`${fld} appearance-none`}><option>I want to start now</option><option>Within a month</option><option>Just researching</option></select></div>
+              <div><label className={lbl}>When do you want to start?</label><select name="demarrage" className={`${fld} appearance-none`}><option>I want to start now</option><option>Within a month</option><option>Just researching</option></select></div>
             </div>
             <div><label className={lbl}>Message (optional)</label><textarea name="message" rows={4} className={fld}></textarea></div>
             <label className="flex items-start gap-3 text-xs text-zinc-400"><input name="consent" type="checkbox" required className="mt-1" /><span>I agree to be contacted by KILLEURUSD about my request. My data stays confidential and is never sold.</span></label>

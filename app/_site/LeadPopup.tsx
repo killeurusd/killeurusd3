@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { X, Download } from "lucide-react";
+import { captureAttribution, getAttribution } from "./tracking";
 
 // Pop-up lead magnet ("L'Audit du Trader Discipliné").
 // Déclenchement : intention de sortie (souris vers le haut, ordi) OU après un délai.
@@ -23,6 +24,7 @@ const COPY = {
     desc: "10 points de contrôle non-négociables à valider avant d'ouvrir la moindre position. Reçois la checklist par email.",
     prenom: "Ton prénom",
     email: "Ton adresse email",
+    tel: "Téléphone (optionnel)",
     cta: "Recevoir la checklist",
     fine: "Accès immédiat. Désinscription en un clic.",
     okTitle: "Merci 👍 Vérifie ta boîte mail.",
@@ -35,6 +37,7 @@ const COPY = {
     desc: "10 non-negotiable checks to run before opening any position. Get the checklist by email.",
     prenom: "Your first name",
     email: "Your email address",
+    tel: "Phone (optional)",
     cta: "Get the checklist",
     fine: "Instant access. Unsubscribe in one click.",
     okTitle: "Thanks 👍 Check your inbox.",
@@ -51,6 +54,8 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
 
   // Déclencheurs : intention de sortie + minuterie, une seule fois.
   useEffect(() => {
+    // Capture l'attribution dès l'arrivée (le pop-up est monté sur chaque page).
+    captureAttribution();
     try {
       if (localStorage.getItem(KEY_DONE) === "1") return;
       const dismissed = Number(localStorage.getItem(KEY_DISMISS) || 0);
@@ -115,7 +120,7 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
       await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ formType: "lead", page: `popup-${lang}`, ...data }),
+        body: JSON.stringify({ formType: "lead", page: `popup-${lang}`, lang, ...getAttribution(), ...data }),
       });
     } catch {}
   }
@@ -174,6 +179,13 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
                   required
                   placeholder={t.email}
                   aria-label={t.email}
+                  className="rounded-sm border border-white/20 bg-[#0B0B0D] px-4 py-3 text-white placeholder-white/40 focus:border-[#C9A227] focus:outline-none"
+                />
+                <input
+                  type="tel"
+                  name="telephone"
+                  placeholder={t.tel}
+                  aria-label={t.tel}
                   className="rounded-sm border border-white/20 bg-[#0B0B0D] px-4 py-3 text-white placeholder-white/40 focus:border-[#C9A227] focus:outline-none"
                 />
                 <button

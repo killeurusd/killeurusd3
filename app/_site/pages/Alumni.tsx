@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Award, CheckCircle2 } from "lucide-react";
 import { Button, SectionHeading } from "../ui";
+import { getAttribution } from "../tracking";
 
 export default function Alumni() {
   const [sent, setSent] = useState(false);
@@ -15,7 +16,7 @@ export default function Alumni() {
       await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ formType: "alumni", page: "/acces-anciens", ...data }),
+        body: JSON.stringify({ formType: "alumni", page: "/acces-anciens", lang: "fr", ...getAttribution(), ...data }),
       });
     } catch {}
   }
@@ -57,6 +58,10 @@ export default function Alumni() {
               <div>
                 <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Adresse Email d'origine</label>
                 <input name="email" type="email" required className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Téléphone</label>
+                <input name="telephone" type="tel" required className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
               </div>
               <Button type="submit" variant="accent" className="w-full">Confirmer mon identité</Button>
               <p className="text-center text-xs text-zinc-400 mt-4">Vérification des registres sous 48h ouvrées. Tes nouveaux accès seront transmis par courrier électronique.</p>

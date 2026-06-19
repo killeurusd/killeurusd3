@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getAttribution } from "./tracking";
 
 // Îlot client : capture e-mail (lead magnet) → /api/submit → Google Sheets.
 export default function LeadForm() {
@@ -14,7 +15,7 @@ export default function LeadForm() {
       await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ formType: "lead", page: "/", ...data }),
+        body: JSON.stringify({ formType: "lead", page: "/", lang: "fr", ...getAttribution(), ...data }),
       });
     } catch {}
   }
@@ -30,14 +31,14 @@ export default function LeadForm() {
 
   return (
     <>
-      <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto" onSubmit={handleSubmit}>
+      <form className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center max-w-2xl mx-auto" onSubmit={handleSubmit}>
         <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
         <input
           type="text"
           name="prenom"
           placeholder="Ton prénom"
           aria-label="Ton prénom"
-          className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/3 rounded-sm"
+          className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm"
           required
         />
         <input
@@ -45,10 +46,17 @@ export default function LeadForm() {
           name="email"
           placeholder="Ton adresse email"
           aria-label="Ton adresse email"
-          className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:w-1/2 rounded-sm"
+          className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[180px] rounded-sm"
           required
         />
-        <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm">
+        <input
+          type="tel"
+          name="telephone"
+          placeholder="Téléphone (optionnel)"
+          aria-label="Téléphone (optionnel)"
+          className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm"
+        />
+        <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm w-full sm:w-auto">
           Télécharger la checklist
         </button>
       </form>

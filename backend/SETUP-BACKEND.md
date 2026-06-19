@@ -3,10 +3,9 @@
 Tout le **code** est en place. Il reste à connecter tes comptes Google. ~20 min.
 
 ## 1) Créer la Google Sheet
-1. Crée une Google Sheet (nom au choix, ex. « KILLEURUSD — Data »).
-2. Crée **2 onglets** (en bas) :
-   - **`Formulaires`** : laisse-le vide (les en-têtes se créent tout seuls à la 1re soumission).
-   - **`Articles`** : mets en **1re ligne** ces colonnes (exactement ces noms) :
+1. Crée une Google Sheet vierge (nom au choix, ex. « KILLEURUSD — Data »).
+2. **Tu n'as aucun onglet à créer pour les formulaires** : le script crée tout seul, à la 1re soumission de chaque type, les onglets **`Contacts`**, **`Leads`** et **`Anciens`** (avec leurs en-têtes).
+3. *(Optionnel — seulement si tu veux publier des articles via la Sheet)* crée un onglet **`Articles`** avec en **1re ligne** ces colonnes (exactement ces noms) :
 
    ```
    lang | slug | title | category | date | dateLabel | readTime | excerpt | metaTitle | metaDescription | cover | body | published
@@ -33,7 +32,7 @@ Dans Vercel → projet **killeurusd3** → **Settings → Environment Variables*
 Puis **redeploy** (Deployments → … → Redeploy).
 
 ## 4) Vérifier
-- **Formulaires** : remplis le formulaire de contact du site → une ligne apparaît dans l'onglet `Formulaires`.
+- **Formulaires** : remplis le formulaire de contact du site → une ligne apparaît dans l'onglet `Contacts` (et `Leads` / `Anciens` pour les autres formulaires). Chaque ligne contient l'horodatage, la page d'origine, la langue, l'attribution marketing (UTM / référent si présents) et les champs saisis.
 - **Articles** : ajoute une ligne dans l'onglet `Articles` (voir §6) → l'article apparaît sur `/blog` sous ~1 min (ISR).
 
 ## 5) Stats visiteurs (GA4)

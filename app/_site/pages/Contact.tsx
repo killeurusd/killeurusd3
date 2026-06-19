@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, MessageSquare, CheckCircle2 } from "lucide-react";
 import { Button, SectionHeading } from "../ui";
+import { getAttribution } from "../tracking";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -17,7 +18,7 @@ export default function Contact() {
       await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ formType: "contact", page: "/contact", ...data }),
+        body: JSON.stringify({ formType: "contact", page: "/contact", lang: "fr", ...getAttribution(), ...data }),
       });
     } catch {}
   }
@@ -67,6 +68,11 @@ export default function Contact() {
           <div className="grid md:grid-cols-2 gap-6">
             <div><label className={lbl}>Nom complet *</label><input name="nom" type="text" required className={fld} /></div>
             <div><label className={lbl}>Adresse Email *</label><input name="email" type="email" required className={fld} /></div>
+          </div>
+
+          <div>
+            <label className={lbl}>Téléphone *</label>
+            <input name="telephone" type="tel" required className={fld} />
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">

@@ -15,8 +15,15 @@
  *      Puis redeploy.
  */
 
-const FORMS_TAB = "Formulaires";
 const ARTICLES_TAB = "Articles";
+
+// Un onglet par type de formulaire (créés automatiquement au besoin).
+const TABS = { contact: "Contacts", lead: "Leads", alumni: "Anciens" };
+const DEFAULT_TAB = "Formulaires";
+
+function tabFor_(formType) {
+  return TABS[String(formType || "").toLowerCase()] || DEFAULT_TAB;
+}
 
 function ss_() {
   return SpreadsheetApp.getActiveSpreadsheet();
@@ -30,23 +37,35 @@ function json_(obj) {
 function doPost(e) {
   try {
     const data = JSON.parse((e.postData && e.postData.contents) || "{}");
-    let sh = ss_().getSheetByName(FORMS_TAB);
-    if (!sh) sh = ss_().insertSheet(FORMS_TAB);
+    const tabName = tabFor_(data.formType);
+    let sh = ss_().getSheetByName(tabName);
+    if (!sh) sh = ss_().insertSheet(tabName);
 
     // En-têtes : crée la 1re ligne si vide, ajoute les colonnes manquantes au besoin.
     let headers = sh.getLastRow() ? sh.getRange(1, 1, 1, sh.getLastColumn()).getValues()[0] : [];
     if (!headers.length || (headers.length === 1 && headers[0] === "")) {
       headers = Object.keys(data);
       sh.getRange(1, 1, 1, headers.length).setValues([headers]);
+      sh.getRange(1, 1, 1, headers.length).setFontWeight("bold");
+      sh.setFrozenRows(1);
     } else {
       Object.keys(data).forEach(function (k) {
         if (headers.indexOf(k) === -1) {
           headers.push(k);
-          sh.getRange(1, headers.length).setValue(k);
+          sh.getRange(1, headers.length).setValue(k).setFontWeight("bold");
         }
       });
     }
-    const row = headers.map(function (h) { return data[h] !== undefined ? data[h] : ""; });
+    const row = headers.map(function (h) {
+      const v = data[h];
+      if (v === undefined) return "";
+      // Horodatage ISO → vraie date (affichage lisible dans Sheets).
+      if (h === "submittedAt" && typeof v === "string") {
+        const d = new Date(v);
+        return isNaN(d.getTime()) ? v : d;
+      }
+      return v;
+    });
     sh.appendRow(row);
     return json_({ ok: true });
   } catch (err) {

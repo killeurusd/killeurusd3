@@ -42,7 +42,8 @@ Infos clés : repo `killeurusd/killeurusd3` (branche `main`) · Vercel projet `k
   Créer le compte → Payment Link 997 $ (after-payment = lien d'accès Notion/Telegram/Drive + redirect `/merci`)
   → poser `NEXT_PUBLIC_STRIPE_PAYMENT_LINK`. **Décider où vit le cours** (Notion / Telegram / Drive).
 - [ ] **GA4** (stats) — créer la propriété → poser `NEXT_PUBLIC_GA_ID` (`G-…`). Insights + rapport hebdo auto (natif GA4).
-- [ ] **Google Sheet + Apps Script** (formulaires + articles) — voir `backend/SETUP-BACKEND.md` → poser `SHEETS_WEBHOOK_URL`.
+- [x] **Formulaires → Google Sheets** ✅ FAIT (2026-06-19). Écriture directe via **compte de service** (API Sheets v4) dans `/api/submit` ; un onglet par type (`Contacts` / `Leads` / `Anciens`), créés tout seuls. Variables Vercel posées : `SHEET_ID`, `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_PRIVATE_KEY`. Sheet : `1lv02iiesDZbFyo5ZqyemeNaEwX7_ry5mDNk9-qXWhiw`. ⚠️ Penser à **régénérer la clé** du compte de service (elle a transité en clair pendant le branchement).
+- [ ] **Articles via Google Sheet** (optionnel) — encore sur Apps Script (`SHEETS_WEBHOOK_URL`, voir `backend/SETUP-BACKEND.md`). Non branché → le blog sert les 3 articles intégrés. Pas nécessaire si tu publies via Claude.
 - [ ] **Certificat apex** : Vercel → Domains → ajouter `killeurusd.com` + redirection 301 vers `www` (aujourd'hui erreur TLS sur le domaine nu).
 - [ ] **CSP + GA** : quand GA4 est actif, ajouter dans `next.config.ts` `https://www.googletagmanager.com` (script-src) et `https://*.google-analytics.com` (connect-src).
 

@@ -48,22 +48,23 @@ export default function Alumni() {
               <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Prénom d'inscription</label>
+                  <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Prénom d'inscription *</label>
                   <input name="prenom" type="text" required className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Nom</label>
+                  <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Nom *</label>
                   <input name="nom" type="text" required className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Adresse Email d'origine</label>
+                <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Adresse Email d'origine *</label>
                 <input name="email" type="email" required className="w-full bg-[#0B0B0D] border border-zinc-800 text-white px-4 py-3 focus:outline-none focus:border-[#C9A227] transition-colors rounded-sm" />
               </div>
               <div>
                 <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Téléphone *</label>
                 <PhoneField lang="fr" variant="dark" />
               </div>
+              <p className="text-xs text-zinc-500">* Champs obligatoires</p>
               <Button type="submit" variant="accent" className="w-full">Confirmer mon identité</Button>
               <p className="text-center text-xs text-zinc-400 mt-4">Vérification des registres sous 48h ouvrées. Tes nouveaux accès seront transmis par courrier électronique.</p>
             </form>

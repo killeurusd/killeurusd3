@@ -37,7 +37,7 @@ export default function LeadForm() {
         <input
           type="text"
           name="prenom"
-          placeholder="Ton prénom"
+          placeholder="Ton prénom *"
           aria-label="Ton prénom"
           className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm"
           required
@@ -45,7 +45,7 @@ export default function LeadForm() {
         <input
           type="email"
           name="email"
-          placeholder="Ton adresse email"
+          placeholder="Ton adresse email *"
           aria-label="Ton adresse email"
           className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[180px] rounded-sm"
           required
@@ -55,7 +55,8 @@ export default function LeadForm() {
           Télécharger la checklist
         </button>
       </form>
-      <p className="text-white/70 text-xs mt-4">Accès immédiat. Désinscription en un clic.</p>
+      <p className="text-white/50 text-xs mt-4">* Champs obligatoires</p>
+      <p className="text-white/70 text-xs mt-1">Accès immédiat. Désinscription en un clic.</p>
     </>
   );
 }

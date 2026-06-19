@@ -24,8 +24,8 @@ const COPY = {
     desc: "10 points de contrôle non-négociables à valider avant d'ouvrir la moindre position. Reçois la checklist par email.",
     prenom: "Ton prénom",
     email: "Ton adresse email",
-    tel: "Téléphone (optionnel)",
     cta: "Recevoir la checklist",
+    req: "* Champs obligatoires",
     fine: "Accès immédiat. Désinscription en un clic.",
     okTitle: "Merci 👍 Vérifie ta boîte mail.",
     okDesc: "La checklist arrive dans quelques instants.",
@@ -37,8 +37,8 @@ const COPY = {
     desc: "10 non-negotiable checks to run before opening any position. Get the checklist by email.",
     prenom: "Your first name",
     email: "Your email address",
-    tel: "Phone (optional)",
     cta: "Get the checklist",
+    req: "* Required fields",
     fine: "Instant access. Unsubscribe in one click.",
     okTitle: "Thanks 👍 Check your inbox.",
     okDesc: "The checklist is on its way.",
@@ -166,7 +166,7 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
                   type="text"
                   name="prenom"
                   required
-                  placeholder={t.prenom}
+                  placeholder={`${t.prenom} *`}
                   aria-label={t.prenom}
                   className="rounded-sm border border-white/20 bg-[#0B0B0D] px-4 py-3 text-white placeholder-white/40 focus:border-[#C9A227] focus:outline-none"
                 />
@@ -174,11 +174,12 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
                   type="email"
                   name="email"
                   required
-                  placeholder={t.email}
+                  placeholder={`${t.email} *`}
                   aria-label={t.email}
                   className="rounded-sm border border-white/20 bg-[#0B0B0D] px-4 py-3 text-white placeholder-white/40 focus:border-[#C9A227] focus:outline-none"
                 />
                 <PhoneField lang={lang} variant="dark" />
+                <p className="text-left text-[11px] text-white/40">{t.req}</p>
                 <button
                   type="submit"
                   className="rounded-sm bg-[#7A0F0F] px-6 py-3 font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#9A1414]"

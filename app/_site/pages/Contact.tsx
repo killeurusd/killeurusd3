@@ -131,6 +131,7 @@ export default function Contact() {
             <span>J'accepte d'être recontacté(e) par KILLEURUSD au sujet de ma demande. Mes données restent confidentielles et ne sont jamais revendues.</span>
           </label>
 
+          <p className="text-xs text-zinc-500">* Champs obligatoires</p>
           <Button type="submit" className="w-full">Envoyer ma demande</Button>
         </form>
       )}

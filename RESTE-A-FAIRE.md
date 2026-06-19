@@ -53,14 +53,14 @@ Infos clés : repo `killeurusd/killeurusd3` (branche `main`) · Vercel projet `k
 
 ## 🎨 RESTE À FAIRE — Assets / contenu
 - [ ] **Photo du fondateur** : remplacer le logo en filigrane par la vraie photo dans `app/_site/FounderCard.tsx` (`<Image>` en `object-cover`).
-- [ ] **Favicon** propre généré depuis le logo (onglet navigateur).
+- [x] **Favicon** ✅ FAIT — logo en `app/icon.png` + `apple-icon.png`.
 - [ ] **PDF du lead magnet** « L'Audit du Trader Discipliné » : brancher l'envoi par email (la capture est déjà loggée).
 - [ ] **Cohorte** : tenir à jour `app/_site/offer.ts` (`COHORT` : places + date) à chaque nouvelle session.
 
 ## 🚀 RESTE À FAIRE — Optionnel (améliorations)
 - [ ] **Automatisation Phase 2** : webhook Stripe → onglet `Clients` + email d'accès sur-mesure (à brancher une fois le compte Stripe créé, pour le tester).
-- [ ] **Animations** mises de côté : le graphique du hero qui se dessine, halo d'ambiance en fond.
-- [ ] Publier régulièrement des **articles** (SEO/GEO) — demander à Claude.
+- [x] **Animations** ✅ FAIT — graphique du hero qui se dessine + halo d'ambiance en fond (home FR + EN).
+- [ ] Publier régulièrement des **articles** (SEO/GEO) — demander à Claude. *(1er ajouté le 2026-06-20 : « Gestion du risque » FR + EN.)*
 
 ---
 

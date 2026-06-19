@@ -457,12 +457,14 @@ export default function EnHome() {
               <p className="text-white/70 text-sm mt-1">The checklist is on its way.</p>
             </div>
           ) : (
-          <form className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center max-w-2xl mx-auto" onSubmit={(e: any) => { setLeadSent(true); postForm(e, "lead"); }}>
+          <form className="flex flex-col gap-4 max-w-2xl mx-auto" onSubmit={(e: any) => { setLeadSent(true); postForm(e, "lead"); }}>
             <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
-            <input type="text" name="prenom" placeholder="Your first name *" aria-label="Your first name" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm" required />
-            <input type="email" name="email" placeholder="Your email *" aria-label="Your email" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[180px] rounded-sm" required />
-            <PhoneField lang="en" variant="light" className="w-full sm:flex-1 sm:min-w-[240px]" />
-            <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm w-full sm:w-auto">Get the checklist</button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input type="text" name="prenom" placeholder="Your first name *" aria-label="Your first name" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 rounded-sm" required />
+              <input type="email" name="email" placeholder="Your email *" aria-label="Your email" className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 rounded-sm" required />
+            </div>
+            <PhoneField lang="en" variant="light" className="w-full" />
+            <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors rounded-sm w-full">Get the checklist</button>
           </form>
           )}
           <p className="text-white/50 text-xs mt-4">* Required fields</p>

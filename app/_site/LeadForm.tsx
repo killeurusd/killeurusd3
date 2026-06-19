@@ -32,26 +32,28 @@ export default function LeadForm() {
 
   return (
     <>
-      <form className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center max-w-2xl mx-auto" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-4 max-w-2xl mx-auto" onSubmit={handleSubmit}>
         <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
-        <input
-          type="text"
-          name="prenom"
-          placeholder="Ton prénom *"
-          aria-label="Ton prénom"
-          className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[150px] rounded-sm"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Ton adresse email *"
-          aria-label="Ton adresse email"
-          className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 sm:min-w-[180px] rounded-sm"
-          required
-        />
-        <PhoneField lang="fr" variant="light" className="w-full sm:flex-1 sm:min-w-[240px]" />
-        <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors whitespace-nowrap rounded-sm w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            name="prenom"
+            placeholder="Ton prénom *"
+            aria-label="Ton prénom"
+            className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 rounded-sm"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Ton adresse email *"
+            aria-label="Ton adresse email"
+            className="px-6 py-4 bg-[#0B0B0D]/50 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white w-full sm:flex-1 rounded-sm"
+            required
+          />
+        </div>
+        <PhoneField lang="fr" variant="light" className="w-full" />
+        <button type="submit" className="px-8 py-4 bg-white text-[#7A0F0F] font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors rounded-sm w-full">
           Télécharger la checklist
         </button>
       </form>

@@ -1,7 +1,7 @@
 /**
  * KILLEURUSD — Google Apps Script (Web App)
  * Relie le site à Google Sheets :
- *   - doPost : enregistre les soumissions de formulaire (onglet "Formulaires")
+ *   - doPost : enregistre les soumissions de formulaire (onglets "Contacts" / "Leads" / "Anciens" selon le type)
  *   - doGet?action=articles : renvoie les articles en JSON (onglet "Articles")
  *
  * INSTALLATION (voir backend/SETUP-BACKEND.md pour le détail) :

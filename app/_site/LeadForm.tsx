@@ -26,6 +26,7 @@ export default function LeadForm() {
       <div className="max-w-2xl mx-auto bg-[#0B0B0D]/40 border border-white/20 p-6 rounded-sm text-center">
         <p className="text-white font-bold">Merci 👍 Vérifie ta boîte mail.</p>
         <p className="text-white/70 text-sm mt-1">La checklist arrive dans quelques instants.</p>
+        <p className="text-[#C9A227] text-xs mt-3 leading-relaxed">📥 Pense à vérifier tes spams (et l'onglet Promotions) : si tu nous y trouves, ajoute-nous à tes contacts de confiance pour bien recevoir nos messages.</p>
       </div>
     );
   }

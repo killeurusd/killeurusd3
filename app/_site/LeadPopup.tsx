@@ -33,6 +33,7 @@ const COPY = {
     fine: "Accès immédiat. Désinscription en un clic.",
     okTitle: "Merci 👍 Vérifie ta boîte mail.",
     okDesc: "La checklist arrive dans quelques instants.",
+    okSpam: "📥 Pense à vérifier tes spams (et l'onglet Promotions) : si tu nous y trouves, ajoute-nous à tes contacts de confiance.",
     close: "Fermer",
   },
   en: {
@@ -50,6 +51,7 @@ const COPY = {
     fine: "Instant access. Unsubscribe in one click.",
     okTitle: "Thanks 👍 Check your inbox.",
     okDesc: "The checklist is on its way.",
+    okSpam: "📥 Check your spam folder (and the Promotions tab): if you find us there, add us to your trusted contacts.",
     close: "Close",
   },
 } as const;
@@ -158,6 +160,7 @@ export default function LeadPopup({ lang = "fr" }: { lang?: Lang }) {
               <div className="mb-3 text-4xl">📩</div>
               <p className="text-lg font-bold text-white">{t.okTitle}</p>
               <p className="mt-2 text-sm text-white/60">{t.okDesc}</p>
+              <p className="mt-3 text-xs leading-relaxed text-[#C9A227]">{t.okSpam}</p>
             </>
           ) : (
             <>

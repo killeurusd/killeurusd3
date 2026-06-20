@@ -57,6 +57,7 @@ export default function Contact() {
           <CheckCircle2 className="w-12 h-12 text-[#C9A227] mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-white mb-2">Demande reçue.</h3>
           <p className="text-zinc-400">Merci. On revient vers toi sous 24h ouvrées avec une réponse adaptée à ton profil.</p>
+          <p className="text-[#C9A227] text-xs mt-4 leading-relaxed max-w-md mx-auto">📥 Notre réponse peut arriver dans tes spams ou l'onglet Promotions. Pense à vérifier ces dossiers et à nous ajouter à tes contacts de confiance.</p>
         </div>
       ) : (
         <form

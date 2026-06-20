@@ -456,6 +456,7 @@ export default function EnHome() {
             <div className="max-w-2xl mx-auto bg-[#0B0B0D]/40 border border-white/20 p-6 rounded-sm text-center">
               <p className="text-white font-bold">Thanks 👍 Check your inbox.</p>
               <p className="text-white/70 text-sm mt-1">The checklist is on its way.</p>
+              <p className="text-[#C9A227] text-xs mt-3 leading-relaxed">📥 Check your spam folder (and the Promotions tab): if you find us there, add us to your trusted contacts so you don't miss our messages.</p>
             </div>
           ) : (
           <form className="flex flex-col gap-4 max-w-2xl mx-auto" onSubmit={(e: any) => { setLeadSent(true); postForm(e, "lead"); }}>
@@ -511,6 +512,7 @@ export default function EnHome() {
               <CheckCircle2 className="w-12 h-12 text-[#C9A227] mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">Request received.</h3>
               <p className="text-zinc-400">Thanks. We'll get back to you within 24 business hours with an answer tailored to your profile.</p>
+              <p className="text-[#C9A227] text-xs mt-4 leading-relaxed max-w-md mx-auto">📥 Our reply may land in your spam or Promotions tab. Please check those folders and add us to your trusted contacts.</p>
             </div>
           ) : (
           <form className="space-y-6 text-left bg-[#0B0B0D] border border-zinc-800 p-8 md:p-10 rounded-sm" onSubmit={(e: any) => { setSent(true); postForm(e, "contact"); }}>

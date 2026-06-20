@@ -37,6 +37,7 @@ export default function Alumni() {
             <CheckCircle2 className="w-12 h-12 text-[#C9A227] mx-auto mb-4" />
             <p className="text-white font-bold text-lg mb-2">Demande enregistrée.</p>
             <p className="text-zinc-400 text-sm">Notre équipe vérifie les registres et te recontacte sous 48h ouvrées par email.</p>
+            <p className="text-[#C9A227] text-xs mt-4 leading-relaxed">📥 Notre email peut arriver dans tes spams ou l'onglet Promotions. Pense à vérifier ces dossiers et à nous ajouter à tes contacts de confiance.</p>
           </div>
         ) : (
           <>

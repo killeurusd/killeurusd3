@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { google } from "googleapis";
+import { sendLeadEmail, emailConfigured } from "../../_site/sendLeadEmail";
 
 // Réception serveur des soumissions de formulaire → écriture directe dans Google
 // Sheets via un compte de service (API Sheets v4). Un onglet par type de
@@ -121,28 +122,36 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "bad_type" }, { status: 400 });
   }
 
-  // Pas encore branché : on accepte (l'UX de confirmation fonctionne déjà côté client).
-  if (!isConfigured()) {
-    return NextResponse.json({ ok: true, stored: false });
+  // 1) Stockage Google Sheets (si configuré).
+  let stored = false;
+  if (isConfigured()) {
+    // Nettoyage : uniquement des chaînes, taille limitée. Horodatage lisible (UTC).
+    const payload: Record<string, string> = {
+      formType,
+      submittedAt: new Date().toISOString().replace("T", " ").slice(0, 19),
+      page: typeof body.page === "string" ? body.page.slice(0, 300) : "",
+    };
+    for (const [k, v] of Object.entries(body)) {
+      if (k === "formType" || k === "company" || k === "page") continue;
+      if (typeof v === "string") payload[k] = v.slice(0, 2000);
+    }
+    try {
+      await appendRow(sheetsClient(), TABS[formType] || DEFAULT_TAB, payload);
+      stored = true;
+    } catch (err) {
+      // On ne révèle pas d'erreur à l'utilisateur ; à surveiller côté logs Vercel.
+      console.error("[submit] sheets error:", err);
+    }
   }
 
-  // Nettoyage : uniquement des chaînes, taille limitée. Horodatage lisible (UTC).
-  const payload: Record<string, string> = {
-    formType,
-    submittedAt: new Date().toISOString().replace("T", " ").slice(0, 19),
-    page: typeof body.page === "string" ? body.page.slice(0, 300) : "",
-  };
-  for (const [k, v] of Object.entries(body)) {
-    if (k === "formType" || k === "company" || k === "page") continue;
-    if (typeof v === "string") payload[k] = v.slice(0, 2000);
+  // 2) Email automatique de bienvenue — leads uniquement (indépendant du stockage).
+  if (formType === "lead" && typeof body.email === "string" && body.email && emailConfigured()) {
+    try {
+      await sendLeadEmail(body.email, typeof body.prenom === "string" ? body.prenom : "", body.lang === "en" ? "en" : "fr");
+    } catch (err) {
+      console.error("[submit] email error:", err);
+    }
   }
 
-  try {
-    await appendRow(sheetsClient(), TABS[formType] || DEFAULT_TAB, payload);
-    return NextResponse.json({ ok: true, stored: true });
-  } catch (err) {
-    // On ne révèle pas d'erreur à l'utilisateur ; à surveiller côté logs Vercel.
-    console.error("[submit] sheets error:", err);
-    return NextResponse.json({ ok: true, stored: false });
-  }
+  return NextResponse.json({ ok: true, stored });
 }

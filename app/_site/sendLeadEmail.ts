@@ -20,7 +20,7 @@ type Copy = {
   hi: (p: string) => string;
   intro: string;
   button: string;
-  attached: string;
+  fallback: string;
   outro: string;
   signoff: string;
   team: string;
@@ -34,7 +34,7 @@ const COPY: Record<Lang, Copy> = {
     hi: (p: string) => (p ? `Salut ${p},` : "Salut,"),
     intro: "Merci d'avoir demandé « L'Audit du Trader Discipliné ». Voici tes 10 points de contrôle non-négociables à valider avant d'ouvrir la moindre position.",
     button: "Télécharger la checklist",
-    attached: "Le PDF est aussi en pièce jointe de cet email.",
+    fallback: "Si le bouton ne s'affiche pas, copie ce lien dans ton navigateur :",
     outro: "Prends le temps de la lire et de l'appliquer avant ta prochaine session. La discipline se construit avant le clic, pas après.",
     signoff: "À très vite,",
     team: "L'équipe KILLEUR USD",
@@ -46,7 +46,7 @@ const COPY: Record<Lang, Copy> = {
     hi: (p: string) => (p ? `Hi ${p},` : "Hi,"),
     intro: "Thanks for requesting “The Disciplined Trader's Audit.” Here are your 10 non-negotiable checks to run before opening any position.",
     button: "Download the checklist",
-    attached: "The PDF is also attached to this email.",
+    fallback: "If the button doesn't show, copy this link into your browser:",
     outro: "Take the time to read and apply it before your next session. Discipline is built before the click, not after.",
     signoff: "Talk soon,",
     team: "The KILLEUR USD team",
@@ -56,10 +56,10 @@ const COPY: Record<Lang, Copy> = {
 
 function html(t: Copy, prenom: string, pdfUrl?: string): string {
   const btn = pdfUrl
-    ? `<tr><td style="padding:8px 0 24px;">
+    ? `<tr><td style="padding:8px 0 16px;">
          <a href="${pdfUrl}" style="display:inline-block;background:#7A0F0F;color:#ffffff;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:14px;padding:14px 28px;border-radius:4px;">${t.button}</a>
        </td></tr>
-       <tr><td style="color:#71717a;font-size:13px;padding-bottom:16px;">${t.attached}</td></tr>`
+       <tr><td style="color:#71717a;font-size:12px;padding-bottom:20px;">${t.fallback}<br/><a href="${pdfUrl}" style="color:#C9A227;">${pdfUrl}</a></td></tr>`
     : "";
   return `<!doctype html><html><body style="margin:0;background:#0B0B0D;font-family:Arial,Helvetica,sans-serif;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0B0B0D;padding:32px 16px;">
@@ -105,23 +105,13 @@ export async function sendLeadEmail(to: string, prenom: string, lang: Lang): Pro
     auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD },
   });
 
-  // Pièce jointe : on récupère le PDF depuis son URL publique (si fournie).
-  const attachments: { filename: string; content: Buffer }[] = [];
-  if (LEAD_PDF_URL) {
-    try {
-      const res = await fetch(LEAD_PDF_URL, { signal: AbortSignal.timeout(8000) });
-      if (res.ok) attachments.push({ filename: t.pdfName, content: Buffer.from(await res.arrayBuffer()) });
-    } catch {
-      /* on envoie quand même (avec le lien), sans bloquer */
-    }
-  }
-
+  // Email léger : le PDF est servi par le site (LEAD_PDF_URL), on envoie juste le lien
+  // — pas de pièce jointe (meilleure délivrabilité, email plus léger).
   await transporter.sendMail({
     from: `"KILLEUR USD" <${GMAIL_USER}>`,
     to,
     subject: t.subject,
     text: text(t, prenom, LEAD_PDF_URL),
     html: html(t, prenom, LEAD_PDF_URL),
-    attachments,
   });
 }

@@ -54,7 +54,7 @@ Infos clés : repo `killeurusd/killeurusd3` (branche `main`) · Vercel projet `k
 ## 🎨 RESTE À FAIRE — Assets / contenu
 - [ ] **Photo du fondateur** : remplacer le logo en filigrane par la vraie photo dans `app/_site/FounderCard.tsx` (`<Image>` en `object-cover`).
 - [x] **Favicon** ✅ FAIT — logo en `app/icon.png` + `apple-icon.png`.
-- [ ] **PDF du lead magnet** « L'Audit du Trader Discipliné » : brancher l'envoi par email (la capture est déjà loggée).
+- [x] **PDF du lead magnet** « L'Audit du Trader Discipliné » ✅ FAIT (2026-06-20). Envoi automatique de l'email à chaque lead via Gmail (nodemailer) ; PDF servi par le site (`/audit-du-trader-discipline.pdf`, lien dans l'email, pas de pièce jointe). Variables Vercel : `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `LEAD_PDF_URL`. Code : `app/_site/sendLeadEmail.ts`. Écrans de confirmation : invitent à vérifier les spams + ajouter en contact de confiance.
 - [ ] **Cohorte** : tenir à jour `app/_site/offer.ts` (`COHORT` : places + date) à chaque nouvelle session.
 
 ## 🚀 RESTE À FAIRE — Optionnel (améliorations)

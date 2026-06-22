@@ -496,7 +496,7 @@ export default function Home() {
           <div className="card-rise bg-[#0B0B0D] border border-zinc-800 p-8 rounded-sm text-center hover:border-zinc-700">
             <h4 className="text-white font-bold uppercase tracking-wider mb-6">Pourquoi faire confiance à cette approche ?</h4>
             <div className="flex flex-wrap justify-center gap-8 text-sm text-zinc-400">
-              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> +7 ans de pratique réelle</div>
+              <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> +10 ans de pratique réelle</div>
               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Zéro illusion marketing</div>
               <div className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#C9A227] mr-2" /> Audit des performances</div>
             </div>
@@ -542,7 +542,7 @@ export default function Home() {
             <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">De coaching / semaine</div>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-black text-[#C9A227] tracking-tight"><CountUp end={7} prefix="+" /></div>
+            <div className="text-4xl md:text-5xl font-black text-[#C9A227] tracking-tight"><CountUp end={10} prefix="+" /></div>
             <div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-widest mt-2">Ans d'expérience</div>
           </div>
         </div>
